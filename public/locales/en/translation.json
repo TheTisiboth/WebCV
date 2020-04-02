@@ -1,7 +1,7 @@
 {
-  "title": "Welcome to react using react-i18next",
+  "title": "Welcome to my Web CV!",
   "description": {
-    "part1": "To get started, edit <1>src/App.js</1> and save to reload.",
+    "part1": "Website currently in production.",
     "part2": "Switch language between english and german using buttons above."
   }
 }

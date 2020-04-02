@@ -1,7 +1,7 @@
 {
-  "title": "Bienvenu sur react et react-i18next",
+  "title": "Bienvenu sur mon Web CV!",
   "description": {
-    "part1": "Modifez le fichier <1>src/App.js</1> et enregistrez pour voir apparaitre vos modifications.",
+    "part1": "Site en cours de production.",
     "part2": "Changez la langue avec ce bouton."
   }
 }
