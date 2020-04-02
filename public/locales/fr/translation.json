@@ -1,0 +1,7 @@
+{
+  "title": "Bienvenu sur react et react-i18next",
+  "description": {
+    "part1": "Modifez le fichier <1>src/App.js</1> et enregistrez pour voir apparaitre vos modifications.",
+    "part2": "Changez la langue avec ce bouton."
+  }
+}
