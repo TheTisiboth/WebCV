@@ -1,8 +1,8 @@
-import React, { Component, Suspense } from 'react';
+import React, { Component, Suspense, useState, useCallback } from 'react';
 import { useTranslation, withTranslation, Trans } from 'react-i18next';
 import logoLoader from './logo.svg';
 import './App.css';
-import { Navbar, Nav, NavDropdown, Button, Image, Row, Col, Container, Figure, OverlayTrigger, Tooltip } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown, Button, Row, Col, Container, Figure, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import image from './assets/leo.jpg';
 import logo from './assets/logo.png';
 import CV_FR from './assets/CV_FR_Leo_Jan.pdf';
@@ -13,46 +13,46 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 /**
  * Translation button, that translate the whole page. It switches between english (by default) and french
  */
-class TranslationButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { isEnglish: true };
-    this.buttonLabel = 'en';
-    this.changeLanguage = lng => { // Change the language of the whole page
-      this.props.i18n.changeLanguage(lng);
-    };
-    this.handleClick = this.handleClick.bind(this);
-    this.renderTooltip = this.renderTooltip.bind(this);
+function TranslationButton(props) {
+  const [state, setState] = useState({
+    isEnglish: true,
+    buttonLabel: 'en'
+  });
 
-  }
+  const changeLanguage = lng => { // Change the language of the whole page
+    props.i18n.changeLanguage(lng);
+  };
 
-  handleClick() {
-    const isEnglish = this.state.isEnglish ? false : true;
-    this.buttonLabel = (isEnglish) ? 'en' : 'fr'
-    this.changeLanguage(this.buttonLabel)
-    this.setState({ isEnglish: isEnglish })
-  }
+  const handleClick =
+    () => {
+      const isEnglish = !state.isEnglish;
+      const buttonLabel = (isEnglish) ? 'en' : 'fr'
+      setState({
+        isEnglish: isEnglish,
+        buttonLabel: buttonLabel
+      });
+      console.log(state)
+      changeLanguage(buttonLabel);
 
-  renderTooltip(props) {
+    }
+
+  const renderTooltip = propss => {
     return (
-      <Tooltip id="button-tooltip" {...props}>
-        {this.props.i18n.t('translationTooltip')}
+      <Tooltip id="button-tooltip" {...propss}>
+        {props.i18n.t('translationTooltip')}
       </Tooltip>
     );
   }
 
-  render() {
-
-    return (
-      <OverlayTrigger
-        placement="bottom"
-        delay={{ show: 250, hide: 400 }}
-        overlay={this.renderTooltip}
-      >
-        <Button className="m-auto" variant="outline-light" onClick={this.handleClick}>{this.buttonLabel}</Button>
-      </OverlayTrigger>
-    );
-  }
+  return (
+    <OverlayTrigger
+      placement="bottom"
+      delay={{ show: 250, hide: 400 }}
+      overlay={renderTooltip}
+    >
+      <Button className="m-auto" variant="outline-light" onClick={handleClick}>{state.buttonLabel}</Button>
+    </OverlayTrigger>
+  );
 }
 
 
@@ -61,7 +61,7 @@ class TranslationButton extends React.Component {
 const _TranslationButton = withTranslation()(TranslationButton);
 
 function MyNavbar() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
@@ -78,8 +78,8 @@ function MyNavbar() {
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="#features">{t('navbar.presentation')}</Nav.Link>
-          <Nav.Link href="#pricing">{t('navbar.education')}</Nav.Link>
-          <Nav.Link href="#pricing">{t('navbar.experience')}</Nav.Link>
+          <Nav.Link href="#">{t('navbar.education')}</Nav.Link>
+          <Nav.Link href="#">{t('navbar.experience')}</Nav.Link>
           <NavDropdown title={t('navbar.skill')} id="collasible-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -98,10 +98,10 @@ function MyNavbar() {
   );
 }
 
-// use hoc for class based components
+// use hoc for based components
 class LegacyWelcomeClass extends Component {
   render() {
-    const { t, i18n } = this.props;
+    const { t } = this.props;
     return <h2>{t('title')}</h2>;
   }
 }
@@ -116,7 +116,7 @@ function MyComponent() {
 }
 
 function LeftHeader() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div >
       <div className="name">
@@ -134,7 +134,7 @@ function LeftHeader() {
 }
 
 function RightHeader() {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   return (
     <div >
       <div className="name">
@@ -153,7 +153,7 @@ function RightHeader() {
 
 // page uses the hook
 function Page() {
-  const { t, i18n } = useTranslation();
+  // const { t, i18n } = useTranslation();
 
   return (
     <div className="App">
