@@ -3,5 +3,18 @@
   "description": {
     "part1": "Website currently in production.",
     "part2": "Switch language between english and german using buttons above."
-  }
+  },
+  "navbar": {
+    "presentation": "Presentation",
+    "education": "Education",
+    "project": "Projects",
+    "experience": "Experiences",
+    "skill": "Skills"
+  },
+  "me": {
+    "work": "Software Engineer",
+    "livesIn": "Lives in Marseille",
+    "age" : "24 years old"
+  },
+  "translationTooltip" : "Translate in french"
 }

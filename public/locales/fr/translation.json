@@ -3,5 +3,18 @@
   "description": {
     "part1": "Site en cours de production.",
     "part2": "Changez la langue avec ce bouton."
-  }
+  },
+  "navbar": {
+    "presentation": "Présentation",
+    "education": "Formation",
+    "project": "Projets",
+    "experience": "Experiences",
+    "skill": "Compétences"
+  },
+  "me": {
+    "work": "Ingénieur Logiciel",
+    "livesIn": "Vis à Marseille",
+    "age" : "24 ans"
+  },
+  "translationTooltip" : "Traduire en anglais"
 }

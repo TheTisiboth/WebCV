@@ -1,9 +1,12 @@
 import React, { Component, Suspense } from 'react';
 import { useTranslation, withTranslation, Trans } from 'react-i18next';
-import logo from './logo.svg';
+import logoLoader from './logo.svg';
 import './App.css';
-import { Navbar, Nav, NavDropdown, Button, Image, Row, Col, Container, Figure } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown, Button, Image, Row, Col, Container, Figure, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import image from './assets/leo.jpg';
+import logo from './assets/logo.png';
+import CV_FR from './assets/CV_FR_Leo_Jan.pdf';
+import CV_EN from './assets/CV_EN_Leo_Jan.pdf';
 import { IconContext } from "react-icons";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 
@@ -19,6 +22,8 @@ class TranslationButton extends React.Component {
       this.props.i18n.changeLanguage(lng);
     };
     this.handleClick = this.handleClick.bind(this);
+    this.renderTooltip = this.renderTooltip.bind(this);
+
   }
 
   handleClick() {
@@ -28,25 +33,54 @@ class TranslationButton extends React.Component {
     this.setState({ isEnglish: isEnglish })
   }
 
-  render() {
+  renderTooltip(props) {
     return (
-      <Button variant="outline-light" onClick={this.handleClick}>{this.buttonLabel}</Button>
+      <Tooltip id="button-tooltip" {...props}>
+        {this.props.i18n.t('translationTooltip')}
+      </Tooltip>
+    );
+  }
+
+  render() {
+
+    return (
+      <OverlayTrigger
+        placement="bottom"
+        delay={{ show: 250, hide: 400 }}
+        overlay={this.renderTooltip}
+      >
+        <Button className="m-auto" variant="outline-light" onClick={this.handleClick}>{this.buttonLabel}</Button>
+      </OverlayTrigger>
     );
   }
 }
 
+
+
+
 const _TranslationButton = withTranslation()(TranslationButton);
 
 function MyNavbar() {
+  const { t, i18n } = useTranslation();
+
   return (
-    <Navbar collapseOnSelect expand="sm" bg="dark" variant="dark">
-      <Navbar.Brand href="#home">Léo Jan</Navbar.Brand>
+    <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
+      <Navbar.Brand href="#home">
+        <img
+          alt=""
+          src={logo}
+          width="40%"
+          height="40%"
+          className="d-inline-block align-top"
+        />{' '}
+      </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link href="#features">Présentation</Nav.Link>
-          <Nav.Link href="#pricing">Scolarité</Nav.Link>
-          <NavDropdown title="Compétences" id="collasible-nav-dropdown">
+          <Nav.Link href="#features">{t('navbar.presentation')}</Nav.Link>
+          <Nav.Link href="#pricing">{t('navbar.education')}</Nav.Link>
+          <Nav.Link href="#pricing">{t('navbar.experience')}</Nav.Link>
+          <NavDropdown title={t('navbar.skill')} id="collasible-nav-dropdown">
             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
@@ -55,6 +89,8 @@ function MyNavbar() {
           </NavDropdown>
         </Nav>
         <Nav>
+          <Nav.Link href={CV_FR} download><Button className="text-white" variant="outline-secondary" >CV FR</Button></Nav.Link>
+          <Nav.Link href={CV_EN} download><Button className="text-white mr-5" variant="outline-secondary" >CV EN</Button></Nav.Link>
           <_TranslationButton />
         </Nav>
       </Navbar.Collapse>
@@ -79,6 +115,42 @@ function MyComponent() {
   );
 }
 
+function LeftHeader() {
+  const { t, i18n } = useTranslation();
+  return (
+    <div >
+      <div className="name">
+        <h1 className="display-4">Léo Jan</h1>
+      </div>
+      <div>
+        <h2>{t('me.work')}</h2>
+      </div>
+      <div>
+        <h3 >{t('me.age')}</h3>
+      </div>
+    </div>
+
+  );
+}
+
+function RightHeader() {
+  const { t, i18n } = useTranslation();
+  return (
+    <div >
+      <div className="name">
+        <h2>Polytech Grenoble</h2>
+      </div>
+      <div>
+        <h2>{t('me.livesIn')}</h2>
+      </div>
+      <div>
+        <h3 >janleopro@gmail.com</h3>
+      </div>
+    </div>
+
+  );
+}
+
 // page uses the hook
 function Page() {
   const { t, i18n } = useTranslation();
@@ -89,19 +161,22 @@ function Page() {
       <Container fluid>
         <Row className="App-header">
           <Row>
-            <Col>
-            Léo Jan
+            <Col sm={12} md={3} className="m-auto text-right">
+              <LeftHeader />
             </Col>
-            <Col>
+            <Col sm={12} md={6}>
               <Figure>
                 <Figure.Image
-                  height="30%"
-                  width="30%"
+                  height="40%"
+                  width="40%"
                   alt="171x180"
                   src={image}
                   roundedCircle
                 />
               </Figure>
+            </Col>
+            <Col sm={12} md={3} className="m-auto text-left">
+              <RightHeader />
             </Col>
           </Row>
 
@@ -142,7 +217,7 @@ function Page() {
 // loading component for suspense fallback
 const Loader = () => (
   <div className="App">
-    <img src={logo} className="App-logo" alt="logo" />
+    <img src={logoLoader} className="App-logo" alt="logo" />
     <div>loading...</div>
   </div>
 );
