@@ -2,7 +2,10 @@ import React, { Component, Suspense } from 'react';
 import { useTranslation, withTranslation, Trans } from 'react-i18next';
 import logo from './logo.svg';
 import './App.css';
-import { Navbar, Nav, NavDropdown,Button } from 'react-bootstrap'
+import { Navbar, Nav, NavDropdown, Button, Image, Row, Col, Container, Figure } from 'react-bootstrap'
+import image from './assets/leo.jpg';
+import { IconContext } from "react-icons";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 /**
  * Translation button, that translate the whole page. It switches between english (by default) and french
@@ -10,8 +13,8 @@ import { Navbar, Nav, NavDropdown,Button } from 'react-bootstrap'
 class TranslationButton extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { isEnglish: true};
-    this.buttonLabel = 'en'; 
+    this.state = { isEnglish: true };
+    this.buttonLabel = 'en';
     this.changeLanguage = lng => { // Change the language of the whole page
       this.props.i18n.changeLanguage(lng);
     };
@@ -83,12 +86,51 @@ function Page() {
   return (
     <div className="App">
       <MyNavbar />
-      <div className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+      <Container fluid>
+        <Row className="App-header">
+          <Row>
+            <Col>
+            Léo Jan
+            </Col>
+            <Col>
+              <Figure>
+                <Figure.Image
+                  height="30%"
+                  width="30%"
+                  alt="171x180"
+                  src={image}
+                  roundedCircle
+                />
+              </Figure>
+            </Col>
+          </Row>
 
-        <Welcome />
 
-      </div>
+        </Row>
+        <Row className="App-header text-center">
+          <Col className="text-right">
+            <a href="https://www.linkedin.com/in/l%C3%A9o-jan-065ba8125/">
+              <IconContext.Provider value={{ size: "5em" }}>
+                <div>
+                  <FaLinkedin />
+                </div>
+              </IconContext.Provider>
+            </a>
+          </Col>
+          <Col className="text-left">
+            <a href="https://github.com/TheTisiboth">
+              <IconContext.Provider value={{ size: "5em" }}>
+                <div>
+                  <FaGithub />
+                </div>
+              </IconContext.Provider>
+            </a>
+          </Col>
+        </Row>
+
+      </Container>
+      <Welcome />
+
       <div className="App-intro">
         <MyComponent />
       </div>
