@@ -20,7 +20,7 @@
 
 ## 3/04
 
-- Refactor de classe en functionanl component
+- Refactor de classe en functional component
 - Passage au typescript (typage)
 - Ajout d'un logo, tooltip
 - Ajout de la partie experience et compétence  
