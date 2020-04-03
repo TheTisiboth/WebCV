@@ -1,4 +1,4 @@
-import React, { Component, Suspense, useState, useCallback } from 'react';
+import React, { Component, Suspense, useState, useCallback, ReactElement } from 'react';
 import { useTranslation, withTranslation, Trans } from 'react-i18next';
 import logoLoader from './logo.svg';
 import './App.css';
@@ -13,13 +13,13 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 /**
  * Translation button, that translate the whole page. It switches between english (by default) and french
  */
-function TranslationButton(props) {
+function TranslationButton(props: { i18n: { changeLanguage: (arg0: any) => void; t: (arg0: string) => React.ReactNode; }; }): ReactElement<any> {
   const [state, setState] = useState({
     isEnglish: true,
     buttonLabel: 'en'
   });
 
-  const changeLanguage = lng => { // Change the language of the whole page
+  const changeLanguage = (lng: string) => { // Change the language of the whole page
     props.i18n.changeLanguage(lng);
   };
 
@@ -36,7 +36,7 @@ function TranslationButton(props) {
 
     }
 
-  const renderTooltip = propss => {
+  const renderTooltip = (propss: any) => {
     return (
       <Tooltip id="button-tooltip" {...propss}>
         {props.i18n.t('translationTooltip')}
@@ -89,7 +89,7 @@ function MyNavbar() {
           </NavDropdown>
         </Nav>
         <Nav>
-          <Nav.Link href={CV_FR} download><Button className="text-white" variant="outline-secondary" >CV FR</Button></Nav.Link>
+          <Nav.Link href={CV_FR} download ><Button className="text-white" variant="outline-secondary" >CV FR</Button></Nav.Link>
           <Nav.Link href={CV_EN} download><Button className="text-white mr-5" variant="outline-secondary" >CV EN</Button></Nav.Link>
           <_TranslationButton />
         </Nav>
@@ -97,15 +97,6 @@ function MyNavbar() {
     </Navbar>
   );
 }
-
-// use hoc for based components
-class LegacyWelcomeClass extends Component {
-  render() {
-    const { t } = this.props;
-    return <h2>{t('title')}</h2>;
-  }
-}
-const Welcome = withTranslation()(LegacyWelcomeClass);
 
 // Component using the Trans component
 function MyComponent() {
@@ -204,7 +195,6 @@ function Page() {
         </Row>
 
       </Container>
-      <Welcome />
 
       <div className="App-intro">
         <MyComponent />
