@@ -28,6 +28,7 @@ import REACT from './assets/react.svg';
 import GIT from './assets/git.png';
 import LINUX from './assets/linux.svg';
 import ARDUINO from './assets/arduino.svg';
+require('./global.d.ts');
 
 /**
  * Translation button, that translate the whole page. It switches between english (by default) and french
