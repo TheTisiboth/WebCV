@@ -16,7 +16,10 @@ i18n
   .init({
     fallbackLng: 'en',
     debug: false,
-
+    backend: {
+      // for all available options read the backend's repository readme file
+      loadPath: '/locales/{{lng}}/translation.json'
+    },
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },

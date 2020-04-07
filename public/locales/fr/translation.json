@@ -16,5 +16,23 @@
     "livesIn": "Habite à Marseille",
     "age" : "24 ans"
   },
-  "translationTooltip" : "Traduire en anglais"
+  "translationTooltip" : "Traduire en anglais",
+  "cvFrTooltip" : "Télécharger mon CV en français",
+  "cvEnTooltip" : "Télécharger mon CV en anglais",
+  "experiences": {
+    "0": {
+      "title": "5 mois - 2020 : Enovacom, Marseille",
+      "body": "<0>Automatisation de Web enquêtes</0> : Aide à la mise en place d'une interface Web permettant de lancer des scripts automatisant les enquêtes relatives aux sites mettant en ligne du contenu audiovisuel de manière illégale. Programmation Web (Jquery, PHP, Python ...)"
+    },
+    "1": {
+      "title": "titl1e",
+      "body": "body1"
+    }
+  },
+  "skills" : {
+    "system" :"Dévelopement Systeme",
+    "software" : "Développement Logiciel",
+    "web" : "Développement Web",
+    "other" : "Autres"
+  }
 }
