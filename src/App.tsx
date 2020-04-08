@@ -1,10 +1,15 @@
-import React, { Component, Suspense, useState, useCallback, ReactElement } from 'react';
+import React, { Component, Suspense, useState, useCallback, ReactElement, Fragment } from 'react';
 import { useTranslation, withTranslation, Trans } from 'react-i18next';
 import logoLoader from './logo.svg';
 import './App.css';
 import { Navbar, Nav, NavDropdown, Button, Row, Col, Container, Figure, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { IconContext } from "react-icons";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+// const { Map: LeafletMap, TileLayer, Marker, Popup } = ReactLeaflet
+import { Icon } from "leaflet";
+
+// import 'leaflet/dist/leaflet.css'
 import image from './assets/leo.jpg';
 import logo from './assets/logo.png';
 import CV_FR from './assets/CV_FR_Leo_Jan.pdf';
@@ -28,6 +33,7 @@ import REACT from './assets/react.svg';
 import GIT from './assets/git.png';
 import LINUX from './assets/linux.svg';
 import ARDUINO from './assets/arduino.svg';
+import L from 'leaflet';
 require('./global.d.ts');
 
 /**
@@ -203,18 +209,18 @@ function Skill(props: { href: string | undefined; tooltip: any; image: string | 
 function Skills() {
   const { t } = useTranslation();
   return (
-    <div>
-      <Row>
-        <Col md={4}>
-        </Col>
-        <Col md={4}>
-          <div className="title rounded display-3 ">
-            {t('navbar.skill')}
-          </div>
-        </Col>
-        <Col md={4}>
-        </Col>
-      </Row>
+    <Row>
+
+      <Col md={4}>
+      </Col>
+      <Col md={4}>
+        <div className="title rounded display-3 ">
+          {t('navbar.skill')}
+        </div>
+      </Col>
+      <Col md={4}>
+      </Col>
+
 
       <Row>
 
@@ -285,7 +291,7 @@ function Skills() {
           </Row>
         </Col>
       </Row>
-    </div>
+    </Row>
   );
 }
 
@@ -313,15 +319,23 @@ function Experience() {
           <h2>{t('experiences.0.title')}</h2>
           <p>
             <Trans i18nKey="experiences.0.body">
-              <strong>Automatisation of Web investigation</strong> : Website creation, in order to centralize multiple scripts that automatize the investigation about some infringing website, which are puting some illegal content on internet. Web Programmation (Jquery, PHP, Python ...)          </Trans>
+              <strong>Software internationalization</strong> : Adapt the software to communicate thanks to a communication protocol. Software development (Java).
+                 </Trans>
           </p>
 
         </Col>
       </Row>
       <Row>
         <Col>
-          <h2>3 month - 2019 : Motion Picture Association of America, Bruxelles</h2>
-          <p></p>
+          <h2>{t('experiences.1.title')}</h2>
+          <p>
+            <Trans i18nKey="experiences.1.body">
+              <strong>Automatisation of Web investigation </strong>: Website creation, in order to centralize multiple
+              scripts that automatize the investigation about some infringing website, which are
+              puting some illegal content on internet. Web Programmation (Jquery, PHP,
+              Python ...)
+          </Trans>
+          </p>
         </Col>
       </Row>
     </Container>
@@ -377,6 +391,90 @@ function AppHeader() {
   );
 }
 
+// type Position = [number, number];
+
+// type Props = {
+//   content: string,
+//   position: Position,
+// };
+
+// type MarkerData = { Props: Props, key: string |};
+
+// const MyPopupMarker = ({ content, position }: Props) => (
+//   <Marker position={position}>
+//     <Popup>{content}</Popup>
+//   </Marker>
+// )
+
+// const MyMarkersList = ({ markers }: { markers: Array<MarkerData> }) => {
+//   const items = markers.map(({ key, ...props }) => (
+//     <MyPopupMarker key={key} {...props} />
+//   ))
+//   return <Fragment>{items}</Fragment>
+// }
+
+function Travel() {
+  const position = [43.3, 5.4];
+  const icon = new Icon({
+    iconUrl: JAVA,
+    iconSize: [25, 25]
+  });
+  // const markers = [
+  //   { key: 'marker1', position: [51.5, -0.1], content: 'My first popup' },
+  //   { key: 'marker2', position: [51.51, -0.1], content: 'My second popup' },
+  //   { key: 'marker3', position: [51.49, -0.05], content: 'My third popup' },
+  // ];
+
+  return (
+    // <Map center={[51.505, -0.09]} zoom={13}>
+    //   <TileLayer
+    //     attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+    //     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+    //   />
+    //   <MyMarkersList markers={markers} />
+    // </Map>
+    <Row>
+      <Col>
+        <Map style={{ width: '100%', height: '500px' }} center={[43.3, 5.4]} zoom={3}>
+          <TileLayer
+            url="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw"
+          />
+          <Marker icon={icon} position={[43.3, 5.4]}>
+            <Popup>
+              <span>A pretty CSS3 popup. <br /> Easily customizable.</span>
+            </Popup>
+          </Marker>
+        </Map>
+      </Col>>
+    </Row>
+  );
+}
+
+function WIP() {
+  const { t } = useTranslation();
+  return (
+    <Container>
+      <Row className="mb-2">
+        <Col md={3}>
+        </Col>
+        <Col md={6} className="title rounded">
+          <div className="display-3">
+            {t('wip.title')}
+          </div>
+        </Col>
+
+        <Col md={3}>
+        </Col>
+      </Row>
+      <Row>
+        <Col className="display-4">
+        {t('wip.body')}
+        </Col>
+      </Row>
+    </Container>
+  );
+}
+
 // page uses the hook
 function Page(): ReactElement<any> {
   return (
@@ -386,10 +484,12 @@ function Page(): ReactElement<any> {
       <AppHeader />
 
       <div className="App-intro">
-        <Row>
-          <Skills />
-        </Row>
+
+        <Skills />
+
         <Experience />
+        {/* <Travel /> */}
+        <WIP />
       </div>
     </div>
   );
@@ -398,8 +498,8 @@ function Page(): ReactElement<any> {
 // loading component for suspense fallback
 const Loader = (): ReactElement<any> => (
   <div className="App">
-    <img src={logoLoader} className="App-logo" alt="logo" />
-    <div>loading...</div>
+    {/* <img src={logoLoader} className="App-logo" alt="logo" />
+    <div>loading...</div> */}
   </div>
 );
 

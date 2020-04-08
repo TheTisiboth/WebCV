@@ -22,17 +22,21 @@
   "experiences": {
     "0": {
       "title": "5 month - 2020 : Enovacom, Marseille",
-      "body": "<0>Automatisation of Web investigation</0> : Website creation, in order to centralize multiple scripts that automatize the investigation about some infringing website, which are puting some illegal content on internet. Web Programmation (Jquery, PHP, Python ...)"
+      "body": "<0>Software internationalization</0> : Adapt the software to communicate thanks to a communication protocol. Software development (Java)."
     },
     "1": {
-      "title": "titl1e",
-      "body": "body1"
+      "title": "3 month - 2019 : Motion Picture Association of America, Bruxelles",
+      "body": "<0>Automatisation of Web investigation </0>: Website creation, in order to centralize multiple scripts that automatize the investigation about some infringing website, which are puting some illegal content on internet. Web Programmation (Jquery, PHP,Python ...)"
     }
   },
-  "skills" : {
-    "system" :"System development",
-    "software" : "Software development",
-    "web" : "Web development",
-    "other" : "Others"
+  "skills": {
+    "system": "System development",
+    "software": "Software development",
+    "web": "Web development",
+    "other": "Others"
+  },
+  "wip": {
+    "title": "Work in progress",
+    "body": "This website is currently under development. It will be updated regularly"
   }
 }
