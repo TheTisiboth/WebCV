@@ -23,7 +23,7 @@
   "experiences": {
     "0": {
       "title": "5 month - 2020 : Enovacom, Marseille",
-      "body": "<0>Software internationalization</0> : Adapt the software to communicate thanks to a communication protocol. Software development (Java)."
+      "body": "<0>Software internationalization</0> : Adapt the software to communicate with others softwares thanks to a communication protocol. Software development (Java)."
     },
     "1": {
       "title": "3 month - 2019 : Motion Picture Association of America, Bruxelles",
@@ -95,6 +95,20 @@
     "sweden": {
       "country" : "Sweden",
       "stockholm" : "Stockholm"
+    }
+  },
+  "education" :{
+    "0" : {
+      "title" : "2016 - 2020 : IT Engineering",
+      "body" : "Polytech, Engineering school of the Grenoble Alpes University - 5th year"
+    },
+    "1" : {
+      "title" : "2014 - 2016 : PEIP Marseille",
+      "body" : "Preparatory classes : two-year undergraduate intensive course in mathematics, physics, chemistry, and IT"
+    },
+    "2" : {
+      "title" : "2014 : Scientific baccalaureate and specialization in Computer Science and Digital Science",
+      "body" : "German Bacalaureat : AbiBac (German literature and history)"
     }
   }
 }

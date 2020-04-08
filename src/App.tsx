@@ -105,16 +105,10 @@ function MyNavbar(): ReactElement<any> {
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
-          <Nav.Link className="display-5" href="#features">{t('navbar.presentation')}</Nav.Link>
-          <Nav.Link className="display-5" href="#">{t('navbar.education')}</Nav.Link>
-          <Nav.Link className="display-5" href="#">{t('navbar.experience')}</Nav.Link>
-          <NavDropdown className="display-5" title={t('navbar.skill')} id="collasible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-          </NavDropdown>
+          <Nav.Link className="display-5" href="#Skills">{t('navbar.skill')}</Nav.Link>
+          <Nav.Link className="display-5" href="#Experiences">{t('navbar.experience')}</Nav.Link>
+          <Nav.Link className="display-5" href="#Education">{t('navbar.education')}</Nav.Link>
+          <Nav.Link className="display-5" href="#Travels">{t('navbar.travel')}</Nav.Link>
         </Nav>
         <Nav>
           <Nav.Link href={CV_FR} download >
@@ -145,34 +139,55 @@ function MyNavbar(): ReactElement<any> {
 function LeftHeader(): ReactElement<any> {
   const { t } = useTranslation();
   return (
-    <div >
-      <div className="name">
-        <h1 className="display-4">Léo Jan</h1>
-      </div>
-      <div>
-        <h2>{t('me.work')}</h2>
-      </div>
-      <div>
-        <h3 >{t('me.age')}</h3>
-      </div>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <div className="name">
+            <h1 className="display-4">Léo Jan</h1>
+          </div>
+          <div>
+            <h2>{t('me.work')}</h2>
+          </div>
+          <div>
+            <h3 >{t('me.age')}</h3>
+          </div>
+        </Col>
+      </Row>
+      <Row className="mt-5">
+        <Col>
+          <div className="name">
+            <h2>Polytech Grenoble</h2>
+          </div>
+          <div>
+            <h2>{t('me.livesIn')}</h2>
+          </div>
+          <div>
+            <h3 >janleopro@gmail.com</h3>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
 function RightHeader(): ReactElement<any> {
   const { t } = useTranslation();
   return (
-    <div >
-      <div className="name">
-        <h2>Polytech Grenoble</h2>
-      </div>
-      <div>
-        <h2>{t('me.livesIn')}</h2>
-      </div>
-      <div>
-        <h3 >janleopro@gmail.com</h3>
-      </div>
-    </div>
+    <Container>
+      <Row>
+        <Col>
+          <div className="name">
+            <h1>Hobby</h1>
+            <ul>
+              <li ><h2>IT</h2></li>
+              <li className="sports"><h2>Sport : Basket-ball, Badminton, Table Tennis, Ultimate Frisbee </h2> <p>(Team leader, and sport licence in a club)</p></li>
+              <li><h2>Read</h2></li>
+              <li><h2>Music</h2></li>
+            </ul>
+          </div>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 
@@ -209,7 +224,7 @@ function Skill(props: { href: string | undefined; tooltip: any; image: string | 
 function Skills() {
   const { t } = useTranslation();
   return (
-    <Row>
+    <Row id="Skills">
 
       <Col md={4}>
       </Col>
@@ -298,19 +313,17 @@ function Skills() {
 function Experience() {
   const { t } = useTranslation();
   return (
-    <Container>
+    <Container id="Experiences">
 
-      <Row className="mb-2">
-        <Col md={4}>
-        </Col>
-        <Col md={4} className="title rounded">
-          <div className="display-3">
+      <Row className="mb-2 justify-content-md-center">
+
+        <Col md={8} className="">
+          <div className="display-3 title rounded">
             {t('navbar.experience')}
           </div>
         </Col>
 
-        <Col md={4}>
-        </Col>
+
       </Row>
       <Row>
         <Col>
@@ -347,71 +360,52 @@ function AppHeader() {
     <Container fluid>
       <Row className="App-header">
         <Row>
-          <Col sm={12} md={3} className="m-auto text-right">
+          <Col sm={12} md={4} className="mt-5 text-right">
             <LeftHeader />
           </Col>
-          <Col sm={12} md={6}>
-            <Figure>
-              <Figure.Image
-                height="40%"
-                width="40%"
-                alt="171x180"
-                src={image}
-                roundedCircle
-              />
-            </Figure>
+          <Col sm={12} md={4}>
+            <Row>
+              <Figure>
+                <Figure.Image
+                  height="50%"
+                  width="50%"
+                  alt="171x180"
+                  src={image}
+                  roundedCircle
+                />
+              </Figure>
+            </Row>
+            <Row className="App-header text-center">
+              <Col className="text-right">
+                <a href="https://www.linkedin.com/in/l%C3%A9o-jan-065ba8125/" target="_blank">
+                  <IconContext.Provider value={{ size: "5em" }}>
+                    <div>
+                      <FaLinkedin />
+                    </div>
+                  </IconContext.Provider>
+                </a>
+              </Col>
+              <Col className="text-left">
+                <a href="https://github.com/TheTisiboth" target="_blank">
+                  <IconContext.Provider value={{ size: "5em" }}>
+                    <div>
+                      <FaGithub />
+                    </div>
+                  </IconContext.Provider>
+                </a>
+              </Col>
+            </Row>
+
           </Col>
-          <Col sm={12} md={3} className="m-auto text-left">
+          <Col sm={12} md={4} className="mt-5 text-left">
             <RightHeader />
           </Col>
         </Row>
 
       </Row>
-      <Row className="App-header text-center">
-        <Col className="text-right">
-          <a href="https://www.linkedin.com/in/l%C3%A9o-jan-065ba8125/" target="_blank">
-            <IconContext.Provider value={{ size: "5em" }}>
-              <div>
-                <FaLinkedin />
-              </div>
-            </IconContext.Provider>
-          </a>
-        </Col>
-        <Col className="text-left">
-          <a href="https://github.com/TheTisiboth" target="_blank">
-            <IconContext.Provider value={{ size: "5em" }}>
-              <div>
-                <FaGithub />
-              </div>
-            </IconContext.Provider>
-          </a>
-        </Col>
-      </Row>
     </Container>
   );
 }
-
-// type Position = [number, number];
-
-// type Props = {
-//   content: string,
-//   position: Position,
-// };
-
-// type MarkerData = { Props: Props, key: string |};
-
-// const MyPopupMarker = ({ content, position }: Props) => (
-//   <Marker position={position}>
-//     <Popup>{content}</Popup>
-//   </Marker>
-// )
-
-// const MyMarkersList = ({ markers }: { markers: Array<MarkerData> }) => {
-//   const items = markers.map(({ key, ...props }) => (
-//     <MyPopupMarker key={key} {...props} />
-//   ))
-//   return <Fragment>{items}</Fragment>
-// }
 
 function Travel() {
   const { t } = useTranslation();
@@ -544,14 +538,9 @@ function Travel() {
         ])
       },
     ];
-  // const markers = [
-  //   { key: 'marker1', position: [51.5, -0.1], content: 'My first popup' },
-  //   { key: 'marker2', position: [51.51, -0.1], content: 'My second popup' },
-  //   { key: 'marker3', position: [51.49, -0.05], content: 'My third popup' },
-  // ];
 
   return (
-    <Container>
+    <Container id="Travels">
       <Row className="mb-4">
         <Col md={4}>
         </Col>
@@ -571,13 +560,58 @@ function Travel() {
               url="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw"
             />
             {country.map(c => {
-              return <Marker position={[c.lat, c.lon]}>
+              return <Marker key={c.tooltip} position={[c.lat, c.lon]}>
                 <TooltipL>{c.tooltip}</TooltipL>
               </Marker>
             })}
           </Map>
         </Col >
-    </Row >
+      </Row >
+    </Container>
+  );
+}
+
+
+function Education() {
+  const { t } = useTranslation();
+  return (
+    <Container id="Education" className="">
+      <Row className="mb-2 justify-content-md-center">
+
+        <Col md={8} className="">
+          <div className="display-3 title rounded">
+            {t('navbar.education')}
+          </div>
+        </Col>
+
+      </Row>
+
+      <Row>
+        <Col>
+          <h2>{t('education.0.title')}</h2>
+          <p>
+            {t('education.0.body')}
+          </p>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <h2>{t('education.1.title')}</h2>
+          <p>
+            {t('education.1.body')}
+          </p>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <h2>{t('education.2.title')}</h2>
+          <p>
+            {t('education.2.body')}
+          </p>
+        </Col>
+      </Row>
     </Container>
   );
 }
@@ -618,9 +652,20 @@ function Page(): ReactElement<any> {
       <div className="App-intro">
 
         <Skills />
+        <Row>
+          <Col className="ml-3">
+            <Experience />
+          </Col>
+          <Col>
+            <Education />
+          </Col>
+        </Row>
 
-        <Experience />
+
+
+
         <Travel />
+
         <WIP />
       </div>
     </div>
