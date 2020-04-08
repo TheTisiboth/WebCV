@@ -579,7 +579,7 @@ function Travel() {
 function WIP() {
   const { t } = useTranslation();
   return (
-    <Container>
+    <Container className="mt-4">
       <Row className="mb-2">
         <Col md={3}>
         </Col>
@@ -615,7 +615,7 @@ function Page(): ReactElement<any> {
 
         <Experience />
         <Travel />
-        {/* <WIP /> */}
+        <WIP />
       </div>
     </div>
   );
