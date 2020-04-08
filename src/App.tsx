@@ -466,8 +466,8 @@ function Travel() {
       },
       {
         // canada
-        lat: 61.0666922,
-        lon: -107.9917071,
+        lat: 53.291587829589844,
+        lon: -71.51642608642578,
         tooltip: countryToString([
           t('travel.canada.country'),
           t('travel.canada.montreal'),
@@ -534,6 +534,15 @@ function Travel() {
           t('travel.fr.marseille')
         ])
       },
+      {
+        // sweden
+        lat: 59.32796859741211,
+        lon: 18.05364227294922,
+        tooltip: countryToString([
+          t('travel.sweden.country'),
+          t('travel.sweden.stockholm')
+        ])
+      },
     ];
   // const markers = [
   //   { key: 'marker1', position: [51.5, -0.1], content: 'My first popup' },
@@ -563,14 +572,11 @@ function Travel() {
             />
             {country.map(c => {
               return <Marker position={[c.lat, c.lon]}>
-                <Popup>
-                  <span>A pretty CSS3 popup. <br /> Easily customizable.</span>
-                </Popup>
                 <TooltipL>{c.tooltip}</TooltipL>
               </Marker>
             })}
           </Map>
-        </Col >>
+        </Col >
     </Row >
     </Container>
   );

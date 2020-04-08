@@ -85,12 +85,16 @@
       "ny": "New York"
     },
     "uk": {
-      "country": "Royaumes Unis",
+      "country": "Royaume-Uni",
       "ireland": "Irlande"
     },
     "fr": {
       "country": "France",
       "marseille": "Marseille"
+    },
+    "sweden": {
+      "country" : "Suède",
+      "stockholm" : "Stockholm"
     }
   }
 }

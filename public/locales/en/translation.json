@@ -91,6 +91,10 @@
     "fr": {
       "country" : "France",
       "marseille" : "Marseille"
+    },
+    "sweden": {
+      "country" : "Sweden",
+      "stockholm" : "Stockholm"
     }
   }
 }
