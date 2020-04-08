@@ -25,3 +25,15 @@
 - Ajout d'un logo, tooltip
 - Ajout de la partie experience et compétence  
 7h
+
+## 7/04
+- Location du nom de domaine janleo.fr
+- Deploiement automatique sur netlify
+- Fix d'un probleme d'import de pdf en production  
+5h
+
+## 8/04
+- Ajout d'un bandeau WIP
+- Ajout d'une Map dynamique
+- Refactor d'un component  
+7h
