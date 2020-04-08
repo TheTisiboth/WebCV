@@ -41,5 +41,13 @@
       "Firefox ESR",
       "not ie < 11"
     ]
+  },
+  "resolve": {
+    "extensions": [
+      ".js",
+      ".json",
+      ".ts",
+      ".tsx"
+    ]
   }
 }
