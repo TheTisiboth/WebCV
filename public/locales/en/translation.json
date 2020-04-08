@@ -9,7 +9,8 @@
     "education": "Education",
     "project": "Projects",
     "experience": "Experiences",
-    "skill": "Skills"
+    "skill": "Skills",
+    "travel" : "Travels"
   },
   "me": {
     "work": "Software Engineer",
@@ -38,5 +39,58 @@
   "wip": {
     "title": "Work in progress",
     "body": "This website is currently under development. It will be updated regularly"
+  },
+  "travel": {
+    "germany": {
+      "country": "Germany",
+      "munich": "Munich",
+      "munster": "Münster",
+      "hamburg": "Hamburg",
+      "berlin": "Berlin"
+    },
+    "tchequie": {
+      "country": "Czech Republic",
+      "prague": "Prague"
+    },
+    "belgium": {
+      "country": "Belgium",
+      "brussels": "Brussels",
+      "liege": "Liège"
+    },
+    "canada": {
+      "country": "Canada",
+      "montreal": "Montreal",
+      "tadoussac": "Tadoussac",
+      "sherbrooke": "Sherbrooke",
+      "quebec": "Quebec"
+    },
+    "spain": {
+      "country": "Spain",
+      "barcelona": "Barcelona",
+      "palma": "Palma de Mallorca"
+    },
+    "italy": {
+      "country": "Italy",
+      "roma": "Roma",
+      "naples": "Naples",
+      "pompei": "Pompei"
+    },
+    "greece": {
+      "country": "Greece",
+      "athens": "Athens",
+      "corinth": "Corinth"
+    },
+    "us": {
+      "country" : "United States",
+      "ny" : "New York"
+    },
+    "uk": {
+      "country" : "United Kingdom",
+      "ireland" : "Ireland"
+    },
+    "fr": {
+      "country" : "France",
+      "marseille" : "Marseille"
+    }
   }
 }

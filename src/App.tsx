@@ -5,7 +5,7 @@ import './App.css';
 import { Navbar, Nav, NavDropdown, Button, Row, Col, Container, Figure, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { IconContext } from "react-icons";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
+import { Map, Marker, Popup, TileLayer, Tooltip as TooltipL } from 'react-leaflet';
 // const { Map: LeafletMap, TileLayer, Marker, Popup } = ReactLeaflet
 import { Icon } from "leaflet";
 
@@ -414,11 +414,127 @@ function AppHeader() {
 // }
 
 function Travel() {
-  const position = [43.3, 5.4];
+  const { t } = useTranslation();
+  const positions = [43.3, 5.4];
   const icon = new Icon({
     iconUrl: JAVA,
     iconSize: [25, 25]
   });
+
+  function countryToString(countrys: Array<string>) {
+    const country = countrys.shift();
+    let s = '';
+    countrys.forEach(c => {
+      s += c + ', ';
+    });
+    s += country;
+    return s;
+  }
+
+  const country =
+    [
+      {
+        // germany
+        lat: 51.0834196,
+        lon: 10.4234469,
+        tooltip: countryToString([
+          t('travel.germany.country'),
+          t('travel.germany.munich'),
+          t('travel.germany.berlin'),
+          t('travel.germany.hamburg'),
+          t('travel.germany.munster')
+        ])
+      },
+      {
+        // tchequie
+        lat: 50.05708312988281,
+        lon: 14.44813060760498,
+        tooltip: countryToString([
+          t('travel.tchequie.country'),
+          t('travel.tchequie.prague'),
+        ])
+      },
+      {
+        // belgium
+        lat: 50.6402809,
+        lon: 4.6667145,
+        tooltip: countryToString([
+          t('travel.belgium.country'),
+          t('travel.belgium.brussels'),
+          t('travel.belgium.liege')
+        ])
+      },
+      {
+        // canada
+        lat: 61.0666922,
+        lon: -107.9917071,
+        tooltip: countryToString([
+          t('travel.canada.country'),
+          t('travel.canada.montreal'),
+          t('travel.canada.quebec'),
+          t('travel.canada.sherbrooke'),
+          t('travel.canada.tadoussac')
+        ])
+      },
+      {
+        // spain
+        lat: 39.3262345,
+        lon: -4.8380649,
+        tooltip: countryToString([
+          t('travel.spain.country'),
+          t('travel.spain.barcelona'),
+          t('travel.spain.palma'),
+        ])
+      },
+      {
+        // italy
+        lat: 42.6384261,
+        lon: 12.674297,
+        tooltip: countryToString([
+          t('travel.italy.country'),
+          t('travel.italy.roma'),
+          t('travel.italy.naples'),
+          t('travel.italy.pompei')
+        ])
+      },
+      {
+        // greece
+        lat: 38.9953683,
+        lon: 21.9877132,
+        tooltip: countryToString([
+          t('travel.greece.country'),
+          t('travel.greece.athens'),
+          t('travel.greece.corinth'),
+        ])
+      },
+      {
+        // us
+        lat: 42.92121887207031,
+        lon: -75.62081909179688,
+        tooltip: countryToString([
+          t('travel.us.country'),
+          t('travel.us.ny')
+        ])
+      },
+      {
+        // uk
+        lat: 52.865196,
+        lon: -7.9794599,
+        tooltip: countryToString([
+          t('travel.uk.country'),
+          t('travel.uk.ireland')
+        ])
+      },
+      {
+        // fr
+        lat: 43.2961743,
+        lon: 5.3699525,
+        tooltip: countryToString([
+          t('travel.fr.country'),
+          t('travel.fr.marseille')
+        ])
+      },
+    ];
   // const markers = [
   //   { key: 'marker1', position: [51.5, -0.1], content: 'My first popup' },
   //   { key: 'marker2', position: [51.51, -0.1], content: 'My second popup' },
@@ -426,27 +542,37 @@ function Travel() {
   // ];
 
   return (
-    // <Map center={[51.505, -0.09]} zoom={13}>
-    //   <TileLayer
-    //     attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    //     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-    //   />
-    //   <MyMarkersList markers={markers} />
-    // </Map>
-    <Row>
-      <Col>
-        <Map style={{ width: '100%', height: '500px' }} center={[43.3, 5.4]} zoom={3}>
-          <TileLayer
-            url="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw"
-          />
-          <Marker icon={icon} position={[43.3, 5.4]}>
-            <Popup>
-              <span>A pretty CSS3 popup. <br /> Easily customizable.</span>
-            </Popup>
-          </Marker>
-        </Map>
-      </Col>>
-    </Row>
+    <Container>
+      <Row className="mb-4">
+        <Col md={4}>
+        </Col>
+        <Col md={4} className="title rounded">
+          <div className="display-3">
+            {t('navbar.travel')}
+          </div>
+        </Col>
+
+        <Col md={4}>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <Map style={{ width: '100%', height: '500px' }} center={[54.370138916189596, -29.918133437500003]} zoom={3}>
+            <TileLayer
+              url="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw"
+            />
+            {country.map(c => {
+              return <Marker position={[c.lat, c.lon]}>
+                <Popup>
+                  <span>A pretty CSS3 popup. <br /> Easily customizable.</span>
+                </Popup>
+                <TooltipL>{c.tooltip}</TooltipL>
+              </Marker>
+            })}
+          </Map>
+        </Col >>
+    </Row >
+    </Container>
   );
 }
 
@@ -468,7 +594,7 @@ function WIP() {
       </Row>
       <Row>
         <Col className="display-4">
-        {t('wip.body')}
+          {t('wip.body')}
         </Col>
       </Row>
     </Container>
@@ -488,8 +614,8 @@ function Page(): ReactElement<any> {
         <Skills />
 
         <Experience />
-        {/* <Travel /> */}
-        <WIP />
+        <Travel />
+        {/* <WIP /> */}
       </div>
     </div>
   );
