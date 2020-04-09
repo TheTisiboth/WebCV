@@ -110,5 +110,13 @@
       "title" : "2014 : Scientific baccalaureate and specialization in Computer Science and Digital Science",
       "body" : "German Bacalaureat : AbiBac (German literature and history)"
     }
+  },
+  "hobbies" :{
+    "read" : "Read",
+    "music" : "Music",
+    "frisbee" :"Ultimate Frisbee : Team leader of my school, sport licence in a club",
+    "badminton" : "Badminton (11 years)",
+    "basketball" : "Basket-ball",
+    "pingpong" : "Table tennis"
   }
 }

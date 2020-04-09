@@ -4,7 +4,9 @@ import logoLoader from './logo.svg';
 import './App.css';
 import { Navbar, Nav, Button, Row, Col, Container, Figure, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { IconContext } from "react-icons";
-import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaBasketballBall, FaTableTennis } from "react-icons/fa";
+import { GiFrisbee } from "react-icons/gi";
+import { AiOutlineGitlab } from 'react-icons/ai';
 import CustomMap from './constants';
 import image from './assets/leo.jpg';
 import logo from './assets/logo.png';
@@ -29,6 +31,7 @@ import REACT from './assets/react.svg';
 import GIT from './assets/git.png';
 import LINUX from './assets/linux.svg';
 import ARDUINO from './assets/arduino.svg';
+import Badminton from './assets/badminton.png';
 
 require('./global.d.ts');
 
@@ -122,7 +125,7 @@ function MyNavbar(): ReactElement<any> {
               delay={{ show: 0, hide: 0 }}
               overlay={renderTooltip(t('cvEnTooltip'))}
             >
-              <Button className="text-white mr-5" variant="outline-secondary" >CV EN</Button>
+              <Button className="text-white mr-md-5 mb-3 mb-md-0" variant="outline-secondary" >CV EN</Button>
             </OverlayTrigger>
           </Nav.Link>
           <TranslationButton />
@@ -173,15 +176,84 @@ function RightHeader(): ReactElement<any> {
       <Row>
         <Col>
           <div className="name">
-            <h1>Hobby</h1>
+            <h1>Hobbies</h1>
             <ul>
               <li ><h2>IT</h2></li>
-              <li className="sports"><h2>Sport : Basket-ball, Badminton, Table Tennis, Ultimate Frisbee </h2> <p>(Team leader, and sport licence in a club)</p></li>
-              <li><h2>Read</h2></li>
-              <li><h2>Music</h2></li>
+              <li className="sports">
+                <h2>Sports</h2>
+                <ul>
+                  <li style={{ listStyleType: "none" }}> <GiFrisbee /> <span className="ml-2 sports">{t('hobbies.frisbee')}</span></li>
+                  <li style={{ listStyleType: "none" }}> <img className="badminton" height="20px" src={Badminton}></img><span className="ml-2 sports">{t('hobbies.badminton')}</span></li>
+                  <li style={{ listStyleType: "none" }}>  <FaBasketballBall /> <span className="ml-2 sports">Basket-ball</span></li>
+                  <li style={{ listStyleType: "none" }}> <FaTableTennis /> <span className="ml-2 sports">{t('hobbies.pingpong')}</span></li>
+                </ul>
+              </li>
+              <li><h2>{t('hobbies.read')}</h2></li>
+              <li><h2>{t('hobbies.music')}</h2></li>
             </ul>
           </div>
         </Col>
+      </Row>
+    </Container>
+  );
+}
+
+function AppHeader() {
+  return (
+    <Container fluid>
+      <Row className="App-header">
+        <Row>
+          <Col sm={12} md={4} className="mt-5 text-right">
+            <LeftHeader />
+          </Col>
+          <Col sm={12} md={4}>
+            <Row>
+              <Figure>
+                <Figure.Image
+                  height="50%"
+                  width="50%"
+                  alt="171x180"
+                  src={image}
+                  roundedCircle
+                />
+              </Figure>
+            </Row>
+            <Row className="App-header text-center">
+              <Col className="text-right">
+                <a href="https://www.linkedin.com/in/l%C3%A9o-jan-065ba8125/" target="_blank">
+                  <IconContext.Provider value={{ size: "5em" }}>
+                    <div>
+                      <FaLinkedin />
+                    </div>
+                  </IconContext.Provider>
+                </a>
+              </Col>
+              <Col className="">
+                <a href="https://github.com/TheTisiboth" target="_blank">
+                  <IconContext.Provider value={{ size: "5em" }}>
+                    <div>
+                      <FaGithub />
+                    </div>
+                  </IconContext.Provider>
+                </a>
+              </Col>
+              <Col className="text-left">
+                <a href="https://gitlab.com/TheTisiboth" target="_blank">
+                  <IconContext.Provider value={{ size: "5em" }}>
+                    <div>
+                      <AiOutlineGitlab />
+                    </div>
+                  </IconContext.Provider>
+                </a>
+              </Col>
+            </Row>
+
+          </Col>
+          <Col sm={12} md={4} className="mt-5 text-left">
+            <RightHeader />
+          </Col>
+        </Row>
+
       </Row>
     </Container>
   );
@@ -351,57 +423,6 @@ function Experience() {
   );
 }
 
-function AppHeader() {
-  return (
-    <Container fluid>
-      <Row className="App-header">
-        <Row>
-          <Col sm={12} md={4} className="mt-5 text-right">
-            <LeftHeader />
-          </Col>
-          <Col sm={12} md={4}>
-            <Row>
-              <Figure>
-                <Figure.Image
-                  height="50%"
-                  width="50%"
-                  alt="171x180"
-                  src={image}
-                  roundedCircle
-                />
-              </Figure>
-            </Row>
-            <Row className="App-header text-center">
-              <Col className="text-right">
-                <a href="https://www.linkedin.com/in/l%C3%A9o-jan-065ba8125/" target="_blank">
-                  <IconContext.Provider value={{ size: "5em" }}>
-                    <div>
-                      <FaLinkedin />
-                    </div>
-                  </IconContext.Provider>
-                </a>
-              </Col>
-              <Col className="text-left">
-                <a href="https://github.com/TheTisiboth" target="_blank">
-                  <IconContext.Provider value={{ size: "5em" }}>
-                    <div>
-                      <FaGithub />
-                    </div>
-                  </IconContext.Provider>
-                </a>
-              </Col>
-            </Row>
-
-          </Col>
-          <Col sm={12} md={4} className="mt-5 text-left">
-            <RightHeader />
-          </Col>
-        </Row>
-
-      </Row>
-    </Container>
-  );
-}
 
 function Travel() {
 

@@ -110,5 +110,13 @@
       "title" : "Juin 2014 : Bac S spécialité Informatique et Science du Numérique",
       "body" : "Double cursus AbiBac (littérature et histoire allemande)"
     }
+  },
+  "hobbies" :{
+    "read" : "Lecture",
+    "music" : "Musique",
+    "frisbee" :"Ultimate Frisbee : Leader de l'equipe de mon école, licence sportive dans un club",
+    "badminton" : "Badminton (11 ans)",
+    "basketball" : "Basket-ball",
+    "pingpong" : "Tennis de table"
   }
 }

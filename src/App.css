@@ -28,10 +28,14 @@
   background-color: rgb(211, 208, 208);
 }
 
-.sports{
-  font-size:1.5em;
+.sports li{
+  font-size:1.2em;
 }
 
+.badminton{
+  filter: invert(100%); 
+  -webkit-filter:invert(100%); 
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
