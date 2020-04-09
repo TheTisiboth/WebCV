@@ -59,8 +59,8 @@ const renderTooltip = (propss: string): ReactElement => {
 function TranslationButton(): ReactElement {
   const { t, i18n } = useTranslation();
   const [state, setState] = useState({
-    isEnglish: i18n.language === "en",
-    buttonLabel: i18n.language,
+    isEnglish: i18n.language.includes("en"),
+    buttonLabel: i18n.language.includes("en") ? "en" : "fr",
   });
 
   const changeLanguage = useCallback(
