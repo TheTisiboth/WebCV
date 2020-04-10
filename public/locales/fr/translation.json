@@ -93,30 +93,30 @@
       "marseille": "Marseille"
     },
     "sweden": {
-      "country" : "Suède",
-      "stockholm" : "Stockholm"
+      "country": "Suède",
+      "stockholm": "Stockholm"
     }
   },
-  "education" :{
-    "0" : {
-      "title" : "2016 - 2020 : École d'Ingénieur Polytech Grenoble",
-      "body" : "Spécialité Réseaux Informatiques et Communication Multimédia, 5ème année"
+  "education": {
+    "0": {
+      "title": "2016 - 2020 : École d'Ingénieur Polytech Grenoble",
+      "body": "Spécialité Réseaux Informatiques et Communication Multimédia, 5ème année"
     },
-    "1" : {
-      "title" : "2014 - 2016 : Parcours des Élèves Ingénieurs Polytech (PEIP)",
-      "body" : "Classe préparatoire intégrée à Polytech (Mathématique, Physique, Chimie, Informatique)"
+    "1": {
+      "title": "2014 - 2016 : Parcours des Élèves Ingénieurs Polytech (PEIP)",
+      "body": "Classe préparatoire intégrée à Polytech (Mathématique, Physique, Chimie, Informatique)"
     },
-    "2" : {
-      "title" : "Juin 2014 : Bac S spécialité Informatique et Science du Numérique",
-      "body" : "Double cursus AbiBac (littérature et histoire allemande)"
+    "2": {
+      "title": "Juin 2014 : Bac S spécialité Informatique et Science du Numérique",
+      "body": "Double cursus AbiBac (littérature et histoire allemande)"
     }
   },
-  "hobbies" :{
-    "read" : "Lecture",
-    "music" : "Musique",
-    "frisbee" :"Ultimate Frisbee : Leader de l'equipe de mon école, licence sportive dans un club",
-    "badminton" : "Badminton (11 ans)",
-    "basketball" : "Basket-ball",
-    "pingpong" : "Tennis de table"
+  "hobbies": {
+    "read": "Lecture (roman fantastique)",
+    "music": "Musique (8 ans de piano et solfège)",
+    "frisbee": "Ultimate Frisbee : Leader de l'equipe de mon école, licence sportive dans un club",
+    "badminton": "Badminton (11 ans)",
+    "basketball": "Basket-ball",
+    "pingpong": "Tennis de table"
   }
 }

@@ -10,7 +10,7 @@
     "project": "Projects",
     "experience": "Experiences",
     "skill": "Skills",
-    "travel" : "Travels"
+    "travel": "Travels"
   },
   "me": {
     "work": "Software Engineer",
@@ -81,42 +81,42 @@
       "corinth": "Corinth"
     },
     "us": {
-      "country" : "United States",
-      "ny" : "New York"
+      "country": "United States",
+      "ny": "New York"
     },
     "uk": {
-      "country" : "United Kingdom",
-      "ireland" : "Ireland"
+      "country": "United Kingdom",
+      "ireland": "Ireland"
     },
     "fr": {
-      "country" : "France",
-      "marseille" : "Marseille"
+      "country": "France",
+      "marseille": "Marseille"
     },
     "sweden": {
-      "country" : "Sweden",
-      "stockholm" : "Stockholm"
+      "country": "Sweden",
+      "stockholm": "Stockholm"
     }
   },
-  "education" :{
-    "0" : {
-      "title" : "2016 - 2020 : IT Engineering",
-      "body" : "Polytech, Engineering school of the Grenoble Alpes University - 5th year"
+  "education": {
+    "0": {
+      "title": "2016 - 2020 : IT Engineering",
+      "body": "Polytech, Engineering school of the Grenoble Alpes University - 5th year"
     },
-    "1" : {
-      "title" : "2014 - 2016 : PEIP Marseille",
-      "body" : "Preparatory classes : two-year undergraduate intensive course in mathematics, physics, chemistry, and IT"
+    "1": {
+      "title": "2014 - 2016 : PEIP Marseille",
+      "body": "Preparatory classes : two-year undergraduate intensive course in mathematics, physics, chemistry, and IT"
     },
-    "2" : {
-      "title" : "2014 : Scientific baccalaureate and specialization in Computer Science and Digital Science",
-      "body" : "German Bacalaureat : AbiBac (German literature and history)"
+    "2": {
+      "title": "2014 : Scientific baccalaureate and specialization in Computer Science and Digital Science",
+      "body": "German Bacalaureat : AbiBac (German literature and history)"
     }
   },
-  "hobbies" :{
-    "read" : "Read",
-    "music" : "Music",
-    "frisbee" :"Ultimate Frisbee : Team leader of my school, sport licence in a club",
-    "badminton" : "Badminton (11 years)",
-    "basketball" : "Basket-ball",
-    "pingpong" : "Table tennis"
+  "hobbies": {
+    "read": "Reading (fantasy novel)",
+    "music": "Music (8 years of piano)",
+    "frisbee": "Ultimate Frisbee : Team leader of my school, sport licence in a club",
+    "badminton": "Badminton (11 years)",
+    "basketball": "Basket-ball",
+    "pingpong": "Table tennis"
   }
 }

@@ -36,11 +36,9 @@ import CSS from "./assets/css.png";
 import HTML from "./assets/html.png";
 import JQUERY from "./assets/jquery.png";
 import MONGODB from "./assets/mongodb.png";
-import NODE from "./assets/node.png";
 import ANGULAR from "./assets/angular.png";
 import PHP from "./assets/php.svg";
 import SQL from "./assets/sql.png";
-import TYPESCRIPT from "./assets/typescript.svg";
 import REACT from "./assets/react.svg";
 import GIT from "./assets/git.png";
 import LINUX from "./assets/linux.svg";
@@ -253,70 +251,68 @@ function RightHeader(): ReactElement {
 
 function AppHeader(): ReactElement {
   return (
-    <Container fluid={true}>
-      <Row className="App-header">
-        <Row>
-          <Col sm={12} md={4} className="mt-5 text-right">
-            <LeftHeader />
-          </Col>
-          <Col sm={12} md={4}>
-            <Row>
-              <Figure>
-                <Figure.Image
-                  height="50%"
-                  width="50%"
-                  alt="171x180"
-                  src={image}
-                  roundedCircle={true}
-                />
-              </Figure>
-            </Row>
-            <Row className="App-header text-center">
-              <Col className="text-right">
-                <a
-                  href="https://www.linkedin.com/in/l%C3%A9o-jan-065ba8125/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <IconContext.Provider value={{ size: "5em" }}>
-                    <div>
-                      <FaLinkedin />
-                    </div>
-                  </IconContext.Provider>
-                </a>
-              </Col>
-              <Col className="">
-                <a
-                  href="https://github.com/TheTisiboth"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <IconContext.Provider value={{ size: "5em" }}>
-                    <div>
-                      <FaGithub />
-                    </div>
-                  </IconContext.Provider>
-                </a>
-              </Col>
-              <Col className="text-left">
-                <a
-                  href="https://gitlab.com/TheTisiboth"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <IconContext.Provider value={{ size: "5em" }}>
-                    <div>
-                      <AiOutlineGitlab />
-                    </div>
-                  </IconContext.Provider>
-                </a>
-              </Col>
-            </Row>
-          </Col>
-          <Col sm={12} md={4} className="mt-5 text-left">
-            <RightHeader />
-          </Col>
-        </Row>
+    <Container fluid={true} className="App-header">
+      <Row>
+        <Col sm={12} md={4} className="mt-5 text-right">
+          <LeftHeader />
+        </Col>
+        <Col sm={12} md={4}>
+          <Row>
+            <Figure>
+              <Figure.Image
+                height="50%"
+                width="50%"
+                alt="171x180"
+                src={image}
+                roundedCircle={true}
+              />
+            </Figure>
+          </Row>
+          <Row className="App-header text-center">
+            <Col className="text-right">
+              <a
+                href="https://www.linkedin.com/in/l%C3%A9o-jan-065ba8125/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconContext.Provider value={{ size: "5em" }}>
+                  <div>
+                    <FaLinkedin />
+                  </div>
+                </IconContext.Provider>
+              </a>
+            </Col>
+            <Col className="">
+              <a
+                href="https://github.com/TheTisiboth"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconContext.Provider value={{ size: "5em" }}>
+                  <div>
+                    <FaGithub />
+                  </div>
+                </IconContext.Provider>
+              </a>
+            </Col>
+            <Col className="text-left">
+              <a
+                href="https://gitlab.com/TheTisiboth"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconContext.Provider value={{ size: "5em" }}>
+                  <div>
+                    <AiOutlineGitlab />
+                  </div>
+                </IconContext.Provider>
+              </a>
+            </Col>
+          </Row>
+        </Col>
+        <Col sm={12} md={4} className="mt-5 text-left">
+          <RightHeader />
+        </Col>
       </Row>
     </Container>
   );
@@ -355,13 +351,12 @@ function Skill(props: {
 function Skills(): ReactElement {
   const { t } = useTranslation();
   return (
-    <Row id="Skills">
-      <Col md={4} />
-      <Col md={4}>
-        <div className="title rounded display-3 ">{t("navbar.skill")}</div>
-      </Col>
-      <Col md={4} />
-
+    <Container fluid={true}>
+      <Row id="Skills" className="justify-content-md-center">
+        <Col md={6}>
+          <div className="title rounded display-3 ">{t("navbar.skill")}</div>
+        </Col>
+      </Row>
       <Row>
         <Col sm={12} md={3}>
           <Row>
@@ -437,11 +432,6 @@ function Skills(): ReactElement {
                 tooltip="Bootstrap"
               />
               <Skill
-                image={TYPESCRIPT}
-                href="https://www.typescriptlang.org/"
-                tooltip="Typescript"
-              />
-              <Skill
                 image={ANGULAR}
                 href="https://angular.io/"
                 tooltip="Angular"
@@ -456,7 +446,6 @@ function Skills(): ReactElement {
                 href="https://www.mongodb.com/"
                 tooltip="MongoDB"
               />
-              <Skill image={NODE} href="https://nodejs.org/" tooltip="Nodejs" />
               <Skill
                 image={JQUERY}
                 href="https://jquery.com/"
@@ -490,14 +479,15 @@ function Skills(): ReactElement {
           </Row>
         </Col>
       </Row>
-    </Row>
+
+    </Container >
   );
 }
 
 function Experience(): ReactElement {
   const { t } = useTranslation();
   return (
-    <Container id="Experiences">
+    <div id="Experiences">
       <Row className="mb-2 justify-content-md-center">
         <Col md={8} className="">
           <div className="display-3 title rounded">
@@ -531,7 +521,7 @@ function Experience(): ReactElement {
           </p>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 }
 
@@ -539,7 +529,7 @@ function Travel(): ReactElement {
   const { t } = useTranslation();
 
   return (
-    <Container id="Travels">
+    <Container fluid={true} id="Travels">
       <Row className="mb-4 justify-content-md-center">
         <Col md={4} className="title rounded">
           <div className="display-3">{t("navbar.travel")}</div>
@@ -557,7 +547,7 @@ function Travel(): ReactElement {
 function Education(): ReactElement {
   const { t } = useTranslation();
   return (
-    <Container id="Education" className="">
+    <div id="Education" className="">
       <Row className="mb-2 justify-content-md-center">
         <Col md={8} className="">
           <div className="display-3 title rounded">{t("navbar.education")}</div>
@@ -584,21 +574,18 @@ function Education(): ReactElement {
           <p>{t("education.2.body")}</p>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 }
 
 function WIP(): ReactElement {
   const { t } = useTranslation();
   return (
-    <Container className="mt-4">
-      <Row className="mb-2">
-        <Col md={3} />
+    <Container fluid={true} className="mt-4">
+      <Row className="mb-2 justify-content-center">
         <Col md={6} className="title rounded">
           <div className="display-3">{t("wip.title")}</div>
         </Col>
-
-        <Col md={3} />
       </Row>
       <Row>
         <Col className="display-4">{t("wip.body")}</Col>
@@ -615,20 +602,22 @@ function Page(): ReactElement {
 
       <AppHeader />
 
-      <div className="App-intro">
-        <Skills />
-        <Row>
-          <Col className="ml-3">
+      <Skills />
+
+      <Container fluid={true}>
+        <Row className="mr-0">
+          <Col className="">
             <Experience />
           </Col>
           <Col>
             <Education />
           </Col>
         </Row>
-        <Travel />
-        <WIP />
-      </div>
+      </Container>
+      <Travel />
+      <WIP />
     </div>
+
   );
 }
 
