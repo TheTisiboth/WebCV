@@ -1,6 +1,10 @@
 {
   "defaultSeverity": "error",
-  "extends": ["tslint:recommended", "tslint-react", "tslint-config-prettier"],
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
   "jsRules": {},
   "rules": {
     "prettier": false,
@@ -9,7 +13,10 @@
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
-    "comment-format": [true, "check-space"],
+    "comment-format": [
+      true,
+      "check-space"
+    ],
     "curly": true,
     "eofline": true,
     "forin": true,
@@ -17,7 +24,10 @@
     "interface-name": false,
     "interface-over-type-literal": true,
     "label-position": true,
-    "max-line-length": [true, 140],
+    "max-line-length": [
+      true,
+      140
+    ],
     "member-access": false,
     "member-ordering": [
       true,
@@ -39,7 +49,10 @@
     "no-empty": false,
     "no-empty-interface": true,
     "no-eval": true,
-    "no-inferrable-types": [true, "ignore-params"],
+    "no-inferrable-types": [
+      true,
+      "ignore-params"
+    ],
     "no-misused-new": true,
     "no-non-null-assertion": true,
     "no-shadowed-variable": false,
@@ -59,10 +72,20 @@
       "check-whitespace"
     ],
     "prefer-const": true,
-    "quotemark": [true, "single", "jsx-double"],
+    "quotemark": [
+      true,
+      "double",
+      "jsx-double"
+    ],
     "radix": true,
-    "semicolon": [true, "always"],
-    "triple-equals": [true, "allow-null-check"],
+    "semicolon": [
+      true,
+      "always"
+    ],
+    "triple-equals": [
+      true,
+      "allow-null-check"
+    ],
     "typedef-whitespace": [
       true,
       {
@@ -83,7 +106,11 @@
       "check-separator",
       "check-type"
     ],
-    "indent": [true, "spaces", 2],
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
     "trailing-comma": [
       false,
       {
@@ -91,7 +118,10 @@
         "singleline": "never"
       }
     ],
-    "linebreak-style": [false, "LF"],
+    "linebreak-style": [
+      false,
+      "LF"
+    ],
     "typedef": [
       true,
       "call-signature",
@@ -102,7 +132,9 @@
     ],
     "no-consecutive-blank-lines": true
   },
-  "rulesDirectory": ["tslint-plugin-prettier"],
+  "rulesDirectory": [
+    "tslint-plugin-prettier"
+  ],
   "linterOptions": {
     "exclude": [
       "config/**/*.js",
