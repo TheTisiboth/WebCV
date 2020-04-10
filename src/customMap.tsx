@@ -22,8 +22,8 @@ export default function CustomMap(): ReactElement<any> {
     },
     {
       // tchequie
-      lat: 50.05708312988281,
-      lon: 14.44813060760498,
+      lat: 49.667628,
+      lon: 15.326962,
       tooltip: countryToString([
         t("travel.tchequie.prague"),
         t("travel.tchequie.country"),
@@ -53,8 +53,8 @@ export default function CustomMap(): ReactElement<any> {
     },
     {
       // spain
-      lat: 39.3262345,
-      lon: -4.8380649,
+      lat: 40.463669,
+      lon: -3.749220,
       tooltip: countryToString([
         t("travel.spain.barcelona"),
         t("travel.spain.palma"),
@@ -84,9 +84,10 @@ export default function CustomMap(): ReactElement<any> {
     },
     {
       // us
-      lat: 42.92121887207031,
-      lon: -75.62081909179688,
-      tooltip: countryToString([t("travel.us.ny"), t("travel.us.country")]),
+      lat: 37.090240,
+      lon: -95.712891,
+      tooltip: countryToString([t("travel.us.ny"),
+      t("travel.us.country")]),
     },
     {
       // uk
@@ -99,8 +100,8 @@ export default function CustomMap(): ReactElement<any> {
     },
     {
       // fr
-      lat: 43.2961743,
-      lon: 5.3699525,
+      lat: 46.227638,
+      lon: 2.213749,
       tooltip: countryToString([
         t("travel.fr.marseille"),
         t("travel.fr.country"),
@@ -108,8 +109,8 @@ export default function CustomMap(): ReactElement<any> {
     },
     {
       // sweden
-      lat: 59.32796859741211,
-      lon: 18.05364227294922,
+      lat: 59.6749712,
+      lon: 14.5208584,
       tooltip: countryToString([
         t("travel.sweden.stockholm"),
         t("travel.sweden.country"),
@@ -253,13 +254,19 @@ export default function CustomMap(): ReactElement<any> {
   const [state, setState] = useState({
     markers: countries,
     zoom: 3,
+    radius: computeRadius(3)
   });
+
+  function computeRadius(zoom: number): number {
+    let radius = (zoom === 0) ? 0 : 30 - 45 * (1 / zoom);
+    return (radius < 0) ? 0 : radius;
+  }
 
   function onZoom(e: any): any {
     const zoom = e.target._zoom;
-    console.log(zoom);
-    if (zoom >= 6) {
+    if (zoom >= 5) {
       setState({
+        ...state,
         markers: cities,
         zoom,
       });
@@ -267,6 +274,7 @@ export default function CustomMap(): ReactElement<any> {
       setState({
         markers: countries,
         zoom,
+        radius: computeRadius(zoom)
       });
     }
   }
@@ -284,7 +292,7 @@ export default function CustomMap(): ReactElement<any> {
           c: { lat: number; lon: number; tooltip: string },
           i: number
         ): ReactElement => {
-          if (state.zoom >= 6) {
+          if (state.zoom >= 5) {
             return (
               <Marker key={i} position={[c.lat, c.lon]}>
                 <Tooltip>{c.tooltip}</Tooltip>
@@ -296,7 +304,7 @@ export default function CustomMap(): ReactElement<any> {
                 key={i}
                 center={[c.lat, c.lon]}
                 color="red"
-                radius={20}
+                radius={state.radius}
               >
                 <Tooltip>{c.tooltip}</Tooltip>
               </CircleMarker>
