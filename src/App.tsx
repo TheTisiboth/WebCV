@@ -612,7 +612,7 @@ function Page(): ReactElement {
 
       <Container fluid={true}>
         <Row className="mr-0">
-          <Col className="">
+          <Col xs={12} md className="">
             <Experience />
           </Col>
           <Col>
