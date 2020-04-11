@@ -5,7 +5,7 @@ import { Map, Marker, Tooltip, TileLayer, CircleMarker } from "react-leaflet";
 export default function CustomMap(): ReactElement<any> {
   const { t } = useTranslation();
 
-  const countryToString = (countries: string[]): string => countries.join(", ");
+  const countryToString = (countries: string[]) => countries.join(", ");
 
   const countries = [
     {
