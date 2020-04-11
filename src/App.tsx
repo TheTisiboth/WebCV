@@ -87,7 +87,7 @@ function TranslationButton(): ReactElement {
       delay={{ show: 0, hide: 0 }}
       overlay={renderTooltip(t("translationTooltip"))}
     >
-      <Button className="m-auto" variant="outline-light" onClick={handleClick}>
+      <Button className="m-auto buttons" variant="outline-light" onClick={handleClick}>
         {state.buttonLabel}
       </Button>
     </OverlayTrigger>
@@ -97,8 +97,9 @@ function TranslationButton(): ReactElement {
 function MyNavbar(): ReactElement {
   const { t } = useTranslation();
 
+
   return (
-    <Navbar collapseOnSelect={true} expand="md" bg="dark" variant="dark">
+    <Navbar collapseOnSelect={true} expand="md" bg="dark" variant="dark" fixed="top" className="pt-0 pb-0">
       <Navbar.Brand href="#home">
         <img
           alt=""
@@ -109,18 +110,18 @@ function MyNavbar(): ReactElement {
         />{" "}
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
+      <Navbar.Collapse id="responsive-navbar-nav" className="pb-3 pb-md-0">
         <Nav className="mr-auto">
-          <Nav.Link className="display-5" href="#Skills">
+          <Nav.Link className="" href="#Skills">
             {t("navbar.skill")}
           </Nav.Link>
-          <Nav.Link className="display-5" href="#Experiences">
+          <Nav.Link className="" href="#Experiences">
             {t("navbar.experience")}
           </Nav.Link>
-          <Nav.Link className="display-5" href="#Education">
+          <Nav.Link className="" href="#Education">
             {t("navbar.education")}
           </Nav.Link>
-          <Nav.Link className="display-5" href="#Travels">
+          <Nav.Link className="" href="#Travels">
             {t("navbar.travel")}
           </Nav.Link>
         </Nav>
@@ -131,7 +132,7 @@ function MyNavbar(): ReactElement {
               delay={{ show: 0, hide: 0 }}
               overlay={renderTooltip(t("cvFrTooltip"))}
             >
-              <Button className="text-white" variant="outline-secondary">
+              <Button className="text-white buttons" variant="outline-secondary">
                 CV FR
               </Button>
             </OverlayTrigger>
@@ -143,7 +144,7 @@ function MyNavbar(): ReactElement {
               overlay={renderTooltip(t("cvEnTooltip"))}
             >
               <Button
-                className="text-white mr-md-5 mb-3 mb-md-0"
+                className="text-white mr-md-5 mb-3 mb-md-0 buttons"
                 variant="outline-secondary"
               >
                 CV EN
@@ -160,51 +161,51 @@ function MyNavbar(): ReactElement {
 function LeftHeader(): ReactElement {
   const { t } = useTranslation();
   return (
-    <Container>
+    <div>
       <Row>
         <Col>
           <div className="name">
-            <h1 className="display-4">Léo Jan</h1>
+            <h1>Léo Jan</h1>
           </div>
           <div>
-            <h2>{t("me.work")}</h2>
+            <h5>{t("me.work")}</h5>
           </div>
           <div>
-            <h3>{t("me.age")}</h3>
+            <h5>{t("me.age")}</h5>
           </div>
         </Col>
       </Row>
       <Row className="mt-5">
         <Col>
           <div className="name">
-            <h2>Polytech Grenoble</h2>
+            <h5>Polytech Grenoble</h5>
           </div>
           <div>
-            <h2>{t("me.livesIn")}</h2>
+            <h5>{t("me.livesIn")}</h5>
           </div>
           <div>
-            <h3>janleopro@gmail.com</h3>
+            <h5>janleopro@gmail.com</h5>
           </div>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 }
 
 function RightHeader(): ReactElement {
   const { t } = useTranslation();
   return (
-    <Container>
+    <div>
       <Row>
         <Col>
           <div className="name">
             <h1>Hobbies</h1>
             <ul>
               <li>
-                <h2>IT</h2>
+                <h5>IT</h5>
               </li>
               <li className="sports">
-                <h2>Sports</h2>
+                <h5>Sports</h5>
                 <ul>
                   <li style={{ listStyleType: "none" }}>
                     {" "}
@@ -236,16 +237,16 @@ function RightHeader(): ReactElement {
                 </ul>
               </li>
               <li>
-                <h2>{t("hobbies.read")}</h2>
+                <h5>{t("hobbies.read")}</h5>
               </li>
               <li>
-                <h2>{t("hobbies.music")}</h2>
+                <h5>{t("hobbies.music")}</h5>
               </li>
             </ul>
           </div>
         </Col>
       </Row>
-    </Container>
+    </div>
   );
 }
 
@@ -253,23 +254,25 @@ function AppHeader(): ReactElement {
   return (
     <Container fluid={true} className="App-header">
       <Row>
-        <Col sm={12} md={4} className="mt-5 text-right">
+        <Col sm={12} md={4} className="m-auto text-right align-self-center">
           <LeftHeader />
         </Col>
-        <Col sm={12} md={4}>
-          <Row>
-            <Figure>
-              <Figure.Image
-                height="50%"
-                width="50%"
-                alt="171x180"
-                src={image}
-                roundedCircle={true}
-              />
-            </Figure>
+        <Col sm={12} md={4} className="align-self-center">
+          <Row >
+            <Col>
+              <Figure>
+                <Figure.Image
+                  height="50%"
+                  width="50%"
+                  alt="171x180"
+                  src={image}
+                  roundedCircle={true}
+                />
+              </Figure>
+            </Col>
           </Row>
           <Row className="App-header text-center">
-            <Col className="text-right">
+            <Col xs={4} className="text-right">
               <a
                 href="https://www.linkedin.com/in/l%C3%A9o-jan-065ba8125/"
                 target="_blank"
@@ -282,7 +285,7 @@ function AppHeader(): ReactElement {
                 </IconContext.Provider>
               </a>
             </Col>
-            <Col className="">
+            <Col xs={4} className="">
               <a
                 href="https://github.com/TheTisiboth"
                 target="_blank"
@@ -295,7 +298,7 @@ function AppHeader(): ReactElement {
                 </IconContext.Provider>
               </a>
             </Col>
-            <Col className="text-left">
+            <Col xs={4} className="text-left">
               <a
                 href="https://gitlab.com/TheTisiboth"
                 target="_blank"
@@ -310,7 +313,7 @@ function AppHeader(): ReactElement {
             </Col>
           </Row>
         </Col>
-        <Col sm={12} md={4} className="mt-5 text-left">
+        <Col sm={12} md={4} className="m-auto text-left align-self-center">
           <RightHeader />
         </Col>
       </Row>
@@ -328,7 +331,7 @@ function Skill(props: {
       href={props.href}
       target="_blank"
       rel="noopener noreferrer"
-      className="m-5 mt-5"
+      className="m-2"
     >
       <OverlayTrigger
         placement="bottom"
@@ -337,8 +340,8 @@ function Skill(props: {
       >
         <Figure>
           <Figure.Image
-            width={50}
-            height={50}
+            width={40}
+            height={40}
             alt="171x180"
             src={props.image}
           />
@@ -352,16 +355,16 @@ function Skills(): ReactElement {
   const { t } = useTranslation();
   return (
     <Container fluid={true}>
-      <Row id="Skills" className="justify-content-md-center">
-        <Col md={6}>
-          <div className="title rounded display-3 ">{t("navbar.skill")}</div>
+      <Row id="Skills" className=" justify-content-center">
+        <Col md={4} xs={8} className="pt-2 pb-2 title rounded">
+          <h2 >{t("navbar.skill")}</h2>
         </Col>
       </Row>
       <Row>
         <Col sm={12} md={3}>
           <Row>
             <Col>
-              <h2>{t("skills.system")}</h2>
+              <h3>{t("skills.system")}</h3>
             </Col>
           </Row>
           <Row>
@@ -388,7 +391,7 @@ function Skills(): ReactElement {
         <Col sm={12} md={3}>
           <Row>
             <Col>
-              <h2>{t("skills.software")}</h2>
+              <h3>{t("skills.software")}</h3>
             </Col>
           </Row>
           <Row>
@@ -411,7 +414,7 @@ function Skills(): ReactElement {
         <Col sm={12} md={3}>
           <Row>
             <Col>
-              <h2>{t("skills.web")}</h2>
+              <h3>{t("skills.web")}</h3>
             </Col>
           </Row>
           <Row>
@@ -464,7 +467,7 @@ function Skills(): ReactElement {
         <Col sm={12} md={3}>
           <Row>
             <Col>
-              <h2>{t("skills.other")}</h2>
+              <h3>{t("skills.other")}</h3>
             </Col>
           </Row>
           <Row>
@@ -488,16 +491,16 @@ function Experience(): ReactElement {
   const { t } = useTranslation();
   return (
     <div id="Experiences">
-      <Row className="mb-2 justify-content-md-center">
-        <Col md={8} className="">
-          <div className="display-3 title rounded">
+      <Row className="mb-2 justify-content-center">
+        <Col xs={8} className="pt-2 pb-2 title rounded">
+          <h2 >
             {t("navbar.experience")}
-          </div>
+          </h2>
         </Col>
       </Row>
       <Row>
         <Col>
-          <h2>{t("experiences.0.title")}</h2>
+          <h3>{t("experiences.0.title")}</h3>
           <p>
             <Trans i18nKey="experiences.0.body">
               <strong>Software internationalization</strong> : Adapt the
@@ -509,7 +512,7 @@ function Experience(): ReactElement {
       </Row>
       <Row>
         <Col>
-          <h2>{t("experiences.1.title")}</h2>
+          <h3>{t("experiences.1.title")}</h3>
           <p>
             <Trans i18nKey="experiences.1.body">
               <strong>Automatisation of Web investigation </strong>: Website
@@ -525,14 +528,48 @@ function Experience(): ReactElement {
   );
 }
 
+function Education(): ReactElement {
+  const { t } = useTranslation();
+  return (
+    <div id="Education" className="">
+      <Row className="mb-2 justify-content-center">
+        <Col xs={8} className="pt-2 pb-2 title rounded">
+          <h2 >{t("navbar.education")}</h2>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <h3>{t("education.0.title")}</h3>
+          <p>{t("education.0.body")}</p>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <h3>{t("education.1.title")}</h3>
+          <p>{t("education.1.body")}</p>
+        </Col>
+      </Row>
+
+      <Row>
+        <Col>
+          <h3>{t("education.2.title")}</h3>
+          <p>{t("education.2.body")}</p>
+        </Col>
+      </Row>
+    </div>
+  );
+}
+
 function Travel(): ReactElement {
   const { t } = useTranslation();
 
   return (
-    <Container fluid={true} id="Travels">
-      <Row className="mb-4 justify-content-md-center">
-        <Col md={4} className="title rounded">
-          <div className="display-3">{t("navbar.travel")}</div>
+    <Container  id="Travels">
+      <Row className="mb-4 justify-content-center">
+        <Col xs={6} className="pt-2 pb-2 title rounded">
+          <h2 className="">{t("navbar.travel")}</h2>
         </Col>
       </Row>
       <Row>
@@ -544,51 +581,20 @@ function Travel(): ReactElement {
   );
 }
 
-function Education(): ReactElement {
-  const { t } = useTranslation();
-  return (
-    <div id="Education" className="">
-      <Row className="mb-2 justify-content-md-center">
-        <Col md={8} className="">
-          <div className="display-3 title rounded">{t("navbar.education")}</div>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          <h2>{t("education.0.title")}</h2>
-          <p>{t("education.0.body")}</p>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          <h2>{t("education.1.title")}</h2>
-          <p>{t("education.1.body")}</p>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          <h2>{t("education.2.title")}</h2>
-          <p>{t("education.2.body")}</p>
-        </Col>
-      </Row>
-    </div>
-  );
-}
 
 function WIP(): ReactElement {
   const { t } = useTranslation();
   return (
-    <Container fluid={true} className="mt-4">
+    <Container  className="mt-4">
       <Row className="mb-2 justify-content-center">
-        <Col md={6} className="title rounded">
-          <div className="display-3">{t("wip.title")}</div>
+        <Col md={6} className="title rounded pt-2 pb-2">
+          <h2 className="">{t("wip.title")}</h2>
         </Col>
       </Row>
-      <Row>
-        <Col className="display-4">{t("wip.body")}</Col>
+      <Row className="mb-5">
+        <Col className="">
+          <h5>{t("wip.body")}</h5>
+          </Col>
       </Row>
     </Container>
   );

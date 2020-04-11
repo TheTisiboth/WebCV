@@ -15,7 +15,7 @@
 }
 
 .App-intro {
-  font-size: large;
+  /* font-size: large; */
   color: #222;
 }
 
@@ -29,10 +29,14 @@
 }
 
 .sports li {
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
 }
 
 .badminton {
   filter: invert(100%);
   -webkit-filter: invert(100%);
+}
+
+.buttons{
+  font-size: 0.9rem!important;
 }
