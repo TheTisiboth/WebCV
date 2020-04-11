@@ -167,7 +167,7 @@ function LeftHeader(): ReactElement {
   return (
     <div>
       <Row>
-        <Col>
+        <Col xs={5} md={12} className="pr-0 pl-0">
           <div className="name">
             <h1>Léo Jan</h1>
           </div>
@@ -178,9 +178,7 @@ function LeftHeader(): ReactElement {
             <h5>{t("me.age")}</h5>
           </div>
         </Col>
-      </Row>
-      <Row className="mt-5">
-        <Col>
+        <Col xs={6} md={12} className="align-self-center mt-md-5 pr-0 pl-0">
           <div className="name">
             <h5>Polytech Grenoble</h5>
           </div>
@@ -257,8 +255,8 @@ function RightHeader(): ReactElement {
 function AppHeader(): ReactElement {
   return (
     <Container fluid={true} className="App-header">
-      <Row>
-        <Col sm={12} md={4} className="m-auto text-right align-self-center">
+      <Row className="content-justify-center">
+        <Col sm={12} md={4} className="m-auto text-md-right align-self-center">
           <LeftHeader />
         </Col>
         <Col sm={12} md={4} className="align-self-center">
@@ -270,7 +268,7 @@ function AppHeader(): ReactElement {
                   width="50%"
                   alt="171x180"
                   src={image}
-                  roundedCircle={true}
+                  roundedCircle
                 />
               </Figure>
             </Col>
