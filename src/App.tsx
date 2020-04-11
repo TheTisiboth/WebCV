@@ -101,7 +101,7 @@ function MyNavbar(): ReactElement {
 
 
   return (
-    <Navbar collapseOnSelect={true} expand="md" bg="dark" variant="dark" fixed="top" className="pt-0 pb-0">
+    <Navbar collapseOnSelect={true} expand="md" bg="dark" variant="dark"  className="pt-0 pb-0">
       <Navbar.Brand href="#home">
         <img
           alt=""
@@ -116,6 +116,9 @@ function MyNavbar(): ReactElement {
         <Nav className="mr-auto">
           <Nav.Link className="" href="#Skills">
             {t("navbar.skill")}
+          </Nav.Link>
+          <Nav.Link className="" href="#Projects">
+            {t("navbar.projects")}
           </Nav.Link>
           <Nav.Link className="" href="#Experiences">
             {t("navbar.experience")}
