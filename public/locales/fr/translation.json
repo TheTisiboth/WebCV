@@ -10,7 +10,8 @@
     "project": "Projets",
     "experience": "Experiences",
     "skill": "Compétences",
-    "travel": "Voyages"
+    "travel": "Voyages",
+    "projects" : "Projets"
   },
   "me": {
     "work": "Ingénieur Logiciel",
@@ -39,6 +40,39 @@
   "wip": {
     "title": "En cours de developpement",
     "body": "Ce site est actuellement en cours de developpement. Il sera mis à jour régulierement."
+  },
+  "education": {
+    "0": {
+      "title": "2016 - 2020 : École d'Ingénieur Polytech Grenoble",
+      "body": "Spécialité Réseaux Informatiques et Communication Multimédia, 5ème année"
+    },
+    "1": {
+      "title": "2014 - 2016 : Parcours des Élèves Ingénieurs Polytech (PEIP)",
+      "body": "Classe préparatoire intégrée à Polytech (Mathématique, Physique, Chimie, Informatique)"
+    },
+    "2": {
+      "title": "Juin 2014 : Bac S spécialité Informatique et Science du Numérique",
+      "body": "Double cursus AbiBac (littérature et histoire allemande)"
+    }
+  },
+  "hobbies": {
+    "it": "Informatique",
+    "read": "Lecture (roman fantastique)",
+    "music": "Musique (8 ans de piano et solfège)",
+    "frisbee": "Ultimate Frisbee : Leader de l'equipe de mon école, licence sportive dans un club",
+    "badminton": "Badminton (11 ans)",
+    "basketball": "Basket-ball",
+    "pingpong": "Tennis de table"
+  },
+  "projects" : {
+    "0" : {
+      "title" : "1 mois - 2020: web CV",
+      "body" : "Création d'un web CV avec React. Il s'agit d'un projet personnel, visant à prendre en main react. Le déploiement à été fait grâce à Netlify, sur un nom de domaine enregistré sur Google Domains."
+    },
+    "1" : {
+      "title" : "3 semaines - 2018 : COLORicm",
+      "body" : "En tant que chef de groupe d'une équipe de 6 développeur, nous avons créé un jeu vidéo 2D en Java (swing), avec des controles en temps réels et des fonctionnalités modulaires, impliquants des automates, ce qui a permis de nous sensibiliser à la notion d'Intelligence Artificielle."
+    }
   },
   "travel": {
     "germany": {
@@ -96,27 +130,5 @@
       "country": "Suède",
       "stockholm": "Stockholm"
     }
-  },
-  "education": {
-    "0": {
-      "title": "2016 - 2020 : École d'Ingénieur Polytech Grenoble",
-      "body": "Spécialité Réseaux Informatiques et Communication Multimédia, 5ème année"
-    },
-    "1": {
-      "title": "2014 - 2016 : Parcours des Élèves Ingénieurs Polytech (PEIP)",
-      "body": "Classe préparatoire intégrée à Polytech (Mathématique, Physique, Chimie, Informatique)"
-    },
-    "2": {
-      "title": "Juin 2014 : Bac S spécialité Informatique et Science du Numérique",
-      "body": "Double cursus AbiBac (littérature et histoire allemande)"
-    }
-  },
-  "hobbies": {
-    "read": "Lecture (roman fantastique)",
-    "music": "Musique (8 ans de piano et solfège)",
-    "frisbee": "Ultimate Frisbee : Leader de l'equipe de mon école, licence sportive dans un club",
-    "badminton": "Badminton (11 ans)",
-    "basketball": "Basket-ball",
-    "pingpong": "Tennis de table"
   }
 }

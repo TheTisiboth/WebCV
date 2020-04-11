@@ -28,10 +28,6 @@
   background-color: rgb(211, 208, 208);
 }
 
-.sports li {
-  /* font-size: 1.2em; */
-}
-
 .badminton {
   filter: invert(100%);
   -webkit-filter: invert(100%);

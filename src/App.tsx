@@ -44,6 +44,8 @@ import GIT from "./assets/git.png";
 import LINUX from "./assets/linux.svg";
 import ARDUINO from "./assets/arduino.svg";
 import Badminton from "./assets/badminton.png";
+import webCV from "./assets/projects/webCV.png";
+import coloricm from "./assets/projects/coloricm.png";
 
 require("./global.d.ts");
 
@@ -151,7 +153,9 @@ function MyNavbar(): ReactElement {
               </Button>
             </OverlayTrigger>
           </Nav.Link>
-          <TranslationButton />
+          <Nav.Link>
+            <TranslationButton />
+          </Nav.Link>
         </Nav>
       </Navbar.Collapse>
     </Navbar>
@@ -199,18 +203,18 @@ function RightHeader(): ReactElement {
       <Row>
         <Col>
           <div className="name">
-            <h1>Hobbies</h1>
+            <h3>Hobbies</h3>
             <ul>
               <li>
-                <h5>IT</h5>
+                <h5>{t('hobbies.it')}</h5>
               </li>
-              <li className="sports">
+              <li className="">
                 <h5>Sports</h5>
                 <ul>
                   <li style={{ listStyleType: "none" }}>
                     {" "}
                     <GiFrisbee />{" "}
-                    <span className="ml-2 sports">{t("hobbies.frisbee")}</span>
+                    <span className="ml-2 ">{t("hobbies.frisbee")}</span>
                   </li>
                   <li style={{ listStyleType: "none" }}>
                     {" "}
@@ -220,19 +224,19 @@ function RightHeader(): ReactElement {
                       src={Badminton}
                       alt=""
                     />
-                    <span className="ml-2 sports">
+                    <span className="ml-2 ">
                       {t("hobbies.badminton")}
                     </span>
                   </li>
                   <li style={{ listStyleType: "none" }}>
                     {" "}
                     <FaBasketballBall />{" "}
-                    <span className="ml-2 sports">Basket-ball</span>
+                    <span className="ml-2 ">Basket-ball</span>
                   </li>
                   <li style={{ listStyleType: "none" }}>
                     {" "}
                     <FaTableTennis />{" "}
-                    <span className="ml-2 sports">{t("hobbies.pingpong")}</span>
+                    <span className="ml-2 ">{t("hobbies.pingpong")}</span>
                   </li>
                 </ul>
               </li>
@@ -278,7 +282,7 @@ function AppHeader(): ReactElement {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <IconContext.Provider value={{ size: "5em" }}>
+                <IconContext.Provider value={{ size: "3em" }}>
                   <div>
                     <FaLinkedin />
                   </div>
@@ -291,7 +295,7 @@ function AppHeader(): ReactElement {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <IconContext.Provider value={{ size: "5em" }}>
+                <IconContext.Provider value={{ size: "3em" }}>
                   <div>
                     <FaGithub />
                   </div>
@@ -304,7 +308,7 @@ function AppHeader(): ReactElement {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <IconContext.Provider value={{ size: "5em" }}>
+                <IconContext.Provider value={{ size: "3em" }}>
                   <div>
                     <AiOutlineGitlab />
                   </div>
@@ -354,7 +358,7 @@ function Skill(props: {
 function Skills(): ReactElement {
   const { t } = useTranslation();
   return (
-    <Container fluid={true}>
+    <Container >
       <Row id="Skills" className=" justify-content-center">
         <Col md={4} xs={8} className="pt-2 pb-2 title rounded">
           <h2 >{t("navbar.skill")}</h2>
@@ -566,7 +570,7 @@ function Travel(): ReactElement {
   const { t } = useTranslation();
 
   return (
-    <Container  id="Travels">
+    <Container id="Travels">
       <Row className="mb-4 justify-content-center">
         <Col xs={6} className="pt-2 pb-2 title rounded">
           <h2 className="">{t("navbar.travel")}</h2>
@@ -581,24 +585,76 @@ function Travel(): ReactElement {
   );
 }
 
-
-function WIP(): ReactElement {
+function Projects() {
   const { t } = useTranslation();
+
   return (
-    <Container  className="mt-4">
-      <Row className="mb-2 justify-content-center">
-        <Col md={6} className="title rounded pt-2 pb-2">
-          <h2 className="">{t("wip.title")}</h2>
+    <Container id="Projects">
+      <Row className="mb-4 justify-content-center">
+        <Col xs={6} className="pt-2 pb-2 title rounded">
+          <h2 className="">{t("navbar.projects")}</h2>
         </Col>
       </Row>
-      <Row className="mb-5">
-        <Col className="">
-          <h5>{t("wip.body")}</h5>
-          </Col>
+      <Row className="justify-content-center">
+        <Col xs={12} md>
+          <Figure>
+            <Figure.Image
+              height="75%"
+              width="75%"
+              alt="171x180"
+              src={webCV}
+            />
+          </Figure>
+        </Col>
+        <Col xs={12} md className="align-self-center pr-5">
+          <h3>{t('projects.0.title')}</h3>
+          <p>{t('projects.0.body')}</p>
+          <a
+            href="https://github.com/TheTisiboth/WebCV"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IconContext.Provider value={{ size: "2em" }}>
+              <div>
+                <FaGithub />
+              </div>
+            </IconContext.Provider>
+          </a>
+        </Col>
+      </Row>
+
+      <Row className="justify-content-center mt-3 mb-3">
+        <Col xs={12} md>
+          <Figure>
+            <Figure.Image
+              height="60%"
+              width="60%"
+              alt="171x180"
+              src={coloricm}
+            />
+          </Figure>
+        </Col>
+        <Col xs={12} md className="align-self-center pr-5">
+          <h3>{t('projects.1.title')}</h3>
+          <p>{t('projects.1.body')}</p>
+          <a
+            href="https://github.com/TheTisiboth/PLA_2018"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <IconContext.Provider value={{ size: "2em" }}>
+              <div>
+                <FaGithub />
+              </div>
+            </IconContext.Provider>
+          </a>
+        </Col>
       </Row>
     </Container>
   );
 }
+
+
 
 // page uses the hook
 function Page(): ReactElement {
@@ -610,7 +666,9 @@ function Page(): ReactElement {
 
       <Skills />
 
-      <Container fluid={true}>
+      <Projects />
+
+      <Container >
         <Row className="mr-0">
           <Col xs={12} md className="">
             <Experience />
@@ -624,6 +682,24 @@ function Page(): ReactElement {
       <WIP />
     </div>
 
+  );
+}
+
+function WIP(): ReactElement {
+  const { t } = useTranslation();
+  return (
+    <Container className="mt-4">
+      <Row className="mb-2 justify-content-center">
+        <Col md={6} className="title rounded pt-2 pb-2">
+          <h2 className="">{t("wip.title")}</h2>
+        </Col>
+      </Row>
+      <Row className="mb-5">
+        <Col className="">
+          <h5>{t("wip.body")}</h5>
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

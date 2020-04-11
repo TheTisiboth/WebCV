@@ -10,7 +10,8 @@
     "project": "Projects",
     "experience": "Experiences",
     "skill": "Skills",
-    "travel": "Travels"
+    "travel": "Travels",
+    "projects" : "Projects"
   },
   "me": {
     "work": "Software Engineer",
@@ -39,6 +40,39 @@
   "wip": {
     "title": "Work in progress",
     "body": "This website is currently under development. It will be updated regularly"
+  },
+  "education": {
+    "0": {
+      "title": "2016 - 2020 : IT Engineering",
+      "body": "Polytech, Engineering school of the Grenoble Alpes University - 5th year"
+    },
+    "1": {
+      "title": "2014 - 2016 : PEIP Marseille",
+      "body": "Preparatory classes : two-year undergraduate intensive course in mathematics, physics, chemistry, and IT"
+    },
+    "2": {
+      "title": "2014 : Scientific baccalaureate and specialization in Computer Science and Digital Science",
+      "body": "German Bacalaureat : AbiBac (German literature and history)"
+    }
+  },
+  "hobbies": {
+    "it": "It",
+    "read": "Reading (fantasy novel)",
+    "music": "Music (8 years of piano)",
+    "frisbee": "Ultimate Frisbee : Team leader of my school, sport licence in a club",
+    "badminton": "Badminton (11 years)",
+    "basketball": "Basket-ball",
+    "pingpong": "Table tennis"
+  },
+  "projects" : {
+    "0" : {
+      "title" : "1 month - 2020: web CV",
+      "body" : "Web CV creation, with React. It is a personnal project, in order to master React. Deployement with the help of Netlify, on a custom domain name registered on Google Domains."
+    },
+    "1" : {
+      "title" : "3 weeks - 2018 : COLORicm",
+      "body" : "As a group Leader of a team of 6, we developped a 2D video game in java (swing), with real-time controls and modular features, involving automatons, introducing the notion of artificial intelligence"
+    }
   },
   "travel": {
     "germany": {
@@ -96,27 +130,5 @@
       "country": "Sweden",
       "stockholm": "Stockholm"
     }
-  },
-  "education": {
-    "0": {
-      "title": "2016 - 2020 : IT Engineering",
-      "body": "Polytech, Engineering school of the Grenoble Alpes University - 5th year"
-    },
-    "1": {
-      "title": "2014 - 2016 : PEIP Marseille",
-      "body": "Preparatory classes : two-year undergraduate intensive course in mathematics, physics, chemistry, and IT"
-    },
-    "2": {
-      "title": "2014 : Scientific baccalaureate and specialization in Computer Science and Digital Science",
-      "body": "German Bacalaureat : AbiBac (German literature and history)"
-    }
-  },
-  "hobbies": {
-    "read": "Reading (fantasy novel)",
-    "music": "Music (8 years of piano)",
-    "frisbee": "Ultimate Frisbee : Team leader of my school, sport licence in a club",
-    "badminton": "Badminton (11 years)",
-    "basketball": "Basket-ball",
-    "pingpong": "Table tennis"
   }
 }
