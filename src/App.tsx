@@ -30,6 +30,7 @@ import CV_EN from "./assets/CV_EN_Leo_Jan.pdf";
 import Badminton from "./assets/badminton.png";
 import webCV from "./assets/projects/webCV.png";
 import coloricm from "./assets/projects/coloricm.png";
+import { TFunction } from 'i18next';
 
 require("./global.d.ts");
 
@@ -87,7 +88,7 @@ function TranslationButton(): ReactElement {
  * The Navbar, containing the different section of the website, and the translate button
  */
 function MyNavbar(): ReactElement {
-  const { t } = useTranslation();
+  const { t }: { t: TFunction } = useTranslation();
 
   return (
     <Navbar collapseOnSelect={true} expand="md" bg="dark" variant="dark" className="pt-0 pb-0">
@@ -159,7 +160,7 @@ function MyNavbar(): ReactElement {
  * LeftHeader, containing general info about author
  */
 function LeftHeader(): ReactElement {
-  const { t } = useTranslation();
+  const { t }: { t: TFunction } = useTranslation();
   return (
     <div>
       <Row>
@@ -194,7 +195,7 @@ function LeftHeader(): ReactElement {
  * RightHeader containing info about hobbies
  */
 function RightHeader(): ReactElement {
-  const { t } = useTranslation();
+  const { t }: { t: TFunction } = useTranslation();
   return (
     <Row className="">
       <Col md={10}>
@@ -318,7 +319,7 @@ function AppHeader(): ReactElement {
  * Projects section
  */
 function Projects() {
-  const { t } = useTranslation();
+  const { t }: { t: TFunction } = useTranslation();
 
   return (
     <Container id="Projects">
@@ -390,7 +391,7 @@ function Projects() {
  * Experience section
  */
 function Experience(): ReactElement {
-  const { t } = useTranslation();
+  const { t }: { t: TFunction } = useTranslation();
   return (
     <div id="Experiences">
       <Row className="mb-2 justify-content-center">
@@ -434,7 +435,7 @@ function Experience(): ReactElement {
  * Education section
  */
 function Education(): ReactElement {
-  const { t } = useTranslation();
+  const { t }: { t: TFunction } = useTranslation();
   return (
     <div id="Education" className="">
       <Row className="mb-2 justify-content-center">
@@ -471,7 +472,7 @@ function Education(): ReactElement {
  * Travel section, containing a leaflet map
  */
 function Travel(): ReactElement {
-  const { t } = useTranslation();
+  const { t }: { t: TFunction } = useTranslation();
 
   return (
     <Container id="Travels">
@@ -513,7 +514,7 @@ function Page(): ReactElement {
       </Container>
 
       <Travel />
-      
+
       <WIP />
     </div>
 
@@ -521,7 +522,7 @@ function Page(): ReactElement {
 }
 
 function WIP(): ReactElement {
-  const { t } = useTranslation();
+  const { t }: { t: TFunction } = useTranslation();
   return (
     <Container className="mt-4">
       <Row className="mb-2 justify-content-center">
