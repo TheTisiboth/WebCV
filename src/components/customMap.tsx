@@ -2,12 +2,24 @@ import React, { useState, ReactElement } from "react";
 import { useTranslation } from "react-i18next";
 import { Map, Marker, Tooltip, TileLayer, CircleMarker } from "react-leaflet";
 
+interface position {
+  lat: number,
+  lon: number,
+  tooltip: string
+}
+
+interface state {
+  markers: position[],
+  zoom: number,
+  radius: number
+}
+
 export default function CustomMap(): ReactElement<any> {
   const { t } = useTranslation();
 
   const countryToString = (countries: string[]) => countries.join(", ");
 
-  const countries = [
+  const countries: position[] = [
     {
       // germany
       lat: 51.0834196,
@@ -118,7 +130,7 @@ export default function CustomMap(): ReactElement<any> {
     },
   ];
 
-  const cities = [
+  const cities: position[] = [
     {
       lat: 48.13825988769531,
       lon: 11.584508895874023,
@@ -251,7 +263,7 @@ export default function CustomMap(): ReactElement<any> {
     },
   ];
 
-  const [state, setState] = useState({
+  const [state, setState] = useState<state>({
     markers: countries,
     zoom: 3,
     radius: computeRadius(3)
@@ -289,7 +301,7 @@ export default function CustomMap(): ReactElement<any> {
       <TileLayer url="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw" />
       {state.markers.map(
         (
-          c: { lat: number; lon: number; tooltip: string },
+          c: position,
           i: number
         ): ReactElement => {
           if (state.zoom >= 5) {
