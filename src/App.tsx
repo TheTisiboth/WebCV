@@ -101,7 +101,7 @@ function MyNavbar(): ReactElement {
 
 
   return (
-    <Navbar collapseOnSelect={true} expand="md" bg="dark" variant="dark" fixed="top" className="pt-0 pb-0">
+    <Navbar collapseOnSelect={true} expand="md" bg="dark" variant="dark" className="pt-0 pb-0">
       <Navbar.Brand href="#home">
         <img
           alt=""
@@ -153,6 +153,7 @@ function MyNavbar(): ReactElement {
               </Button>
             </OverlayTrigger>
           </Nav.Link>
+
           <Nav.Link>
             <TranslationButton />
           </Nav.Link>
@@ -199,58 +200,56 @@ function LeftHeader(): ReactElement {
 function RightHeader(): ReactElement {
   const { t } = useTranslation();
   return (
-    <div>
-      <Row>
-        <Col>
-          <div className="name">
-            <h3>Hobbies</h3>
-            <ul>
-              <li>
-                <h5>{t('hobbies.it')}</h5>
-              </li>
-              <li className="">
-                <h5>Sports</h5>
-                <ul>
-                  <li style={{ listStyleType: "none" }}>
-                    {" "}
-                    <GiFrisbee />{" "}
-                    <span className="ml-2 ">{t("hobbies.frisbee")}</span>
-                  </li>
-                  <li style={{ listStyleType: "none" }}>
-                    {" "}
-                    <img
-                      className="badminton"
-                      height="20px"
-                      src={Badminton}
-                      alt=""
-                    />
-                    <span className="ml-2 ">
-                      {t("hobbies.badminton")}
-                    </span>
-                  </li>
-                  <li style={{ listStyleType: "none" }}>
-                    {" "}
-                    <FaBasketballBall />{" "}
-                    <span className="ml-2 ">Basket-ball</span>
-                  </li>
-                  <li style={{ listStyleType: "none" }}>
-                    {" "}
-                    <FaTableTennis />{" "}
-                    <span className="ml-2 ">{t("hobbies.pingpong")}</span>
-                  </li>
-                </ul>
-              </li>
-              <li>
-                <h5>{t("hobbies.read")}</h5>
-              </li>
-              <li>
-                <h5>{t("hobbies.music")}</h5>
-              </li>
-            </ul>
-          </div>
-        </Col>
-      </Row>
-    </div>
+    <Row>
+      <Col>
+        <div className="name">
+          <h3>Hobbies</h3>
+          <ul>
+            <li>
+              <h5>{t('hobbies.it')}</h5>
+            </li>
+            <li className="">
+              <h5>Sports</h5>
+              <ul>
+                <li style={{ listStyleType: "none" }}>
+                  {" "}
+                  <GiFrisbee />{" "}
+                  <span className="ml-2 ">{t("hobbies.frisbee")}</span>
+                </li>
+                <li style={{ listStyleType: "none" }}>
+                  {" "}
+                  <img
+                    className="badminton"
+                    height="20px"
+                    src={Badminton}
+                    alt=""
+                  />
+                  <span className="ml-2 ">
+                    {t("hobbies.badminton")}
+                  </span>
+                </li>
+                <li style={{ listStyleType: "none" }}>
+                  {" "}
+                  <FaBasketballBall />{" "}
+                  <span className="ml-2 ">Basket-ball</span>
+                </li>
+                <li style={{ listStyleType: "none" }}>
+                  {" "}
+                  <FaTableTennis />{" "}
+                  <span className="ml-2 ">{t("hobbies.pingpong")}</span>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <h5>{t("hobbies.read")}</h5>
+            </li>
+            <li>
+              <h5>{t("hobbies.music")}</h5>
+            </li>
+          </ul>
+        </div>
+      </Col>
+    </Row>
   );
 }
 
