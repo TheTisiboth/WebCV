@@ -23,6 +23,8 @@ import {
 } from "react-icons/fa";
 import { GiFrisbee } from "react-icons/gi";
 import { AiOutlineGitlab } from "react-icons/ai";
+import { MdTranslate } from "react-icons/md";
+import { FaRegFilePdf } from "react-icons/fa";
 import image from "./assets/leo.jpg";
 import logo from "./assets/logo.png";
 import CV_FR from "./assets/CV_FR_Leo_Jan.pdf";
@@ -78,6 +80,7 @@ function TranslationButton(): ReactElement {
       overlay={renderTooltip(t("translationTooltip"))}
     >
       <Button className="m-auto buttons" variant="outline-light" onClick={handleClick}>
+        <MdTranslate className="mr-2" />
         {state.buttonLabel}
       </Button>
     </OverlayTrigger>
@@ -128,6 +131,7 @@ function MyNavbar(): ReactElement {
               overlay={renderTooltip(t("cvFrTooltip"))}
             >
               <Button className="text-white buttons" variant="outline-secondary">
+                <FaRegFilePdf className="mr-2" />
                 CV FR
               </Button>
             </OverlayTrigger>
@@ -142,6 +146,7 @@ function MyNavbar(): ReactElement {
                 className="text-white mr-md-5 mb-3 mb-md-0 buttons"
                 variant="outline-secondary"
               >
+                <FaRegFilePdf className="mr-2" />
                 CV EN
               </Button>
             </OverlayTrigger>
@@ -322,7 +327,7 @@ function Projects() {
   const { t }: { t: TFunction } = useTranslation();
 
   return (
-    <Container id="Projects">
+    <Container fluid id="Projects" className="grey pl-md-5 pr-md-5">
       <Row className="mb-4 justify-content-center">
         <Col xs={6} className="pt-2 pb-2 title rounded">
           <h2 className="">{t("navbar.projects")}</h2>
@@ -341,7 +346,7 @@ function Projects() {
         </Col>
         <Col xs={12} md className="align-self-center pr-5">
           <h3>{t('projects.0.title')}</h3>
-          <p>{t('projects.0.body')}</p>
+          <p className="text-left">{t('projects.0.body')}</p>
           <a
             href="https://github.com/TheTisiboth/WebCV"
             target="_blank"
@@ -369,7 +374,7 @@ function Projects() {
         </Col>
         <Col xs={12} md className="align-self-center pr-5">
           <h3>{t('projects.1.title')}</h3>
-          <p>{t('projects.1.body')}</p>
+          <p className="text-left">{t('projects.1.body')}</p>
           <a
             href="https://github.com/TheTisiboth/PLA_2018"
             target="_blank"
@@ -404,7 +409,7 @@ function Experience(): ReactElement {
       <Row>
         <Col>
           <h3>{t("experiences.0.title")}</h3>
-          <p>
+          <p className="text-left">
             <Trans i18nKey="experiences.0.body">
               <strong>Software internationalization</strong> : Adapt the
               software to communicate thanks to a communication protocol.
@@ -416,7 +421,7 @@ function Experience(): ReactElement {
       <Row>
         <Col>
           <h3>{t("experiences.1.title")}</h3>
-          <p>
+          <p className="text-left">
             <Trans i18nKey="experiences.1.body">
               <strong>Automatisation of Web investigation </strong>: Website
               creation, in order to centralize multiple scripts that automatize
@@ -447,21 +452,21 @@ function Education(): ReactElement {
       <Row>
         <Col>
           <h3>{t("education.0.title")}</h3>
-          <p>{t("education.0.body")}</p>
+          <p className="text-left">{t("education.0.body")}</p>
         </Col>
       </Row>
 
       <Row>
         <Col>
           <h3>{t("education.1.title")}</h3>
-          <p>{t("education.1.body")}</p>
+          <p className="text-left">{t("education.1.body")}</p>
         </Col>
       </Row>
 
       <Row>
         <Col>
           <h3>{t("education.2.title")}</h3>
-          <p>{t("education.2.body")}</p>
+          <p className="text-left">{t("education.2.body")}</p>
         </Col>
       </Row>
     </div>
@@ -475,14 +480,14 @@ function Travel(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
 
   return (
-    <Container id="Travels">
+    <Container fluid id="Travels" className="grey pb-4 pl-md-5 pr-md-5">
       <Row className="mb-4 justify-content-center">
         <Col xs={6} className="pt-2 pb-2 title rounded">
           <h2 className="">{t("navbar.travel")}</h2>
         </Col>
       </Row>
-      <Row>
-        <Col>
+      <Row className="mb-4 justify-content-center">
+        <Col md={10}>
           <CustomMap />
         </Col>
       </Row>
@@ -502,7 +507,7 @@ function Page(): ReactElement {
 
       <Projects />
 
-      <Container >
+      <Container fluid className="pl-md-5 pr-md-5">
         <Row className="mr-0">
           <Col xs={12} md className="">
             <Experience />

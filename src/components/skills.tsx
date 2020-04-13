@@ -195,7 +195,7 @@ export function Skills(): ReactElement {
     const skillsList: skills[] = [system, software, web, others];
 
     return (
-        <Container >
+        <Container fluid className="pl-md-5 pr-md-5">
             <Row id="Skills" className=" justify-content-center">
                 <Col md={4} xs={8} className="pt-2 pb-2 title rounded">
                     <h2 >{t("navbar.skill")}</h2>

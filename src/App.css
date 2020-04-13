@@ -33,6 +33,10 @@
   -webkit-filter: invert(100%);
 }
 
-.buttons{
+.buttons {
   font-size: 0.9rem!important;
+}
+
+.grey {
+  background-color: rgb(240, 234, 234);
 }

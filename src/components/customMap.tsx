@@ -293,7 +293,7 @@ export default function CustomMap(): ReactElement<any> {
 
   return (
     <Map
-      style={{ width: "100%", height: "500px" }}
+      style={{ height: "500px" }}
       center={[54.370138916189596, -29.918133437500003]}
       zoom={state.zoom}
       onZoomend={onZoom}
