@@ -11,7 +11,8 @@
     "experience": "Experiences",
     "skill": "Compétences",
     "travel": "Voyages",
-    "projects" : "Projets"
+    "projects" : "Projets",
+    "cv" : "Télécharger CV"
   },
   "me": {
     "work": "Ingénieur Logiciel",

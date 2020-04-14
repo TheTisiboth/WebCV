@@ -9,7 +9,8 @@ import {
   Col,
   Container,
   Figure,
-  OverlayTrigger
+  OverlayTrigger,
+  NavDropdown
 } from "react-bootstrap";
 import { renderTooltip } from "./utils";
 import CustomMap from "./components/customMap";
@@ -23,7 +24,7 @@ import {
 } from "react-icons/fa";
 import { GiFrisbee } from "react-icons/gi";
 import { AiOutlineGitlab } from "react-icons/ai";
-import { MdTranslate } from "react-icons/md";
+import { MdTranslate, MdFileDownload } from "react-icons/md";
 import { FaRegFilePdf } from "react-icons/fa";
 import image from "./assets/leo.jpg";
 import logo from "./assets/logo.png";
@@ -44,7 +45,7 @@ function TranslationButton(): ReactElement {
   const { t, i18n } = useTranslation();
   const [state, setState] = useState<{ isEnglish: boolean, buttonLabel: string }>({
     isEnglish: i18n.language.includes("en"),
-    buttonLabel: i18n.language.includes("en") ? "en" : "fr",
+    buttonLabel: i18n.language.includes("en") ? "EN" : "FR",
   });
 
   /**
@@ -65,7 +66,7 @@ function TranslationButton(): ReactElement {
    */
   const handleClick = (): any => {
     const isEnglish: boolean = !state.isEnglish;
-    const buttonLabel: string = isEnglish ? "en" : "fr";
+    const buttonLabel: string = isEnglish ? "EN" : "FR";
     setState({
       isEnglish,
       buttonLabel,
@@ -94,7 +95,7 @@ function MyNavbar(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
 
   return (
-    <Navbar collapseOnSelect={true} expand="md" bg="dark" variant="dark" className="pt-0 pb-0">
+    <Navbar collapseOnSelect={true} expand="md" bg="dark" variant="dark" className="pt-0 pb-0" >
       <Navbar.Brand href="#home">
         <img
           alt=""
@@ -103,6 +104,7 @@ function MyNavbar(): ReactElement {
           height="40%"
           className="d-inline-block align-top"
         />{" "}
+
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse id="responsive-navbar-nav" className="pb-3 pb-md-0">
@@ -123,35 +125,38 @@ function MyNavbar(): ReactElement {
             {t("navbar.travel")}
           </Nav.Link>
         </Nav>
-        <Nav>
-          <Nav.Link href={CV_FR} download={true}>
-            <OverlayTrigger
-              placement="bottom"
-              delay={{ show: 0, hide: 0 }}
-              overlay={renderTooltip(t("cvFrTooltip"))}
-            >
-              <Button className="text-white buttons" variant="outline-secondary">
-                <FaRegFilePdf className="mr-2" />
-                CV FR
-              </Button>
-            </OverlayTrigger>
-          </Nav.Link>
-          <Nav.Link href={CV_EN} download={true}>
-            <OverlayTrigger
-              placement="bottom"
-              delay={{ show: 0, hide: 0 }}
-              overlay={renderTooltip(t("cvEnTooltip"))}
-            >
-              <Button
-                className="text-white mr-md-5 mb-3 mb-md-0 buttons"
-                variant="outline-secondary"
-              >
-                <FaRegFilePdf className="mr-2" />
-                CV EN
-              </Button>
-            </OverlayTrigger>
-          </Nav.Link>
+        <Nav >
+          <NavDropdown title={
+            <span className="m-auto">
+              <MdFileDownload className=" mr-2 myIcon" />{t('navbar.cv')}
+          </span>}
+            id="basic-nav-dropdown" className="m-auto mr-md-5">
 
+            <NavDropdown.Item href={CV_FR} download={true} className="text-center">
+              <OverlayTrigger
+                placement="bottom"
+                delay={{ show: 0, hide: 0 }}
+                overlay={renderTooltip(t("cvFrTooltip"))}
+              >
+                <div>
+                  <FaRegFilePdf className="mr-2" />
+                CV FR
+                </div>
+              </OverlayTrigger>
+            </NavDropdown.Item>
+            <NavDropdown.Item href={CV_EN} download={true} className="text-center">
+              <OverlayTrigger
+                placement="bottom"
+                delay={{ show: 0, hide: 0 }}
+                overlay={renderTooltip(t("cvEnTooltip"))}
+              >
+                <div>
+                  <FaRegFilePdf className="mr-2" />
+                CV EN
+                </div>
+              </OverlayTrigger>
+            </NavDropdown.Item>
+          </NavDropdown>
           <Nav.Link>
             <TranslationButton />
           </Nav.Link>

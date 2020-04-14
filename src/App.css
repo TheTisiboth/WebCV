@@ -33,10 +33,32 @@
   -webkit-filter: invert(100%);
 }
 
+.myIcon {
+  color: rgba(255, 255, 255, .5)
+}
+
 .buttons {
   font-size: 0.9rem!important;
 }
 
 .grey {
-  background-color: rgb(240, 234, 234);
+  background-color: rgb(240, 234, 234)!important;
 }
+
+.dropdown-menu {
+  background: #464d55!important;
+}
+
+.dropdown-item, .dropdown-toggle {
+  color: rgba(255, 255, 255, .5)!important;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  background: rgba(255, 255, 255, .5)!important;
+  color: #343a40!important;
+}
+
+.dropdown-menu .active {
+  background: #343a40!important;
+}
+
