@@ -194,13 +194,13 @@ export function Skills(): ReactElement {
     const row2: skills[] = [web, others];
 
     return (
-        <div className="text-center pt-5 pt-md-0">
-            <Row id="Skills" className=" justify-content-center">
-                <Col md={4} xs={8} className="pt-2 pb-2">
+        <div id="Skills" className="text-center pt-5 pt-md-2 pr-0 pr-md-5">
+            <Row  className=" justify-content-center">
+                <Col md={6} xs={8} className="pt-2 pb-2 titleReverse rounded">
                     <h2 >{t("navbar.skill")}</h2>
                 </Col>
             </Row>
-            <Row className="justify-content-center">
+            <Row className="justify-content-center pt-4">
                 {row1.map((skills: skills): ReactElement => {
                     return (
 
@@ -237,7 +237,7 @@ export function Skills(): ReactElement {
                 })
                 }
             </Row>
-            <Row className="pt-0 pt-md-5">
+            <Row >
                 {row2.map((skills: skills): ReactElement => {
                     return (
 

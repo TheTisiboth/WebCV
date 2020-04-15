@@ -33,6 +33,11 @@
   /* color: white; */
 }
 
+.titleReverse{
+  background-color: #cdcdcd;
+  color: #011638;
+}
+
 .skills {
   background-color: rgb(211, 208, 208);
 }

@@ -12,6 +12,8 @@ import {
   OverlayTrigger,
   NavDropdown
 } from "react-bootstrap";
+import { scroller } from 'react-scroll';
+
 import { renderTooltip } from "./utils";
 import CustomMap from "./components/customMap";
 import { Skills } from "./components/skills";
@@ -126,6 +128,12 @@ function MyNavbar(): ReactElement {
     };
   });
 
+  const scrollOptions =  {
+    smooth: true,
+    offset: -40,
+    duration: 500,
+  };
+
   return (
     <Navbar ref={nav} collapseOnSelect={true} expand="md" bg="dark" variant="dark" className="pt-0 pb-0" fixed="top">
       <Navbar.Brand href="#home">
@@ -141,19 +149,19 @@ function MyNavbar(): ReactElement {
       <Navbar.Toggle ref={toggle} aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse ref={collapse} id="responsive-navbar-nav" className="pb-3 pb-md-0">
         <Nav className="mr-auto">
-          <Nav.Link className="" href="#Skills">
+          <Nav.Link className="" href="#Skills" onSelect={() => scroller.scrollTo('Skills',scrollOptions)}>
             {t("navbar.skill")}
           </Nav.Link>
-          <Nav.Link className="" href="#Projects">
+          <Nav.Link className="" href="#Projects" onSelect={() => scroller.scrollTo('Projects',scrollOptions)}>
             {t("navbar.projects")}
           </Nav.Link>
-          <Nav.Link className="" href="#Experiences">
+          <Nav.Link className="" href="#Experiences" onSelect={() => scroller.scrollTo('Experiences',scrollOptions)}>
             {t("navbar.experience")}
           </Nav.Link>
-          <Nav.Link className="" href="#Education">
+          <Nav.Link className="" href="#Education" onSelect={() => scroller.scrollTo('Education',scrollOptions)}>
             {t("navbar.education")}
           </Nav.Link>
-          <Nav.Link className="" href="#Travels">
+          <Nav.Link className="" href="#Travels" onSelect={() => scroller.scrollTo('Travels',scrollOptions)}>
             {t("navbar.travel")}
           </Nav.Link>
         </Nav>
@@ -197,7 +205,7 @@ function MyNavbar(): ReactElement {
 
         </Nav>
       </Navbar.Collapse>
-    </Navbar>
+    </Navbar >
   );
 }
 
@@ -280,8 +288,8 @@ function AppHeader(): ReactElement {
             <Col>
               <Figure>
                 <Figure.Image
-                  height="50%"
-                  width="50%"
+                  height="60%"
+                  width="60%"
                   alt="171x180"
                   src={image}
                   roundedCircle
@@ -397,7 +405,7 @@ function Experience(): ReactElement {
         </Col>
       </Row>
       <Row className="pt-5">
-        <Col md>
+        <Col md className="align-self-center">
           <Figure>
             <Figure.Image
               height="30%"
@@ -408,7 +416,7 @@ function Experience(): ReactElement {
           </Figure>
         </Col>
         <Col md>
-          <h3>{t("experiences.0.title")}</h3>
+          <h4>{t("experiences.0.title")}</h4>
           <p className="text-left">
             <Trans i18nKey="experiences.0.body">
               <strong>Software internationalization</strong> : Adapt the
@@ -430,7 +438,7 @@ function Experience(): ReactElement {
           </Figure>
         </Col>
         <Col md className="align-self-center">
-          <h3>{t("experiences.1.title")}</h3>
+          <h4>{t("experiences.1.title")}</h4>
           <p className="text-left">
             <Trans i18nKey="experiences.1.body">
               <strong>Automatisation of Web investigation </strong>: Website
@@ -462,21 +470,21 @@ function Education(): ReactElement {
 
       <Row className="pt-5 text-left justify-content-center">
         <Col md={8}>
-          <h3>{t("education.0.title")}</h3>
+          <h4>{t("education.0.title")}</h4>
           <p className="text-left">{t("education.0.body")}</p>
         </Col>
       </Row>
 
       <Row className="text-left justify-content-center pt-3">
         <Col md={8}>
-          <h3>{t("education.1.title")}</h3>
+          <h4>{t("education.1.title")}</h4>
           <p className="text-left">{t("education.1.body")}</p>
         </Col>
       </Row>
 
       <Row className="pb-5 text-left justify-content-center pt-3">
         <Col md={8}>
-          <h3>{t("education.2.title")}</h3>
+          <h4>{t("education.2.title")}</h4>
           <p className="text-left">{t("education.2.body")}</p>
         </Col>
       </Row>
@@ -638,6 +646,7 @@ const Loader = (): ReactElement => (
 
 // here app catches the suspense from page in case translations are not yet loaded
 export default function App(): ReactElement {
+
   return (
     <Suspense fallback={<Loader />}>
       <Page />

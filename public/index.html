@@ -26,6 +26,18 @@
     crossorigin=""></script>
   <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"
     integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+  <!-- <script>
+
+    var shiftWindow = function () {
+      console.log(this)
+      window.scrollBy({
+        top: -50,
+        behavior: 'smooth'
+      });
+    };
+    window.addEventListener("hashchange", shiftWindow);
+    function load() { if (window.location.hash) shiftWindow(); }
+  </script> -->
   <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -38,7 +50,7 @@
   <title>Léo Jan</title>
 </head>
 
-<body>
+<body onload="load()">
   <noscript>
     You need to enable JavaScript to run this app.
   </noscript>
