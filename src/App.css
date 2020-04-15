@@ -19,6 +19,13 @@
   color: #222;
 }
 
+.App-footer {
+  background-color: #222;
+  height: 20%;
+  padding: 20px;
+  color: white;
+}
+
 .title {
   /* background-color: #343a40; */
   background-color: #011638;
@@ -61,5 +68,5 @@
 }
 
 .dropdown-menu .active {
-  background: #343a40!important;
+  background: #464d55!important;
 }

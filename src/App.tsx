@@ -1,4 +1,4 @@
-import React, { Suspense, useState, ReactElement, useCallback } from "react";
+import React, { Suspense, useState, ReactElement, useCallback, useEffect, useRef } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import "./App.css";
 import {
@@ -97,16 +97,37 @@ function TranslationButton(props: { onClick: () => void; }): ReactElement {
  */
 function MyNavbar(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
-  // The toggle navbar button 
-  let toggle: any = React.createRef();
+  // Toggle component
+  const toggle: any = useRef();
+  // Collapse component
+  const collapse: any = useRef();
+  // Navbar component
+  const nav: any = useRef();
 
-  // Triger toggle navbar
+  // Triger toggle navbar if collapsed
   const onClick = () => {
-    toggle.current.click();
+    if (collapse.current.className.includes("show"))
+      toggle.current.click();
   }
 
+  // If we click outside the navbar, we close it
+  const handleClick = (e: { target: any; }) => {
+    if (!nav.current.contains(e.target)) {
+      onClick();
+    }
+  };
+
+  useEffect(() => {
+    // add when mounted
+    document.addEventListener("mousedown", handleClick);
+    // return function to be called when unmounted
+    return () => {
+      document.removeEventListener("mousedown", handleClick);
+    };
+  });
+
   return (
-    <Navbar collapseOnSelect={true} expand="md" bg="dark" variant="dark" className="pt-0 pb-0" >
+    <Navbar ref={nav} collapseOnSelect={true} expand="md" bg="dark" variant="dark" className="pt-0 pb-0" fixed="top">
       <Navbar.Brand href="#home">
         <img
           alt=""
@@ -117,8 +138,8 @@ function MyNavbar(): ReactElement {
         />{" "}
 
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" ref={toggle} />
-      <Navbar.Collapse id="responsive-navbar-nav" className="pb-3 pb-md-0">
+      <Navbar.Toggle ref={toggle} aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse ref={collapse} id="responsive-navbar-nav" className="pb-3 pb-md-0">
         <Nav className="mr-auto">
           <Nav.Link className="" href="#Skills">
             {t("navbar.skill")}
@@ -155,6 +176,7 @@ function MyNavbar(): ReactElement {
                 </div>
               </OverlayTrigger>
             </NavDropdown.Item>
+            {/* <NavDropdown.Divider /> */}
             <NavDropdown.Item href={CV_EN} download={true} className="text-center">
               <OverlayTrigger
                 placement="bottom"
@@ -187,7 +209,7 @@ function LeftHeader(): ReactElement {
   return (
     <div>
       <Row>
-        <Col xs={5} md={12} className="pr-0 pl-0">
+        <Col md={12} className="pr-0 pl-0">
           <div className="name">
             <h1>Léo Jan</h1>
           </div>
@@ -198,7 +220,7 @@ function LeftHeader(): ReactElement {
             <h5>{t("me.age")}</h5>
           </div>
         </Col>
-        <Col xs={6} md={12} className="align-self-center mt-md-5 pr-0 pl-0">
+        <Col md={12} className="align-self-center pt-3 pt-md-0 pb-3 pb-md-0 mt-md-5 pr-0 pl-0">
           <div className="name">
             <h5>Polytech Grenoble</h5>
           </div>
@@ -295,7 +317,7 @@ function Projects() {
   const { t }: { t: TFunction } = useTranslation();
 
   return (
-    <Container fluid id="Projects" className="pt-5 grey pl-md-5 pr-md-5">
+    <Container id="Projects" className="pt-5">
       <Row className="mb-4 justify-content-center">
         <Col xs={6} className="pt-2 pb-2 title rounded">
           <h2 className="">{t("navbar.projects")}</h2>
@@ -366,7 +388,7 @@ function Projects() {
 function Experience(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
   return (
-    <Container fluid id="Experiences" className="pt-5 pl-md-5 pr-md-5">
+    <Container id="Experiences" className="pt-5">
       <Row className="mb-4 justify-content-center">
         <Col xs={7} className="pt-2 pb-2 title rounded">
           <h2 >
@@ -424,13 +446,14 @@ function Experience(): ReactElement {
   );
 }
 
+
 /**
  * Education section
  */
 function Education(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
   return (
-    <Container fluid id="Education" className="pt-5 grey pl-md-5 pr-md-5">
+    <Container id="Education" className="pt-5">
       <Row className="mb-4 justify-content-center">
         <Col xs={6} className="pt-2 pb-2 title rounded">
           <h2 >{t("navbar.education")}</h2>
@@ -522,6 +545,7 @@ function Hobbies() {
     </Container>
   );
 }
+
 /**
  * Travel section, containing a leaflet map
  */
@@ -529,7 +553,7 @@ function Travel(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
 
   return (
-    <Container fluid id="Travels" className="grey pt-5 pb-4 pl-md-5 pr-md-5">
+    <Container id="Travels" className="pt-5 pb-4">
       <Row className="mb-4 justify-content-center">
         <Col xs={6} className="pt-2 pb-2 title rounded">
           <h2 className="">{t("navbar.travel")}</h2>
@@ -544,6 +568,18 @@ function Travel(): ReactElement {
   );
 }
 
+function Footer() {
+  return (
+    <Container>
+      <ul>
+        <li>qsd</li>
+        <li>qs</li>
+        <li>qsddqsd</li>
+      </ul>
+    </Container>
+  );
+}
+
 // page uses the hook
 function Page(): ReactElement {
   return (
@@ -551,20 +587,26 @@ function Page(): ReactElement {
       <MyNavbar />
 
       <AppHeader />
-
-      <Projects />
-
-      <Experience />
-
-      <Education />
-
-      <Hobbies />
-
-      <Travel />
-
+      <section className="grey">
+        <Projects />
+      </section>
+      <section>
+        <Experience />
+      </section>
+      <section className="grey">
+        <Education />
+      </section>
+      <section>
+        <Hobbies />
+      </section>
+      <section className="grey">
+        <Travel />
+      </section>
       <WIP />
+      <section className="App-footer">
+        <Footer />
+      </section>
     </div>
-
   );
 }
 

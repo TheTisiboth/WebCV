@@ -25,7 +25,6 @@ import GIT from "../assets/git.png";
 import LINUX from "../assets/linux.svg";
 import ARDUINO from "../assets/arduino.svg";
 
-
 interface skill {
     image: string,
     href: string,
@@ -249,10 +248,9 @@ export function Skills(): ReactElement {
                                 </Col>
                             </Row>
                             <Row className="justify-content-center">
-                                <Col>
-                                    {skills.skills.map((skill: skill): ReactElement => {
+                                <Col xs={6} md>
+                                    {skills.skills.map((skill: skill, index: number) => {
                                         return (
-
                                             <Skill
                                                 key={skill.href}
                                                 image={skill.image}
@@ -261,9 +259,7 @@ export function Skills(): ReactElement {
                                                 class={skill.class}
                                                 size={skill.size}
                                             />
-
                                         );
-
                                     }
                                     )}
                                 </Col>
