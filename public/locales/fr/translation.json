@@ -69,7 +69,7 @@
   "projects" : {
     "0" : {
       "title" : "1 mois - 2020: web CV",
-      "body" : "Création d'un web CV avec React. Il s'agit d'un projet personnel, visant à prendre en main react. Le déploiement à été fait grâce à Netlify, sur un nom de domaine enregistré sur Google Domains."
+      "body" : "Création d'un web CV avec React. Il s'agit d'un projet personnel, visant à prendre en main react. Le déploiement à été fait grâce à Netlify, sur un nom de domaine enregistré sur Google Domains. Développement web (React, Bootstrap)."
     },
     "1" : {
       "title" : "3 semaines - 2018 : COLORicm",

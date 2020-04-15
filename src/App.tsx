@@ -43,7 +43,7 @@ require("./global.d.ts");
 /**
  * Translation button, that translate the whole page. It switches between english (by default) and french
  */
-function TranslationButton(): ReactElement {
+function TranslationButton(props: { onClick: () => void; }): ReactElement {
   const { t, i18n } = useTranslation();
   const [state, setState] = useState<{ isEnglish: boolean, buttonLabel: string }>({
     isEnglish: i18n.language.includes("en"),
@@ -74,6 +74,8 @@ function TranslationButton(): ReactElement {
       buttonLabel,
     });
     changeLanguage(buttonLabel);
+    // Toggle navbar
+    props.onClick();
   };
 
   return (
@@ -95,6 +97,13 @@ function TranslationButton(): ReactElement {
  */
 function MyNavbar(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
+  // The toggle navbar button 
+  let toggle: any = React.createRef();
+
+  // Triger toggle navbar
+  const onClick = () => {
+    toggle.current.click();
+  }
 
   return (
     <Navbar collapseOnSelect={true} expand="md" bg="dark" variant="dark" className="pt-0 pb-0" >
@@ -108,7 +117,7 @@ function MyNavbar(): ReactElement {
         />{" "}
 
       </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" ref={toggle} />
       <Navbar.Collapse id="responsive-navbar-nav" className="pb-3 pb-md-0">
         <Nav className="mr-auto">
           <Nav.Link className="" href="#Skills">
@@ -159,9 +168,11 @@ function MyNavbar(): ReactElement {
               </OverlayTrigger>
             </NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link>
-            <TranslationButton />
+
+          <Nav.Link href="#">
+            <TranslationButton onClick={onClick} />
           </Nav.Link>
+
         </Nav>
       </Navbar.Collapse>
     </Navbar>
