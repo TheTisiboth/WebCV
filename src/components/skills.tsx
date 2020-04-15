@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import {
     Row,
     Col,
-    Container,
     Figure,
     OverlayTrigger
 } from "react-bootstrap";
@@ -30,7 +29,9 @@ import ARDUINO from "../assets/arduino.svg";
 interface skill {
     image: string,
     href: string,
-    tooltip: string
+    tooltip: string,
+    class?: string,
+    size?: number
 }
 
 interface skills {
@@ -42,11 +43,7 @@ interface skills {
  * Display an image of a technology, with a link to its website, and a tooltip (on hover) 
  * @param props Info about the image to display
  */
-function Skill(props: {
-    href: string | undefined;
-    tooltip: any;
-    image: string | undefined;
-}): ReactElement {
+function Skill(props: skill): ReactElement {
     return (
         <a
             href={props.href}
@@ -61,8 +58,9 @@ function Skill(props: {
             >
                 <Figure>
                     <Figure.Image
-                        width={40}
-                        height={40}
+                        className={(props.class ? props.class : "")}
+                        width={(props.size) ? props.size : 30}
+                        height={(props.size) ? props.size : 30}
                         alt="171x180"
                         src={props.image}
                     />
@@ -112,7 +110,7 @@ export function Skills(): ReactElement {
             {
                 image: PYTHON,
                 href: "https://www.python.org/",
-                tooltip: "Pyhton"
+                tooltip: "Python"
             },
             {
                 image: OCAML,
@@ -129,7 +127,8 @@ export function Skills(): ReactElement {
             {
                 image: HTML,
                 href: "https://en.wikipedia.org/wiki/HTML",
-                tooltip: "HTML"
+                tooltip: "HTML",
+                size: 42
             },
             {
                 image: CSS,
@@ -176,12 +175,13 @@ export function Skills(): ReactElement {
 
     const others: skills =
     {
-        title: t("skills.others"),
+        title: t("skills.other"),
         skills: [
             {
                 image: GIT,
                 href: "https://git-scm.com/",
-                tooltip: "Git"
+                tooltip: "Git",
+                class: "iconToWhite"
             },
             {
                 image: LINUX,
@@ -191,41 +191,88 @@ export function Skills(): ReactElement {
         ]
     };
 
-
-    const skillsList: skills[] = [system, software, web, others];
+    const row1: skills[] = [system, software];
+    const row2: skills[] = [web, others];
 
     return (
-        <Container fluid className="pl-md-5 pr-md-5">
+        <div className="text-center pt-5 pt-md-0">
             <Row id="Skills" className=" justify-content-center">
-                <Col md={4} xs={8} className="pt-2 pb-2 title rounded">
+                <Col md={4} xs={8} className="pt-2 pb-2">
                     <h2 >{t("navbar.skill")}</h2>
                 </Col>
             </Row>
-            <Row>
-                {skillsList.map((skills: skills): ReactElement => {
+            <Row className="justify-content-center">
+                {row1.map((skills: skills): ReactElement => {
                     return (
-                        <Col key={skills.title} sm={12} md={3}>
+
+                        <Col key={skills.title} md={6}>
                             <Row>
                                 <Col>
-                                    <h3>{skills.title}</h3>
+                                    <h5>{skills.title}</h5>
                                 </Col>
                             </Row>
-                            <Row>
+                            <Row className="justify-content-center">
                                 <Col>
                                     {skills.skills.map((skill: skill): ReactElement => {
-                                        return (<Skill
-                                            key={skill.href}
-                                            image={skill.image}
-                                            href={skill.href}
-                                            tooltip={skill.tooltip}
-                                        />);
-                                    })}
+                                        return (
+
+                                            <Skill
+                                                key={skill.href}
+                                                image={skill.image}
+                                                href={skill.href}
+                                                tooltip={skill.tooltip}
+                                                class={skill.class}
+                                                size={skill.size}
+                                            />
+
+
+                                        );
+
+                                    }
+                                    )}
+                                </Col>
+                            </Row>
+                        </Col>
+
+                    );
+                })
+                }
+            </Row>
+            <Row className="pt-0 pt-md-5">
+                {row2.map((skills: skills): ReactElement => {
+                    return (
+
+                        <Col key={skills.title} md={6}>
+                            <Row>
+                                <Col>
+                                    <h5>{skills.title}</h5>
+                                </Col>
+                            </Row>
+                            <Row className="justify-content-center">
+                                <Col>
+                                    {skills.skills.map((skill: skill): ReactElement => {
+                                        return (
+
+                                            <Skill
+                                                key={skill.href}
+                                                image={skill.image}
+                                                href={skill.href}
+                                                tooltip={skill.tooltip}
+                                                class={skill.class}
+                                                size={skill.size}
+                                            />
+
+                                        );
+
+                                    }
+                                    )}
                                 </Col>
                             </Row>
                         </Col>
                     );
-                })}
+                })
+                }
             </Row>
-        </Container >
+        </div>
     );
 }

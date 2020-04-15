@@ -33,6 +33,8 @@ import CV_EN from "./assets/CV_EN_Leo_Jan.pdf";
 import Badminton from "./assets/badminton.png";
 import webCV from "./assets/projects/webCV.png";
 import coloricm from "./assets/projects/coloricm.png";
+import mpaa from "./assets/mpaa.png";
+import enovacom from "./assets/enovacom.png";
 import { TFunction } from 'i18next';
 
 require("./global.d.ts");
@@ -45,7 +47,7 @@ function TranslationButton(): ReactElement {
   const { t, i18n } = useTranslation();
   const [state, setState] = useState<{ isEnglish: boolean, buttonLabel: string }>({
     isEnglish: i18n.language.includes("en"),
-    buttonLabel: i18n.language.includes("en") ? "EN" : "FR",
+    buttonLabel: i18n.language.includes("en") ? "en" : "fr",
   });
 
   /**
@@ -66,7 +68,7 @@ function TranslationButton(): ReactElement {
    */
   const handleClick = (): any => {
     const isEnglish: boolean = !state.isEnglish;
-    const buttonLabel: string = isEnglish ? "EN" : "FR";
+    const buttonLabel: string = isEnglish ? "en" : "fr";
     setState({
       isEnglish,
       buttonLabel,
@@ -82,7 +84,7 @@ function TranslationButton(): ReactElement {
     >
       <Button className="m-auto buttons" variant="outline-light" onClick={handleClick}>
         <MdTranslate className="mr-2" />
-        {state.buttonLabel}
+        {state.buttonLabel.toUpperCase()}
       </Button>
     </OverlayTrigger>
   );
@@ -129,7 +131,7 @@ function MyNavbar(): ReactElement {
           <NavDropdown title={
             <span className="m-auto">
               <MdFileDownload className=" mr-2 myIcon" />{t('navbar.cv')}
-          </span>}
+            </span>}
             id="basic-nav-dropdown" className="m-auto mr-md-5">
 
             <NavDropdown.Item href={CV_FR} download={true} className="text-center">
@@ -205,58 +207,9 @@ function LeftHeader(): ReactElement {
  * RightHeader containing info about hobbies
  */
 function RightHeader(): ReactElement {
-  const { t }: { t: TFunction } = useTranslation();
+  // const { t }: { t: TFunction } = useTranslation();
   return (
-    <Row className="">
-      <Col md={10}>
-        <div className="name">
-          <h3>Hobbies</h3>
-          <ul>
-            <li>
-              <h5>{t('hobbies.it')}</h5>
-            </li>
-            <li className="">
-              <h5>Sports</h5>
-              <ul>
-                <li style={{ listStyleType: "none" }}>
-                  {" "}
-                  <GiFrisbee />{" "}
-                  <span className="ml-2 ">{t("hobbies.frisbee")}</span>
-                </li>
-                <li style={{ listStyleType: "none" }}>
-                  {" "}
-                  <img
-                    className="badminton"
-                    height="20px"
-                    src={Badminton}
-                    alt=""
-                  />
-                  <span className="ml-2 ">
-                    {t("hobbies.badminton")}
-                  </span>
-                </li>
-                <li style={{ listStyleType: "none" }}>
-                  {" "}
-                  <FaBasketballBall />{" "}
-                  <span className="ml-2 ">Basket-ball</span>
-                </li>
-                <li style={{ listStyleType: "none" }}>
-                  {" "}
-                  <FaTableTennis />{" "}
-                  <span className="ml-2 ">{t("hobbies.pingpong")}</span>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <h5>{t("hobbies.read")}</h5>
-            </li>
-            <li>
-              <h5>{t("hobbies.music")}</h5>
-            </li>
-          </ul>
-        </div>
-      </Col>
-    </Row>
+    <Skills />
   );
 }
 
@@ -286,7 +239,7 @@ function AppHeader(): ReactElement {
   return (
     <Container fluid={true} className="App-header">
       <Row className="content-justify-center">
-        <Col sm={12} md={4} className="m-auto text-md-right align-self-center">
+        <Col sm={12} md={4} className="m-auto text-md-center align-self-center">
           <LeftHeader />
         </Col>
         <Col sm={12} md={4} className="align-self-center">
@@ -324,7 +277,6 @@ function AppHeader(): ReactElement {
 }
 
 
-
 /**
  * Projects section
  */
@@ -332,13 +284,13 @@ function Projects() {
   const { t }: { t: TFunction } = useTranslation();
 
   return (
-    <Container fluid id="Projects" className="grey pl-md-5 pr-md-5">
+    <Container fluid id="Projects" className="pt-5 grey pl-md-5 pr-md-5">
       <Row className="mb-4 justify-content-center">
         <Col xs={6} className="pt-2 pb-2 title rounded">
           <h2 className="">{t("navbar.projects")}</h2>
         </Col>
       </Row>
-      <Row className="justify-content-center">
+      <Row className="pt-5 justify-content-center">
         <Col xs={12} md>
           <Figure>
             <Figure.Image
@@ -366,7 +318,7 @@ function Projects() {
         </Col>
       </Row>
 
-      <Row className="justify-content-center mt-3 mb-3">
+      <Row className="justify-content-center pt-5 pb-5 mt-3 mb-3">
         <Col xs={12} md>
           <Figure>
             <Figure.Image
@@ -403,16 +355,26 @@ function Projects() {
 function Experience(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
   return (
-    <div id="Experiences">
-      <Row className="mb-2 justify-content-center">
-        <Col xs={8} className="pt-2 pb-2 title rounded">
+    <Container fluid id="Experiences" className="pt-5 pl-md-5 pr-md-5">
+      <Row className="mb-4 justify-content-center">
+        <Col xs={7} className="pt-2 pb-2 title rounded">
           <h2 >
             {t("navbar.experience")}
           </h2>
         </Col>
       </Row>
-      <Row>
-        <Col>
+      <Row className="pt-5">
+        <Col md>
+          <Figure>
+            <Figure.Image
+              height="30%"
+              width="30%"
+              alt="171x180"
+              src={enovacom}
+            />
+          </Figure>
+        </Col>
+        <Col md>
           <h3>{t("experiences.0.title")}</h3>
           <p className="text-left">
             <Trans i18nKey="experiences.0.body">
@@ -423,8 +385,18 @@ function Experience(): ReactElement {
           </p>
         </Col>
       </Row>
-      <Row>
-        <Col>
+      <Row className="pt-5 pb-5">
+        <Col md className="align-self-center">
+          <Figure>
+            <Figure.Image
+              height="20%"
+              width="20%"
+              alt="171x180"
+              src={mpaa}
+            />
+          </Figure>
+        </Col>
+        <Col md className="align-self-center">
           <h3>{t("experiences.1.title")}</h3>
           <p className="text-left">
             <Trans i18nKey="experiences.1.body">
@@ -437,7 +409,7 @@ function Experience(): ReactElement {
           </p>
         </Col>
       </Row>
-    </div>
+    </Container>
   );
 }
 
@@ -447,37 +419,98 @@ function Experience(): ReactElement {
 function Education(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
   return (
-    <div id="Education" className="">
-      <Row className="mb-2 justify-content-center">
-        <Col xs={8} className="pt-2 pb-2 title rounded">
+    <Container fluid id="Education" className="pt-5 grey pl-md-5 pr-md-5">
+      <Row className="mb-4 justify-content-center">
+        <Col xs={6} className="pt-2 pb-2 title rounded">
           <h2 >{t("navbar.education")}</h2>
         </Col>
       </Row>
 
-      <Row>
-        <Col>
+      <Row className="pt-5 text-left justify-content-center">
+        <Col md={8}>
           <h3>{t("education.0.title")}</h3>
           <p className="text-left">{t("education.0.body")}</p>
         </Col>
       </Row>
 
-      <Row>
-        <Col>
+      <Row className="text-left justify-content-center pt-3">
+        <Col md={8}>
           <h3>{t("education.1.title")}</h3>
           <p className="text-left">{t("education.1.body")}</p>
         </Col>
       </Row>
 
-      <Row>
-        <Col>
+      <Row className="pb-5 text-left justify-content-center pt-3">
+        <Col md={8}>
           <h3>{t("education.2.title")}</h3>
           <p className="text-left">{t("education.2.body")}</p>
         </Col>
       </Row>
-    </div>
+    </Container>
   );
 }
 
+
+function Hobbies() {
+  const { t } = useTranslation();
+  return (
+    <Container>
+      <Row className="pt-5 mb-4 justify-content-center">
+        <Col xs={6} className="pt-2 pb-2 title rounded">
+          <h3>{t('navbar.hobbies')}</h3>
+        </Col>
+      </Row>
+      <Row className="pb-5">
+        <Col md={10}>
+          <div className="text-left">
+            <ul>
+              <li>
+                <h5>{t('hobbies.it')}</h5>
+              </li>
+              <li className="">
+                <h5>Sports</h5>
+                <ul>
+                  <li style={{ listStyleType: "none" }}>
+                    {" "}
+                    <GiFrisbee />{" "}
+                    <span className="ml-2 ">{t("hobbies.frisbee")}</span>
+                  </li>
+                  <li style={{ listStyleType: "none" }}>
+                    {" "}
+                    <img
+                      height="20px"
+                      src={Badminton}
+                      alt=""
+                    />
+                    <span className="ml-2 ">
+                      {t("hobbies.badminton")}
+                    </span>
+                  </li>
+                  <li style={{ listStyleType: "none" }}>
+                    {" "}
+                    <FaBasketballBall />{" "}
+                    <span className="ml-2 ">Basket-ball</span>
+                  </li>
+                  <li style={{ listStyleType: "none" }}>
+                    {" "}
+                    <FaTableTennis />{" "}
+                    <span className="ml-2 ">{t("hobbies.pingpong")}</span>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <h5>{t("hobbies.read")}</h5>
+              </li>
+              <li>
+                <h5>{t("hobbies.music")}</h5>
+              </li>
+            </ul>
+          </div>
+        </Col>
+      </Row>
+    </Container>
+  );
+}
 /**
  * Travel section, containing a leaflet map
  */
@@ -485,13 +518,13 @@ function Travel(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
 
   return (
-    <Container fluid id="Travels" className="grey pb-4 pl-md-5 pr-md-5">
+    <Container fluid id="Travels" className="grey pt-5 pb-4 pl-md-5 pr-md-5">
       <Row className="mb-4 justify-content-center">
         <Col xs={6} className="pt-2 pb-2 title rounded">
           <h2 className="">{t("navbar.travel")}</h2>
         </Col>
       </Row>
-      <Row className="mb-4 justify-content-center">
+      <Row className="pt-5 mb-4 justify-content-center">
         <Col md={10}>
           <CustomMap />
         </Col>
@@ -508,20 +541,13 @@ function Page(): ReactElement {
 
       <AppHeader />
 
-      <Skills />
-
       <Projects />
 
-      <Container fluid className="pl-md-5 pr-md-5">
-        <Row className="mr-0">
-          <Col xs={12} md className="">
-            <Experience />
-          </Col>
-          <Col>
-            <Education />
-          </Col>
-        </Row>
-      </Container>
+      <Experience />
+
+      <Education />
+
+      <Hobbies />
 
       <Travel />
 

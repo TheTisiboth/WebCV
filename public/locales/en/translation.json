@@ -12,7 +12,8 @@
     "skill": "Skills",
     "travel": "Travels",
     "projects" : "Projects",
-    "cv" : "Download CVs"
+    "cv" : "Download CVs",
+    "hobbies" : "Hobbies"
   },
   "me": {
     "work": "Software Engineer",

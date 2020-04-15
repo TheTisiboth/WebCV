@@ -12,7 +12,8 @@
     "skill": "Compétences",
     "travel": "Voyages",
     "projects" : "Projets",
-    "cv" : "Télécharger CV"
+    "cv" : "Télécharger CV",
+    "hobbies" : "Centres d'interêts"
   },
   "me": {
     "work": "Ingénieur Logiciel",

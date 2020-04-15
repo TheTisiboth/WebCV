@@ -20,15 +20,17 @@
 }
 
 .title {
-  background-color: #343a40;
-  color: white;
+  /* background-color: #343a40; */
+  background-color: #011638;
+  color: #cdcdcd;
+  /* color: white; */
 }
 
 .skills {
   background-color: rgb(211, 208, 208);
 }
 
-.badminton {
+.iconToWhite {
   filter: invert(100%);
   -webkit-filter: invert(100%);
 }
@@ -61,4 +63,3 @@
 .dropdown-menu .active {
   background: #343a40!important;
 }
-
