@@ -402,7 +402,7 @@ function History() {
     <Container id="History" className="pt-5">
       <Row className="mb-4 justify-content-center">
         <Col xs={6} className="pt-2 pb-2 mytitle rounded">
-          <h2 >History</h2>
+          <h2 >{t('navbar.history')}</h2>
         </Col>
       </Row>
       <Timeline lineColor={'#ddd'}>
