@@ -11,9 +11,10 @@
     "experience": "Experiences",
     "skill": "Compétences",
     "travel": "Voyages",
-    "projects" : "Projets",
-    "cv" : "Télécharger CV",
-    "hobbies" : "Centres d'interêts"
+    "projects": "Projets",
+    "cv": "Télécharger CV",
+    "hobbies": "Centres d'interêts",
+    "history" : "Historique"
   },
   "me": {
     "work": "Ingénieur Logiciel",
@@ -25,12 +26,29 @@
   "cvEnTooltip": "Télécharger mon CV en anglais",
   "experiences": {
     "0": {
-      "title": "5 mois - 2020 : Enovacom, Marseille",
+      "date" : "05/2020 - Présent",
+      "title": "Enovacom, Marseille",
       "body": "<0>Internationalisation de logiciel</0> : Aide à la mise en place du protocole de communication FHIR afin de pouvoir permettre un dialogue entre différents logiciels. Programmation logicielle (Java)."
     },
     "1": {
-      "title": "3 mois - 2019 : Motion Picture Association of America, Bruxelles",
+      "date" : "05/2019 - 08/2019",
+      "title": "Motion Picture Association of America, Bruxelles",
       "body": "<0>Automatisation de Web enquêtes</0> : Aide à la mise en place d'une interface Web permettant de lancer des scripts automatisant les enquêtes relatives aux sites mettant en ligne du contenu audiovisuel de manière illégale. Programmation Web (Jquery, PHP, Python ...)"
+    },
+    "2": {
+      "date" : "Eté 2018",
+      "title": "MacDonald's, Marseille",
+      "body": "<0>Équipier polyvalent</0> : Participation en cuisine à la préparation des commandes en suivant le protocole et les recettes préalablement définis"
+    }    ,
+    "3": {
+      "date" : "Été 2017",
+      "title": "Deliveroo, Grenoble",
+      "body": "<0>Auto-entrepreneur</0> : Livraison à domicile de nourriture à vélo."
+    },
+    "4": {
+      "date" : "Eté 2014 & 2015",
+      "title": "SEBBEN, Toulon",
+      "body": "<0>Entreprise multi-services</0> : Nettoyage des parties communes d'immeubles"
     }
   },
   "skills": {
@@ -45,15 +63,18 @@
   },
   "education": {
     "0": {
-      "title": "2016 - 2020 : École d'Ingénieur Polytech Grenoble",
+      "date": "2016 - 2020",
+      "title": "École d'Ingénieur Polytech Grenoble",
       "body": "Spécialité Réseaux Informatiques et Communication Multimédia, 5ème année"
     },
     "1": {
-      "title": "2014 - 2016 : Parcours des Élèves Ingénieurs Polytech (PEIP)",
+      "date": "2014 - 2016",
+      "title": "Parcours des Élèves Ingénieurs Polytech (PEIP)",
       "body": "Classe préparatoire intégrée à Polytech (Mathématique, Physique, Chimie, Informatique)"
     },
     "2": {
-      "title": "Juin 2014 : Bac S spécialité Informatique et Science du Numérique",
+      "date": "06/2016",
+      "title": "Bac S spécialité Informatique et Science du Numérique",
       "body": "Double cursus AbiBac (littérature et histoire allemande)"
     }
   },
@@ -66,14 +87,14 @@
     "basketball": "Basket-ball",
     "pingpong": "Tennis de table"
   },
-  "projects" : {
-    "0" : {
-      "title" : "1 mois - 2020: web CV",
-      "body" : "Création d'un web CV avec React. Il s'agit d'un projet personnel, visant à prendre en main react. Le déploiement à été fait grâce à Netlify, sur un nom de domaine enregistré sur Google Domains. Développement web (React, Bootstrap)."
+  "projects": {
+    "0": {
+      "title": "1 mois - 2020: web CV",
+      "body": "Création d'un web CV avec React. Il s'agit d'un projet personnel, visant à prendre en main react. Le déploiement à été fait grâce à Netlify, sur un nom de domaine enregistré sur Google Domains. Développement web (React, Bootstrap)."
     },
-    "1" : {
-      "title" : "3 semaines - 2018 : COLORicm",
-      "body" : "En tant que chef de groupe d'une équipe de 6 développeur, nous avons créé un jeu vidéo 2D en Java (swing), avec des controles en temps réels et des fonctionnalités modulaires, impliquants des automates, ce qui a permis de nous sensibiliser à la notion d'Intelligence Artificielle."
+    "1": {
+      "title": "3 semaines - 2018 : COLORicm",
+      "body": "En tant que chef de groupe d'une équipe de 6 développeur, nous avons créé un jeu vidéo 2D en Java (swing), avec des controles en temps réels et des fonctionnalités modulaires, impliquants des automates, ce qui a permis de nous sensibiliser à la notion d'Intelligence Artificielle."
     }
   },
   "travel": {

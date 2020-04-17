@@ -26,16 +26,16 @@
   color: white;
 }
 
-.title {
-  /* background-color: #343a40; */
-  background-color: #011638;
-  color: #cdcdcd;
-  /* color: white; */
+.mytitle {
+  background-color: #011638!important;
+  color: #cdcdcd!important;
+  /* padding: 5px 50px!important; */
 }
 
-.titleReverse{
-  background-color: #cdcdcd;
-  color: #011638;
+.titleReverse {
+  background-color: #cdcdcd!important;
+  color: #011638!important;
+  /* padding: 5px 50px!important; */
 }
 
 .skills {
@@ -74,4 +74,13 @@
 
 .dropdown-menu .active {
   background: #464d55!important;
+}
+
+.copyright {
+  border-radius: .25rem!important;
+}
+
+#enovacom {
+  margin-top: -20px;
+  margin-bottom: -20px;
 }

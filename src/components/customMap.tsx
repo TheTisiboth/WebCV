@@ -19,7 +19,7 @@ export default function CustomMap(): ReactElement<any> {
 
   const countryToString = (countries: string[]) => countries.join(", ");
 
-  const countries: position[] = [
+  let countries: position[] = [
     {
       // germany
       lat: 51.0834196,
@@ -130,7 +130,7 @@ export default function CustomMap(): ReactElement<any> {
     },
   ];
 
-  const cities: position[] = [
+  let cities: position[] = [
     {
       lat: 48.13825988769531,
       lon: 11.584508895874023,

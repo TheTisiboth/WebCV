@@ -10,9 +10,11 @@ import {
   Container,
   Figure,
   OverlayTrigger,
-  NavDropdown
+  NavDropdown,
+  ListGroup
 } from "react-bootstrap";
 import { scroller } from 'react-scroll';
+import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
 
 import { renderTooltip } from "./utils";
 import CustomMap from "./components/customMap";
@@ -128,15 +130,15 @@ function MyNavbar(): ReactElement {
     };
   });
 
-  const scrollOptions =  {
+  const scrollOptions = {
     smooth: true,
     offset: -40,
     duration: 500,
   };
 
   return (
-    <Navbar ref={nav} collapseOnSelect={true} expand="md" bg="dark" variant="dark" className="pt-0 pb-0" fixed="top">
-      <Navbar.Brand href="#home">
+    <Navbar id="nav" ref={nav} collapseOnSelect={true} expand="md" bg="dark" variant="dark" className="pt-0 pb-0" fixed="top">
+      <Nav.Link href="#App" onSelect={() => scroller.scrollTo('App', scrollOptions)}>
         <img
           alt=""
           src={logo}
@@ -145,23 +147,20 @@ function MyNavbar(): ReactElement {
           className="d-inline-block align-top"
         />{" "}
 
-      </Navbar.Brand>
+      </Nav.Link>
       <Navbar.Toggle ref={toggle} aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse ref={collapse} id="responsive-navbar-nav" className="pb-3 pb-md-0">
         <Nav className="mr-auto">
-          <Nav.Link className="" href="#Skills" onSelect={() => scroller.scrollTo('Skills',scrollOptions)}>
+          <Nav.Link className="" href="#Skills" onSelect={() => scroller.scrollTo('Skills', scrollOptions)}>
             {t("navbar.skill")}
           </Nav.Link>
-          <Nav.Link className="" href="#Projects" onSelect={() => scroller.scrollTo('Projects',scrollOptions)}>
+          <Nav.Link className="" href="#Projects" onSelect={() => scroller.scrollTo('Projects', scrollOptions)}>
             {t("navbar.projects")}
           </Nav.Link>
-          <Nav.Link className="" href="#Experiences" onSelect={() => scroller.scrollTo('Experiences',scrollOptions)}>
-            {t("navbar.experience")}
+          <Nav.Link className="" href="#History" onSelect={() => scroller.scrollTo('History', scrollOptions)}>
+            {t("navbar.history")}
           </Nav.Link>
-          <Nav.Link className="" href="#Education" onSelect={() => scroller.scrollTo('Education',scrollOptions)}>
-            {t("navbar.education")}
-          </Nav.Link>
-          <Nav.Link className="" href="#Travels" onSelect={() => scroller.scrollTo('Travels',scrollOptions)}>
+          <Nav.Link className="" href="#Travels" onSelect={() => scroller.scrollTo('Travels', scrollOptions)}>
             {t("navbar.travel")}
           </Nav.Link>
         </Nav>
@@ -236,7 +235,10 @@ function LeftHeader(): ReactElement {
             <h5>{t("me.livesIn")}</h5>
           </div>
           <div>
-            <h5>janleopro@gmail.com</h5>
+            <a href="mailto:janleopro@gmail.com" target="_blank" rel="noopener noreferrer">
+              <Button variant="secondary">pro@janleo.fr</Button>
+            </a>
+
           </div>
         </Col>
       </Row>
@@ -327,7 +329,7 @@ function Projects() {
   return (
     <Container id="Projects" className="pt-5">
       <Row className="mb-4 justify-content-center">
-        <Col xs={6} className="pt-2 pb-2 title rounded">
+        <Col xs={6} className="pt-2 pb-2 mytitle rounded">
           <h2 className="">{t("navbar.projects")}</h2>
         </Col>
       </Row>
@@ -391,32 +393,43 @@ function Projects() {
 }
 
 /**
- * Experience section
+ * Contains Education and professionnal experience
  */
-function Experience(): ReactElement {
-  const { t }: { t: TFunction } = useTranslation();
+function History() {
+  const { t } = useTranslation();
   return (
-    <Container id="Experiences" className="pt-5">
+
+    <Container id="History" className="pt-5">
       <Row className="mb-4 justify-content-center">
-        <Col xs={7} className="pt-2 pb-2 title rounded">
-          <h2 >
-            {t("navbar.experience")}
-          </h2>
+        <Col xs={6} className="pt-2 pb-2 mytitle rounded">
+          <h2 >History</h2>
         </Col>
       </Row>
-      <Row className="pt-5">
-        <Col md className="align-self-center">
-          <Figure>
-            <Figure.Image
-              height="30%"
-              width="30%"
-              alt="171x180"
-              src={enovacom}
-            />
-          </Figure>
-        </Col>
-        <Col md>
+      <Timeline lineColor={'#ddd'}>
+        <TimelineItem
+          key="001"
+          dateText={t("experiences.0.date")}
+          style={{ color: '#e86971' }}
+          bodyContainerStyle={{
+            background: '#ddd',
+            padding: '20px',
+            borderRadius: '8px',
+            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+          }}
+        >
+
+
           <h4>{t("experiences.0.title")}</h4>
+          <a href="https://www.enovacom.fr/" target="_blank" rel="noopener noreferrer">
+            <Figure id="enovacom">
+              <Figure.Image
+                height="75%"
+                width="75%"
+                alt="171x180"
+                src={enovacom}
+              />
+            </Figure>
+          </a>
           <p className="text-left">
             <Trans i18nKey="experiences.0.body">
               <strong>Software internationalization</strong> : Adapt the
@@ -424,21 +437,31 @@ function Experience(): ReactElement {
               Software development (Java).
             </Trans>
           </p>
-        </Col>
-      </Row>
-      <Row className="pt-5 pb-5">
-        <Col md className="align-self-center">
-          <Figure>
-            <Figure.Image
-              height="20%"
-              width="20%"
-              alt="171x180"
-              src={mpaa}
-            />
-          </Figure>
-        </Col>
-        <Col md className="align-self-center">
+
+        </TimelineItem>
+        <TimelineItem
+          key="002"
+          dateText={t("experiences.1.date")}
+          style={{ color: '#e86971' }}
+          bodyContainerStyle={{
+            background: '#ddd',
+            padding: '20px',
+            borderRadius: '8px',
+            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+          }}
+        >
+
           <h4>{t("experiences.1.title")}</h4>
+          <a href="https://www.motionpictures.org/" target="_blank" rel="noopener noreferrer">
+            <Figure className="mt-4">
+              <Figure.Image
+                height="20%"
+                width="20%"
+                alt="171x180"
+                src={mpaa}
+              />
+            </Figure>
+          </a>
           <p className="text-left">
             <Trans i18nKey="experiences.1.body">
               <strong>Automatisation of Web investigation </strong>: Website
@@ -448,57 +471,112 @@ function Experience(): ReactElement {
               Python ...)
             </Trans>
           </p>
-        </Col>
-      </Row>
-    </Container>
-  );
-}
 
+        </TimelineItem>
+        <TimelineItem
+          key="003"
+          dateText={t("education.0.date")}
+          dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
+          style={{ color: '#61b8ff' }}
 
-/**
- * Education section
- */
-function Education(): ReactElement {
-  const { t }: { t: TFunction } = useTranslation();
-  return (
-    <Container id="Education" className="pt-5">
-      <Row className="mb-4 justify-content-center">
-        <Col xs={6} className="pt-2 pb-2 title rounded">
-          <h2 >{t("navbar.education")}</h2>
-        </Col>
-      </Row>
-
-      <Row className="pt-5 text-left justify-content-center">
-        <Col md={8}>
+        >
           <h4>{t("education.0.title")}</h4>
           <p className="text-left">{t("education.0.body")}</p>
-        </Col>
-      </Row>
+        </TimelineItem>
+        <TimelineItem
+          key="004"
+          dateText={t("experiences.2.date")}
+          style={{ color: '#e86971' }}
+          bodyContainerStyle={{
+            background: '#ddd',
+            padding: '20px',
+            borderRadius: '8px',
+            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+          }}
+        >
+          <h4>{t("experiences.2.title")}</h4>
+          <p className="text-left">
+            <Trans i18nKey="experiences.2.body">
+              <strong>Software internationalization</strong> : Adapt the
+              software to communicate thanks to a communication protocol.
+              Software development (Java).
+            </Trans>
+          </p>
 
-      <Row className="text-left justify-content-center pt-3">
-        <Col md={8}>
+        </TimelineItem>
+        <TimelineItem
+          key="005"
+          dateText={t("experiences.3.date")}
+          style={{ color: '#e86971' }}
+          bodyContainerStyle={{
+            background: '#ddd',
+            padding: '20px',
+            borderRadius: '8px',
+            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+          }}
+        >
+          <h4>{t("experiences.3.title")}</h4>
+          <p className="text-left">
+            <Trans i18nKey="experiences.3.body">
+              <strong>Software internationalization</strong> : Adapt the
+              software to communicate thanks to a communication protocol.
+              Software development (Java).
+            </Trans>
+          </p>
+
+        </TimelineItem>
+        <TimelineItem
+          key="006"
+          dateText={t("education.1.date")}
+          dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
+          style={{ color: '#61b8ff' }}
+
+        >
           <h4>{t("education.1.title")}</h4>
           <p className="text-left">{t("education.1.body")}</p>
-        </Col>
-      </Row>
+        </TimelineItem>
+        <TimelineItem
+          key="007"
+          dateText={t("education.2.date")}
+          dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
+          style={{ color: '#61b8ff' }}
 
-      <Row className="pb-5 text-left justify-content-center pt-3">
-        <Col md={8}>
+        >
           <h4>{t("education.2.title")}</h4>
           <p className="text-left">{t("education.2.body")}</p>
-        </Col>
-      </Row>
+        </TimelineItem>
+        <TimelineItem
+          key="008"
+          dateText={t("experiences.4.date")}
+          style={{ color: '#e86971' }}
+          bodyContainerStyle={{
+            background: '#ddd',
+            padding: '20px',
+            borderRadius: '8px',
+            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+          }}
+        >
+          <h4>{t("experiences.4.title")}</h4>
+          <p className="text-left">
+            <Trans i18nKey="experiences.4.body">
+              <strong>Software internationalization</strong> : Adapt the
+              software to communicate thanks to a communication protocol.
+              Software development (Java).
+            </Trans>
+          </p>
+
+        </TimelineItem>
+      </Timeline>
     </Container>
   );
 }
-
 
 function Hobbies() {
   const { t } = useTranslation();
   return (
     <Container>
       <Row className="pt-5 mb-4 justify-content-center">
-        <Col xs={6} className="pt-2 pb-2 title rounded">
+        <Col xs={6} className="pt-2 pb-2 mytitle rounded">
           <h3>{t('navbar.hobbies')}</h3>
         </Col>
       </Row>
@@ -563,7 +641,7 @@ function Travel(): ReactElement {
   return (
     <Container id="Travels" className="pt-5 pb-4">
       <Row className="mb-4 justify-content-center">
-        <Col xs={6} className="pt-2 pb-2 title rounded">
+        <Col xs={6} className="pt-2 pb-2 mytitle rounded">
           <h2 className="">{t("navbar.travel")}</h2>
         </Col>
       </Row>
@@ -576,14 +654,27 @@ function Travel(): ReactElement {
   );
 }
 
+
 function Footer() {
+  const scrollOptions = {
+    smooth: true,
+    offset: -40,
+    duration: 500,
+  };
   return (
     <Container>
-      <ul>
-        <li>qsd</li>
-        <li>qs</li>
-        <li>qsddqsd</li>
-      </ul>
+      <ListGroup horizontal  className="justify-content-center copyright pt-2">
+        <ListGroup.Item className="copyright" variant="dark">© 2020 Copyright: Léo Jan</ListGroup.Item>
+
+      </ListGroup>
+      <Row>
+        <Col>
+          <Nav.Link className="" href="#App" onSelect={() => scroller.scrollTo('App', scrollOptions)}>
+            Retour en haut
+          </Nav.Link>
+
+        </Col>
+      </Row>
     </Container>
   );
 }
@@ -591,18 +682,16 @@ function Footer() {
 // page uses the hook
 function Page(): ReactElement {
   return (
-    <div className="App">
+    <div id="App" className="App">
       <MyNavbar />
 
       <AppHeader />
+
       <section className="grey">
         <Projects />
       </section>
       <section>
-        <Experience />
-      </section>
-      <section className="grey">
-        <Education />
+        <History />
       </section>
       <section>
         <Hobbies />
@@ -623,7 +712,7 @@ function WIP(): ReactElement {
   return (
     <Container className="mt-4">
       <Row className="mb-2 justify-content-center">
-        <Col md={6} className="title rounded pt-2 pb-2">
+        <Col md={6} className="mytitle rounded pt-2 pb-2">
           <h2 className="">{t("wip.title")}</h2>
         </Col>
       </Row>
