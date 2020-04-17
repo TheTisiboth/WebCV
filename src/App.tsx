@@ -693,10 +693,10 @@ function Page(): ReactElement {
       <section>
         <History />
       </section>
-      <section>
+      <section className="grey">
         <Hobbies />
       </section>
-      <section className="grey">
+      <section>
         <Travel />
       </section>
       <WIP />
