@@ -25,6 +25,7 @@ import {
   FaGithub,
   FaBasketballBall,
   FaTableTennis,
+  FaArrowUp
 } from "react-icons/fa";
 import { GiFrisbee } from "react-icons/gi";
 import { AiOutlineGitlab } from "react-icons/ai";
@@ -670,7 +671,7 @@ function Footer() {
       <Row>
         <Col>
           <Nav.Link className="" href="#App" onSelect={() => scroller.scrollTo('App', scrollOptions)}>
-            Retour en haut
+            <FaArrowUp />Retour en haut<FaArrowUp />
           </Nav.Link>
 
         </Col>
