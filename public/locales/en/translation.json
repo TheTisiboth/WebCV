@@ -69,7 +69,7 @@
     },
     "1": {
       "date" : "2014 - 2016",
-      "title": "PEIP Marseille",
+      "title": "PEIP, Marseille",
       "body": "Preparatory classes : two-year undergraduate intensive course in mathematics, physics, chemistry, and IT"
     },
     "2": {
@@ -90,11 +90,20 @@
   "projects" : {
     "0" : {
       "title" : "1 month - 2020: web CV",
-      "body" : "Web CV creation, with React. It is a personnal project, in order to master React. Deployement with the help of Netlify, on a custom domain name registered on Google Domains. Web development (React, Bootstrap)."
+      "body" : "Web CV creation, with React. It is a personnal project, in order to master React. Deployement in production with the help of Netlify, on a custom domain name registered on Google Domains."
     },
     "1" : {
+      "title" : "3 month - 2020 : Kine 2.0",
+      "body" : "Creation of 2 websites : one for the physiotherapist, so they can manage their patients, and monitor their activities, and one for the patients, so they can do their rehabilitation exercise at home. This project was carried out at the request of our client Vestib+, which is a Kinesitherapy practice specializing in balance disorders."
+    },
+    "2" : {
+      "title" : "2.5 month - 2019 : Guc Voile",
+      "body" : "Creation of a website that helps the sailing club member to rent some sailing equipment in advance."
+    },
+    
+    "3" : {
       "title" : "3 weeks - 2018 : COLORicm",
-      "body" : "As a group Leader of a team of 6, we developped a 2D video game in java (swing), with real-time controls and modular features, involving automatons, introducing the notion of artificial intelligence"
+      "body" : "As a group Leader of a team of 6, we developped a 2D video game in java (swing), with real-time controls and modular features, involving automatons, introducing the notion of artificial intelligence."
     }
   },
   "travel": {
