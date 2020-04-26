@@ -16,7 +16,6 @@ import {
 } from "react-bootstrap";
 import { scroller } from 'react-scroll';
 import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
-
 import { renderTooltip } from "./utils";
 import CustomMap from "./components/customMap";
 import { Skills } from "./components/skills";
