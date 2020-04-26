@@ -19,7 +19,7 @@ import HTML from "../assets/html.png";
 import JQUERY from "../assets/jquery.png";
 import MONGODB from "../assets/mongodb.png";
 import ANGULAR from "../assets/angular.png";
-import PHP from "../assets/php.svg";
+import PHP from "../assets/php.png";
 import SQL from "../assets/sql.png";
 import REACT from "../assets/react.svg";
 import GIT from "../assets/git.png";
@@ -132,8 +132,7 @@ export function Skills(props: { skill: string; }): ReactElement {
             {
                 image: HTML,
                 href: "https://en.wikipedia.org/wiki/HTML",
-                tooltip: "HTML",
-                size: 42
+                tooltip: "HTML"
             },
             {
                 image: CSS,
@@ -175,7 +174,6 @@ export function Skills(props: { skill: string; }): ReactElement {
                 image: SQL,
                 href: "https://en.wikipedia.org/wiki/SQL",
                 tooltip: "SQL",
-                size: 55
             }
         ]
     };

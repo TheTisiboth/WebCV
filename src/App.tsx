@@ -357,7 +357,7 @@ function Projects() {
           <h3>{t('projects.0.title')}</h3>
           <p className="text-left">{t('projects.0.body')}</p>
           <Row>
-            <Col>
+            <Col xs={4}>
               <a
                 href="https://github.com/TheTisiboth/WebCV"
                 target="_blank"
@@ -394,7 +394,7 @@ function Projects() {
           <h3>{t('projects.1.title')}</h3>
           <p className="text-left">{t('projects.1.body')}</p>
           <Row>
-            <Col>
+            <Col xs={4}>
               <a
                 href="https://gitlab.com/Eva_B/reeducation_kine_connecte"
                 target="_blank"
@@ -431,7 +431,7 @@ function Projects() {
           <h3>{t('projects.2.title')}</h3>
           <p className="text-left">{t('projects.2.body')}</p>
           <Row>
-            <Col>
+            <Col xs={4}>
               <a
                 href="https://gitlab.com/Polytech-INFO5-2019-2020/g3/2019-2020-ecom-info5-root"
                 target="_blank"
@@ -445,6 +445,7 @@ function Projects() {
               </a>
             </Col>
             <Col className="pl-0 pr-0">
+            <Skills skill="JHipster" />
               <Skills skill="Angular" />
               <Skills skill="Spring" />
               <Skills skill="Postgre" />
@@ -469,7 +470,7 @@ function Projects() {
           <p className="text-left">{t('projects.3.body')}</p>
 
           <Row>
-            <Col>
+            <Col xs={4}>
               <a
                 href="https://github.com/TheTisiboth/PLA_2018"
                 target="_blank"
