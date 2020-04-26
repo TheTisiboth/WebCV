@@ -69,7 +69,7 @@
     },
     "1": {
       "date": "2014 - 2016",
-      "title": "Parcours des Élèves Ingénieurs Polytech (PEIP)",
+      "title": "Parcours des Élèves Ingénieurs Polytech (PEIP), Marseille",
       "body": "Classe préparatoire intégrée à Polytech (Mathématique, Physique, Chimie, Informatique)"
     },
     "2": {
@@ -90,9 +90,17 @@
   "projects": {
     "0": {
       "title": "1 mois - 2020: web CV",
-      "body": "Création d'un web CV avec React. Il s'agit d'un projet personnel, visant à prendre en main react. Le déploiement à été fait grâce à Netlify, sur un nom de domaine enregistré sur Google Domains. Développement web (React, Bootstrap)."
+      "body": "Création d'un web CV avec React. Il s'agit d'un projet personnel, visant à prendre en main react. Le déploiement en production à été fait grâce à Netlify, sur un nom de domaine enregistré sur Google Domains."
     },
-    "1": {
+    "1" : {
+      "title" : "3 mois - 2020 : Kine 2.0",
+      "body" : "Création de 2 sites web : un pour les kinesithérapeuthes afin qu'ils gèrent leur patient, et puissent suivre leurs activitées, et un pour les patients, afin qu'ils puissent faire leurs exercices de rééducation à la maison. Ce projet à été réalisé à la demande de notre client Vestib+, qui est un cabinet de Kinesithérapie, spécialisé dans les troubles de l'équilibre."
+    },
+    "2" : {
+      "title" : "2,5 mois - 2019 : Guc Voile",
+      "body" : "Création d'un site de e-commerce permettant la location de materiel de voile pour les membres du club Guc voile de Grenoble."
+    },
+    "3": {
       "title": "3 semaines - 2018 : COLORicm",
       "body": "En tant que chef de groupe d'une équipe de 6 développeur, nous avons créé un jeu vidéo 2D en Java (swing), avec des controles en temps réels et des fonctionnalités modulaires, impliquants des automates, ce qui a permis de nous sensibiliser à la notion d'Intelligence Artificielle."
     }

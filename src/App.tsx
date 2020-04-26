@@ -11,7 +11,8 @@ import {
   Figure,
   OverlayTrigger,
   NavDropdown,
-  ListGroup
+  ListGroup,
+  Badge
 } from "react-bootstrap";
 import { scroller } from 'react-scroll';
 import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
@@ -25,7 +26,8 @@ import {
   FaGithub,
   FaBasketballBall,
   FaTableTennis,
-  FaArrowUp
+  FaArrowUp,
+  FaGitlab
 } from "react-icons/fa";
 import { GiFrisbee } from "react-icons/gi";
 import { AiOutlineGitlab } from "react-icons/ai";
@@ -38,8 +40,14 @@ import CV_EN from "./assets/CV_EN_Leo_Jan.pdf";
 import Badminton from "./assets/badminton.png";
 import webCV from "./assets/projects/webCV.png";
 import coloricm from "./assets/projects/coloricm.png";
+import kine from "./assets/projects/kine.png";
+import guc from "./assets/projects/guc.png";
 import mpaa from "./assets/mpaa.png";
 import enovacom from "./assets/enovacom.png";
+import polytech from "./assets/polytech.png";
+import peip from "./assets/peip.png";
+import mcdonalds from "./assets/mcdonalds.png";
+import deliveroo from "./assets/deliveroo.png";
 import { TFunction } from 'i18next';
 
 require("./global.d.ts");
@@ -236,7 +244,7 @@ function LeftHeader(): ReactElement {
             <h5>{t("me.livesIn")}</h5>
           </div>
           <div>
-            <a href="mailto:janleopro@gmail.com" target="_blank" rel="noopener noreferrer">
+            <a href="mailto:pro@janleo.fr" target="_blank" rel="noopener noreferrer">
               <Button variant="secondary">pro@janleo.fr</Button>
             </a>
 
@@ -330,11 +338,11 @@ function Projects() {
   return (
     <Container id="Projects" className="pt-5">
       <Row className="mb-4 justify-content-center">
-        <Col xs={6} className="pt-2 pb-2 mytitle rounded">
-          <h2 className="">{t("navbar.projects")}</h2>
+        <Col xs md={8} className="pt-2 pb-2">
+          <Badge><h2 className="mytitle titles rounded ">{t("navbar.projects")}</h2></Badge>
         </Col>
       </Row>
-      <Row className="pt-5 justify-content-center">
+      <Row className="justify-content-center pt-5 pb-5 mt-3 mb-3">
         <Col xs={12} md>
           <Figure>
             <Figure.Image
@@ -348,17 +356,29 @@ function Projects() {
         <Col xs={12} md className="align-self-center pr-5">
           <h3>{t('projects.0.title')}</h3>
           <p className="text-left">{t('projects.0.body')}</p>
-          <a
-            href="https://github.com/TheTisiboth/WebCV"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <IconContext.Provider value={{ size: "2em" }}>
-              <div>
-                <FaGithub />
-              </div>
-            </IconContext.Provider>
-          </a>
+          <Row>
+            <Col>
+              <a
+                href="https://github.com/TheTisiboth/WebCV"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconContext.Provider value={{ size: "2em" }}>
+                  <div>
+                    <FaGithub />
+
+                  </div>
+                </IconContext.Provider>
+              </a>
+            </Col>
+            <Col>
+              <Skills skill="React" />
+              <Skills skill="Bootstrap" />
+            </Col>
+          </Row>
+
+
+
         </Col>
       </Row>
 
@@ -366,27 +386,112 @@ function Projects() {
         <Col xs={12} md>
           <Figure>
             <Figure.Image
-              height="60%"
-              width="60%"
+              height="75%"
+              width="75%"
               alt="171x180"
-              src={coloricm}
+              src={kine}
             />
           </Figure>
         </Col>
         <Col xs={12} md className="align-self-center pr-5">
           <h3>{t('projects.1.title')}</h3>
           <p className="text-left">{t('projects.1.body')}</p>
-          <a
-            href="https://github.com/TheTisiboth/PLA_2018"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <IconContext.Provider value={{ size: "2em" }}>
-              <div>
-                <FaGithub />
-              </div>
-            </IconContext.Provider>
-          </a>
+          <Row>
+            <Col>
+              <a
+                href="https://gitlab.com/Eva_B/reeducation_kine_connecte"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconContext.Provider value={{ size: "2em" }}>
+                  <div>
+                    <FaGitlab />
+                  </div>
+                </IconContext.Provider>
+              </a>
+            </Col>
+            <Col className="pl-0 pr-0">
+              <Skills skill="Angular" />
+              <Skills skill="MongoDB" />
+              <Skills skill="Node" />
+            </Col>
+          </Row>
+
+        </Col>
+      </Row>
+      <Row className="justify-content-center pt-5 pb-5 mt-3 mb-3">
+        <Col xs={12} md>
+          <Figure>
+            <Figure.Image
+              height="75%"
+              width="75%"
+              alt="171x180"
+              src={guc}
+            />
+          </Figure>
+        </Col>
+        <Col xs={12} md className="align-self-center pr-5">
+          <h3>{t('projects.2.title')}</h3>
+          <p className="text-left">{t('projects.2.body')}</p>
+          <Row>
+            <Col>
+              <a
+                href="https://gitlab.com/Polytech-INFO5-2019-2020/g3/2019-2020-ecom-info5-root"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconContext.Provider value={{ size: "2em" }}>
+                  <div>
+                    <FaGitlab />
+                  </div>
+                </IconContext.Provider>
+              </a>
+            </Col>
+            <Col className="pl-0 pr-0">
+              <Skills skill="Angular" />
+              <Skills skill="Spring" />
+              <Skills skill="Postgre" />
+            </Col>
+          </Row>
+
+
+        </Col>
+      </Row>
+
+      <Row className="justify-content-center pt-5 pb-5 mt-3 mb-3">
+        <Col xs={12} md>
+          <Figure>
+            <Figure.Image
+              height="75%"
+              width="75%"
+              alt="171x180"
+              src={coloricm}
+            />
+          </Figure>
+        </Col>
+        <Col xs={12} md className="align-self-center pr-5">
+          <h3>{t('projects.3.title')}</h3>
+          <p className="text-left">{t('projects.3.body')}</p>
+
+          <Row>
+            <Col>
+              <a
+                href="https://github.com/TheTisiboth/PLA_2018"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <IconContext.Provider value={{ size: "2em" }}>
+                  <div>
+                    <FaGithub />
+                  </div>
+                </IconContext.Provider>
+              </a>
+            </Col>
+            <Col>
+              <Skills skill="Java" />
+            </Col>
+          </Row>
+
         </Col>
       </Row>
     </Container>
@@ -402,8 +507,8 @@ function History() {
 
     <Container id="History" className="pt-5">
       <Row className="mb-4 justify-content-center">
-        <Col xs={6} className="pt-2 pb-2 mytitle rounded">
-          <h2 >{t('navbar.history')}</h2>
+        <Col xs md={8} className="pt-2 pb-2">
+          <Badge><h2 className="mytitle titles rounded ">{t('navbar.history')}</h2></Badge>
         </Col>
       </Row>
       <Timeline lineColor={'#ddd'}>
@@ -482,6 +587,16 @@ function History() {
 
         >
           <h4>{t("education.0.title")}</h4>
+          <a href="https://www.polytech-grenoble.fr/" target="_blank" rel="noopener noreferrer">
+            <Figure className="mt-3">
+              <Figure.Image
+                height="30%"
+                width="30%"
+                alt="171x180"
+                src={polytech}
+              />
+            </Figure>
+          </a>
           <p className="text-left">{t("education.0.body")}</p>
         </TimelineItem>
         <TimelineItem
@@ -496,6 +611,16 @@ function History() {
           }}
         >
           <h4>{t("experiences.2.title")}</h4>
+          <a href="https://www.mcdonalds.fr/" target="_blank" rel="noopener noreferrer">
+            <Figure className="mt-3">
+              <Figure.Image
+                height="15%"
+                width="15%"
+                alt="171x180"
+                src={mcdonalds}
+              />
+            </Figure>
+          </a>
           <p className="text-left">
             <Trans i18nKey="experiences.2.body">
               <strong>Software internationalization</strong> : Adapt the
@@ -517,6 +642,16 @@ function History() {
           }}
         >
           <h4>{t("experiences.3.title")}</h4>
+          <a href="https://deliveroo.fr" target="_blank" rel="noopener noreferrer">
+            <Figure className="mt-3">
+              <Figure.Image
+                height="20%"
+                width="20%"
+                alt="171x180"
+                src={deliveroo}
+              />
+            </Figure>
+          </a>
           <p className="text-left">
             <Trans i18nKey="experiences.3.body">
               <strong>Software internationalization</strong> : Adapt the
@@ -534,17 +669,17 @@ function History() {
 
         >
           <h4>{t("education.1.title")}</h4>
+          <a href="https://polytech.univ-amu.fr/formations/cycle-preparatoire" target="_blank" rel="noopener noreferrer">
+            <Figure className="mt-3">
+              <Figure.Image
+                height="17%"
+                width="17%"
+                alt="171x180"
+                src={peip}
+              />
+            </Figure>
+          </a>
           <p className="text-left">{t("education.1.body")}</p>
-        </TimelineItem>
-        <TimelineItem
-          key="007"
-          dateText={t("education.2.date")}
-          dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
-          style={{ color: '#61b8ff' }}
-
-        >
-          <h4>{t("education.2.title")}</h4>
-          <p className="text-left">{t("education.2.body")}</p>
         </TimelineItem>
         <TimelineItem
           key="008"
@@ -565,7 +700,26 @@ function History() {
               Software development (Java).
             </Trans>
           </p>
+        </TimelineItem>
+        <TimelineItem
+          key="007"
+          dateText={t("education.2.date")}
+          dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
+          style={{ color: '#61b8ff' }}
 
+        >
+          <h4>{t("education.2.title")}</h4>
+          {/* <a href="https://www.polytech-grenoble.fr/" target="_blank" rel="noopener noreferrer">
+            <Figure className="mt-3">
+              <Figure.Image
+                height="30%"
+                width="30%"
+                alt="171x180"
+                src={polytech}
+              />
+            </Figure>
+          </a> */}
+          <p className="text-left">{t("education.2.body")}</p>
         </TimelineItem>
       </Timeline>
     </Container>
@@ -577,8 +731,10 @@ function Hobbies() {
   return (
     <Container>
       <Row className="pt-5 mb-4 justify-content-center">
-        <Col xs={6} className="pt-2 pb-2 mytitle rounded">
-          <h3>{t('navbar.hobbies')}</h3>
+        <Col xs className="pt-2 pb-2">
+          <Badge>
+            <h2 className="mytitle titles rounded ">{t('navbar.hobbies')}</h2>
+          </Badge>
         </Col>
       </Row>
       <Row className="pb-5">
@@ -642,8 +798,10 @@ function Travel(): ReactElement {
   return (
     <Container id="Travels" className="pt-5 pb-4">
       <Row className="mb-4 justify-content-center">
-        <Col xs={6} className="pt-2 pb-2 mytitle rounded">
-          <h2 className="">{t("navbar.travel")}</h2>
+        <Col xs={8} className="pt-2 pb-2">
+        <Badge>
+            <h2 className="mytitle titles rounded ">{t("navbar.travel")}</h2>
+          </Badge>
         </Col>
       </Row>
       <Row className="pt-5 mb-4 justify-content-center">
@@ -664,7 +822,7 @@ function Footer() {
   };
   return (
     <Container>
-      <ListGroup horizontal  className="justify-content-center copyright pt-2">
+      <ListGroup horizontal className="justify-content-center copyright pt-2">
         <ListGroup.Item className="copyright" variant="dark">© 2020 Copyright: Léo Jan</ListGroup.Item>
 
       </ListGroup>
