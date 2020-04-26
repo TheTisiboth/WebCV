@@ -79,9 +79,8 @@ function Skill(props: any): ReactElement {
 /**
  * Display a list of skill
  */
-export function Skills(props: any): ReactElement {
+export function Skills(props: { skill: string; }): ReactElement {
     const { t } = useTranslation();
-
     const system: skills =
     {
         title: t("skills.system"),
@@ -228,7 +227,7 @@ export function Skills(props: any): ReactElement {
 
     const row1: skills[] = [system, software];
     const row2: skills[] = [web, others];
-    if (!props.skill) {
+    if (props.skill === "") {
         return (
             <div id="Skills" className="text-center pt-5 pt-md-2 pr-0 pr-md-5">
                 <Row className=" justify-content-center">
@@ -301,7 +300,7 @@ export function Skills(props: any): ReactElement {
         let mySkill = null;
         arr.map(skills => {
             skills.skills.map(skill => {
-                if (skill.tooltip.includes(props.skill))
+                if (skill.tooltip.includes(props!.skill))
                     mySkill = skill;
             })
         })

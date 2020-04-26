@@ -261,7 +261,7 @@ function LeftHeader(): ReactElement {
 function RightHeader(): ReactElement {
   // const { t }: { t: TFunction } = useTranslation();
   return (
-    <Skills />
+    <Skills skill="" />
   );
 }
 
