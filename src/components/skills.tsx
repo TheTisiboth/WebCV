@@ -236,18 +236,18 @@ export function Skills(props: { skill: string; }): ReactElement {
                     </Col>
                 </Row>
                 <Row className="justify-content-center pt-4">
-                    {row1.map((skills: skills): ReactElement => {
+                    {row1.map((s: skills): ReactElement => {
                         return (
 
-                            <Col key={skills.title} md={6}>
+                            <Col key={s.title} md={6}>
                                 <Row>
                                     <Col>
-                                        <h5>{skills.title}</h5>
+                                        <h5>{s.title}</h5>
                                     </Col>
                                 </Row>
                                 <Row className="justify-content-center">
                                     <Col>
-                                        {skills.skills.map((skill: skill): ReactElement => {
+                                        {s.skills.map((skill: skill): ReactElement => {
                                             return (
 
                                                 <Skill
@@ -266,18 +266,18 @@ export function Skills(props: { skill: string; }): ReactElement {
                     }
                 </Row>
                 <Row >
-                    {row2.map((skills: skills): ReactElement => {
+                    {row2.map((s: skills): ReactElement => {
                         return (
 
-                            <Col key={skills.title} md={6}>
+                            <Col key={s.title} md={6}>
                                 <Row>
                                     <Col>
-                                        <h5>{skills.title}</h5>
+                                        <h5>{s.title}</h5>
                                     </Col>
                                 </Row>
                                 <Row className="justify-content-center">
                                     <Col xs={6} md>
-                                        {skills.skills.map((skill: skill, index: number) => {
+                                        {s.skills.map((skill: skill, index: number): ReactElement => {
                                             return (
                                                 <Skill
                                                     skill={skill}
