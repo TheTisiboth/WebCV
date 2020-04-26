@@ -376,9 +376,6 @@ function Projects() {
               <Skills skill="Bootstrap" />
             </Col>
           </Row>
-
-
-
         </Col>
       </Row>
 
@@ -453,8 +450,6 @@ function Projects() {
               <Skills skill="Postgre" />
             </Col>
           </Row>
-
-
         </Col>
       </Row>
 
@@ -491,7 +486,6 @@ function Projects() {
               <Skills skill="Java" />
             </Col>
           </Row>
-
         </Col>
       </Row>
     </Container>
@@ -523,8 +517,6 @@ function History() {
             boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
           }}
         >
-
-
           <h4>{t("experiences.0.title")}</h4>
           <a href="https://www.enovacom.fr/" target="_blank" rel="noopener noreferrer">
             <Figure id="enovacom">
@@ -709,16 +701,6 @@ function History() {
 
         >
           <h4>{t("education.2.title")}</h4>
-          {/* <a href="https://www.polytech-grenoble.fr/" target="_blank" rel="noopener noreferrer">
-            <Figure className="mt-3">
-              <Figure.Image
-                height="30%"
-                width="30%"
-                alt="171x180"
-                src={polytech}
-              />
-            </Figure>
-          </a> */}
           <p className="text-left">{t("education.2.body")}</p>
         </TimelineItem>
       </Timeline>
@@ -799,7 +781,7 @@ function Travel(): ReactElement {
     <Container id="Travels" className="pt-5 pb-4">
       <Row className="mb-4 justify-content-center">
         <Col xs={8} className="pt-2 pb-2">
-        <Badge>
+          <Badge>
             <h2 className="mytitle titles rounded ">{t("navbar.travel")}</h2>
           </Badge>
         </Col>
@@ -831,7 +813,6 @@ function Footer() {
           <Nav.Link className="" href="#App" onSelect={() => scroller.scrollTo('App', scrollOptions)}>
             <FaArrowUp />Retour en haut<FaArrowUp />
           </Nav.Link>
-
         </Col>
       </Row>
     </Container>
@@ -887,8 +868,6 @@ function WIP(): ReactElement {
 // loading component for suspense fallback
 const Loader = (): ReactElement => (
   <div className="App">
-    {/* <img src={logoLoader} className="App-logo" alt="logo" />
-    <div>loading...</div> */}
   </div>
 );
 
