@@ -520,7 +520,7 @@ function History() {
         >
           <h4>{t("experiences.0.title")}</h4>
           <a href="https://www.enovacom.fr/" target="_blank" rel="noopener noreferrer">
-            <Figure id="enovacom">
+            <Figure className="mt-4">
               <Figure.Image
                 height="75%"
                 width="75%"
@@ -809,10 +809,10 @@ function Footer() {
         <ListGroup.Item className="copyright" variant="dark">© 2020 Copyright: Léo Jan</ListGroup.Item>
 
       </ListGroup>
-      <Row>
-        <Col>
+      <Row className="justify-content-center">
+        <Col md={3}>
           <Nav.Link className="" href="#App" onSelect={() => scroller.scrollTo('App', scrollOptions)}>
-            <FaArrowUp />Retour en haut<FaArrowUp />
+            <FaArrowUp className="mr-1"/>Retour en haut<FaArrowUp className="ml-1" />
           </Nav.Link>
         </Col>
       </Row>
