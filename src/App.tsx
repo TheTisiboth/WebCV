@@ -47,6 +47,7 @@ import polytech from "./assets/polytech.png";
 import peip from "./assets/peip.png";
 import mcdonalds from "./assets/mcdonalds.png";
 import deliveroo from "./assets/deliveroo.png";
+import sebben from "./assets/sebben.png";
 import { TFunction } from 'i18next';
 
 require("./global.d.ts");
@@ -370,7 +371,7 @@ function Projects() {
                 </IconContext.Provider>
               </a>
             </Col>
-            <Col>
+            <Col className="text-right pr-md-5">
               <Skills skill="React" />
               <Skills skill="Bootstrap" />
             </Col>
@@ -406,7 +407,7 @@ function Projects() {
                 </IconContext.Provider>
               </a>
             </Col>
-            <Col className="pl-0 pr-0">
+            <Col className="text-right pr-md-5">
               <Skills skill="Angular" />
               <Skills skill="MongoDB" />
               <Skills skill="Node" />
@@ -443,7 +444,7 @@ function Projects() {
                 </IconContext.Provider>
               </a>
             </Col>
-            <Col className="pl-0 pr-0">
+            <Col className="text-right pr-0 pr-md-5">
             <Skills skill="JHipster" />
               <Skills skill="Angular" />
               <Skills skill="Spring" />
@@ -482,7 +483,7 @@ function Projects() {
                 </IconContext.Provider>
               </a>
             </Col>
-            <Col>
+            <Col className="text-right pr-md-5">
               <Skills skill="Java" />
             </Col>
           </Row>
@@ -521,8 +522,8 @@ function History() {
           <a href="https://www.enovacom.fr/" target="_blank" rel="noopener noreferrer">
             <Figure className="mt-4">
               <Figure.Image
-                height="75%"
-                width="75%"
+                height="120"
+                width="120px"
                 alt="171x180"
                 src={enovacom}
               />
@@ -553,8 +554,8 @@ function History() {
           <a href="https://www.motionpictures.org/" target="_blank" rel="noopener noreferrer">
             <Figure className="mt-4">
               <Figure.Image
-                height="20%"
-                width="20%"
+                height="80px"
+                width="80px"
                 alt="171x180"
                 src={mpaa}
               />
@@ -582,8 +583,8 @@ function History() {
           <a href="https://www.polytech-grenoble.fr/" target="_blank" rel="noopener noreferrer">
             <Figure className="mt-3">
               <Figure.Image
-                height="30%"
-                width="30%"
+                height="160px"
+                width="160px"
                 alt="171x180"
                 src={polytech}
               />
@@ -606,8 +607,8 @@ function History() {
           <a href="https://www.mcdonalds.fr/" target="_blank" rel="noopener noreferrer">
             <Figure className="mt-3">
               <Figure.Image
-                height="15%"
-                width="15%"
+                height="80px"
+                width="80px"
                 alt="171x180"
                 src={mcdonalds}
               />
@@ -637,8 +638,8 @@ function History() {
           <a href="https://deliveroo.fr" target="_blank" rel="noopener noreferrer">
             <Figure className="mt-3">
               <Figure.Image
-                height="20%"
-                width="20%"
+                height="80px"
+                width="80px"
                 alt="171x180"
                 src={deliveroo}
               />
@@ -664,8 +665,8 @@ function History() {
           <a href="https://polytech.univ-amu.fr/formations/cycle-preparatoire" target="_blank" rel="noopener noreferrer">
             <Figure className="mt-3">
               <Figure.Image
-                height="17%"
-                width="17%"
+                height="80px"
+                width="80px"
                 alt="171x180"
                 src={peip}
               />
@@ -701,6 +702,15 @@ function History() {
 
         >
           <h4>{t("education.2.title")}</h4>
+          
+            <Figure className="mt-3">
+              <Figure.Image
+                height="80px"
+                width="80px"
+                alt="171x180"
+                src={sebben}
+              />
+            </Figure>
           <p className="text-left">{t("education.2.body")}</p>
         </TimelineItem>
       </Timeline>
