@@ -98,7 +98,7 @@
     },
     "2" : {
       "title" : "2,5 mois - 2019 : Guc Voile",
-      "body" : "Création d'un site de e-commerce permettant la location de materiel de voile pour les membres du club Guc voile de Grenoble."
+      "body" : "Création d'un site de e-commerce permettant la location de materiel de voile pour les membres du club Guc voile de Grenoble, et permettant la gestion des stocks pour les gérants du club. Généré à l'aide de JHipster."
     },
     "3": {
       "title": "3 semaines - 2018 : COLORicm",

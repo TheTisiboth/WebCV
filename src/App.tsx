@@ -686,6 +686,14 @@ function History() {
           }}
         >
           <h4>{t("experiences.4.title")}</h4>
+          <Figure className="mt-3">
+              <Figure.Image
+                height="80px"
+                width="80px"
+                alt="171x180"
+                src={sebben}
+              />
+            </Figure>
           <p className="text-left">
             <Trans i18nKey="experiences.4.body">
               <strong>Software internationalization</strong> : Adapt the
@@ -699,18 +707,8 @@ function History() {
           dateText={t("education.2.date")}
           dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
           style={{ color: '#61b8ff' }}
-
         >
           <h4>{t("education.2.title")}</h4>
-          
-            <Figure className="mt-3">
-              <Figure.Image
-                height="80px"
-                width="80px"
-                alt="171x180"
-                src={sebben}
-              />
-            </Figure>
           <p className="text-left">{t("education.2.body")}</p>
         </TimelineItem>
       </Timeline>
