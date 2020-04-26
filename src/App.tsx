@@ -356,7 +356,7 @@ function Projects() {
           <h3>{t('projects.0.title')}</h3>
           <p className="text-left">{t('projects.0.body')}</p>
           <Row>
-            <Col>
+            <Col xs={4}>
               <a
                 href="https://github.com/TheTisiboth/WebCV"
                 target="_blank"
@@ -393,7 +393,7 @@ function Projects() {
           <h3>{t('projects.1.title')}</h3>
           <p className="text-left">{t('projects.1.body')}</p>
           <Row>
-            <Col>
+            <Col xs={4}>
               <a
                 href="https://gitlab.com/Eva_B/reeducation_kine_connecte"
                 target="_blank"
@@ -430,7 +430,7 @@ function Projects() {
           <h3>{t('projects.2.title')}</h3>
           <p className="text-left">{t('projects.2.body')}</p>
           <Row>
-            <Col>
+            <Col xs={4}>
               <a
                 href="https://gitlab.com/Polytech-INFO5-2019-2020/g3/2019-2020-ecom-info5-root"
                 target="_blank"
@@ -444,6 +444,7 @@ function Projects() {
               </a>
             </Col>
             <Col className="pl-0 pr-0">
+            <Skills skill="JHipster" />
               <Skills skill="Angular" />
               <Skills skill="Spring" />
               <Skills skill="Postgre" />
@@ -468,7 +469,7 @@ function Projects() {
           <p className="text-left">{t('projects.3.body')}</p>
 
           <Row>
-            <Col>
+            <Col xs={4}>
               <a
                 href="https://github.com/TheTisiboth/PLA_2018"
                 target="_blank"
@@ -518,7 +519,7 @@ function History() {
         >
           <h4>{t("experiences.0.title")}</h4>
           <a href="https://www.enovacom.fr/" target="_blank" rel="noopener noreferrer">
-            <Figure id="enovacom">
+            <Figure className="mt-4">
               <Figure.Image
                 height="75%"
                 width="75%"
@@ -807,10 +808,10 @@ function Footer() {
         <ListGroup.Item className="copyright" variant="dark">© 2020 Copyright: Léo Jan</ListGroup.Item>
 
       </ListGroup>
-      <Row>
-        <Col>
+      <Row className="justify-content-center">
+        <Col md={3}>
           <Nav.Link className="" href="#App" onSelect={() => scroller.scrollTo('App', scrollOptions)}>
-            <FaArrowUp />Retour en haut<FaArrowUp />
+            <FaArrowUp className="mr-1"/>Retour en haut<FaArrowUp className="ml-1" />
           </Nav.Link>
         </Col>
       </Row>
