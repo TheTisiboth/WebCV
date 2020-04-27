@@ -1,5 +1,6 @@
 {
   "title": "Welcome to my Web CV!",
+  "top" : "Back to the top",
   "description": {
     "part1": "Website currently in production.",
     "part2": "Switch language between english and german using buttons above."

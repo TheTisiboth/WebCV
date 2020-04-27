@@ -25,8 +25,8 @@ import {
   FaGithub,
   FaBasketballBall,
   FaTableTennis,
-  FaArrowUp,
-  FaGitlab
+  FaGitlab,
+  FaArrowAltCircleUp
 } from "react-icons/fa";
 import { GiFrisbee } from "react-icons/gi";
 import { AiOutlineGitlab } from "react-icons/ai";
@@ -445,7 +445,7 @@ function Projects() {
               </a>
             </Col>
             <Col className="text-right pr-0 pr-md-5">
-            <Skills skill="JHipster" />
+              <Skills skill="JHipster" />
               <Skills skill="Angular" />
               <Skills skill="Spring" />
               <Skills skill="Postgre" />
@@ -687,13 +687,13 @@ function History() {
         >
           <h4>{t("experiences.4.title")}</h4>
           <Figure className="mt-3">
-              <Figure.Image
-                height="80px"
-                width="80px"
-                alt="171x180"
-                src={sebben}
-              />
-            </Figure>
+            <Figure.Image
+              height="80px"
+              width="80px"
+              alt="171x180"
+              src={sebben}
+            />
+          </Figure>
           <p className="text-left">
             <Trans i18nKey="experiences.4.body">
               <strong>Software internationalization</strong> : Adapt the
@@ -805,6 +805,7 @@ function Travel(): ReactElement {
 
 
 function Footer() {
+  const { t } = useTranslation();
   const scrollOptions = {
     smooth: true,
     offset: -40,
@@ -818,8 +819,18 @@ function Footer() {
       </ListGroup>
       <Row className="justify-content-center">
         <Col md={3}>
-          <Nav.Link className="" href="#App" onSelect={() => scroller.scrollTo('App', scrollOptions)}>
-            <FaArrowUp className="mr-1"/>Retour en haut<FaArrowUp className="ml-1" />
+
+          <Nav.Link className="mt-2" href="#App" onSelect={() => scroller.scrollTo('App', scrollOptions)}>
+            <OverlayTrigger
+              placement="right"
+              delay={{ show: 0, hide: 0 }}
+              overlay={renderTooltip(t("top"))}
+            >
+              <Button variant="outline-light">
+
+                <FaArrowAltCircleUp className="mb-1" />
+              </Button>
+            </OverlayTrigger>
           </Nav.Link>
         </Col>
       </Row>
@@ -860,7 +871,7 @@ function WIP(): ReactElement {
   return (
     <Container className="mt-4">
       <Row className="mb-2 justify-content-center">
-        <Col md={6} className="mytitle rounded pt-2 pb-2">
+        <Col md={6} className="mytitle pt-2 pb-2">
           <h2 className="">{t("wip.title")}</h2>
         </Col>
       </Row>

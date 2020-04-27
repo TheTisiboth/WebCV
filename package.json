@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/geojson": "^7946.0.7",
     "@types/jest": "^25.1.5",
     "@types/leaflet": "^1.5.12",
     "@types/node": "^13.11.0",
