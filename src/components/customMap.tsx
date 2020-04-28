@@ -2,7 +2,8 @@ import React, { useState, ReactElement } from "react";
 import { useTranslation } from "react-i18next";
 import { Map, Marker, Tooltip, TileLayer, GeoJSON } from "react-leaflet";
 import geoJsonData from '../assets/geoJsonData.json';
-import { LatLngLiteral } from 'leaflet';
+import { LatLngLiteral, Layer, LeafletMouseEvent } from 'leaflet';
+import geojson from 'geojson';
 
 interface position {
   latlng: LatLngLiteral,
@@ -14,13 +15,13 @@ interface state {
   zoom: number,
   display: position[] | any,
   geoJson: any,
-  countries: any
+  countries: { [key: string]: position }
 }
 
 /**
  * Display a Leaflet Map, containing a GeoJson object, or a list of Markers, depending on the zoom
  */
-export default function CustomMap(): ReactElement<any> {
+export default function CustomMap(): ReactElement {
   const { t } = useTranslation();
 
   const countryToString = (countries: string[]): string => countries.join(", ");
@@ -336,22 +337,24 @@ export default function CustomMap(): ReactElement<any> {
   ];
 
   // For each country, we display a tooltip on hover
-  const onEachFeature = (feature: any, layer: any) => {
+  const onEachFeature = (feature: geojson.Feature<geojson.GeometryObject>, layer: Layer) => {
     layer.on({
-      'mouseover': (e: any) => {
+      'mouseover': (e: LeafletMouseEvent) => {
         const country = state.countries[e.target.feature.properties.adm0_a3];
         layer.bindTooltip(country.tooltip);
         layer.openTooltip(country.latlng);
       },
-      'mouseout': (e: any) => {
+      'mouseout': () => {
         layer.unbindTooltip();
         layer.closeTooltip();
       },
     });
   }
 
+
+
   // Contains the json containing the polygons of the countries
-  const data: any = geoJsonData;
+  const data: geojson.FeatureCollection = geoJsonData as geojson.FeatureCollection;
   const geoJson = <GeoJSON
     data={data}
     style={() => ({
@@ -372,7 +375,7 @@ export default function CustomMap(): ReactElement<any> {
   });
 
   // Update on zoom change
-  function onZoom(e: any): any {
+  function onZoom(e: LeafletMouseEvent): void {
     const zoom = e.target._zoom;
     let newDisplay = updateDisplay(zoom);
     setState({
@@ -383,24 +386,20 @@ export default function CustomMap(): ReactElement<any> {
   }
 
   // Called on every zoom change, in order to display either the GeoJson, or the cities Marker
-  function updateDisplay(zoom: number): any {
-    let toDisplay: any = [];
-
+  function updateDisplay(zoom: number): Marker[] | any {
     if (zoom >= 4) {
-      console.log(state)
-      state.markers.forEach(
+      return (state.markers.map(
         (
           c: position,
           i: number
         ) => {
-          toDisplay.push(
+          return (
             <Marker key={c.latlng.lat + c.latlng.lng} position={c.latlng}>
               <Tooltip>{c.tooltip}</Tooltip>
             </Marker>
           );
         }
-      );
-      return toDisplay;
+      ));
     } else {
       return state.geoJson;
     }

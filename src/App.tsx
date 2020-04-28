@@ -1,4 +1,4 @@
-import React, { Suspense, useState, ReactElement, useCallback, useEffect, useRef } from "react";
+import React, { Suspense, useState, ReactElement, useCallback, useEffect, useRef, MutableRefObject } from "react";
 import { useTranslation, Trans } from "react-i18next";
 import "./App.css";
 import {
@@ -68,7 +68,7 @@ function TranslationButton(props: { onClick: () => void; }): ReactElement {
    * Switch language between en and fr
    */
   const changeLanguage = useCallback(
-    (lng: string): any => {
+    (lng: string): void => {
       if (!i18n) {
         return;
       }
@@ -80,7 +80,7 @@ function TranslationButton(props: { onClick: () => void; }): ReactElement {
   /**
    * When we click on the translate button, we switch the button label, and switch the language
    */
-  const handleClick = (): any => {
+  const handleClick = (): void => {
     const isEnglish: boolean = !state.isEnglish;
     const buttonLabel: string = isEnglish ? "en" : "fr";
     setState({
@@ -112,11 +112,11 @@ function TranslationButton(props: { onClick: () => void; }): ReactElement {
 function MyNavbar(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
   // Toggle component
-  const toggle: any = useRef();
+  const toggle: MutableRefObject<any> = useRef();
   // Collapse component
-  const collapse: any = useRef();
+  const collapse: MutableRefObject<any> = useRef();
   // Navbar component
-  const nav: any = useRef();
+  const nav: MutableRefObject<any> = useRef();
 
   // Triger toggle navbar if collapsed
   const onClick = () => {
@@ -125,7 +125,7 @@ function MyNavbar(): ReactElement {
   }
 
   // If we click outside the navbar, we close it
-  const handleClick = (e: { target: any; }) => {
+  const handleClick = (e: MouseEvent) => {
     if (!nav.current.contains(e.target)) {
       onClick();
     }

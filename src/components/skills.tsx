@@ -47,7 +47,7 @@ interface skills {
  * Display an image of a technology, with a link to its website, and a tooltip (on hover) 
  * @param props Info about the image to display
  */
-function Skill(props: any): ReactElement {
+function Skill(props: { skill: skill; }): ReactElement {
     const skill = props.skill;
 
     return (
@@ -272,7 +272,7 @@ export function Skills(props?: { skill?: string; }): ReactElement {
         );
     } else {
         const arr = [...list[0], ...list[1], extraSkills];
-        let mySkill = null;
+        let mySkill: skill = arr[0][0];
         for (let skills of arr) {
             for (let skill of skills.skills) {
                 if (skill.tooltip.includes(props!.skill)) {
@@ -285,4 +285,5 @@ export function Skills(props?: { skill?: string; }): ReactElement {
         }
         return (<Skill skill={mySkill} />)
     }
+    
 }
