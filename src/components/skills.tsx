@@ -272,18 +272,9 @@ export function Skills(props?: { skill?: string; }): ReactElement {
         );
     } else {
         const arr = [...list[0], ...list[1], extraSkills];
-        let mySkill: skill = arr[0][0];
-        for (let skills of arr) {
-            for (let skill of skills.skills) {
-                if (skill.tooltip.includes(props!.skill)) {
-                    mySkill = skill;
-                    break;
-                }
-            }
-            if (mySkill)
-                break;
-        }
+        const skills = arr.map(({ skills }) => skills).flat()
+        const mySkill: skill = skills.find(skill => skill.tooltip.includes(props!.skill as string)) as skill;
+
         return (<Skill skill={mySkill} />)
     }
-    
 }

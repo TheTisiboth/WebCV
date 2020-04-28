@@ -27,7 +27,7 @@ export default function CustomMap(): ReactElement {
   const countryToString = (countries: string[]): string => countries.join(", ");
 
   // List of position and label of tooltip for the GeoJson object, for each country
-  let countries: { [key: string]: position } = {
+  const countries: { [key: string]: position } = {
     DEU: {
       latlng: {
         lat: 51.0834196,
@@ -152,7 +152,7 @@ export default function CustomMap(): ReactElement {
   }
 
   // List of position and tooltip for the cities Markers
-  let cities: position[] = [
+  const cities: position[] = [
     {
       latlng: {
         lat: 48.13825988769531,
@@ -377,7 +377,7 @@ export default function CustomMap(): ReactElement {
   // Update on zoom change
   function onZoom(e: LeafletMouseEvent): void {
     const zoom = e.target._zoom;
-    let newDisplay = updateDisplay(zoom);
+    const newDisplay = updateDisplay(zoom);
     setState({
       ...state,
       zoom,
