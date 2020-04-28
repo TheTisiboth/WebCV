@@ -79,7 +79,7 @@ function Skill(props: any): ReactElement {
 /**
  * Display a list of skill
  */
-export function Skills(props: { skill: string; }): ReactElement {
+export function Skills(props?: { skill?: string; }): ReactElement {
     const { t } = useTranslation();
     const system: skills =
     {
@@ -227,7 +227,7 @@ export function Skills(props: { skill: string; }): ReactElement {
     const list: skills[][] = [[system, software], [web, others]]
 
     // We want to display all the skills
-    if (props.skill === "") {
+    if (props === undefined || props.skill === undefined) {
         return (
             <div id="Skills" className="text-center pt-5 pt-md-2 pr-0 pr-md-5">
                 <Row className=" justify-content-center">
