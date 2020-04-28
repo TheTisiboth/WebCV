@@ -32,6 +32,7 @@ import { GiFrisbee } from "react-icons/gi";
 import { AiOutlineGitlab } from "react-icons/ai";
 import { MdTranslate, MdFileDownload } from "react-icons/md";
 import { FaRegFilePdf } from "react-icons/fa";
+
 import image from "./assets/leo.jpg";
 import logo from "./assets/logo.png";
 import CV_FR from "./assets/CV_FR_Leo_Jan.pdf";
@@ -247,7 +248,6 @@ function LeftHeader(): ReactElement {
             <a href="mailto:pro@janleo.fr" target="_blank" rel="noopener noreferrer">
               <Button variant="secondary">pro@janleo.fr</Button>
             </a>
-
           </div>
         </Col>
       </Row>
@@ -284,6 +284,7 @@ function IconSocial(props: { href: string | undefined; icon: React.ReactNode; })
     </a>
   );
 }
+
 /**
  * AppHeader, containing LeftHeader, Image, and RightHeader
  */
@@ -803,13 +804,15 @@ function Travel(): ReactElement {
   );
 }
 
-
+/**
+ * Footer component
+ */
 function Footer() {
   const { t } = useTranslation();
   const scrollOptions = {
     smooth: true,
     offset: -40,
-    duration: 500,
+    duration: 1000,
   };
   return (
     <Container>

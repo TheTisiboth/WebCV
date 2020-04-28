@@ -130,16 +130,6 @@ export function Skills(props: { skill: string; }): ReactElement {
         title: t("skills.web"),
         skills: [
             {
-                image: HTML,
-                href: "https://en.wikipedia.org/wiki/HTML",
-                tooltip: "HTML"
-            },
-            {
-                image: CSS,
-                href: "https://en.wikipedia.org/wiki/Cascading_Style_Sheets",
-                tooltip: "CSS"
-            },
-            {
                 image: BOOTSTRAP,
                 href: "https://getbootstrap.com/",
                 tooltip: "Bootstrap"
@@ -148,11 +138,6 @@ export function Skills(props: { skill: string; }): ReactElement {
                 image: ANGULAR,
                 href: "https://angular.io/",
                 tooltip: "Angular"
-            },
-            {
-                image: REACT,
-                href: "https://reactjs.org/",
-                tooltip: "React"
             },
             {
                 image: MONGODB,
@@ -174,6 +159,7 @@ export function Skills(props: { skill: string; }): ReactElement {
                 image: SQL,
                 href: "https://en.wikipedia.org/wiki/SQL",
                 tooltip: "SQL",
+                size: 25
             }
         ]
     };
@@ -219,12 +205,28 @@ export function Skills(props: { skill: string; }): ReactElement {
                 image: POSTGRES,
                 href: "https://www.postgresql.org/",
                 tooltip: "Postgres SQL",
-            }
+            },
+            {
+                image: HTML,
+                href: "https://en.wikipedia.org/wiki/HTML",
+                tooltip: "HTML"
+            },
+            {
+                image: CSS,
+                href: "https://en.wikipedia.org/wiki/Cascading_Style_Sheets",
+                tooltip: "CSS"
+            },
+            {
+                image: REACT,
+                href: "https://reactjs.org/",
+                tooltip: "React"
+            },
         ]
     }
 
-    const row1: skills[] = [system, software];
-    const row2: skills[] = [web, others];
+    const list: skills[][] = [[system, software], [web, others]]
+
+    // We want to display all the skills
     if (props.skill === "") {
         return (
             <div id="Skills" className="text-center pt-5 pt-md-2 pr-0 pr-md-5">
@@ -233,75 +235,54 @@ export function Skills(props: { skill: string; }): ReactElement {
                         <Badge className="titleReverse pl-3 pr-3"><h2 >{t("navbar.skill")}</h2></Badge>
                     </Col>
                 </Row>
-                <Row className="justify-content-center pt-4">
-                    {row1.map((s: skills): ReactElement => {
-                        return (
+                {/* <Row className="justify-content-center pt-4"> */}
+                {list.map((row: skills[]) => {
+                    return (
+                        <Row key={row[0].title} className="justify-content-center pt-4">
+                            {row.map((s: skills): ReactElement => {
+                                return (
+                                    <Col key={s.title} md={6}>
+                                        <Row>
+                                            <Col>
+                                                <h5>{s.title}</h5>
+                                            </Col>
+                                        </Row>
+                                        <Row className="justify-content-center">
+                                            <Col xs={6} md={10}>
+                                                {s.skills.map((skill: skill): ReactElement => {
+                                                    return (
 
-                            <Col key={s.title} md={6}>
-                                <Row>
-                                    <Col>
-                                        <h5>{s.title}</h5>
+                                                        <Skill
+                                                            skill={skill}
+                                                            key={skill.href}
+                                                        />
+                                                    );
+                                                }
+                                                )}
+                                            </Col>
+                                        </Row>
                                     </Col>
-                                </Row>
-                                <Row className="justify-content-center">
-                                    <Col>
-                                        {s.skills.map((skill: skill): ReactElement => {
-                                            return (
 
-                                                <Skill
-                                                    skill={skill}
-                                                    key={skill.href}
-                                                />
-                                            );
-                                        }
-                                        )}
-                                    </Col>
-                                </Row>
-                            </Col>
-
-                        );
-                    })
-                    }
-                </Row>
-                <Row >
-                    {row2.map((s: skills): ReactElement => {
-                        return (
-
-                            <Col key={s.title} md={6}>
-                                <Row>
-                                    <Col>
-                                        <h5>{s.title}</h5>
-                                    </Col>
-                                </Row>
-                                <Row className="justify-content-center">
-                                    <Col xs={6} md>
-                                        {s.skills.map((skill: skill, index: number): ReactElement => {
-                                            return (
-                                                <Skill
-                                                    skill={skill}
-                                                    key={skill.href}
-                                                />
-                                            );
-                                        }
-                                        )}
-                                    </Col>
-                                </Row>
-                            </Col>
-                        );
-                    })
-                    }
-                </Row>
+                                );
+                            })}
+                        </Row>
+                    )
+                })}
             </div>
         );
     } else {
-        const arr = [...row1, ...row2, extraSkills];
+        const arr = [...list[0], ...list[1], extraSkills];
         let mySkill = null;
-        arr.map(skills => {
-            skills.skills.map(skill => {
-                if (skill.tooltip.includes(props!.skill))
+        for (let skills of arr) {
+            for (let skill of skills.skills) {
+                if (skill.tooltip.includes(props!.skill)) {
                     mySkill = skill;
-            })
-        })
+                    break;
+                }
+            }
+            if (mySkill)
+                break;
+        }
         return (<Skill skill={mySkill} />)
     }
 }

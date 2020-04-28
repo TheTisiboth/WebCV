@@ -17,13 +17,16 @@ interface state {
   countries: any
 }
 
-
+/**
+ * Display a Leaflet Map, containing a GeoJson object, or a list of Markers, depending on the zoom
+ */
 export default function CustomMap(): ReactElement<any> {
   const { t } = useTranslation();
 
   const countryToString = (countries: string[]): string => countries.join(", ");
 
-  let countries = {
+  // List of position and label of tooltip for the GeoJson object, for each country
+  let countries: { [key: string]: position } = {
     DEU: {
       latlng: {
         lat: 51.0834196,
@@ -110,8 +113,10 @@ export default function CustomMap(): ReactElement<any> {
         lat: 42.92121887207031,
         lng: -75.62081909179688,
       },
-      tooltip: countryToString([t("travel.us.ny"),
-      t("travel.us.country")])
+      tooltip: countryToString(
+        [t("travel.us.ny"),
+        t("travel.us.country")
+        ])
     },
     IRL: {
       latlng: {
@@ -145,6 +150,7 @@ export default function CustomMap(): ReactElement<any> {
     }
   }
 
+  // List of position and tooltip for the cities Markers
   let cities: position[] = [
     {
       latlng: {
@@ -329,21 +335,22 @@ export default function CustomMap(): ReactElement<any> {
     },
   ];
 
-  const onEachFeature=(feature:any, layer:any) => {
+  // For each country, we display a tooltip on hover
+  const onEachFeature = (feature: any, layer: any) => {
     layer.on({
-      'mouseover': (e:any) => {
+      'mouseover': (e: any) => {
         const country = state.countries[e.target.feature.properties.adm0_a3];
         layer.bindTooltip(country.tooltip);
         layer.openTooltip(country.latlng);
       },
-      'mouseout': (e:any) => {
+      'mouseout': (e: any) => {
         layer.unbindTooltip();
         layer.closeTooltip();
       },
     });
   }
-  
 
+  // Contains the json containing the polygons of the countries
   const data: any = geoJsonData;
   const geoJson = <GeoJSON
     data={data}
@@ -353,7 +360,7 @@ export default function CustomMap(): ReactElement<any> {
       fillColor: "#1a1d62",
       fillOpacity: 0.25,
     })}
-   onEachFeature={onEachFeature}
+    onEachFeature={onEachFeature}
   />
 
   const [state, setState] = useState<state>({
@@ -364,24 +371,24 @@ export default function CustomMap(): ReactElement<any> {
     countries: countries
   });
 
+  // Update on zoom change
   function onZoom(e: any): any {
     const zoom = e.target._zoom;
     let newDisplay = updateDisplay(zoom);
     setState({
       ...state,
       zoom,
-      geoJson: state.geoJson,
       display: newDisplay,
     });
   }
 
-
+  // Called on every zoom change, in order to display either the GeoJson, or the cities Marker
   function updateDisplay(zoom: number): any {
     let toDisplay: any = [];
 
     if (zoom >= 4) {
       console.log(state)
-      state.markers.map(
+      state.markers.forEach(
         (
           c: position,
           i: number
