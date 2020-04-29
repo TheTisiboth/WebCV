@@ -338,18 +338,6 @@ export default function CustomMap(): ReactElement {
     },
   ];
 
-  cities = [
-
-    {
-      // germany
-      latlng: {
-        lat: 53.56729507446289,
-        lng: 9.941673278808594,
-      },
-      tooltip: "travel.germany.hamburg",
-    }
-  ]
-
   // Contains the json containing the polygons of the countries
   const data: geojson.FeatureCollection = geoJsonData as geojson.FeatureCollection;
   let geoJson: JSX.Element = <GeoJSON
@@ -386,6 +374,7 @@ export default function CustomMap(): ReactElement {
     display: geoJson,
     countries: countries
   });
+
 
   // Update on zoom change
   function onZoom(e: LeafletMouseEvent): void {
