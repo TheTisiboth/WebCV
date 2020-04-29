@@ -29,6 +29,7 @@ import NODE from "../assets/node.png";
 import JHIPSTER from "../assets/jhipster.png";
 import SPRING from "../assets/spring.png";
 import POSTGRES from "../assets/postgres.webp";
+import { TFunction } from 'i18next';
 
 interface skill {
     image: string,
@@ -80,7 +81,7 @@ function Skill(props: { skill: skill; }): ReactElement {
  * Display a list of skill
  */
 export function Skills(props?: { skill?: string; }): ReactElement {
-    const { t } = useTranslation();
+    const { t }: { t: TFunction } = useTranslation();
     const system: skills =
     {
         title: t("skills.system"),

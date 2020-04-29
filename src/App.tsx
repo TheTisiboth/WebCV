@@ -259,7 +259,6 @@ function LeftHeader(): ReactElement {
  * RightHeader containing info about hobbies
  */
 function RightHeader(): ReactElement {
-  // const { t }: { t: TFunction } = useTranslation();
   return (
     <Skills />
   );
@@ -498,7 +497,7 @@ function Projects() {
  * Contains Education and professionnal experience
  */
 function History() {
-  const { t } = useTranslation();
+  const { t }: { t: TFunction } = useTranslation();
   return (
 
     <Container id="History" className="pt-5">
@@ -718,7 +717,7 @@ function History() {
 }
 
 function Hobbies() {
-  const { t } = useTranslation();
+  const { t }: { t: TFunction } = useTranslation();
   return (
     <Container>
       <Row className="pt-5 mb-4 justify-content-center">
@@ -808,7 +807,7 @@ function Travel(): ReactElement {
  * Footer component
  */
 function Footer() {
-  const { t } = useTranslation();
+  const { t }: { t: TFunction } = useTranslation();
   const scrollOptions = {
     smooth: true,
     offset: -40,

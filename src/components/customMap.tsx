@@ -15,7 +15,7 @@ interface state {
   markers: position[],
   zoom: number,
   display: position[] | any,
-  geoJson: any,
+  geoJson: JSX.Element,
   countries: { [key: string]: position }
 }
 
@@ -337,27 +337,10 @@ export default function CustomMap(): ReactElement {
     },
   ];
 
-  // For each country, we display a tooltip on hover
-  // const onEachFeature = (feature: geojson.Feature<geojson.GeometryObject>, layer: Layer) => {
-  //   layer.on({
-  //     'mouseover': (e: LeafletMouseEvent) => {
-  //       const country = state.countries[e.target.feature.properties.adm0_a3];
-  //       layer.bindTooltip(country.tooltip);
-  //       layer.openTooltip(country.latlng);
-  //     },
-  //     'mouseout': () => {
-  //       layer.unbindTooltip();
-  //       layer.closeTooltip();
-  //     },
-  //   });
-  // }
-
-
-
-
+ 
   // Contains the json containing the polygons of the countries
   const data: geojson.FeatureCollection = geoJsonData as geojson.FeatureCollection;
-  let geoJson: any = <GeoJSON
+  let geoJson: JSX.Element = <GeoJSON
     key='my-geojson'
     data={data}
     style={() => ({
