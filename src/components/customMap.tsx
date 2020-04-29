@@ -4,6 +4,7 @@ import { Map, Marker, Tooltip, TileLayer, GeoJSON } from "react-leaflet";
 import geoJsonData from '../assets/geoJsonData.json';
 import { LatLngLiteral, Layer, LeafletMouseEvent } from 'leaflet';
 import geojson from 'geojson';
+import { TFunction } from 'i18next';
 
 interface position {
   latlng: LatLngLiteral,
@@ -22,7 +23,7 @@ interface state {
  * Display a Leaflet Map, containing a GeoJson object, or a list of Markers, depending on the zoom
  */
 export default function CustomMap(): ReactElement {
-  const { t } = useTranslation();
+  const { t }: { t: TFunction } = useTranslation();
 
   const countryToString = (countries: string[]): string => countries.join(", ");
 
@@ -337,25 +338,27 @@ export default function CustomMap(): ReactElement {
   ];
 
   // For each country, we display a tooltip on hover
-  const onEachFeature = (feature: geojson.Feature<geojson.GeometryObject>, layer: Layer) => {
-    layer.on({
-      'mouseover': (e: LeafletMouseEvent) => {
-        const country = state.countries[e.target.feature.properties.adm0_a3];
-        layer.bindTooltip(country.tooltip);
-        layer.openTooltip(country.latlng);
-      },
-      'mouseout': () => {
-        layer.unbindTooltip();
-        layer.closeTooltip();
-      },
-    });
-  }
+  // const onEachFeature = (feature: geojson.Feature<geojson.GeometryObject>, layer: Layer) => {
+  //   layer.on({
+  //     'mouseover': (e: LeafletMouseEvent) => {
+  //       const country = state.countries[e.target.feature.properties.adm0_a3];
+  //       layer.bindTooltip(country.tooltip);
+  //       layer.openTooltip(country.latlng);
+  //     },
+  //     'mouseout': () => {
+  //       layer.unbindTooltip();
+  //       layer.closeTooltip();
+  //     },
+  //   });
+  // }
+
 
 
 
   // Contains the json containing the polygons of the countries
   const data: geojson.FeatureCollection = geoJsonData as geojson.FeatureCollection;
-  const geoJson = <GeoJSON
+  let geoJson: any = <GeoJSON
+    key='my-geojson'
     data={data}
     style={() => ({
       color: '#4a83ec',
@@ -363,8 +366,24 @@ export default function CustomMap(): ReactElement {
       fillColor: "#1a1d62",
       fillOpacity: 0.25,
     })}
-    onEachFeature={onEachFeature}
+
+    // PROBLEM : does not update the tooltips when we switch languages
+    // FIX ME
+    onEachFeature={(feature: geojson.Feature<geojson.GeometryObject>, layer: Layer) => {
+      layer.on({
+        'mouseover': (e: LeafletMouseEvent) => {
+          const country = state.countries[e.target.feature.properties.adm0_a3];
+          layer.bindTooltip(country.tooltip);
+          layer.openTooltip(country.latlng);
+        },
+        'mouseout': () => {
+          layer.unbindTooltip();
+          layer.closeTooltip();
+        },
+      });
+    }}
   />
+
 
   const [state, setState] = useState<state>({
     markers: cities,
