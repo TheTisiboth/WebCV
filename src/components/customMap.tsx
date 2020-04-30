@@ -42,8 +42,8 @@ export default function CustomMap(): ReactElement {
     }}
   />
 
-  // Contains a list of marker for the cities
-  const cityMarkers = cities.map(
+  // Contains a list of marker for the citiess
+  let cityMarkers: JSX.Element[] = cities.map(
     (
       c: position,
       i: number
@@ -63,15 +63,13 @@ export default function CustomMap(): ReactElement {
     display: geoJson,
   });
 
-
   // Update on zoom change
   function onZoom(e: LeafletMouseEvent): void {
     const zoom = e.target._zoom;
-    const newDisplay = updateDisplay(zoom);
+    const display = updateDisplay(zoom);
     setState({
-      ...state,
       zoom,
-      display: newDisplay,
+      display
     });
   }
 
@@ -83,7 +81,6 @@ export default function CustomMap(): ReactElement {
       return geoJson;
     }
   }
-
 
   return (
     <Map

@@ -47,147 +47,147 @@ export interface skills {
 }
 
 export const system: skills =
+{
+  title: "skills.system",
+  skills: [
     {
-        title: "skills.system",
-        skills: [
-            {
-                image: C,
-                href: "https://en.wikipedia.org/wiki/C_(programming_language)",
-                tooltip: "C"
-            },
-            {
-                image: ARM,
-                href: "https://www.arm.com/products/silicon-ip-cpu",
-                tooltip: "ARM"
-            },
-            {
-                image: ARDUINO,
-                href: "https://www.arduino.cc/",
-                tooltip: "Arduino"
-            }
-        ]
-    };
-
-    export const software: skills =
+      image: C,
+      href: "https://en.wikipedia.org/wiki/C_(programming_language)",
+      tooltip: "C"
+    },
     {
-        title: "skills.software",
-        skills: [
-            {
-                image: JAVA,
-                href: "https://www.java.com/fr/",
-                tooltip: "Java"
-            },
-            {
-                image: PYTHON,
-                href: "https://www.python.org/",
-                tooltip: "Python"
-            },
-            {
-                image: OCAML,
-                href: "https://ocaml.org/",
-                tooltip: "Ocaml"
-            }
-        ]
-    };
-
-    export const web: skills =
+      image: ARM,
+      href: "https://www.arm.com/products/silicon-ip-cpu",
+      tooltip: "ARM"
+    },
     {
-        title: "skills.web",
-        skills: [
-            {
-                image: BOOTSTRAP,
-                href: "https://getbootstrap.com/",
-                tooltip: "Bootstrap"
-            },
-            {
-                image: ANGULAR,
-                href: "https://angular.io/",
-                tooltip: "Angular"
-            },
-            {
-                image: MONGODB,
-                href: "https://www.mongodb.com/",
-                tooltip: "MongoDB"
-            },
-            {
-                image: JQUERY,
-                href: "https://jquery.com/",
-                tooltip: "JQuery"
-            },
-            {
-                image: PHP,
-                href: "https://www.php.net/",
-                tooltip: "PHP",
-                size: 42
-            },
-            {
-                image: SQL,
-                href: "https://en.wikipedia.org/wiki/SQL",
-                tooltip: "SQL",
-                size: 25
-            }
-        ]
-    };
-
-    export const others: skills =
-    {
-        title: "skills.other",
-        skills: [
-            {
-                image: GIT,
-                href: "https://git-scm.com/",
-                tooltip: "Git",
-                class: "iconToWhite"
-            },
-            {
-                image: LINUX,
-                href: "https://www.linux.org/",
-                tooltip: "Linux"
-            }
-        ]
-    };
-
-    export const extraSkills: skills =
-    {
-        title: "Extra Skills",
-        skills: [
-            {
-                image: NODE,
-                href: "https://nodejs.org/",
-                tooltip: "Node.js",
-            },
-            {
-                image: JHIPSTER,
-                href: "https://www.jhipster.tech/",
-                tooltip: "JHipster",
-            },
-            {
-                image: SPRING,
-                href: "https://spring.io/",
-                tooltip: "Spring",
-            },
-            {
-                image: POSTGRES,
-                href: "https://www.postgresql.org/",
-                tooltip: "Postgres SQL",
-            },
-            {
-                image: HTML,
-                href: "https://en.wikipedia.org/wiki/HTML",
-                tooltip: "HTML"
-            },
-            {
-                image: CSS,
-                href: "https://en.wikipedia.org/wiki/Cascading_Style_Sheets",
-                tooltip: "CSS"
-            },
-            {
-                image: REACT,
-                href: "https://reactjs.org/",
-                tooltip: "React"
-            },
-        ]
+      image: ARDUINO,
+      href: "https://www.arduino.cc/",
+      tooltip: "Arduino"
     }
+  ]
+};
+
+export const software: skills =
+{
+  title: "skills.software",
+  skills: [
+    {
+      image: JAVA,
+      href: "https://www.java.com/fr/",
+      tooltip: "Java"
+    },
+    {
+      image: PYTHON,
+      href: "https://www.python.org/",
+      tooltip: "Python"
+    },
+    {
+      image: OCAML,
+      href: "https://ocaml.org/",
+      tooltip: "Ocaml"
+    }
+  ]
+};
+
+export const web: skills =
+{
+  title: "skills.web",
+  skills: [
+    {
+      image: BOOTSTRAP,
+      href: "https://getbootstrap.com/",
+      tooltip: "Bootstrap"
+    },
+    {
+      image: ANGULAR,
+      href: "https://angular.io/",
+      tooltip: "Angular"
+    },
+    {
+      image: MONGODB,
+      href: "https://www.mongodb.com/",
+      tooltip: "MongoDB"
+    },
+    {
+      image: JQUERY,
+      href: "https://jquery.com/",
+      tooltip: "JQuery"
+    },
+    {
+      image: PHP,
+      href: "https://www.php.net/",
+      tooltip: "PHP",
+      size: 42
+    },
+    {
+      image: SQL,
+      href: "https://en.wikipedia.org/wiki/SQL",
+      tooltip: "SQL",
+      size: 25
+    }
+  ]
+};
+
+export const others: skills =
+{
+  title: "skills.other",
+  skills: [
+    {
+      image: GIT,
+      href: "https://git-scm.com/",
+      tooltip: "Git",
+      class: "iconToWhite"
+    },
+    {
+      image: LINUX,
+      href: "https://www.linux.org/",
+      tooltip: "Linux"
+    }
+  ]
+};
+
+export const extraSkills: skills =
+{
+  title: "Extra Skills",
+  skills: [
+    {
+      image: NODE,
+      href: "https://nodejs.org/",
+      tooltip: "Node.js",
+    },
+    {
+      image: JHIPSTER,
+      href: "https://www.jhipster.tech/",
+      tooltip: "JHipster",
+    },
+    {
+      image: SPRING,
+      href: "https://spring.io/",
+      tooltip: "Spring",
+    },
+    {
+      image: POSTGRES,
+      href: "https://www.postgresql.org/",
+      tooltip: "Postgres SQL",
+    },
+    {
+      image: HTML,
+      href: "https://en.wikipedia.org/wiki/HTML",
+      tooltip: "HTML"
+    },
+    {
+      image: CSS,
+      href: "https://en.wikipedia.org/wiki/Cascading_Style_Sheets",
+      tooltip: "CSS"
+    },
+    {
+      image: REACT,
+      href: "https://reactjs.org/",
+      tooltip: "React"
+    },
+  ]
+}
 
 
 
