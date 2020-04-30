@@ -26,12 +26,10 @@ export interface position {
   tooltip: string | string[]
 }
 
+
 export interface state {
-  markers: position[],
   zoom: number,
   display: position[] | any,
-  geoJson: JSX.Element,
-  countries: { [key: string]: position }
 }
 
 

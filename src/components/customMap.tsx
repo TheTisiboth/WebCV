@@ -27,13 +27,10 @@ export default function CustomMap(): ReactElement {
       fillColor: "#1a1d62",
       fillOpacity: 0.25,
     })}
-
-    // PROBLEM : does not update the tooltips when we switch languages
-    // FIX ME
     onEachFeature={(feature: geojson.Feature<geojson.GeometryObject>, layer: Layer) => {
       layer.on({
         'mouseover': (e: LeafletMouseEvent) => {
-          const country = state.countries[e.target.feature.properties.adm0_a3];
+          const country = countries[e.target.feature.properties.adm0_a3];
           layer.bindTooltip(countryToString(country.tooltip as string[]));
           layer.openTooltip(country.latlng);
         },
@@ -45,12 +42,25 @@ export default function CustomMap(): ReactElement {
     }}
   />
 
+  // Contains a list of marker for the cities
+  const cityMarkers = cities.map(
+    (
+      c: position,
+      i: number
+    ) => {
+      return (
+        // Here are the tooltips that doesn't update in real time, when we switch language
+        // FIX ME
+        <Marker key={c.latlng.lat + c.latlng.lng} position={c.latlng}>
+          <Tooltip>{t(c.tooltip as string)}</Tooltip>
+        </Marker>
+      );
+    }
+  );
+
   const [state, setState] = useState<state>({
-    markers: cities,
     zoom: 3,
-    geoJson: geoJson,
     display: geoJson,
-    countries: countries
   });
 
 
@@ -68,20 +78,9 @@ export default function CustomMap(): ReactElement {
   // Called on every zoom change, in order to display either the GeoJson, or the cities Marker
   function updateDisplay(zoom: number): Marker[] | any {
     if (zoom >= 4) {
-      return (state.markers.map(
-        (
-          c: position,
-          i: number
-        ) => {
-          return (
-            <Marker key={c.latlng.lat + c.latlng.lng} position={c.latlng}>
-              <Tooltip>{t(c.tooltip as string)}</Tooltip>
-            </Marker>
-          );
-        }
-      ));
+      return cityMarkers;
     } else {
-      return state.geoJson;
+      return geoJson;
     }
   }
 
