@@ -8,41 +8,8 @@ import {
     Badge
 } from "react-bootstrap";
 import { renderTooltip } from "../utils";
-import C from "../assets/c.png";
-import JAVA from "../assets/java.png";
-import PYTHON from "../assets/python.png";
-import OCAML from "../assets/ocaml.jpg";
-import ARM from "../assets/arm2.png";
-import BOOTSTRAP from "../assets/bootstrap.png";
-import CSS from "../assets/css.png";
-import HTML from "../assets/html.png";
-import JQUERY from "../assets/jquery.png";
-import MONGODB from "../assets/mongodb.png";
-import ANGULAR from "../assets/angular.png";
-import PHP from "../assets/php.png";
-import SQL from "../assets/sql.png";
-import REACT from "../assets/react.svg";
-import GIT from "../assets/git.png";
-import LINUX from "../assets/linux.svg";
-import ARDUINO from "../assets/arduino.svg";
-import NODE from "../assets/node.png";
-import JHIPSTER from "../assets/jhipster.png";
-import SPRING from "../assets/spring.png";
-import POSTGRES from "../assets/postgres.webp";
 import { TFunction } from 'i18next';
-
-interface skill {
-    image: string,
-    href: string,
-    tooltip: string,
-    class?: string,
-    size?: number
-}
-
-interface skills {
-    title: string,
-    skills: skill[]
-}
+import {skill, skills, software, web, others, system, extraSkills} from './constant';
 
 /**
  * Display an image of a technology, with a link to its website, and a tooltip (on hover) 
@@ -82,149 +49,7 @@ function Skill(props: { skill: skill; }): ReactElement {
  */
 export function Skills(props?: { skill?: string; }): ReactElement {
     const { t }: { t: TFunction } = useTranslation();
-    const system: skills =
-    {
-        title: t("skills.system"),
-        skills: [
-            {
-                image: C,
-                href: "https://en.wikipedia.org/wiki/C_(programming_language)",
-                tooltip: "C"
-            },
-            {
-                image: ARM,
-                href: "https://www.arm.com/products/silicon-ip-cpu",
-                tooltip: "ARM"
-            },
-            {
-                image: ARDUINO,
-                href: "https://www.arduino.cc/",
-                tooltip: "Arduino"
-            }
-        ]
-    };
-
-    const software: skills =
-    {
-        title: t("skills.software"),
-        skills: [
-            {
-                image: JAVA,
-                href: "https://www.java.com/fr/",
-                tooltip: "Java"
-            },
-            {
-                image: PYTHON,
-                href: "https://www.python.org/",
-                tooltip: "Python"
-            },
-            {
-                image: OCAML,
-                href: "https://ocaml.org/",
-                tooltip: "Ocaml"
-            }
-        ]
-    };
-
-    const web: skills =
-    {
-        title: t("skills.web"),
-        skills: [
-            {
-                image: BOOTSTRAP,
-                href: "https://getbootstrap.com/",
-                tooltip: "Bootstrap"
-            },
-            {
-                image: ANGULAR,
-                href: "https://angular.io/",
-                tooltip: "Angular"
-            },
-            {
-                image: MONGODB,
-                href: "https://www.mongodb.com/",
-                tooltip: "MongoDB"
-            },
-            {
-                image: JQUERY,
-                href: "https://jquery.com/",
-                tooltip: "JQuery"
-            },
-            {
-                image: PHP,
-                href: "https://www.php.net/",
-                tooltip: "PHP",
-                size: 42
-            },
-            {
-                image: SQL,
-                href: "https://en.wikipedia.org/wiki/SQL",
-                tooltip: "SQL",
-                size: 25
-            }
-        ]
-    };
-
-    const others: skills =
-    {
-        title: t("skills.other"),
-        skills: [
-            {
-                image: GIT,
-                href: "https://git-scm.com/",
-                tooltip: "Git",
-                class: "iconToWhite"
-            },
-            {
-                image: LINUX,
-                href: "https://www.linux.org/",
-                tooltip: "Linux"
-            }
-        ]
-    };
-
-    const extraSkills: skills =
-    {
-        title: "Extra Skills",
-        skills: [
-            {
-                image: NODE,
-                href: "https://nodejs.org/",
-                tooltip: "Node.js",
-            },
-            {
-                image: JHIPSTER,
-                href: "https://www.jhipster.tech/",
-                tooltip: "JHipster",
-            },
-            {
-                image: SPRING,
-                href: "https://spring.io/",
-                tooltip: "Spring",
-            },
-            {
-                image: POSTGRES,
-                href: "https://www.postgresql.org/",
-                tooltip: "Postgres SQL",
-            },
-            {
-                image: HTML,
-                href: "https://en.wikipedia.org/wiki/HTML",
-                tooltip: "HTML"
-            },
-            {
-                image: CSS,
-                href: "https://en.wikipedia.org/wiki/Cascading_Style_Sheets",
-                tooltip: "CSS"
-            },
-            {
-                image: REACT,
-                href: "https://reactjs.org/",
-                tooltip: "React"
-            },
-        ]
-    }
-
+    
     const list: skills[][] = [[system, software], [web, others]]
 
     // We want to display all the skills
@@ -245,7 +70,7 @@ export function Skills(props?: { skill?: string; }): ReactElement {
                                     <Col key={s.title} md={6}>
                                         <Row>
                                             <Col>
-                                                <h5>{s.title}</h5>
+                                                <h5>{t(s.title)}</h5>
                                             </Col>
                                         </Row>
                                         <Row className="justify-content-center">
