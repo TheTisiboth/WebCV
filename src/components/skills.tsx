@@ -9,7 +9,20 @@ import {
 } from "react-bootstrap";
 import { renderTooltip } from "../utils";
 import { TFunction } from 'i18next';
-import {skill, skills, software, web, others, system, extraSkills} from './constant';
+import { software, web, others, system, extraSkills} from './constant';
+
+interface skill {
+    image: string,
+    href: string,
+    tooltip: string,
+    class?: string,
+    size?: number
+  }
+  
+  export interface skills {
+    title: string,
+    skills: skill[]
+  }
 
 /**
  * Display an image of a technology, with a link to its website, and a tooltip (on hover) 

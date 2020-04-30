@@ -1,4 +1,5 @@
-import { LatLngLiteral } from 'leaflet';
+import { position } from './customMap';
+import { skills } from './skills';
 import C from "../assets/c.png";
 import JAVA from "../assets/java.png";
 import PYTHON from "../assets/python.png";
@@ -20,31 +21,6 @@ import NODE from "../assets/node.png";
 import JHIPSTER from "../assets/jhipster.png";
 import SPRING from "../assets/spring.png";
 import POSTGRES from "../assets/postgres.webp";
-
-export interface position {
-  latlng: LatLngLiteral,
-  tooltip: string | string[]
-}
-
-
-export interface state {
-  zoom: number,
-  display: position[] | any,
-}
-
-
-export interface skill {
-  image: string,
-  href: string,
-  tooltip: string,
-  class?: string,
-  size?: number
-}
-
-export interface skills {
-  title: string,
-  skills: skill[]
-}
 
 export const system: skills =
 {

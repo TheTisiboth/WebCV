@@ -2,10 +2,21 @@ import React, { useState, ReactElement } from "react";
 import { useTranslation } from "react-i18next";
 import { Map, Marker, Tooltip, TileLayer, GeoJSON } from "react-leaflet";
 import geoJsonData from '../assets/geoJsonData.json';
-import { Layer, LeafletMouseEvent } from 'leaflet';
+import { Layer, LeafletMouseEvent, LatLngLiteral } from 'leaflet';
 import geojson from 'geojson';
 import { TFunction } from 'i18next';
-import { state, position, cities, countries } from './constant';
+import { cities, countries } from './constant';
+
+export interface position {
+  latlng: LatLngLiteral,
+  tooltip: string | string[]
+}
+
+
+interface state {
+  zoom: number,
+  display: position[] | any,
+}
 
 /**
  * Display a Leaflet Map, containing a GeoJson object, or a list of Markers, depending on the zoom
