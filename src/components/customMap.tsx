@@ -1,11 +1,12 @@
-import React, { useState, ReactElement } from "react";
+import React, { useState, ReactElement, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { Map, Marker, Tooltip, TileLayer, GeoJSON } from "react-leaflet";
+import { Map, Marker, TileLayer, GeoJSON } from "react-leaflet";
 import geoJsonData from '../assets/geoJsonData.json';
 import { Layer, LeafletMouseEvent, LatLngLiteral } from 'leaflet';
 import geojson from 'geojson';
 import { TFunction } from 'i18next';
 import { cities, countries } from './constant';
+import L from "leaflet";
 
 export interface position {
   latlng: LatLngLiteral,
@@ -22,10 +23,10 @@ interface state {
  * Display a Leaflet Map, containing a GeoJson object, or a list of Markers, depending on the zoom
  */
 export default function CustomMap(): ReactElement {
-  const { t }: { t: TFunction } = useTranslation();
+  const mapRef: any = useRef();
+  const { t, i18n }: { t: TFunction; i18n: any } = useTranslation();
 
   const countryToString = (countries: string[]): string => countries.map(c => t(c)).join(", ");
-
 
   // Contains the json containing the polygons of the countries
   const data: geojson.FeatureCollection = geoJsonData as geojson.FeatureCollection;
@@ -53,25 +54,30 @@ export default function CustomMap(): ReactElement {
     }}
   />
 
-  // Contains a list of marker for the citiess
-  let cityMarkers: JSX.Element[] = cities.map(
-    (
-      c: position,
-      i: number
-    ) => {
-      return (
-        // Here are the tooltips that doesn't update in real time, when we switch language
-        // FIX ME
-        <Marker key={c.latlng.lat + c.latlng.lng} position={c.latlng}>
-          <Tooltip>{t(c.tooltip as string)}</Tooltip>
-        </Marker>
-      );
-    }
-  );
+  const [markersAdded, setMarkersAdded] = useState<boolean>(false);
 
   const [state, setState] = useState<state>({
     zoom: 3,
     display: geoJson,
+  });
+
+  i18n.on("languageChanged", (lng: any): void => {
+    if (lng) {
+      const map = mapRef.current;
+      if (map && map.leafletElement.getZoom() >= 4 && markersAdded) {
+        // In order to update all markers, we remove them
+        map.leafletElement.eachLayer(function (layer: L.Layer) {
+          if (layer instanceof L.Marker) map.leafletElement.removeLayer(layer);
+        });
+        // And we add them again, with the translated tooltip
+        // It is the only we I found to update the tooltip
+        cities.forEach((c: position, i: number) => {
+          L.marker(c.latlng)
+            .addTo(map.leafletElement)
+            .bindTooltip(t(c.tooltip));
+        });
+      }
+    }
   });
 
   // Update on zoom change
@@ -86,15 +92,30 @@ export default function CustomMap(): ReactElement {
 
   // Called on every zoom change, in order to display either the GeoJson, or the cities Marker
   function updateDisplay(zoom: number): Marker[] | any {
+    const map = mapRef.current;
     if (zoom >= 4) {
-      return cityMarkers;
+      return cities.forEach((c: position, i: number) => {
+        // Add the city markers if they weren't already added
+        if (map && !markersAdded) {
+          L.marker(c.latlng)
+            .addTo(map.leafletElement)
+            .bindTooltip(t(c.tooltip));
+          setMarkersAdded(true);
+        }
+      });
     } else {
+      // Remove all markers
+      map.leafletElement.eachLayer(function (layer: L.Layer) {
+        if (layer instanceof L.Marker) map.leafletElement.removeLayer(layer);
+      });
+      setMarkersAdded(false);
       return geoJson;
     }
   }
 
   return (
     <Map
+      ref={mapRef}
       style={{ height: "500px" }}
       center={[54.370138916189596, -29.918133437500003]}
       zoom={state.zoom}

@@ -18,7 +18,7 @@ i18n
     react: {
       wait: true,
     },
-    debug: true,
+    debug: false,
     initImmediate: true,
     preload: ["en", "fr"],
     fallbackLng: "en",

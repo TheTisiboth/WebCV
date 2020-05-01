@@ -9,7 +9,7 @@ import {
 } from "react-bootstrap";
 import { renderTooltip } from "../utils";
 import { TFunction } from 'i18next';
-import { software, web, others, system, extraSkills} from './constant';
+import { software, web, others, system, extraSkills } from './constant';
 
 interface skill {
     image: string,
@@ -17,12 +17,12 @@ interface skill {
     tooltip: string,
     class?: string,
     size?: number
-  }
-  
-  export interface skills {
+}
+
+export interface skills {
     title: string,
     skills: skill[]
-  }
+}
 
 /**
  * Display an image of a technology, with a link to its website, and a tooltip (on hover) 
@@ -62,7 +62,7 @@ function Skill(props: { skill: skill; }): ReactElement {
  */
 export function Skills(props?: { skill?: string; }): ReactElement {
     const { t }: { t: TFunction } = useTranslation();
-    
+
     const list: skills[][] = [[system, software], [web, others]]
 
     // We want to display all the skills
