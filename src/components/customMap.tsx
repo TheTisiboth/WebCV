@@ -1,6 +1,6 @@
 import React, { useState, ReactElement, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { Map, Marker, TileLayer, GeoJSON } from "react-leaflet";
+import { Map, TileLayer, GeoJSON } from "react-leaflet";
 import geoJsonData from '../assets/geoJsonData.json';
 import { Layer, LeafletMouseEvent, LatLngLiteral } from 'leaflet';
 import geojson from 'geojson';
@@ -91,7 +91,7 @@ export default function CustomMap(): ReactElement {
   }
 
   // Called on every zoom change, in order to display either the GeoJson, or the cities Marker
-  function updateDisplay(zoom: number): Marker[] | any {
+  function updateDisplay(zoom: number): void | JSX.Element {
     const map = mapRef.current;
     if (zoom >= 4) {
       return cities.forEach((c: position, i: number) => {

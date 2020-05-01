@@ -74,8 +74,7 @@ export function Skills(props?: { skill?: string; }): ReactElement {
                         <Badge className="titleReverse pl-3 pr-3"><h2 >{t("navbar.skill")}</h2></Badge>
                     </Col>
                 </Row>
-                {/* <Row className="justify-content-center pt-4"> */}
-                {list.map((row: skills[]) => {
+                {list.map((row: skills[]): ReactElement => {
                     return (
                         <Row key={row[0].title} className="justify-content-center pt-4">
                             {row.map((s: skills): ReactElement => {
@@ -90,18 +89,15 @@ export function Skills(props?: { skill?: string; }): ReactElement {
                                             <Col xs={6} md={10}>
                                                 {s.skills.map((skill: skill): ReactElement => {
                                                     return (
-
                                                         <Skill
                                                             skill={skill}
                                                             key={skill.href}
                                                         />
                                                     );
-                                                }
-                                                )}
+                                                })}
                                             </Col>
                                         </Row>
                                     </Col>
-
                                 );
                             })}
                         </Row>

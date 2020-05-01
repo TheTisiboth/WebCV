@@ -49,10 +49,10 @@ import peip from "./assets/peip.png";
 import mcdonalds from "./assets/mcdonalds.png";
 import deliveroo from "./assets/deliveroo.png";
 import sebben from "./assets/sebben.png";
+// import logoLoader from './assets/logoLoader.svg';
 import { TFunction } from 'i18next';
 
 require("./global.d.ts");
-
 
 /**
  * Translation button, that translate the whole page. It switches between english (by default) and french
@@ -193,7 +193,6 @@ function MyNavbar(): ReactElement {
                 </div>
               </OverlayTrigger>
             </NavDropdown.Item>
-            {/* <NavDropdown.Divider /> */}
             <NavDropdown.Item href={CV_EN} download={true} className="text-center">
               <OverlayTrigger
                 placement="bottom"
@@ -207,11 +206,9 @@ function MyNavbar(): ReactElement {
               </OverlayTrigger>
             </NavDropdown.Item>
           </NavDropdown>
-
           <Nav.Link href="#">
             <TranslationButton onClick={onClick} />
           </Nav.Link>
-
         </Nav>
       </Navbar.Collapse>
     </Navbar >
@@ -366,7 +363,6 @@ function Projects() {
                 <IconContext.Provider value={{ size: "2em" }}>
                   <div>
                     <FaGithub />
-
                   </div>
                 </IconContext.Provider>
               </a>
@@ -413,9 +409,9 @@ function Projects() {
               <Skills skill="Node" />
             </Col>
           </Row>
-
         </Col>
       </Row>
+
       <Row className="justify-content-center pt-5 pb-5 mt-3 mb-3">
         <Col xs={12} md>
           <Figure>
@@ -468,7 +464,6 @@ function Projects() {
         <Col xs={12} md className="align-self-center pr-5">
           <h3>{t('projects.3.title')}</h3>
           <p className="text-left">{t('projects.3.body')}</p>
-
           <Row>
             <Col xs={4}>
               <a
@@ -817,11 +812,9 @@ function Footer() {
     <Container>
       <ListGroup horizontal className="justify-content-center copyright pt-2">
         <ListGroup.Item className="copyright" variant="dark">© 2020 Copyright: Léo Jan</ListGroup.Item>
-
       </ListGroup>
       <Row className="justify-content-center">
         <Col md={3}>
-
           <Nav.Link className="mt-2" href="#App" onSelect={() => scroller.scrollTo('App', scrollOptions)}>
             <OverlayTrigger
               placement="right"
@@ -829,7 +822,6 @@ function Footer() {
               overlay={renderTooltip(t("top"))}
             >
               <Button variant="outline-light">
-
                 <FaArrowAltCircleUp className="mb-1" />
               </Button>
             </OverlayTrigger>
