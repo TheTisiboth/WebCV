@@ -1,12 +1,12 @@
-import React, { useState, ReactElement, useRef } from "react";
-import { useTranslation } from "react-i18next";
-import { Map, TileLayer, GeoJSON } from "react-leaflet";
-import geoJsonData from "../assets/geoJsonData.json";
-import { Layer, LeafletMouseEvent, LatLngLiteral, PathOptions } from "leaflet";
-import geojson from "geojson";
-import { TFunction } from "i18next";
-import { cities, countries } from "./constant";
-import L from "leaflet";
+import React, { useState, ReactElement, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Map, TileLayer, GeoJSON } from 'react-leaflet';
+import geoJsonData from '../assets/geoJsonData.json';
+import { Layer, LeafletMouseEvent, LatLngLiteral, PathOptions } from 'leaflet';
+import geojson from 'geojson';
+import { TFunction } from 'i18next';
+import { cities, countries } from './constant';
+import L from 'leaflet';
 
 export interface Position {
   latlng: LatLngLiteral;
@@ -25,7 +25,7 @@ export default function CustomMap(): ReactElement {
   const mapRef: any = useRef();
   const { t, i18n }: { t: TFunction; i18n: any } = useTranslation();
 
-  const countryToString = (countries: string[]): string => countries.map((c: string): string => t(c)).join(", ");
+  const countryToString = (countries: string[]): string => countries.map((c: string): string => t(c)).join(', ');
 
   // Contains the json containing the polygons of the countries
   const data: geojson.FeatureCollection = geoJsonData as geojson.FeatureCollection;
@@ -33,19 +33,19 @@ export default function CustomMap(): ReactElement {
     key="my-geojson"
     data={data}
     style={(): PathOptions => ({
-      color: "#4a83ec",
+      color: '#4a83ec',
       weight: 1,
-      fillColor: "#1a1d62",
+      fillColor: '#1a1d62',
       fillOpacity: 0.25,
     })}
     onEachFeature={(feature: geojson.Feature<geojson.GeometryObject>, layer: Layer): void => {
       layer.on({
-        "mouseover": (e: LeafletMouseEvent): void => {
+        'mouseover': (e: LeafletMouseEvent): void => {
           const country = countries[e.target.feature.properties.adm0_a3];
           layer.bindTooltip(countryToString(country.tooltip as string[]));
           layer.openTooltip(country.latlng);
         },
-        "mouseout": (): void => {
+        'mouseout': (): void => {
           layer.unbindTooltip();
           layer.closeTooltip();
         },
@@ -60,7 +60,7 @@ export default function CustomMap(): ReactElement {
     display: geoJson,
   });
 
-  i18n.on("languageChanged", (lng: any): void => {
+  i18n.on('languageChanged', (lng: any): void => {
     if (lng) {
       const map = mapRef.current;
       if (map && map.leafletElement.getZoom() >= 4 && markersAdded) {
@@ -115,7 +115,7 @@ export default function CustomMap(): ReactElement {
   return (
     <Map
       ref={mapRef}
-      style={{ height: "500px" }}
+      style={{ height: '500px' }}
       center={[54.370138916189596, -29.918133437500003]}
       zoom={state.zoom}
       onZoomend={onZoom}

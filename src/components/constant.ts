@@ -1,178 +1,178 @@
-import { Position } from "./customMap";
-import { Skills } from "./skills";
-import C from "../assets/c.png";
-import JAVA from "../assets/java.png";
-import PYTHON from "../assets/python.png";
-import OCAML from "../assets/ocaml.jpg";
-import ARM from "../assets/arm2.png";
-import BOOTSTRAP from "../assets/bootstrap.png";
-import CSS from "../assets/css.png";
-import HTML from "../assets/html.png";
-import JQUERY from "../assets/jquery.png";
-import MONGODB from "../assets/mongodb.png";
-import ANGULAR from "../assets/angular.png";
-import PHP from "../assets/php.png";
-import SQL from "../assets/sql.png";
-import REACT from "../assets/react.svg";
-import GIT from "../assets/git.png";
-import LINUX from "../assets/linux.svg";
-import ARDUINO from "../assets/arduino.svg";
-import NODE from "../assets/node.png";
-import JHIPSTER from "../assets/jhipster.png";
-import SPRING from "../assets/spring.png";
-import POSTGRES from "../assets/postgres.webp";
+import { Position } from './customMap';
+import { Skills } from './skills';
+import C from '../assets/c.png';
+import JAVA from '../assets/java.png';
+import PYTHON from '../assets/python.png';
+import OCAML from '../assets/ocaml.jpg';
+import ARM from '../assets/arm2.png';
+import BOOTSTRAP from '../assets/bootstrap.png';
+import CSS from '../assets/css.png';
+import HTML from '../assets/html.png';
+import JQUERY from '../assets/jquery.png';
+import MONGODB from '../assets/mongodb.png';
+import ANGULAR from '../assets/angular.png';
+import PHP from '../assets/php.png';
+import SQL from '../assets/sql.png';
+import REACT from '../assets/react.svg';
+import GIT from '../assets/git.png';
+import LINUX from '../assets/linux.svg';
+import ARDUINO from '../assets/arduino.svg';
+import NODE from '../assets/node.png';
+import JHIPSTER from '../assets/jhipster.png';
+import SPRING from '../assets/spring.png';
+import POSTGRES from '../assets/postgres.webp';
 
 export const system: Skills = {
-  title: "skills.system",
+  title: 'skills.system',
   skills: [
     {
       image: C,
-      href: "https://en.wikipedia.org/wiki/C_(programming_language)",
-      tooltip: "C"
+      href: 'https://en.wikipedia.org/wiki/C_(programming_language)',
+      tooltip: 'C'
     },
     {
       image: ARM,
-      href: "https://www.arm.com/products/silicon-ip-cpu",
-      tooltip: "ARM"
+      href: 'https://www.arm.com/products/silicon-ip-cpu',
+      tooltip: 'ARM'
     },
     {
       image: ARDUINO,
-      href: "https://www.arduino.cc/",
-      tooltip: "Arduino"
+      href: 'https://www.arduino.cc/',
+      tooltip: 'Arduino'
     }
   ]
 };
 
 export const software: Skills = {
-  title: "skills.software",
+  title: 'skills.software',
   skills: [
     {
       image: JAVA,
-      href: "https://www.java.com/fr/",
-      tooltip: "Java"
+      href: 'https://www.java.com/fr/',
+      tooltip: 'Java'
     },
     {
       image: PYTHON,
-      href: "https://www.python.org/",
-      tooltip: "Python"
+      href: 'https://www.python.org/',
+      tooltip: 'Python'
     },
     {
       image: OCAML,
-      href: "https://ocaml.org/",
-      tooltip: "Ocaml"
+      href: 'https://ocaml.org/',
+      tooltip: 'Ocaml'
     }
   ]
 };
 
 export const web: Skills = {
-  title: "skills.web",
+  title: 'skills.web',
   skills: [
     {
       image: BOOTSTRAP,
-      href: "https://getbootstrap.com/",
-      tooltip: "Bootstrap"
+      href: 'https://getbootstrap.com/',
+      tooltip: 'Bootstrap'
     },
     {
       image: ANGULAR,
-      href: "https://angular.io/",
-      tooltip: "Angular"
+      href: 'https://angular.io/',
+      tooltip: 'Angular'
     },
     {
       image: MONGODB,
-      href: "https://www.mongodb.com/",
-      tooltip: "MongoDB"
+      href: 'https://www.mongodb.com/',
+      tooltip: 'MongoDB'
     },
     {
       image: JQUERY,
-      href: "https://jquery.com/",
-      tooltip: "JQuery"
+      href: 'https://jquery.com/',
+      tooltip: 'JQuery'
     },
     {
       image: PHP,
-      href: "https://www.php.net/",
-      tooltip: "PHP",
+      href: 'https://www.php.net/',
+      tooltip: 'PHP',
       size: 42
     },
     {
       image: SQL,
-      href: "https://en.wikipedia.org/wiki/SQL",
-      tooltip: "SQL",
+      href: 'https://en.wikipedia.org/wiki/SQL',
+      tooltip: 'SQL',
       size: 25
     }
   ]
 };
 
 export const others: Skills = {
-  title: "skills.other",
+  title: 'skills.other',
   skills: [
     {
       image: GIT,
-      href: "https://git-scm.com/",
-      tooltip: "Git",
-      class: "iconToWhite"
+      href: 'https://git-scm.com/',
+      tooltip: 'Git',
+      class: 'iconToWhite'
     },
     {
       image: LINUX,
-      href: "https://www.linux.org/",
-      tooltip: "Linux"
+      href: 'https://www.linux.org/',
+      tooltip: 'Linux'
     }
   ]
 };
 
 export const extraSkills: Skills = {
-  title: "Extra Skills",
+  title: 'Extra Skills',
   skills: [
     {
       image: NODE,
-      href: "https://nodejs.org/",
-      tooltip: "Node.js",
+      href: 'https://nodejs.org/',
+      tooltip: 'Node.js',
     },
     {
       image: JHIPSTER,
-      href: "https://www.jhipster.tech/",
-      tooltip: "JHipster",
+      href: 'https://www.jhipster.tech/',
+      tooltip: 'JHipster',
     },
     {
       image: SPRING,
-      href: "https://spring.io/",
-      tooltip: "Spring",
+      href: 'https://spring.io/',
+      tooltip: 'Spring',
     },
     {
       image: POSTGRES,
-      href: "https://www.postgresql.org/",
-      tooltip: "Postgres SQL",
+      href: 'https://www.postgresql.org/',
+      tooltip: 'Postgres SQL',
     },
     {
       image: HTML,
-      href: "https://en.wikipedia.org/wiki/HTML",
-      tooltip: "HTML"
+      href: 'https://en.wikipedia.org/wiki/HTML',
+      tooltip: 'HTML'
     },
     {
       image: CSS,
-      href: "https://en.wikipedia.org/wiki/Cascading_Style_Sheets",
-      tooltip: "CSS"
+      href: 'https://en.wikipedia.org/wiki/Cascading_Style_Sheets',
+      tooltip: 'CSS'
     },
     {
       image: REACT,
-      href: "https://reactjs.org/",
-      tooltip: "React"
+      href: 'https://reactjs.org/',
+      tooltip: 'React'
     },
   ]
 };
 
 // List of position and label of tooltip for the GeoJson object, for each country
-export let countries: { [key: string]: Position } = {
+export const countries: { [key: string]: Position } = {
   DEU: {
     latlng: {
       lat: 51.0834196,
       lng: 10.4234469,
     },
     tooltip: [
-      "travel.germany.munich",
-      "travel.germany.berlin",
-      "travel.germany.hamburg",
-      "travel.germany.munster",
-      "travel.germany.country",
+      'travel.germany.munich',
+      'travel.germany.berlin',
+      'travel.germany.hamburg',
+      'travel.germany.munster',
+      'travel.germany.country',
     ]
   },
   CZE: {
@@ -181,8 +181,8 @@ export let countries: { [key: string]: Position } = {
       lng: 15.326962,
     },
     tooltip: [
-      "travel.tchequie.prague",
-      "travel.tchequie.country",
+      'travel.tchequie.prague',
+      'travel.tchequie.country',
     ]
   },
   BEL: {
@@ -191,9 +191,9 @@ export let countries: { [key: string]: Position } = {
       lng: 4.6667145,
     },
     tooltip: [
-      "travel.belgium.brussels",
-      "travel.belgium.liege",
-      "travel.belgium.country",
+      'travel.belgium.brussels',
+      'travel.belgium.liege',
+      'travel.belgium.country',
     ]
   },
   CAN: {
@@ -202,11 +202,11 @@ export let countries: { [key: string]: Position } = {
       lng: -71.20849,
     },
     tooltip: [
-      "travel.canada.montreal",
-      "travel.canada.quebec",
-      "travel.canada.sherbrooke",
-      "travel.canada.tadoussac",
-      "travel.canada.country",
+      'travel.canada.montreal',
+      'travel.canada.quebec',
+      'travel.canada.sherbrooke',
+      'travel.canada.tadoussac',
+      'travel.canada.country',
     ]
   },
   ESP: {
@@ -215,9 +215,9 @@ export let countries: { [key: string]: Position } = {
       lng: -3.749220,
     },
     tooltip: [
-      "travel.spain.barcelona",
-      "travel.spain.palma",
-      "travel.spain.country",
+      'travel.spain.barcelona',
+      'travel.spain.palma',
+      'travel.spain.country',
     ]
   },
   ITA: {
@@ -226,10 +226,10 @@ export let countries: { [key: string]: Position } = {
       lng: 12.674297,
     },
     tooltip: [
-      "travel.italy.roma",
-      "travel.italy.naples",
-      "travel.italy.pompei",
-      "travel.italy.country",
+      'travel.italy.roma',
+      'travel.italy.naples',
+      'travel.italy.pompei',
+      'travel.italy.country',
     ]
   },
   GRC: {
@@ -238,9 +238,9 @@ export let countries: { [key: string]: Position } = {
       lng: 21.9877132,
     },
     tooltip: [
-      "travel.greece.athens",
-      "travel.greece.corinth",
-      "travel.greece.country",
+      'travel.greece.athens',
+      'travel.greece.corinth',
+      'travel.greece.country',
     ]
   },
   USA: {
@@ -249,8 +249,8 @@ export let countries: { [key: string]: Position } = {
       lng: -75.62081909179688,
     },
     tooltip:
-      ["travel.us.ny",
-        "travel.us.country"
+      ['travel.us.ny',
+        'travel.us.country'
       ]
   },
   IRL: {
@@ -259,8 +259,8 @@ export let countries: { [key: string]: Position } = {
       lng: -7.9794599,
     },
     tooltip: [
-      "travel.uk.ireland",
-      "travel.uk.country",
+      'travel.uk.ireland',
+      'travel.uk.country',
     ]
   },
   FRA: {
@@ -269,8 +269,8 @@ export let countries: { [key: string]: Position } = {
       lng: 5.3699525,
     },
     tooltip: [
-      "travel.fr.marseille",
-      "travel.fr.country",
+      'travel.fr.marseille',
+      'travel.fr.country',
     ]
   },
   SWE: {
@@ -279,27 +279,27 @@ export let countries: { [key: string]: Position } = {
       lng: 14.5208584,
     },
     tooltip: [
-      "travel.sweden.stockholm",
-      "travel.sweden.country",
+      'travel.sweden.stockholm',
+      'travel.sweden.country',
     ]
   }
 };
 
 // List of position and tooltip for the cities Markers
-export let cities: Position[] = [
+export const cities: Position[] = [
   {
     latlng: {
       lat: 48.13825988769531,
       lng: 11.584508895874023,
     },
-    tooltip: "travel.germany.munich",
+    tooltip: 'travel.germany.munich',
   },
   {
     latlng: {
       lat: 52.51763153076172,
       lng: 13.40965747833252,
     },
-    tooltip: "travel.germany.berlin",
+    tooltip: 'travel.germany.berlin',
   },
   {
     // germany
@@ -307,7 +307,7 @@ export let cities: Position[] = [
       lat: 53.56729507446289,
       lng: 9.941673278808594,
     },
-    tooltip: "travel.germany.hamburg",
+    tooltip: 'travel.germany.hamburg',
   },
   {
     // germany
@@ -315,7 +315,7 @@ export let cities: Position[] = [
       lat: 51.960906982421875,
       lng: 7.628866195678711,
     },
-    tooltip: "travel.germany.munster",
+    tooltip: 'travel.germany.munster',
   },
   {
     // tchequie
@@ -323,7 +323,7 @@ export let cities: Position[] = [
       lat: 50.05708312988281,
       lng: 14.44813060760498,
     },
-    tooltip: "travel.tchequie.prague",
+    tooltip: 'travel.tchequie.prague',
   },
   {
     // belgium
@@ -331,7 +331,7 @@ export let cities: Position[] = [
       lat: 50.6451381,
       lng: 5.5734203,
     },
-    tooltip: "travel.belgium.liege",
+    tooltip: 'travel.belgium.liege',
   },
   {
     // belgium
@@ -339,7 +339,7 @@ export let cities: Position[] = [
       lat: 50.8436709,
       lng: 4.3674367,
     },
-    tooltip: "travel.belgium.brussels",
+    tooltip: 'travel.belgium.brussels',
   },
   {
     // canada
@@ -347,7 +347,7 @@ export let cities: Position[] = [
       lat: 45.509063720703125,
       lng: -73.55335998535156,
     },
-    tooltip: "travel.canada.montreal",
+    tooltip: 'travel.canada.montreal',
   },
   {
     // canada
@@ -355,7 +355,7 @@ export let cities: Position[] = [
       lat: 46.825754,
       lng: -71.20849,
     },
-    tooltip: "travel.canada.quebec",
+    tooltip: 'travel.canada.quebec',
   },
   {
     // canada
@@ -363,7 +363,7 @@ export let cities: Position[] = [
       lat: 48.1433429,
       lng: -69.7174574,
     },
-    tooltip: "travel.canada.tadoussac",
+    tooltip: 'travel.canada.tadoussac',
   },
   {
     // canada
@@ -372,7 +372,7 @@ export let cities: Position[] = [
       lng: -71.89034271240234,
 
     },
-    tooltip: "travel.canada.sherbrooke",
+    tooltip: 'travel.canada.sherbrooke',
   },
   {
     // spain
@@ -381,7 +381,7 @@ export let cities: Position[] = [
       lng: 2.9746341705322266,
 
     },
-    tooltip: "travel.spain.palma",
+    tooltip: 'travel.spain.palma',
   },
   {
     // spain
@@ -390,7 +390,7 @@ export let cities: Position[] = [
       lng: 2.164867401123047,
 
     },
-    tooltip: "travel.spain.barcelona",
+    tooltip: 'travel.spain.barcelona',
   },
   {
     // italy
@@ -399,7 +399,7 @@ export let cities: Position[] = [
       lng: 12.493546485900879,
 
     },
-    tooltip: "travel.italy.roma",
+    tooltip: 'travel.italy.roma',
   },
   {
     // italy
@@ -407,7 +407,7 @@ export let cities: Position[] = [
       lat: 40.83998489379883,
       lng: 14.252542495727539,
     },
-    tooltip: "travel.italy.naples",
+    tooltip: 'travel.italy.naples',
   },
   {
     // italy
@@ -416,7 +416,7 @@ export let cities: Position[] = [
       lng: 14.501250267028809,
 
     },
-    tooltip: "travel.italy.pompei",
+    tooltip: 'travel.italy.pompei',
   },
   {
     // greece
@@ -424,7 +424,7 @@ export let cities: Position[] = [
       lat: 37.99076843261719,
       lng: 23.74122428894043,
     },
-    tooltip: "travel.greece.athens",
+    tooltip: 'travel.greece.athens',
   },
   {
     // greece
@@ -433,7 +433,7 @@ export let cities: Position[] = [
       lng: 22.92695426940918,
 
     },
-    tooltip: "travel.greece.corinth",
+    tooltip: 'travel.greece.corinth',
   },
   {
     // us
@@ -441,7 +441,7 @@ export let cities: Position[] = [
       lat: 42.92121887207031,
       lng: -75.62081909179688,
     },
-    tooltip: "travel.us.ny",
+    tooltip: 'travel.us.ny',
   },
   {
     // uk
@@ -450,7 +450,7 @@ export let cities: Position[] = [
       lng: -7.9794599,
 
     },
-    tooltip: "travel.uk.ireland",
+    tooltip: 'travel.uk.ireland',
   },
   {
     // fr
@@ -458,7 +458,7 @@ export let cities: Position[] = [
       lat: 43.2961743,
       lng: 5.3699525,
     },
-    tooltip: "travel.fr.marseille",
+    tooltip: 'travel.fr.marseille',
   },
   {
     // sweden
@@ -466,6 +466,6 @@ export let cities: Position[] = [
       lat: 59.32796859741211,
       lng: 18.05364227294922,
     },
-    tooltip: "travel.sweden.stockholm",
+    tooltip: 'travel.sweden.stockholm',
   },
 ];

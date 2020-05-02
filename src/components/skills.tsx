@@ -1,15 +1,15 @@
-import React, { ReactElement } from "react";
-import { useTranslation } from "react-i18next";
+import React, { ReactElement } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
     Row,
     Col,
     Figure,
     OverlayTrigger,
     Badge
-} from "react-bootstrap";
-import { renderTooltip } from "../utils";
-import { TFunction } from "i18next";
-import { software, web, others, system, extraSkills } from "./constant";
+} from 'react-bootstrap';
+import { renderTooltip } from '../utils';
+import { TFunction } from 'i18next';
+import { software, web, others, system, extraSkills } from './constant';
 
 interface Skill {
     image: string;
@@ -45,7 +45,7 @@ function Skill(props: { skill: Skill; }): ReactElement {
             >
                 <Figure>
                     <Figure.Image
-                        className={(skill.class ? skill.class : "")}
+                        className={(skill.class ? skill.class : '')}
                         width={(skill.size) ? skill.size : 32}
                         height={(skill.size) ? skill.size : 32}
                         alt="171x180"
@@ -71,7 +71,7 @@ export function Skills(props?: { skill?: string; }): ReactElement {
             <div id="Skills" className="text-center pt-5 pt-md-2 pr-0 pr-md-5">
                 <Row className=" justify-content-center">
                     <Col md={6} xs={8} className="pt-2 pb-2  rounded">
-                        <Badge className="titleReverse pl-3 pr-3"><h2 >{t("navbar.skill")}</h2></Badge>
+                        <Badge className="titleReverse pl-3 pr-3"><h2 >{t('navbar.skill')}</h2></Badge>
                     </Col>
                 </Row>
                 {list.map((row: Skills[]): ReactElement => {
