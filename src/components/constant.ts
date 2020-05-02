@@ -1,5 +1,5 @@
-import { position } from './customMap';
-import { skills } from './skills';
+import { Position } from "./customMap";
+import { Skills } from "./skills";
 import C from "../assets/c.png";
 import JAVA from "../assets/java.png";
 import PYTHON from "../assets/python.png";
@@ -22,8 +22,7 @@ import JHIPSTER from "../assets/jhipster.png";
 import SPRING from "../assets/spring.png";
 import POSTGRES from "../assets/postgres.webp";
 
-export const system: skills =
-{
+export const system: Skills = {
   title: "skills.system",
   skills: [
     {
@@ -44,8 +43,7 @@ export const system: skills =
   ]
 };
 
-export const software: skills =
-{
+export const software: Skills = {
   title: "skills.software",
   skills: [
     {
@@ -66,8 +64,7 @@ export const software: skills =
   ]
 };
 
-export const web: skills =
-{
+export const web: Skills = {
   title: "skills.web",
   skills: [
     {
@@ -105,8 +102,7 @@ export const web: skills =
   ]
 };
 
-export const others: skills =
-{
+export const others: Skills = {
   title: "skills.other",
   skills: [
     {
@@ -123,8 +119,7 @@ export const others: skills =
   ]
 };
 
-export const extraSkills: skills =
-{
+export const extraSkills: Skills = {
   title: "Extra Skills",
   skills: [
     {
@@ -163,12 +158,10 @@ export const extraSkills: skills =
       tooltip: "React"
     },
   ]
-}
-
-
+};
 
 // List of position and label of tooltip for the GeoJson object, for each country
-export let countries: { [key: string]: position } = {
+export let countries: { [key: string]: Position } = {
   DEU: {
     latlng: {
       lat: 51.0834196,
@@ -290,11 +283,10 @@ export let countries: { [key: string]: position } = {
       "travel.sweden.country",
     ]
   }
-}
-
+};
 
 // List of position and tooltip for the cities Markers
-export let cities: position[] = [
+export let cities: Position[] = [
   {
     latlng: {
       lat: 48.13825988769531,

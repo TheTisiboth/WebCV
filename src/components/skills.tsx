@@ -8,27 +8,27 @@ import {
     Badge
 } from "react-bootstrap";
 import { renderTooltip } from "../utils";
-import { TFunction } from 'i18next';
-import { software, web, others, system, extraSkills } from './constant';
+import { TFunction } from "i18next";
+import { software, web, others, system, extraSkills } from "./constant";
 
-interface skill {
-    image: string,
-    href: string,
-    tooltip: string,
-    class?: string,
-    size?: number
+interface Skill {
+    image: string;
+    href: string;
+    tooltip: string;
+    class?: string;
+    size?: number;
 }
 
-export interface skills {
-    title: string,
-    skills: skill[]
+export interface Skills {
+    title: string;
+    skills: Skill[];
 }
 
 /**
- * Display an image of a technology, with a link to its website, and a tooltip (on hover) 
+ * Display an image of a technology, with a link to its website, and a tooltip (on hover)
  * @param props Info about the image to display
  */
-function Skill(props: { skill: skill; }): ReactElement {
+function Skill(props: { skill: Skill; }): ReactElement {
     const skill = props.skill;
 
     return (
@@ -63,7 +63,7 @@ function Skill(props: { skill: skill; }): ReactElement {
 export function Skills(props?: { skill?: string; }): ReactElement {
     const { t }: { t: TFunction } = useTranslation();
 
-    const list: skills[][] = [[system, software], [web, others]]
+    const list: Skills[][] = [[system, software], [web, others]];
 
     // We want to display all the skills
     if (props === undefined || props.skill === undefined) {
@@ -74,10 +74,10 @@ export function Skills(props?: { skill?: string; }): ReactElement {
                         <Badge className="titleReverse pl-3 pr-3"><h2 >{t("navbar.skill")}</h2></Badge>
                     </Col>
                 </Row>
-                {list.map((row: skills[]): ReactElement => {
+                {list.map((row: Skills[]): ReactElement => {
                     return (
                         <Row key={row[0].title} className="justify-content-center pt-4">
-                            {row.map((s: skills): ReactElement => {
+                            {row.map((s: Skills): ReactElement => {
                                 return (
                                     <Col key={s.title} md={6}>
                                         <Row>
@@ -87,7 +87,7 @@ export function Skills(props?: { skill?: string; }): ReactElement {
                                         </Row>
                                         <Row className="justify-content-center">
                                             <Col xs={6} md={10}>
-                                                {s.skills.map((skill: skill): ReactElement => {
+                                                {s.skills.map((skill: Skill): ReactElement => {
                                                     return (
                                                         <Skill
                                                             skill={skill}
@@ -101,15 +101,15 @@ export function Skills(props?: { skill?: string; }): ReactElement {
                                 );
                             })}
                         </Row>
-                    )
+                    );
                 })}
             </div>
         );
     } else {
         const arr = [...list[0], ...list[1], extraSkills];
-        const skills = arr.map(({ skills }) => skills).flat()
-        const mySkill: skill = skills.find(skill => skill.tooltip.includes(props!.skill as string)) as skill;
+        const skills = arr.map(({ skills }: Skills): Skill[] => skills).flat();
+        const mySkill: Skill = skills.find((skill: Skill): boolean => skill.tooltip.includes(props.skill as string)) as Skill;
 
-        return (<Skill skill={mySkill} />)
+        return (<Skill skill={mySkill} />);
     }
 }

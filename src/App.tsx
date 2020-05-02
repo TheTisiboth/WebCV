@@ -14,8 +14,8 @@ import {
   ListGroup,
   Badge
 } from "react-bootstrap";
-import { scroller } from 'react-scroll';
-import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
+import { scroller } from "react-scroll";
+import { Timeline, TimelineItem } from "vertical-timeline-component-for-react";
 import { renderTooltip } from "./utils";
 import CustomMap from "./components/customMap";
 import { Skills } from "./components/skills";
@@ -50,8 +50,9 @@ import mcdonalds from "./assets/mcdonalds.png";
 import deliveroo from "./assets/deliveroo.png";
 import sebben from "./assets/sebben.png";
 // import logoLoader from './assets/logoLoader.svg';
-import { TFunction } from 'i18next';
+import { TFunction } from "i18next";
 
+// tslint:disable-next-line: no-var-requires
 require("./global.d.ts");
 
 /**
@@ -119,23 +120,24 @@ function MyNavbar(): ReactElement {
   const nav: MutableRefObject<any> = useRef();
 
   // Triger toggle navbar if collapsed
-  const onClick = () => {
-    if (collapse.current.className.includes("show"))
+  const onClick = (): void => {
+    if (collapse.current.className.includes("show")) {
       toggle.current.click();
-  }
+    }
+  };
 
   // If we click outside the navbar, we close it
-  const handleClick = (e: MouseEvent) => {
+  const handleClick = (e: MouseEvent): void => {
     if (!nav.current.contains(e.target)) {
       onClick();
     }
   };
 
-  useEffect(() => {
+  useEffect((): (() => void) => {
     // add when mounted
     document.addEventListener("mousedown", handleClick);
     // return function to be called when unmounted
-    return () => {
+    return (): void => {
       document.removeEventListener("mousedown", handleClick);
     };
   });
@@ -148,7 +150,7 @@ function MyNavbar(): ReactElement {
 
   return (
     <Navbar id="nav" ref={nav} collapseOnSelect={true} expand="md" bg="dark" variant="dark" className="pt-0 pb-0" fixed="top">
-      <Nav.Link href="#App" onSelect={() => scroller.scrollTo('App', scrollOptions)}>
+      <Nav.Link href="#App" onSelect={(): void => scroller.scrollTo("App", scrollOptions)}>
         <img
           alt=""
           src={logo}
@@ -161,23 +163,23 @@ function MyNavbar(): ReactElement {
       <Navbar.Toggle ref={toggle} aria-controls="responsive-navbar-nav" />
       <Navbar.Collapse ref={collapse} id="responsive-navbar-nav" className="pb-3 pb-md-0">
         <Nav className="mr-auto">
-          <Nav.Link className="" href="#Skills" onSelect={() => scroller.scrollTo('Skills', scrollOptions)}>
+          <Nav.Link className="" href="#Skills" onSelect={(): void => scroller.scrollTo("Skills", scrollOptions)}>
             {t("navbar.skill")}
           </Nav.Link>
-          <Nav.Link className="" href="#Projects" onSelect={() => scroller.scrollTo('Projects', scrollOptions)}>
+          <Nav.Link className="" href="#Projects" onSelect={(): void => scroller.scrollTo("Projects", scrollOptions)}>
             {t("navbar.projects")}
           </Nav.Link>
-          <Nav.Link className="" href="#History" onSelect={() => scroller.scrollTo('History', scrollOptions)}>
+          <Nav.Link className="" href="#History" onSelect={(): void => scroller.scrollTo("History", scrollOptions)}>
             {t("navbar.history")}
           </Nav.Link>
-          <Nav.Link className="" href="#Travels" onSelect={() => scroller.scrollTo('Travels', scrollOptions)}>
+          <Nav.Link className="" href="#Travels" onSelect={(): void => scroller.scrollTo("Travels", scrollOptions)}>
             {t("navbar.travel")}
           </Nav.Link>
         </Nav>
         <Nav >
           <NavDropdown title={
             <span className="m-auto">
-              <MdFileDownload className=" mr-2 myIcon" />{t('navbar.cv')}
+              <MdFileDownload className=" mr-2 myIcon" />{t("navbar.cv")}
             </span>}
             id="basic-nav-dropdown" className="m-auto mr-md-5">
 
@@ -300,7 +302,7 @@ function AppHeader(): ReactElement {
                   width="60%"
                   alt="171x180"
                   src={image}
-                  roundedCircle
+                  roundedCircle={true}
                 />
               </Figure>
             </Col>
@@ -325,22 +327,21 @@ function AppHeader(): ReactElement {
   );
 }
 
-
 /**
  * Projects section
  */
-function Projects() {
+function Projects(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
 
   return (
     <Container id="Projects" className="pt-5">
       <Row className="mb-4 justify-content-center">
-        <Col xs md={8} className="pt-2 pb-2">
+        <Col xs={true} md={8} className="pt-2 pb-2">
           <Badge><h2 className="mytitle titles rounded ">{t("navbar.projects")}</h2></Badge>
         </Col>
       </Row>
       <Row className="justify-content-center pt-5 pb-5 mt-3 mb-3">
-        <Col xs={12} md>
+        <Col xs={12} md={true}>
           <Figure>
             <Figure.Image
               height="75%"
@@ -350,9 +351,9 @@ function Projects() {
             />
           </Figure>
         </Col>
-        <Col xs={12} md className="align-self-center pr-5">
-          <h3>{t('projects.0.title')}</h3>
-          <p className="text-left">{t('projects.0.body')}</p>
+        <Col xs={12} md={true} className="align-self-center pr-5">
+          <h3>{t("projects.0.title")}</h3>
+          <p className="text-left">{t("projects.0.body")}</p>
           <Row>
             <Col xs={4}>
               <a
@@ -376,7 +377,7 @@ function Projects() {
       </Row>
 
       <Row className="justify-content-center pt-5 pb-5 mt-3 mb-3">
-        <Col xs={12} md>
+        <Col xs={12} md={true}>
           <Figure>
             <Figure.Image
               height="75%"
@@ -386,9 +387,9 @@ function Projects() {
             />
           </Figure>
         </Col>
-        <Col xs={12} md className="align-self-center pr-5">
-          <h3>{t('projects.1.title')}</h3>
-          <p className="text-left">{t('projects.1.body')}</p>
+        <Col xs={12} md={true} className="align-self-center pr-5">
+          <h3>{t("projects.1.title")}</h3>
+          <p className="text-left">{t("projects.1.body")}</p>
           <Row>
             <Col xs={4}>
               <a
@@ -413,7 +414,7 @@ function Projects() {
       </Row>
 
       <Row className="justify-content-center pt-5 pb-5 mt-3 mb-3">
-        <Col xs={12} md>
+        <Col xs={12} md={true}>
           <Figure>
             <Figure.Image
               height="75%"
@@ -423,9 +424,9 @@ function Projects() {
             />
           </Figure>
         </Col>
-        <Col xs={12} md className="align-self-center pr-5">
-          <h3>{t('projects.2.title')}</h3>
-          <p className="text-left">{t('projects.2.body')}</p>
+        <Col xs={12} md={true} className="align-self-center pr-5">
+          <h3>{t("projects.2.title")}</h3>
+          <p className="text-left">{t("projects.2.body")}</p>
           <Row>
             <Col xs={4}>
               <a
@@ -451,7 +452,7 @@ function Projects() {
       </Row>
 
       <Row className="justify-content-center pt-5 pb-5 mt-3 mb-3">
-        <Col xs={12} md>
+        <Col xs={12} md={true}>
           <Figure>
             <Figure.Image
               height="75%"
@@ -461,9 +462,9 @@ function Projects() {
             />
           </Figure>
         </Col>
-        <Col xs={12} md className="align-self-center pr-5">
-          <h3>{t('projects.3.title')}</h3>
-          <p className="text-left">{t('projects.3.body')}</p>
+        <Col xs={12} md={true} className="align-self-center pr-5">
+          <h3>{t("projects.3.title")}</h3>
+          <p className="text-left">{t("projects.3.body")}</p>
           <Row>
             <Col xs={4}>
               <a
@@ -491,26 +492,26 @@ function Projects() {
 /**
  * Contains Education and professionnal experience
  */
-function History() {
+function History(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
   return (
 
     <Container id="History" className="pt-5">
       <Row className="mb-4 justify-content-center">
-        <Col xs md={8} className="pt-2 pb-2">
-          <Badge><h2 className="mytitle titles rounded ">{t('navbar.history')}</h2></Badge>
+        <Col xs={true} md={8} className="pt-2 pb-2">
+          <Badge><h2 className="mytitle titles rounded ">{t("navbar.history")}</h2></Badge>
         </Col>
       </Row>
-      <Timeline lineColor={'#ddd'}>
+      <Timeline lineColor={"#ddd"}>
         <TimelineItem
           key="001"
           dateText={t("experiences.0.date")}
-          style={{ color: '#e86971' }}
+          style={{ color: "#e86971" }}
           bodyContainerStyle={{
-            background: '#ddd',
-            padding: '20px',
-            borderRadius: '8px',
-            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+            background: "#ddd",
+            padding: "20px",
+            borderRadius: "8px",
+            boxShadow: "0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)",
           }}
         >
           <h4>{t("experiences.0.title")}</h4>
@@ -536,12 +537,12 @@ function History() {
         <TimelineItem
           key="002"
           dateText={t("experiences.1.date")}
-          style={{ color: '#e86971' }}
+          style={{ color: "#e86971" }}
           bodyContainerStyle={{
-            background: '#ddd',
-            padding: '20px',
-            borderRadius: '8px',
-            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+            background: "#ddd",
+            padding: "20px",
+            borderRadius: "8px",
+            boxShadow: "0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)",
           }}
         >
 
@@ -570,8 +571,8 @@ function History() {
         <TimelineItem
           key="003"
           dateText={t("education.0.date")}
-          dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
-          style={{ color: '#61b8ff' }}
+          dateInnerStyle={{ background: "#61b8ff", color: "#000" }}
+          style={{ color: "#61b8ff" }}
 
         >
           <h4>{t("education.0.title")}</h4>
@@ -590,12 +591,12 @@ function History() {
         <TimelineItem
           key="004"
           dateText={t("experiences.2.date")}
-          style={{ color: '#e86971' }}
+          style={{ color: "#e86971" }}
           bodyContainerStyle={{
-            background: '#ddd',
-            padding: '20px',
-            borderRadius: '8px',
-            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+            background: "#ddd",
+            padding: "20px",
+            borderRadius: "8px",
+            boxShadow: "0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)",
           }}
         >
           <h4>{t("experiences.2.title")}</h4>
@@ -621,12 +622,12 @@ function History() {
         <TimelineItem
           key="005"
           dateText={t("experiences.3.date")}
-          style={{ color: '#e86971' }}
+          style={{ color: "#e86971" }}
           bodyContainerStyle={{
-            background: '#ddd',
-            padding: '20px',
-            borderRadius: '8px',
-            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+            background: "#ddd",
+            padding: "20px",
+            borderRadius: "8px",
+            boxShadow: "0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)",
           }}
         >
           <h4>{t("experiences.3.title")}</h4>
@@ -652,8 +653,8 @@ function History() {
         <TimelineItem
           key="006"
           dateText={t("education.1.date")}
-          dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
-          style={{ color: '#61b8ff' }}
+          dateInnerStyle={{ background: "#61b8ff", color: "#000" }}
+          style={{ color: "#61b8ff" }}
 
         >
           <h4>{t("education.1.title")}</h4>
@@ -672,12 +673,12 @@ function History() {
         <TimelineItem
           key="008"
           dateText={t("experiences.4.date")}
-          style={{ color: '#e86971' }}
+          style={{ color: "#e86971" }}
           bodyContainerStyle={{
-            background: '#ddd',
-            padding: '20px',
-            borderRadius: '8px',
-            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+            background: "#ddd",
+            padding: "20px",
+            borderRadius: "8px",
+            boxShadow: "0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)",
           }}
         >
           <h4>{t("experiences.4.title")}</h4>
@@ -700,8 +701,8 @@ function History() {
         <TimelineItem
           key="007"
           dateText={t("education.2.date")}
-          dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
-          style={{ color: '#61b8ff' }}
+          dateInnerStyle={{ background: "#61b8ff", color: "#000" }}
+          style={{ color: "#61b8ff" }}
         >
           <h4>{t("education.2.title")}</h4>
           <p className="text-left">{t("education.2.body")}</p>
@@ -711,14 +712,14 @@ function History() {
   );
 }
 
-function Hobbies() {
+function Hobbies(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
   return (
     <Container>
       <Row className="pt-5 mb-4 justify-content-center">
-        <Col xs className="pt-2 pb-2">
+        <Col xs={true} className="pt-2 pb-2">
           <Badge>
-            <h2 className="mytitle titles rounded ">{t('navbar.hobbies')}</h2>
+            <h2 className="mytitle titles rounded ">{t("navbar.hobbies")}</h2>
           </Badge>
         </Col>
       </Row>
@@ -727,7 +728,7 @@ function Hobbies() {
           <div className="text-left">
             <ul>
               <li>
-                <h5>{t('hobbies.it')}</h5>
+                <h5>{t("hobbies.it")}</h5>
               </li>
               <li className="">
                 <h5>Sports</h5>
@@ -801,7 +802,7 @@ function Travel(): ReactElement {
 /**
  * Footer component
  */
-function Footer() {
+function Footer(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
   const scrollOptions = {
     smooth: true,
@@ -810,12 +811,12 @@ function Footer() {
   };
   return (
     <Container>
-      <ListGroup horizontal className="justify-content-center copyright pt-2">
+      <ListGroup horizontal={true} className="justify-content-center copyright pt-2">
         <ListGroup.Item className="copyright" variant="dark">© 2020 Copyright: Léo Jan</ListGroup.Item>
       </ListGroup>
       <Row className="justify-content-center">
         <Col md={3}>
-          <Nav.Link className="mt-2" href="#App" onSelect={() => scroller.scrollTo('App', scrollOptions)}>
+          <Nav.Link className="mt-2" href="#App" onSelect={(): void => scroller.scrollTo("App", scrollOptions)}>
             <OverlayTrigger
               placement="right"
               delay={{ show: 0, hide: 0 }}
@@ -880,8 +881,8 @@ function WIP(): ReactElement {
 
 // loading component for suspense fallback
 const Loader = (): ReactElement => (
-  <div className="App">
-  </div>
+
+  <div className="App" />
 );
 
 // here app catches the suspense from page in case translations are not yet loaded
