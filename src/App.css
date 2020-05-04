@@ -46,10 +46,26 @@ h2 {
   padding: 10px 30px;
 }
 
+.longDate > .title{
+  width:80%!important;
+}
+
+#longTitle{
+  padding: 10px 15px;
+}
+
 /* On md screen */
 @media (min-width: 768px) {
   .titles {
     padding: 10px 100px;
+  }
+
+  #longTitle{
+    padding: 10px 100px;
+  }
+
+  .longDate >.title{
+    width:34%!important;
   }
 }
 
@@ -94,3 +110,4 @@ h2 {
 .copyright {
   border-radius: .25rem!important;
 }
+

@@ -15,6 +15,8 @@ import {
   Badge
 } from 'react-bootstrap';
 import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
+import ScrollAnimation from 'react-animate-on-scroll';
+
 import { renderTooltip, scrollTo } from './utils';
 import CustomMap from './components/customMap';
 import { Skills } from './components/skills';
@@ -49,6 +51,7 @@ import mcdonalds from './assets/mcdonalds.png';
 import deliveroo from './assets/deliveroo.png';
 import sebben from './assets/sebben.png';
 import { TFunction } from 'i18next';
+import 'animate.css/animate.min.css';
 
 // tslint:disable-next-line: no-var-requires
 require('./global.d.ts');
@@ -144,7 +147,7 @@ function MyNavbar(): ReactElement {
 
   const scrollOptions = {
     smooth: true,
-    offset: -40,
+    offset: -50,
     duration: 500,
   };
 
@@ -295,7 +298,7 @@ function AppHeader(): ReactElement {
         <Col sm={12} md={4} className="align-self-center">
           <Row >
             <Col>
-              <Figure>
+              <Figure className="mt-3">
                 <Figure.Image
                   height="60%"
                   width="60%"
@@ -427,7 +430,7 @@ function Projects(): ReactElement {
           <h3>{t('projects.2.title')}</h3>
           <p className="text-left">{t('projects.2.body')}</p>
           <Row>
-            <Col xs={4}>
+            <Col xs={3}>
               <a
                 href="https://gitlab.com/Polytech-INFO5-2019-2020/g3/2019-2020-ecom-info5-root"
                 target="_blank"
@@ -512,6 +515,7 @@ function History(): ReactElement {
             borderRadius: '8px',
             boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
           }}
+          className="longDate"
         >
           <h4>{t('experiences.0.title')}</h4>
           <a href="https://www.enovacom.fr/" target="_blank" rel="noopener noreferrer">
@@ -543,6 +547,7 @@ function History(): ReactElement {
             borderRadius: '8px',
             boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
           }}
+          className="longDate"
         >
 
           <h4>{t('experiences.1.title')}</h4>
@@ -718,7 +723,7 @@ function Hobbies(): ReactElement {
       <Row className="pt-5 mb-4 justify-content-center">
         <Col xs={true} className="pt-2 pb-2">
           <Badge>
-            <h2 className="mytitle titles rounded ">{t('navbar.hobbies')}</h2>
+            <h2 id="longTitle" className="mytitle rounded ">{t('navbar.hobbies')}</h2>
           </Badge>
         </Col>
       </Row>
@@ -840,24 +845,31 @@ function Page(): ReactElement {
       <MyNavbar />
 
       <AppHeader />
-
-      <section className="grey">
-        <Projects />
-      </section>
-      <section>
-        <History />
-      </section>
-      <section className="grey">
-        <Hobbies />
-      </section>
-      <section>
-        <Travel />
-      </section>
+      <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true} >
+        <section className="grey">
+          <Projects />
+        </section>
+      </ScrollAnimation>
+      <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
+        <section>
+          <History />
+        </section>
+      </ScrollAnimation>
+      <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
+        <section className="grey">
+          <Hobbies />
+        </section>
+      </ScrollAnimation>
+      <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
+        <section>
+          <Travel />
+        </section>
+      </ScrollAnimation>
       <WIP />
       <section className="App-footer">
         <Footer />
       </section>
-    </div>
+    </div >
   );
 }
 
