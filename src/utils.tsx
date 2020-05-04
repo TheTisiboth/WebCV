@@ -17,4 +17,6 @@ export const renderTooltip = (propss: string): ReactElement => {
  * @param target Where we want to scroll
  * @param scrollOptions Contains options like offset, speed ...
  */
-export const scrollTo: any = (target: string, scrollOptions: any): () => void => (): void => scroller.scrollTo(target, scrollOptions);
+export const scrollTo = (target: string, scrollOptions: any): (() => void) =>
+    (): void =>
+        scroller.scrollTo(target, scrollOptions);
