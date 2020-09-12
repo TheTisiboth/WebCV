@@ -59,8 +59,8 @@ require('./global.d.ts');
 
 
 /**
- * Translation button, that translate the whole page. It switches between english (by default) and french
- */
+* Translation button, that translate the whole page. It switches between english (by default) and french
+*/
 function TranslationButton(props: { onClick: () => void; }): ReactElement {
   const { t, i18n } = useTranslation();
   const [state, setState] = useState<{ isEnglish: boolean, buttonLabel: string }>({
@@ -69,8 +69,8 @@ function TranslationButton(props: { onClick: () => void; }): ReactElement {
   });
 
   /**
-   * Switch language between en and fr
-   */
+  * Switch language between en and fr
+  */
   const changeLanguage = useCallback(
     (lng: string): void => {
       if (!i18n) {
@@ -82,8 +82,8 @@ function TranslationButton(props: { onClick: () => void; }): ReactElement {
   );
 
   /**
-   * When we click on the translate button, we switch the button label, and switch the language
-   */
+  * When we click on the translate button, we switch the button label, and switch the language
+  */
   const handleClick = (): void => {
     const isEnglish: boolean = !state.isEnglish;
     const buttonLabel: string = isEnglish ? 'en' : 'fr';
@@ -111,8 +111,8 @@ function TranslationButton(props: { onClick: () => void; }): ReactElement {
 }
 
 /**
- * The Navbar, containing the different section of the website, and the translate button
- */
+* The Navbar, containing the different section of the website, and the translate button
+*/
 function MyNavbar(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
   // Toggle component
@@ -193,8 +193,8 @@ function MyNavbar(): ReactElement {
               >
                 <div>
                   <FaRegFilePdf className="mr-2" />
-                CV FR
-                </div>
+                  CV FR
+      </div>
               </OverlayTrigger>
             </NavDropdown.Item>
             <NavDropdown.Item href={CV_EN} download={true} className="text-center">
@@ -205,8 +205,8 @@ function MyNavbar(): ReactElement {
               >
                 <div>
                   <FaRegFilePdf className="mr-2" />
-                CV EN
-                </div>
+                  CV EN
+      </div>
               </OverlayTrigger>
             </NavDropdown.Item>
           </NavDropdown>
@@ -220,8 +220,8 @@ function MyNavbar(): ReactElement {
 }
 
 /**
- * LeftHeader, containing general info about author
- */
+* LeftHeader, containing general info about author
+*/
 function LeftHeader(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
   return (
@@ -257,8 +257,8 @@ function LeftHeader(): ReactElement {
 }
 
 /**
- * RightHeader containing info about hobbies
- */
+* RightHeader containing info about hobbies
+*/
 function RightHeader(): ReactElement {
   return (
     <Skills />
@@ -266,9 +266,9 @@ function RightHeader(): ReactElement {
 }
 
 /**
- * Display an icon that links to social media
- * @param props info about the social media (href, icon)
- */
+* Display an icon that links to social media
+* @param props info about the social media (href, icon)
+*/
 function IconSocial(props: { href: string | undefined; icon: React.ReactNode; }): ReactElement {
   return (
     <a
@@ -286,8 +286,8 @@ function IconSocial(props: { href: string | undefined; icon: React.ReactNode; })
 }
 
 /**
- * AppHeader, containing LeftHeader, Image, and RightHeader
- */
+* AppHeader, containing LeftHeader, Image, and RightHeader
+*/
 function AppHeader(): ReactElement {
   return (
     <Container fluid={true} className="App-header">
@@ -330,8 +330,8 @@ function AppHeader(): ReactElement {
 }
 
 /**
- * Projects section
- */
+* Projects section
+*/
 function Projects(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
 
@@ -354,7 +354,11 @@ function Projects(): ReactElement {
           </Figure>
         </Col>
         <Col xs={12} md={true} className="align-self-center pr-5">
-          <h3>{t('projects.0.title')}</h3>
+          <h3>
+            <Trans i18nKey="projects.0.title">
+              <strong></strong>
+            </Trans>
+          </h3>
           <p className="text-left">{t('projects.0.body')}</p>
           <Row>
             <Col xs={4}>
@@ -390,7 +394,11 @@ function Projects(): ReactElement {
           </Figure>
         </Col>
         <Col xs={12} md={true} className="align-self-center pr-5">
-          <h3>{t('projects.1.title')}</h3>
+          <h3>
+            <Trans i18nKey="projects.1.title">
+              <strong></strong>
+            </Trans>
+          </h3>
           <p className="text-left">{t('projects.1.body')}</p>
           <Row>
             <Col xs={4}>
@@ -427,7 +435,11 @@ function Projects(): ReactElement {
           </Figure>
         </Col>
         <Col xs={12} md={true} className="align-self-center pr-5">
-          <h3>{t('projects.2.title')}</h3>
+          <h3>
+            <Trans i18nKey="projects.2.title">
+              <strong></strong>
+            </Trans>
+          </h3>
           <p className="text-left">{t('projects.2.body')}</p>
           <Row>
             <Col xs={3}>
@@ -465,7 +477,11 @@ function Projects(): ReactElement {
           </Figure>
         </Col>
         <Col xs={12} md={true} className="align-self-center pr-5">
-          <h3>{t('projects.3.title')}</h3>
+          <h3>
+            <Trans i18nKey="projects.3.title">
+              <strong></strong>
+            </Trans>
+          </h3>
           <p className="text-left">{t('projects.3.body')}</p>
           <Row>
             <Col xs={4}>
@@ -492,8 +508,8 @@ function Projects(): ReactElement {
 }
 
 /**
- * Contains Education and professionnal experience
- */
+* Contains Education and professionnal experience
+*/
 function History(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
   return (
@@ -533,7 +549,7 @@ function History(): ReactElement {
               <strong>Software internationalization</strong> : Adapt the
               software to communicate thanks to a communication protocol.
               Software development (Java).
-            </Trans>
+      </Trans>
           </p>
 
         </TimelineItem>
@@ -567,8 +583,8 @@ function History(): ReactElement {
               creation, in order to centralize multiple scripts that automatize
               the investigation about some infringing website, which are puting
               some illegal content on internet. Web Programmation (Jquery, PHP,
-              Python ...)
-            </Trans>
+                Python ...)
+        </Trans>
           </p>
 
         </TimelineItem>
@@ -619,7 +635,7 @@ function History(): ReactElement {
               <strong>Software internationalization</strong> : Adapt the
               software to communicate thanks to a communication protocol.
               Software development (Java).
-            </Trans>
+        </Trans>
           </p>
 
         </TimelineItem>
@@ -650,7 +666,7 @@ function History(): ReactElement {
               <strong>Software internationalization</strong> : Adapt the
               software to communicate thanks to a communication protocol.
               Software development (Java).
-            </Trans>
+        </Trans>
           </p>
 
         </TimelineItem>
@@ -699,7 +715,7 @@ function History(): ReactElement {
               <strong>Software internationalization</strong> : Adapt the
               software to communicate thanks to a communication protocol.
               Software development (Java).
-            </Trans>
+        </Trans>
           </p>
         </TimelineItem>
         <TimelineItem
@@ -780,8 +796,8 @@ function Hobbies(): ReactElement {
 }
 
 /**
- * Travel section, containing a leaflet map
- */
+* Travel section, containing a leaflet map
+*/
 function Travel(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
 
@@ -804,8 +820,8 @@ function Travel(): ReactElement {
 }
 
 /**
- * Footer component
- */
+* Footer component
+*/
 function Footer(): ReactElement {
   const { t }: { t: TFunction } = useTranslation();
   const scrollOptions = {

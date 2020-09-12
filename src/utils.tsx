@@ -1,6 +1,6 @@
 import React, { ReactElement } from 'react';
 import {
-    Tooltip,
+  Tooltip,
 } from 'react-bootstrap';
 import { scroller } from 'react-scroll';
 
@@ -9,7 +9,7 @@ import { scroller } from 'react-scroll';
  * @param propss A sring to display in the tooltip
  */
 export const renderTooltip = (propss: string): ReactElement => {
-    return <Tooltip id="button-tooltip">{propss}</Tooltip>;
+  return <Tooltip id="button-tooltip">{propss}</Tooltip>;
 };
 
 /**
@@ -18,5 +18,5 @@ export const renderTooltip = (propss: string): ReactElement => {
  * @param scrollOptions Contains options like offset, speed ...
  */
 export const scrollTo = (target: string, scrollOptions: any): (() => void) =>
-    (): void =>
-        scroller.scrollTo(target, scrollOptions);
+  (): void =>
+    scroller.scrollTo(target, scrollOptions);

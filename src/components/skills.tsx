@@ -1,27 +1,27 @@
 import React, { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
-    Row,
-    Col,
-    Figure,
-    OverlayTrigger,
-    Badge
+  Row,
+  Col,
+  Figure,
+  OverlayTrigger,
+  Badge
 } from 'react-bootstrap';
 import { renderTooltip } from '../utils';
 import { TFunction } from 'i18next';
 import { software, web, others, system, extraSkills } from './constant';
 
 interface Skill {
-    image: string;
-    href: string;
-    tooltip: string;
-    class?: string;
-    size?: number;
+  image: string;
+  href: string;
+  tooltip: string;
+  class?: string;
+  size?: number;
 }
 
 export interface Skills {
-    title: string;
-    skills: Skill[];
+  title: string;
+  skills: Skill[];
 }
 
 /**
@@ -29,87 +29,87 @@ export interface Skills {
  * @param props Info about the image to display
  */
 function Skill(props: { skill: Skill; }): ReactElement {
-    const skill = props.skill;
+  const skill = props.skill;
 
-    return (
-        <a
-            href={skill.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="m-2"
-        >
-            <OverlayTrigger
-                placement="bottom"
-                delay={{ show: 0, hide: 0 }}
-                overlay={renderTooltip(skill.tooltip)}
-            >
-                <Figure>
-                    <Figure.Image
-                        className={(skill.class ? skill.class : '')}
-                        width={(skill.size) ? skill.size : 32}
-                        height={(skill.size) ? skill.size : 32}
-                        alt="171x180"
-                        src={skill.image}
-                    />
-                </Figure>
-            </OverlayTrigger>
-        </a>
-    );
+  return (
+    <a
+      href={skill.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="m-2"
+    >
+      <OverlayTrigger
+        placement="bottom"
+        delay={{ show: 0, hide: 0 }}
+        overlay={renderTooltip(skill.tooltip)}
+      >
+        <Figure>
+          <Figure.Image
+            className={(skill.class ? skill.class : '')}
+            width={(skill.size) ? skill.size : 32}
+            height={(skill.size) ? skill.size : 32}
+            alt="171x180"
+            src={skill.image}
+          />
+        </Figure>
+      </OverlayTrigger>
+    </a>
+  );
 }
 
 /**
  * Display a list of skill
  */
 export function Skills(props?: { skill?: string; }): ReactElement {
-    const { t }: { t: TFunction } = useTranslation();
+  const { t }: { t: TFunction } = useTranslation();
 
-    const list: Skills[][] = [[system, software], [web, others]];
+  const list: Skills[][] = [[system, software], [web, others]];
 
-    // We want to display all the skills
-    if (props === undefined || props.skill === undefined) {
-        return (
-            <div id="Skills" className="text-center pt-5 pt-md-2 pr-0 pr-md-5">
-                <Row className=" justify-content-center">
-                    <Col md={6} xs={8} className="pt-2 pb-2  rounded">
-                        <Badge className="titleReverse pl-3 pr-3"><h2 >{t('navbar.skill')}</h2></Badge>
-                    </Col>
-                </Row>
-                {list.map((row: Skills[]): ReactElement => {
-                    return (
-                        <Row key={row[0].title} className="justify-content-center pt-4">
-                            {row.map((s: Skills): ReactElement => {
-                                return (
-                                    <Col key={s.title} md={6}>
-                                        <Row>
-                                            <Col>
-                                                <h5>{t(s.title)}</h5>
-                                            </Col>
-                                        </Row>
-                                        <Row className="justify-content-center">
-                                            <Col xs={6} md={10}>
-                                                {s.skills.map((skill: Skill): ReactElement => {
-                                                    return (
-                                                        <Skill
-                                                            skill={skill}
-                                                            key={skill.href}
-                                                        />
-                                                    );
-                                                })}
-                                            </Col>
-                                        </Row>
-                                    </Col>
-                                );
-                            })}
-                        </Row>
-                    );
-                })}
-            </div>
-        );
-    } else {
-        const arr = [...list[0], ...list[1], extraSkills];
-        const skills = arr.map(({ skills }: Skills): Skill[] => skills).flat();
-        const mySkill: Skill = skills.find((skill: Skill): boolean => skill.tooltip.includes(props.skill as string)) as Skill;
+  // We want to display all the skills
+  if (props === undefined || props.skill === undefined) {
+    return (
+      <div id="Skills" className="text-center pt-5 pt-md-2 pr-0 pr-md-5">
+        <Row className=" justify-content-center">
+          <Col md={6} xs={8} className="pt-2 pb-2  rounded">
+            <Badge className="titleReverse pl-3 pr-3"><h2 >{t('navbar.skill')}</h2></Badge>
+          </Col>
+        </Row>
+        {list.map((row: Skills[]): ReactElement => {
+          return (
+            <Row key={row[0].title} className="justify-content-center pt-4">
+              {row.map((s: Skills): ReactElement => {
+                return (
+                  <Col key={s.title} md={6}>
+                    <Row>
+                      <Col>
+                        <h5>{t(s.title)}</h5>
+                      </Col>
+                    </Row>
+                    <Row className="justify-content-center">
+                      <Col xs={6} md={10}>
+                        {s.skills.map((skill: Skill): ReactElement => {
+                          return (
+                            <Skill
+                              skill={skill}
+                              key={skill.href}
+                            />
+                          );
+                        })}
+                      </Col>
+                    </Row>
+                  </Col>
+                );
+              })}
+            </Row>
+          );
+        })}
+      </div>
+    );
+  } else {
+    const arr = [...list[0], ...list[1], extraSkills];
+    const skills = arr.map(({ skills }: Skills): Skill[] => skills).flat();
+    const mySkill: Skill = skills.find((skill: Skill): boolean => skill.tooltip.includes(props.skill as string)) as Skill;
 
-        return (<Skill skill={mySkill} />);
-    }
+    return (<Skill skill={mySkill} />);
+  }
 }
