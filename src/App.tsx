@@ -59,17 +59,31 @@ require('./global.d.ts');
 
 
 /**
-* Translation button, that translate the whole page. It switches between english (by default) and french
+* Translation button, that translate the whole page. It switches between english (by default), french and german
 */
 function TranslationButton(props: { onClick: () => void; }): ReactElement {
   const { t, i18n } = useTranslation();
-  const [state, setState] = useState<{ isEnglish: boolean, buttonLabel: string }>({
-    isEnglish: i18n.language.includes('en'),
-    buttonLabel: i18n.language.includes('en') ? 'en' : 'fr',
-  });
 
   /**
-  * Switch language between en and fr
+  * Get a language code from the i18n current language
+  */
+  const getShortLanguage = (language: any): string => {
+    if (language.includes('fr')) {
+      return 'fr';
+    } else if (language.includes('de')) {
+      return 'de';
+    } else {
+      return 'en';
+    }
+  }
+
+  const [state, setState] = useState<{ langShort: string }>({
+    langShort: getShortLanguage(i18n.language),
+  });
+
+
+  /**
+  * Switch language between en, fr and de
   */
   const changeLanguage = useCallback(
     (lng: string): void => {
@@ -84,29 +98,59 @@ function TranslationButton(props: { onClick: () => void; }): ReactElement {
   /**
   * When we click on the translate button, we switch the button label, and switch the language
   */
-  const handleClick = (): void => {
-    const isEnglish: boolean = !state.isEnglish;
-    const buttonLabel: string = isEnglish ? 'en' : 'fr';
+  const handleClick = (language: string): void => {
     setState({
-      isEnglish,
-      buttonLabel,
+      langShort: language,
     });
-    changeLanguage(buttonLabel);
+    changeLanguage(language);
     // Toggle navbar
     props.onClick();
   };
 
+  /*
+  * Get the full language name from the code
+  */
+  const getLangFull = (lang: string): string => {
+    switch (lang) {
+      case 'fr':
+        return t('languages.french');
+        break;
+      case 'de':
+        return t('languages.german');
+      default:
+        return t('languages.english');
+        break;
+    }
+  }
+
   return (
-    <OverlayTrigger
-      placement="bottom"
-      delay={{ show: 0, hide: 0 }}
-      overlay={renderTooltip(t('translationTooltip'))}
-    >
-      <Button className="m-auto buttons" variant="outline-light" onClick={handleClick}>
-        <MdTranslate className="mr-2" />
-        {state.buttonLabel.toUpperCase()}
-      </Button>
-    </OverlayTrigger>
+    <NavDropdown title={
+      <OverlayTrigger
+        placement="bottom"
+        delay={{ show: 0, hide: 0 }}
+        overlay={renderTooltip(t('translationTooltip'))}
+      >
+        <span className="m-auto">
+          <MdTranslate className=" mr-2 myIcon" />{getLangFull(state.langShort)}
+        </span>
+      </OverlayTrigger>}
+      id="basic-nav-dropdown" className="m-auto mr-md-5">
+      <NavDropdown.Item className="text-center" onClick={() => { handleClick('fr') }}>
+        <div>
+          {t('languages.french')}
+        </div>
+      </NavDropdown.Item>
+      <NavDropdown.Item className="text-center" onClick={() => { handleClick('en') }}>
+        <div>
+          {t('languages.english')}
+        </div>
+      </NavDropdown.Item>
+      <NavDropdown.Item className="text-center" onClick={() => { handleClick('de') }}>
+        <div>
+          {t('languages.german')}
+        </div>
+      </NavDropdown.Item>
+    </NavDropdown>
   );
 }
 
@@ -210,9 +254,9 @@ function MyNavbar(): ReactElement {
               </OverlayTrigger>
             </NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link href="#">
-            <TranslationButton onClick={onClick} />
-          </Nav.Link>
+
+          <TranslationButton onClick={onClick} />
+
         </Nav>
       </Navbar.Collapse>
     </Navbar >
@@ -881,29 +925,11 @@ function Page(): ReactElement {
           <Travel />
         </section>
       </ScrollAnimation>
-      <WIP />
+
       <section className="App-footer">
         <Footer />
       </section>
     </div >
-  );
-}
-
-function WIP(): ReactElement {
-  const { t }: { t: TFunction } = useTranslation();
-  return (
-    <Container className="mt-4">
-      <Row className="mb-2 justify-content-center">
-        <Col md={6} className="mytitle pt-2 pb-2">
-          <h2 className="">{t('wip.title')}</h2>
-        </Col>
-      </Row>
-      <Row className="mb-5">
-        <Col className="">
-          <h5>{t('wip.body')}</h5>
-        </Col>
-      </Row>
-    </Container>
   );
 }
 

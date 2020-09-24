@@ -1,14 +1,9 @@
 {
   "title": "Bienvenu sur mon Web CV!",
   "top": "Retour en haut",
-  "description": {
-    "part1": "Site en cours de production.",
-    "part2": "Changez la langue avec ce bouton."
-  },
   "navbar": {
     "presentation": "Présentation",
     "education": "Formation",
-    "project": "Projets",
     "experience": "Experiences",
     "skill": "Compétences",
     "travel": "Voyages",
@@ -22,12 +17,17 @@
     "livesIn": "Habite à Marseille",
     "age": "24 ans"
   },
-  "translationTooltip": "Traduire en anglais",
+  "translationTooltip": "Traduire le site",
   "cvFrTooltip": "Télécharger mon CV en français",
   "cvEnTooltip": "Télécharger mon CV en anglais",
+  "languages":{
+    "french": "Français",
+    "english": "Anglais",
+    "german" : "Allemand"
+  },
   "experiences": {
     "0": {
-      "date": "05/2020 - Présent",
+      "date": "05/2020 - 09/2020",
       "title": "Enovacom, Marseille",
       "body": "<0>Internationalisation de logiciel</0> : Mise en place d'une API RESTful respectant la norme de communication FHIR afin de pouvoir permettre un dialogue entre un logiciel d'annuaire et nimporte quelle autre application tierce compatible FHIR. Programmation logicielle (Java)."
     },
@@ -58,10 +58,6 @@
     "web": "Développement Web",
     "other": "Autres"
   },
-  "wip": {
-    "title": "En cours de developpement",
-    "body": "Ce site est actuellement en cours de developpement. Il sera mis à jour régulierement."
-  },
   "education": {
     "0": {
       "date": "2016 - 2020",
@@ -80,7 +76,7 @@
     }
   },
   "hobbies": {
-    "it": "Informatique",
+    "it": "Développement Informatique",
     "read": "Lecture (roman fantastique)",
     "music": "Musique (8 ans de piano et solfège)",
     "frisbee": "Ultimate Frisbee : Leader de l'equipe de mon école, licence sportive dans un club",
