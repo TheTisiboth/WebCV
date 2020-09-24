@@ -114,12 +114,10 @@ function TranslationButton(props: { onClick: () => void; }): ReactElement {
     switch (lang) {
       case 'fr':
         return t('languages.french');
-        break;
       case 'de':
         return t('languages.german');
       default:
         return t('languages.english');
-        break;
     }
   }
 
