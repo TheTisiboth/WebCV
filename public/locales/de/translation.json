@@ -1,0 +1,162 @@
+{
+  "title": "Willkommen zu meinem Web CV!",
+  "top": "Zurück zum Anfang",
+  "navbar": {
+    "presentation": "Vorführung",
+    "education": "Ausbildung",
+    "experience": "Erlebnisse",
+    "skill": "Fähigkeiten",
+    "travel": "Reisen",
+    "projects": "Projekte",
+    "cv": "Lebenslauf herunterladen",
+    "hobbies": "Interessen",
+    "history": "Geschichte"
+  },
+  "me": {
+    "work": "Software-Ingenieur",
+    "livesIn": "Lebt in Marseille",
+    "age": "24 Jahre alt"
+  },
+  "translationTooltip": "Die Website übersetzen.",
+  "cvFrTooltip": "Meinen Lebenslauf auf Französisch herunterladen",
+  "cvEnTooltip": "Meinen Lebenslauf auf Englisch hochladen",
+  "languages":{
+    "french": "Französisch",
+    "english": "Englisch",
+    "german" : "Deutsch"
+  },
+  "experiences": {
+    "0": {
+      "date": "05/2020 - 09/2020",
+      "title": "Enovacom, Marseille",
+      "body": "<0>Internationalisierung der Software</0> : Implementierung einer RESTful API, die den FHIR-Kommunikationsstandard respektiert, um einen Dialog zwischen einer Verzeichnissoftware und jeder anderen FHIR-kompatiblen Drittanwendung zu ermöglichen. Software-Programmierung (Java)"
+    },
+    "1": {
+      "date": "05/2019 - 08/2019",
+      "title": "Motion Picture Association of America, Brüssel",
+      "body": "<0>Automatisierung von Web-Umfragen</0> : Hilfe bei der Einrichtung einer Web-Schnittstelle zum Starten von Skripten zur Automatisierung von Umfragen für Websites, die illegal audiovisuelle Inhalte veröffentlichen. Web-Programmierung (Jquery, PHP, Python ...)"
+    },
+    "2": {
+      "date": "Eté 2018",
+      "title": "MacDonald's, Marseille",
+      "body": "<0>Polyvalentes Teammitglied</0> : Teilnahme an der Küche, um die Bestellungen nach dem vorher festgelegten Protokoll und Rezepten vorzubereiten."
+    },
+    "3": {
+      "date": "Été 2017",
+      "title": "Deliveroo, Grenoble",
+      "body": "<0>Selbstständig Erwerbstätige</0>: Hauslieferung von Lebensmitteln auf Fahrrädern"
+    },
+    "4": {
+      "date": "Eté 2014 & 2015",
+      "title": "SEBBEN, Toulon",
+      "body": "<0>Multi-Service-Unternehmen</0>: Reinigung von Gemeinschaftsbereichen von Gebäuden"
+    }
+  },
+  "skills": {
+    "system": "Systementwicklung",
+    "software": "Software-Entwicklung",
+    "web": "Webentwicklung",
+    "other": "Andere"
+  },
+  "education": {
+    "0": {
+      "date": "2016 - 2020",
+      "title": "École d'Ingénieur Polytech Grenoble",
+      "body": "Fachgebiet Computernetzwerke und Multimedia-Kommunikation, 5."
+    },
+    "1": {
+      "date": "2014 - 2016",
+      "title": "Parcours des Élèves Ingénieurs Polytech (PEIP), Marseille",
+      "body": "Classe préparatoire intégrée à Polytech (Mathematik, Physik, Chemie, Informatik)"
+    },
+    "2": {
+      "date": "06/2016",
+      "title": "Bac S spécialité Informatique et Science du Numérique",
+      "body": "AbiBac Doppelstudium der deutschen Literatur und Geschichte"
+    }
+  },
+  "hobbies": {
+    "it": "Computer-Entwicklung",
+    "read": "Lesen (Fantasy-Roman)",
+    "music": "Musik (8 Jahre Klavier und Musiktheorie)",
+    "frisbee": "Ultimate Frisbee: Leiter der Mannschaft meiner Schule, Sportlizenz in einem Club",
+    "badminton": "Badminton (11 Jahren)",
+    "basketball": "Basketball",
+    "pingpong": "Tischtennis"
+  },
+  "projects": {
+    "0": {
+      "title": "<0>Web CV</0>, 2020 - 1 Monat",
+      "body": "Erstellung von 2 Websites: eine für Kinesitherapeuten, um ihre Patienten zu betreuen und ihre Aktivitäten zu verfolgen, und eine für Patienten, um ihre Rehabilitationsübungen zu Hause durchzuführen. Dieses Projekt wurde auf Wunsch unseres Kunden Vestib+, einer auf Gleichgewichtsstörungen spezialisierten Kinesitherapiepraxis, durchgeführt"
+    },
+    "1": {
+      "title": "<0>Kine 2.0</0>, 2020 - 3 Monate",
+      "body": "Einrichtung einer E-Commerce-Website, die den Mitgliedern des Clubs Guc voile de Grenoble die Vermietung von Segelausrüstung und den Clubmanagern die Lagerverwaltung ermöglicht. Generiert mit JHipster."
+    },
+    "2": {
+      "title": "<0>Guc Voile</0>, 2019 - 2,5 Monate",
+      "body": "Création d'un site de e-commerce permettant la location de materiel de voile pour les membres du club Guc voile de Grenoble, et permettant la gestion des stocks pour les gérants du club. Généré à l'aide de JHipster."
+    },
+    "3": {
+      "title": "<0>COLORicm</0>, 2018 - 3 Wochen",
+      "body": "Als Gruppenleiter eines Teams von 6 Entwicklern haben wir ein 2D-Videospiel in Java (Swing) mit Echtzeitsteuerung und modularer Funktionalität unter Einbeziehung von Automaten entwickelt, das uns das Konzept der künstlichen Intelligenz näher gebracht hat."
+    }
+  },
+  "travel": {
+    "germany": {
+      "country": "Deutschland",
+      "munich": "München",
+      "munster": "Münster",
+      "hamburg": "Hamburg",
+      "berlin": "Berlin"
+    },
+    "tchequie": {
+      "country": "Tschechische Republik",
+      "prague": "Prag"
+    },
+    "belgium": {
+      "country": "Belgien",
+      "brussels": "Brüssel",
+      "liege": "Lüttich"
+    },
+    "canada": {
+      "country": "Kanada",
+      "montreal": "Montreal",
+      "tadoussac": "Tadoussac",
+      "sherbrooke": "Sherbrooke",
+      "quebec": "Quebec"
+    },
+    "spain": {
+      "country": "Spanien",
+      "barcelona": "Barcelona",
+      "palma": "Palma de Mallorca"
+    },
+    "italy": {
+      "country": "Italien",
+      "roma": "Rom",
+      "naples": "Neapel",
+      "pompei": "Pompeji"
+    },
+    "greece": {
+      "country": "Griechenland",
+      "athens": "Athen",
+      "corinth": "Korinth"
+    },
+    "us": {
+      "country": "Vereinigte Staaten",
+      "ny": "New York"
+    },
+    "uk": {
+      "country": "Vereinigtes Königreich",
+      "ireland": "Irland"
+    },
+    "fr": {
+      "country": "Frankreich",
+      "marseille": "Marseille"
+    },
+    "sweden": {
+      "country": "Schweden",
+      "stockholm": "Stockholm"
+    }
+  }
+}
