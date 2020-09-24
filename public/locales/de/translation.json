@@ -61,17 +61,17 @@
   "education": {
     "0": {
       "date": "2016 - 2020",
-      "title": "École d'Ingénieur Polytech Grenoble",
+      "title": "Ingenieurschule  Polytech Grenoble",
       "body": "Fachgebiet Computernetzwerke und Multimedia-Kommunikation, 5."
     },
     "1": {
       "date": "2014 - 2016",
       "title": "Parcours des Élèves Ingénieurs Polytech (PEIP), Marseille",
-      "body": "Classe préparatoire intégrée à Polytech (Mathematik, Physik, Chemie, Informatik)"
+      "body": "Polytech integrierte Vorbereitungsklasse (Mathematik, Physik, Chemie, Informatik)"
     },
     "2": {
       "date": "06/2016",
-      "title": "Bac S spécialité Informatique et Science du Numérique",
+      "title": "Wissenschaftliches Bakkalaureat in Informatik und Digitaler Wissenschaft",
       "body": "AbiBac Doppelstudium der deutschen Literatur und Geschichte"
     }
   },
@@ -87,15 +87,15 @@
   "projects": {
     "0": {
       "title": "<0>Web CV</0>, 2020 - 1 Monat",
-      "body": "Erstellung von 2 Websites: eine für Kinesitherapeuten, um ihre Patienten zu betreuen und ihre Aktivitäten zu verfolgen, und eine für Patienten, um ihre Rehabilitationsübungen zu Hause durchzuführen. Dieses Projekt wurde auf Wunsch unseres Kunden Vestib+, einer auf Gleichgewichtsstörungen spezialisierten Kinesitherapiepraxis, durchgeführt"
+      "body": "Erstellung eines Web-Lebenslaufs mit React. Dies ist ein persönliches Projekt, das darauf abzielt, in die Hand zu nehmen reagieren. Der Einsatz in der Produktion erfolgte dank Netlify auf einem bei Google Domains registrierten Domainnamen."
     },
     "1": {
       "title": "<0>Kine 2.0</0>, 2020 - 3 Monate",
-      "body": "Einrichtung einer E-Commerce-Website, die den Mitgliedern des Clubs Guc voile de Grenoble die Vermietung von Segelausrüstung und den Clubmanagern die Lagerverwaltung ermöglicht. Generiert mit JHipster."
+      "body": "Erstellung von 2 Websites: eine für die Kinesitherapeuten, damit sie ihre Patienten verwalten und ihre Aktivitäten verfolgen können, und eine für die Patienten, damit sie ihre Rehabilitationsübungen zu Hause durchführen können. Dieses Projekt wurde auf Wunsch unseres Kunden Vestib+, einer auf Gleichgewichtsstörungen spezialisierten Kinesitherapiepraxis, durchgeführt."
     },
     "2": {
       "title": "<0>Guc Voile</0>, 2019 - 2,5 Monate",
-      "body": "Création d'un site de e-commerce permettant la location de materiel de voile pour les membres du club Guc voile de Grenoble, et permettant la gestion des stocks pour les gérants du club. Généré à l'aide de JHipster."
+      "body": "Einrichtung einer E-Commerce-Website, die es den Mitgliedern des Clubs Guc voile de Grenoble ermöglicht, Segelausrüstung zu mieten und den Managern des Clubs eine Lagerverwaltung zu ermöglichen. Generiert mit JHipster."
     },
     "3": {
       "title": "<0>COLORicm</0>, 2018 - 3 Wochen",
