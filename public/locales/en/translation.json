@@ -1,14 +1,9 @@
 {
   "title": "Welcome to my Web CV!",
   "top": "Back to the top",
-  "description": {
-    "part1": "Website currently in production.",
-    "part2": "Switch language between english and german using buttons above."
-  },
   "navbar": {
     "presentation": "Presentation",
     "education": "Education",
-    "project": "Projects",
     "experience": "Experiences",
     "skill": "Skills",
     "travel": "Travels",
@@ -22,12 +17,17 @@
     "livesIn": "Living in Marseille",
     "age": "24 years old"
   },
-  "translationTooltip": "Translate in french",
+  "translationTooltip": "Translate the website",
   "cvFrTooltip": "Download my french resume",
   "cvEnTooltip": "Download my english resume",
+  "languages":{
+    "french": "French",
+    "english": "English",
+    "german" : "German"
+  },
   "experiences": {
     "0": {
-      "date": "05/2020 - Present",
+      "date": "06/2020 - 09/2020",
       "title": "Enovacom, Marseille",
       "body": "<0>Software internationalization</0> : Implementation of a RESTful API respecting the FHIR communication standard in order to allow a dialogue between a directory software and any other FHIR compatible third party application.. Software development (Java)."
     },
