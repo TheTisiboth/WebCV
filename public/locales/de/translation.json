@@ -20,10 +20,11 @@
   "translationTooltip": "Die Website übersetzen.",
   "cvFrTooltip": "Meinen Lebenslauf auf Französisch herunterladen",
   "cvEnTooltip": "Meinen Lebenslauf auf Englisch hochladen",
-  "languages":{
+  "cvDeTooltip": "Meinen Lebenslauf auf Deutsch hochladen",
+  "languages": {
     "french": "Französisch",
     "english": "Englisch",
-    "german" : "Deutsch"
+    "german": "Deutsch"
   },
   "experiences": {
     "0": {

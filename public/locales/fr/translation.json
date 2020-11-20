@@ -20,10 +20,11 @@
   "translationTooltip": "Traduire le site",
   "cvFrTooltip": "Télécharger mon CV en français",
   "cvEnTooltip": "Télécharger mon CV en anglais",
-  "languages":{
+  "cvDeTooltip": "Télécharger mon CV en allemand",
+  "languages": {
     "french": "Français",
     "english": "Anglais",
-    "german" : "Allemand"
+    "german": "Allemand"
   },
   "experiences": {
     "0": {

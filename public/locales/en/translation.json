@@ -20,10 +20,11 @@
   "translationTooltip": "Translate the website",
   "cvFrTooltip": "Download my french resume",
   "cvEnTooltip": "Download my english resume",
-  "languages":{
+  "cvDeTooltip": "Download my german resume",
+  "languages": {
     "french": "French",
     "english": "English",
-    "german" : "German"
+    "german": "German"
   },
   "experiences": {
     "0": {
@@ -101,7 +102,6 @@
       "title": "<0>Guc Voile</0>, 2019 - 2.5 month",
       "body": "Creation of a website that helps the sailing club member to rent some sailing equipment in advance, and helps the club owners to monitor the sailing equipment. Generated with the help of JHipster."
     },
-
     "3": {
       "title": "<0>COLORicm</0>, 2018 - 3 weeks",
       "body": "As a group Leader of a team of 6, we developped a 2D video game in java (swing), with real-time controls and modular features, involving automatons, introducing the notion of artificial intelligence."

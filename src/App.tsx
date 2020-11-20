@@ -38,6 +38,7 @@ import image from './assets/leo.jpg';
 import logo from './assets/logo.png';
 import CV_FR from './assets/CV_FR_Leo_Jan.pdf';
 import CV_EN from './assets/CV_EN_Leo_Jan.pdf';
+import CV_DE from './assets/CV_DE_Leo_Jan.pdf';
 import Badminton from './assets/badminton.png';
 import webCV from './assets/projects/webCV.png';
 import coloricm from './assets/projects/coloricm.png';
@@ -236,6 +237,18 @@ function MyNavbar(): ReactElement {
                 <div>
                   <FaRegFilePdf className="mr-2" />
                   CV FR
+      </div>
+              </OverlayTrigger>
+            </NavDropdown.Item>
+            <NavDropdown.Item href={CV_DE} download={true} className="text-center">
+              <OverlayTrigger
+                placement="bottom"
+                delay={{ show: 0, hide: 0 }}
+                overlay={renderTooltip(t('cvDeTooltip'))}
+              >
+                <div>
+                  <FaRegFilePdf className="mr-2" />
+                  CV DE
       </div>
               </OverlayTrigger>
             </NavDropdown.Item>
