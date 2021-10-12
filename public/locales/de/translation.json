@@ -51,6 +51,11 @@
       "date": "Eté 2014 & 2015",
       "title": "SEBBEN, Toulon",
       "body": "<0>Multi-Service-Unternehmen</0>: Reinigung von Gemeinschaftsbereichen von Gebäuden"
+    },
+    "5": {
+      "date": "01/2021 - Jetzt",
+      "title": "GreenDelta - Berlin",
+      "body": "<0>Sofwtare und Web Entwicklung</0> : Arbeit an verschiedenen open-source Projekte, in Zusammenhang mit der nachhaltigen Entwicklung. Neue Funktionalität für openLCA (Java), software für LCA, und erstellung einer leichtgewichtigen Web-Version von openLCA im Bereich des Bauwesens (React)"
     }
   },
   "skills": {

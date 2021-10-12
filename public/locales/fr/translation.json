@@ -51,6 +51,11 @@
       "date": "Eté 2014 & 2015",
       "title": "SEBBEN, Toulon",
       "body": "<0>Entreprise multi-services</0> : Nettoyage des parties communes d'immeubles"
+    },
+    "5": {
+      "date": "01/2021 - Maintenant",
+      "title": "GreenDelta - Berlin",
+      "body": "<0>Développement web et logiciel</0> : Travail sur openLCA, un logiciel qui permet de faire des bilans écologiques. J'ai contribué à de nouvelles fonctionnalités pour ce logiciel (Java), et j'ai mis en place un site web permettant d'accéder à une version allégée de openLCA, pour permettre de faire des bilans écologique dans le domaine de la construction (React)"
     }
   },
   "skills": {

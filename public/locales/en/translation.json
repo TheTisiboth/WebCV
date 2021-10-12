@@ -51,6 +51,11 @@
       "date": "Summer 2014 & 2015",
       "title": "SEBBEN, Toulon",
       "body": "<0>Cleaning professionals</0> : cleaning service in buildings shared"
+    },
+    "5": {
+      "date": "01/2021 - Now",
+      "title": "GreenDelta - Berlin",
+      "body": "<0>Web and software developement</0> : Work on openLCA: a software in the sustainability developement. I worked on some feature for it (Java), and I built a website for accessing a light version of openLCA, in order to perform ecological analysis for the construction field (React)"
     }
   },
   "skills": {

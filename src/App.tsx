@@ -1,58 +1,45 @@
-import React, { Suspense, useState, ReactElement, useCallback, useEffect, useRef, MutableRefObject } from 'react';
-import { useTranslation, Trans } from 'react-i18next';
-import './App.css';
-import {
-  Navbar,
-  Nav,
-  Button,
-  Row,
-  Col,
-  Container,
-  Figure,
-  OverlayTrigger,
-  NavDropdown,
-  ListGroup,
-  Badge
-} from 'react-bootstrap';
-import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
+import 'animate.css/animate.min.css';
+import { TFunction } from 'i18next';
+import React, { MutableRefObject, ReactElement, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import ScrollAnimation from 'react-animate-on-scroll';
-
-import { renderTooltip, scrollTo } from './utils';
-import CustomMap from './components/customMap';
-import { Skills } from './components/skills';
-import { IconContext } from 'react-icons';
 import {
-  FaLinkedin,
-  FaGithub,
-  FaBasketballBall,
-  FaTableTennis,
-  FaGitlab,
-  FaArrowAltCircleUp
+  Badge, Button, Col,
+  Container,
+  Figure, ListGroup, Nav, Navbar, NavDropdown, OverlayTrigger, Row
+} from 'react-bootstrap';
+import { Trans, useTranslation } from 'react-i18next';
+import { IconContext } from 'react-icons';
+import { AiOutlineGitlab } from 'react-icons/ai';
+import {
+  FaArrowAltCircleUp, FaBasketballBall, FaGithub, FaGitlab, FaLinkedin, FaRegFilePdf, FaTableTennis
 } from 'react-icons/fa';
 import { GiFrisbee } from 'react-icons/gi';
-import { AiOutlineGitlab } from 'react-icons/ai';
-import { MdTranslate, MdFileDownload } from 'react-icons/md';
-import { FaRegFilePdf } from 'react-icons/fa';
-
+import { MdFileDownload, MdTranslate } from 'react-icons/md';
+import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
+import './App.css';
+import Badminton from './assets/badminton.png';
+import CV_DE from './assets/CV_DE_Leo_Jan.pdf';
+import CV_EN from './assets/CV_EN_Leo_Jan.pdf';
+import CV_FR from './assets/CV_FR_Leo_Jan.pdf';
+import deliveroo from './assets/deliveroo.png';
+import enovacom from './assets/enovacom.png';
+import greendelta from './assets/greendelta.png';
 import image from './assets/leo.jpg';
 import logo from './assets/logo.png';
-import CV_FR from './assets/CV_FR_Leo_Jan.pdf';
-import CV_EN from './assets/CV_EN_Leo_Jan.pdf';
-import CV_DE from './assets/CV_DE_Leo_Jan.pdf';
-import Badminton from './assets/badminton.png';
-import webCV from './assets/projects/webCV.png';
-import coloricm from './assets/projects/coloricm.png';
-import kine from './assets/projects/kine.png';
-import guc from './assets/projects/guc.png';
-import mpaa from './assets/mpaa.png';
-import enovacom from './assets/enovacom.png';
-import polytech from './assets/polytech.png';
-import peip from './assets/peip.png';
 import mcdonalds from './assets/mcdonalds.png';
-import deliveroo from './assets/deliveroo.png';
+import mpaa from './assets/mpaa.png';
+import peip from './assets/peip.png';
+import polytech from './assets/polytech.png';
+import coloricm from './assets/projects/coloricm.png';
+import guc from './assets/projects/guc.png';
+import kine from './assets/projects/kine.png';
+import webCV from './assets/projects/webCV.png';
 import sebben from './assets/sebben.png';
-import { TFunction } from 'i18next';
-import 'animate.css/animate.min.css';
+import CustomMap from './components/customMap';
+import { Skills } from './components/skills';
+import { renderTooltip, scrollTo } from './utils';
+
+
 
 // tslint:disable-next-line: no-var-requires
 require('./global.d.ts');
@@ -237,7 +224,7 @@ function MyNavbar(): ReactElement {
                 <div>
                   <FaRegFilePdf className="mr-2" />
                   CV FR
-      </div>
+                </div>
               </OverlayTrigger>
             </NavDropdown.Item>
             <NavDropdown.Item href={CV_DE} download={true} className="text-center">
@@ -249,7 +236,7 @@ function MyNavbar(): ReactElement {
                 <div>
                   <FaRegFilePdf className="mr-2" />
                   CV DE
-      </div>
+                </div>
               </OverlayTrigger>
             </NavDropdown.Item>
             <NavDropdown.Item href={CV_EN} download={true} className="text-center">
@@ -261,7 +248,7 @@ function MyNavbar(): ReactElement {
                 <div>
                   <FaRegFilePdf className="mr-2" />
                   CV EN
-      </div>
+                </div>
               </OverlayTrigger>
             </NavDropdown.Item>
           </NavDropdown>
@@ -577,6 +564,38 @@ function History(): ReactElement {
       </Row>
       <Timeline lineColor={'#ddd'}>
         <TimelineItem
+          key="009"
+          dateText={t('experiences.5.date')}
+          style={{ color: '#e86971' }}
+          bodyContainerStyle={{
+            background: '#ddd',
+            padding: '20px',
+            borderRadius: '8px',
+            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
+          }}
+          className="longDate"
+        >
+          <h4>{t('experiences.5.title')}</h4>
+          <a href="https://www.greendelta.com/" target="_blank" rel="noopener noreferrer">
+            <Figure className="mt-4">
+              <Figure.Image
+                height="120"
+                width="120px"
+                alt="171x180"
+                src={greendelta}
+              />
+            </Figure>
+          </a>
+          <p className="text-left">
+            <Trans i18nKey="experiences.5.body">
+              <strong>Software internationalization</strong> : Adapt the
+              software to communicate thanks to a communication protocol.
+              Software development (Java).
+            </Trans>
+          </p>
+
+        </TimelineItem>
+        <TimelineItem
           key="001"
           dateText={t('experiences.0.date')}
           style={{ color: '#e86971' }}
@@ -604,7 +623,7 @@ function History(): ReactElement {
               <strong>Software internationalization</strong> : Adapt the
               software to communicate thanks to a communication protocol.
               Software development (Java).
-      </Trans>
+            </Trans>
           </p>
 
         </TimelineItem>
@@ -638,8 +657,8 @@ function History(): ReactElement {
               creation, in order to centralize multiple scripts that automatize
               the investigation about some infringing website, which are puting
               some illegal content on internet. Web Programmation (Jquery, PHP,
-                Python ...)
-        </Trans>
+              Python ...)
+            </Trans>
           </p>
 
         </TimelineItem>
@@ -690,7 +709,7 @@ function History(): ReactElement {
               <strong>Software internationalization</strong> : Adapt the
               software to communicate thanks to a communication protocol.
               Software development (Java).
-        </Trans>
+            </Trans>
           </p>
 
         </TimelineItem>
@@ -721,7 +740,7 @@ function History(): ReactElement {
               <strong>Software internationalization</strong> : Adapt the
               software to communicate thanks to a communication protocol.
               Software development (Java).
-        </Trans>
+            </Trans>
           </p>
 
         </TimelineItem>
@@ -770,7 +789,7 @@ function History(): ReactElement {
               <strong>Software internationalization</strong> : Adapt the
               software to communicate thanks to a communication protocol.
               Software development (Java).
-        </Trans>
+            </Trans>
           </p>
         </TimelineItem>
         <TimelineItem
