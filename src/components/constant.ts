@@ -11,6 +11,7 @@ import JHIPSTER from '../assets/jhipster.png';
 import JQUERY from '../assets/jquery.png';
 import LINUX from '../assets/linux.svg';
 import MONGODB from '../assets/mongodb.png';
+import MUI from '../assets/mui.png';
 import NODE from '../assets/node.png';
 import OCAML from '../assets/ocaml.jpg';
 import PHP from '../assets/php.png';
@@ -71,6 +72,11 @@ export const web: Skills = {
       image: REACT,
       href: 'https://reactjs.org/',
       tooltip: 'React'
+    },
+    {
+      image: MUI,
+      href: 'https://mui.com/',
+      tooltip: 'Material UI'
     },
     {
       image: BOOTSTRAP,
