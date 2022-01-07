@@ -1,15 +1,12 @@
-import React, { ReactElement } from 'react';
-import { useTranslation } from 'react-i18next';
+import React, { FC, ReactElement } from 'react';
 import {
-  Row,
-  Col,
+  Badge, Col,
   Figure,
-  OverlayTrigger,
-  Badge
+  OverlayTrigger, Row
 } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
 import { renderTooltip } from '../utils';
-import { TFunction } from 'i18next';
-import { software, web, others, system, extraSkills } from './constant';
+import { extraSkills, others, software, system, web } from './constant';
 
 interface Skill {
   image: string;
@@ -28,9 +25,7 @@ export interface Skills {
  * Display an image of a technology, with a link to its website, and a tooltip (on hover)
  * @param props Info about the image to display
  */
-function Skill(props: { skill: Skill; }): ReactElement {
-  const skill = props.skill;
-
+const Skill: FC<{ skill: Skill }> = ({ skill }) => {
   return (
     <a
       href={skill.href}
@@ -60,13 +55,13 @@ function Skill(props: { skill: Skill; }): ReactElement {
 /**
  * Display a list of skill
  */
-export function Skills(props?: { skill?: string; }): ReactElement {
-  const { t }: { t: TFunction } = useTranslation();
+export const Skills: FC<{ skillName?: string }> = ({ skillName }) => {
+  const { t } = useTranslation();
 
   const list: Skills[][] = [[system, software], [web, others]];
 
   // We want to display all the skills
-  if (props === undefined || props.skill === undefined) {
+  if (!skillName) {
     return (
       <div id="Skills" className="text-center pt-5 pt-md-2 pr-0 pr-md-5">
         <Row className=" justify-content-center">
@@ -105,11 +100,11 @@ export function Skills(props?: { skill?: string; }): ReactElement {
         })}
       </div>
     );
-  } else {
-    const arr = [...list[0], ...list[1], extraSkills];
-    const skills = arr.map(({ skills }: Skills): Skill[] => skills).flat();
-    const mySkill: Skill = skills.find((skill: Skill): boolean => skill.tooltip.includes(props.skill as string)) as Skill;
-
-    return (<Skill skill={mySkill} />);
   }
+
+  const allSkills = [...list[0], ...list[1], extraSkills];
+  const skills = allSkills.map(({ skills }: Skills): Skill[] => skills).flat();
+  const mySkill: Skill = skills.find((skill: Skill) => skill.tooltip.includes(skillName as string)) as Skill;
+
+  return (<Skill skill={mySkill} />);
 }

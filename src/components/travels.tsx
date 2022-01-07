@@ -1,12 +1,36 @@
-import React, { useState, ReactElement, useRef } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Map, TileLayer, GeoJSON } from 'react-leaflet';
-import geoJsonData from '../assets/geoJsonData.json';
-import { Layer, LeafletMouseEvent, LatLngLiteral, PathOptions } from 'leaflet';
 import geojson from 'geojson';
 import { TFunction } from 'i18next';
+import L, { LatLngLiteral, Layer, LeafletMouseEvent, PathOptions } from 'leaflet';
+import React, { FC, useRef, useState } from 'react';
+import { Badge, Col, Container, Row } from 'react-bootstrap';
+import { useTranslation } from 'react-i18next';
+import { GeoJSON, Map, TileLayer } from 'react-leaflet';
+import geoJsonData from '../assets/geoJsonData.json';
 import { cities, countries } from './constant';
-import L from 'leaflet';
+
+/**
+* Travel section, containing a leaflet map
+*/
+export const Travels: FC = () => {
+  const { t } = useTranslation();
+
+  return (
+    <Container id="Travels" className="pt-5 pb-4" fluid>
+      <Row className="mb-4 justify-content-center">
+        <Col xs={8} className="pt-2 pb-2">
+          <Badge>
+            <h2 className="mytitle titles rounded ">{t('navbar.travel')}</h2>
+          </Badge>
+        </Col>
+      </Row>
+      <Row className="pt-5 mb-4 justify-content-center">
+        <Col md={10}>
+          <CustomMap />
+        </Col>
+      </Row>
+    </Container>
+  );
+}
 
 export interface Position {
   latlng: LatLngLiteral;
@@ -21,7 +45,7 @@ interface State {
 /**
  * Display a Leaflet Map, containing a GeoJson object, or a list of Markers, depending on the zoom
  */
-export default function CustomMap(): ReactElement {
+const CustomMap = () => {
   const mapRef: any = useRef();
   const { t, i18n }: { t: TFunction; i18n: any } = useTranslation();
 

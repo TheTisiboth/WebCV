@@ -1,26 +1,26 @@
-import { Position } from './customMap';
-import { Skills } from './skills';
-import C from '../assets/c.png';
-import JAVA from '../assets/java.png';
-import PYTHON from '../assets/python.png';
-import OCAML from '../assets/ocaml.jpg';
+import ANGULAR from '../assets/angular.png';
+import ARDUINO from '../assets/arduino.svg';
 import ARM from '../assets/arm2.png';
 import BOOTSTRAP from '../assets/bootstrap.png';
+import C from '../assets/c.png';
 import CSS from '../assets/css.png';
-import HTML from '../assets/html.png';
-import JQUERY from '../assets/jquery.png';
-import MONGODB from '../assets/mongodb.png';
-import ANGULAR from '../assets/angular.png';
-import PHP from '../assets/php.png';
-import SQL from '../assets/sql.png';
-import REACT from '../assets/react.svg';
 import GIT from '../assets/git.png';
-import LINUX from '../assets/linux.svg';
-import ARDUINO from '../assets/arduino.svg';
-import NODE from '../assets/node.png';
+import HTML from '../assets/html.png';
+import JAVA from '../assets/java.png';
 import JHIPSTER from '../assets/jhipster.png';
-import SPRING from '../assets/spring.png';
+import JQUERY from '../assets/jquery.png';
+import LINUX from '../assets/linux.svg';
+import MONGODB from '../assets/mongodb.png';
+import NODE from '../assets/node.png';
+import OCAML from '../assets/ocaml.jpg';
+import PHP from '../assets/php.png';
 import POSTGRES from '../assets/postgres.webp';
+import PYTHON from '../assets/python.png';
+import REACT from '../assets/react.svg';
+import SPRING from '../assets/spring.png';
+import SQL from '../assets/sql.png';
+import { Skills } from './skills';
+import { Position } from './travels';
 
 export const system: Skills = {
   title: 'skills.system',
@@ -67,6 +67,11 @@ export const software: Skills = {
 export const web: Skills = {
   title: 'skills.web',
   skills: [
+    {
+      image: REACT,
+      href: 'https://reactjs.org/',
+      tooltip: 'React'
+    },
     {
       image: BOOTSTRAP,
       href: 'https://getbootstrap.com/',
@@ -151,11 +156,6 @@ export const extraSkills: Skills = {
       image: CSS,
       href: 'https://en.wikipedia.org/wiki/Cascading_Style_Sheets',
       tooltip: 'CSS'
-    },
-    {
-      image: REACT,
-      href: 'https://reactjs.org/',
-      tooltip: 'React'
     },
   ]
 };
