@@ -15,30 +15,21 @@ import {
 } from 'react-icons/fa';
 import { GiFrisbee } from 'react-icons/gi';
 import { MdFileDownload, MdTranslate } from 'react-icons/md';
-import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
 import './App.css';
 import Badminton from './assets/badminton.png';
 import CV_DE from './assets/CV_DE_Leo_Jan.pdf';
 import CV_EN from './assets/CV_EN_Leo_Jan.pdf';
 import CV_FR from './assets/CV_FR_Leo_Jan.pdf';
-import deliveroo from './assets/deliveroo.png';
-import enovacom from './assets/enovacom.png';
-import greendelta from './assets/greendelta.png';
 import image from './assets/leo.jpg';
 import logo from './assets/logo.png';
-import mcdonalds from './assets/mcdonalds.png';
-import mpaa from './assets/mpaa.png';
-import peip from './assets/peip.png';
-import polytech from './assets/polytech.png';
 import coloricm from './assets/projects/coloricm.png';
 import guc from './assets/projects/guc.png';
 import kine from './assets/projects/kine.png';
 import webCV from './assets/projects/webCV.png';
-import sebben from './assets/sebben.png';
 import CustomMap from './components/customMap';
+import { History } from "./components/history";
 import { Skills } from './components/skills';
-import { renderTooltip, scrollTo } from './utils';
-
+import { computeAge, renderTooltip, scrollTo } from './utils';
 
 
 // tslint:disable-next-line: no-var-requires
@@ -265,7 +256,7 @@ function MyNavbar(): ReactElement {
 * LeftHeader, containing general info about author
 */
 function LeftHeader(): ReactElement {
-  const { t }: { t: TFunction } = useTranslation();
+  const { t } = useTranslation()
   return (
     <div>
       <Row>
@@ -277,7 +268,7 @@ function LeftHeader(): ReactElement {
             <h5>{t('me.work')}</h5>
           </div>
           <div>
-            <h5>{t('me.age')}</h5>
+            <h5>{computeAge()} {t('me.years')}</h5>
           </div>
         </Col>
         <Col md={12} className="align-self-center pt-3 pt-md-0 pb-3 pb-md-0 mt-md-5 pr-0 pl-0">
@@ -311,7 +302,7 @@ function RightHeader(): ReactElement {
 * Display an icon that links to social media
 * @param props info about the social media (href, icon)
 */
-function IconSocial(props: { href: string | undefined; icon: React.ReactNode; }): ReactElement {
+function IconSocial(props: { href: string | undefined, icon: React.ReactNode }): ReactElement {
   return (
     <a
       href={props.href}
@@ -545,263 +536,6 @@ function Projects(): ReactElement {
           </Row>
         </Col>
       </Row>
-    </Container>
-  );
-}
-
-/**
-* Contains Education and professionnal experience
-*/
-function History(): ReactElement {
-  const { t }: { t: TFunction } = useTranslation();
-  return (
-
-    <Container id="History" className="pt-5">
-      <Row className="mb-4 justify-content-center">
-        <Col xs={true} md={8} className="pt-2 pb-2">
-          <Badge><h2 className="mytitle titles rounded ">{t('navbar.history')}</h2></Badge>
-        </Col>
-      </Row>
-      <Timeline lineColor={'#ddd'}>
-        <TimelineItem
-          key="009"
-          dateText={t('experiences.5.date')}
-          style={{ color: '#e86971' }}
-          bodyContainerStyle={{
-            background: '#ddd',
-            padding: '20px',
-            borderRadius: '8px',
-            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
-          }}
-          className="longDate"
-        >
-          <h4>{t('experiences.5.title')}</h4>
-          <a href="https://www.greendelta.com/" target="_blank" rel="noopener noreferrer">
-            <Figure className="mt-4">
-              <Figure.Image
-                height="120"
-                width="120px"
-                alt="171x180"
-                src={greendelta}
-              />
-            </Figure>
-          </a>
-          <p className="text-left">
-            <Trans i18nKey="experiences.5.body">
-              <strong>Software internationalization</strong> : Adapt the
-              software to communicate thanks to a communication protocol.
-              Software development (Java).
-            </Trans>
-          </p>
-
-        </TimelineItem>
-        <TimelineItem
-          key="001"
-          dateText={t('experiences.0.date')}
-          style={{ color: '#e86971' }}
-          bodyContainerStyle={{
-            background: '#ddd',
-            padding: '20px',
-            borderRadius: '8px',
-            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
-          }}
-          className="longDate"
-        >
-          <h4>{t('experiences.0.title')}</h4>
-          <a href="https://www.enovacom.fr/" target="_blank" rel="noopener noreferrer">
-            <Figure className="mt-4">
-              <Figure.Image
-                height="120"
-                width="120px"
-                alt="171x180"
-                src={enovacom}
-              />
-            </Figure>
-          </a>
-          <p className="text-left">
-            <Trans i18nKey="experiences.0.body">
-              <strong>Software internationalization</strong> : Adapt the
-              software to communicate thanks to a communication protocol.
-              Software development (Java).
-            </Trans>
-          </p>
-
-        </TimelineItem>
-        <TimelineItem
-          key="002"
-          dateText={t('experiences.1.date')}
-          style={{ color: '#e86971' }}
-          bodyContainerStyle={{
-            background: '#ddd',
-            padding: '20px',
-            borderRadius: '8px',
-            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
-          }}
-          className="longDate"
-        >
-
-          <h4>{t('experiences.1.title')}</h4>
-          <a href="https://www.motionpictures.org/" target="_blank" rel="noopener noreferrer">
-            <Figure className="mt-4">
-              <Figure.Image
-                height="80px"
-                width="80px"
-                alt="171x180"
-                src={mpaa}
-              />
-            </Figure>
-          </a>
-          <p className="text-left">
-            <Trans i18nKey="experiences.1.body">
-              <strong>Automatisation of Web investigation </strong>: Website
-              creation, in order to centralize multiple scripts that automatize
-              the investigation about some infringing website, which are puting
-              some illegal content on internet. Web Programmation (Jquery, PHP,
-              Python ...)
-            </Trans>
-          </p>
-
-        </TimelineItem>
-        <TimelineItem
-          key="003"
-          dateText={t('education.0.date')}
-          dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
-          style={{ color: '#61b8ff' }}
-
-        >
-          <h4>{t('education.0.title')}</h4>
-          <a href="https://www.polytech-grenoble.fr/" target="_blank" rel="noopener noreferrer">
-            <Figure className="mt-3">
-              <Figure.Image
-                height="160px"
-                width="160px"
-                alt="171x180"
-                src={polytech}
-              />
-            </Figure>
-          </a>
-          <p className="text-left">{t('education.0.body')}</p>
-        </TimelineItem>
-        <TimelineItem
-          key="004"
-          dateText={t('experiences.2.date')}
-          style={{ color: '#e86971' }}
-          bodyContainerStyle={{
-            background: '#ddd',
-            padding: '20px',
-            borderRadius: '8px',
-            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
-          }}
-        >
-          <h4>{t('experiences.2.title')}</h4>
-          <a href="https://www.mcdonalds.fr/" target="_blank" rel="noopener noreferrer">
-            <Figure className="mt-3">
-              <Figure.Image
-                height="80px"
-                width="80px"
-                alt="171x180"
-                src={mcdonalds}
-              />
-            </Figure>
-          </a>
-          <p className="text-left">
-            <Trans i18nKey="experiences.2.body">
-              <strong>Software internationalization</strong> : Adapt the
-              software to communicate thanks to a communication protocol.
-              Software development (Java).
-            </Trans>
-          </p>
-
-        </TimelineItem>
-        <TimelineItem
-          key="005"
-          dateText={t('experiences.3.date')}
-          style={{ color: '#e86971' }}
-          bodyContainerStyle={{
-            background: '#ddd',
-            padding: '20px',
-            borderRadius: '8px',
-            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
-          }}
-        >
-          <h4>{t('experiences.3.title')}</h4>
-          <a href="https://deliveroo.fr" target="_blank" rel="noopener noreferrer">
-            <Figure className="mt-3">
-              <Figure.Image
-                height="80px"
-                width="80px"
-                alt="171x180"
-                src={deliveroo}
-              />
-            </Figure>
-          </a>
-          <p className="text-left">
-            <Trans i18nKey="experiences.3.body">
-              <strong>Software internationalization</strong> : Adapt the
-              software to communicate thanks to a communication protocol.
-              Software development (Java).
-            </Trans>
-          </p>
-
-        </TimelineItem>
-        <TimelineItem
-          key="006"
-          dateText={t('education.1.date')}
-          dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
-          style={{ color: '#61b8ff' }}
-
-        >
-          <h4>{t('education.1.title')}</h4>
-          <a href="https://polytech.univ-amu.fr/formations/cycle-preparatoire" target="_blank" rel="noopener noreferrer">
-            <Figure className="mt-3">
-              <Figure.Image
-                height="80px"
-                width="80px"
-                alt="171x180"
-                src={peip}
-              />
-            </Figure>
-          </a>
-          <p className="text-left">{t('education.1.body')}</p>
-        </TimelineItem>
-        <TimelineItem
-          key="008"
-          dateText={t('experiences.4.date')}
-          style={{ color: '#e86971' }}
-          bodyContainerStyle={{
-            background: '#ddd',
-            padding: '20px',
-            borderRadius: '8px',
-            boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
-          }}
-        >
-          <h4>{t('experiences.4.title')}</h4>
-          <Figure className="mt-3">
-            <Figure.Image
-              height="80px"
-              width="80px"
-              alt="171x180"
-              src={sebben}
-            />
-          </Figure>
-          <p className="text-left">
-            <Trans i18nKey="experiences.4.body">
-              <strong>Software internationalization</strong> : Adapt the
-              software to communicate thanks to a communication protocol.
-              Software development (Java).
-            </Trans>
-          </p>
-        </TimelineItem>
-        <TimelineItem
-          key="007"
-          dateText={t('education.2.date')}
-          dateInnerStyle={{ background: '#61b8ff', color: '#000' }}
-          style={{ color: '#61b8ff' }}
-        >
-          <h4>{t('education.2.title')}</h4>
-          <p className="text-left">{t('education.2.body')}</p>
-        </TimelineItem>
-      </Timeline>
     </Container>
   );
 }
