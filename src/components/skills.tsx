@@ -43,7 +43,7 @@ const Skill: FC<{ skill: Skill }> = ({ skill }) => {
             className={(skill.class ? skill.class : '')}
             width={(skill.size) ? skill.size : 32}
             height={(skill.size) ? skill.size : 32}
-            alt="171x180"
+            alt={skill.tooltip}
             src={skill.image}
           />
         </Figure>
