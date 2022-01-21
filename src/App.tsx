@@ -52,8 +52,8 @@ const LeftHeader: FC = () => {
             <h5>{t('me.livesIn')}</h5>
           </div>
           <div>
-            <a href="mailto:pro@janleo.fr" target="_blank" rel="noopener noreferrer">
-              <Button variant="secondary">pro@janleo.fr</Button>
+            <a href="mailto:pro@leojan.fr" target="_blank" rel="noopener noreferrer">
+              <Button variant="secondary">pro@leojan.fr</Button>
             </a>
           </div>
         </Col>
