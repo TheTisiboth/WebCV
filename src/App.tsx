@@ -21,7 +21,6 @@ import { Projects } from './components/projects'
 import { Skills } from './components/skills'
 // import { Travels } from "./components/travels";
 import { computeAge, renderTooltip, scrollTo } from './utils'
-import {Travels} from './components/travels.tsx'
 
 /**
  * LeftHeader, containing general info about author
@@ -172,22 +171,22 @@ const Footer: FC = () => {
 const Page: FC = () => {
   return (
     <div id="App" className="App">
-      <MyNavbar />
+      <MyNavbar/>
 
-      <AppHeader />
+      <AppHeader/>
       <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true} animatePreScroll={false}>
         <section className="grey">
-          <Projects />
+          <Projects/>
         </section>
       </ScrollAnimation>
       <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
         <section>
-          {/*<History />*/}
+          <History/>
         </section>
       </ScrollAnimation>
       <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
         <section className="grey">
-          <Hobbies />
+          <Hobbies/>
         </section>
       </ScrollAnimation>
       <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
@@ -196,22 +195,22 @@ const Page: FC = () => {
         </section>
       </ScrollAnimation>
       <section className="App-footer">
-        <Footer />
+        <Footer/>
       </section>
-    </div >
+    </div>
   )
 }
 
 // loading component for suspense fallback
 const Loader = (): ReactElement => (
-  <div className="App" />
+  <div className="App"/>
 )
 
 // here app catches the suspense from page in case translations are not yet loaded
 const App: FC = () => {
   return (
-    <Suspense fallback={<Loader />}>
-      <Page />
+    <Suspense fallback={<Loader/>}>
+      <Page/>
     </Suspense>
   )
 }
