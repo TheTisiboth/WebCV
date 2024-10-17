@@ -1,4 +1,4 @@
-import React, { FC, MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
+import { FC, MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
 import { Nav, Navbar, NavDropdown, OverlayTrigger } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { FaRegFilePdf } from 'react-icons/fa';
@@ -52,7 +52,7 @@ export const MyNavbar: FC = () => {
 
     return (
         <Navbar id="nav" ref={nav} collapseOnSelect={true} expand="md" bg="dark" variant="dark" className="pt-0 pb-0" fixed="top">
-            <Nav.Link href="#App" onSelect={scrollTo('App', scrollOptions)}>
+            <Nav.Link href="#App" onSelect={scrollTo('App', scrollOptions)} className='nav-link'>
                 <img
                     alt=""
                     src={logo}

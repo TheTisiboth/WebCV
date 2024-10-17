@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Badge, Col, Container, Figure, Row } from 'react-bootstrap';
 import { Trans, useTranslation } from 'react-i18next';
 import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
@@ -96,7 +96,7 @@ export const History: FC = () => {
         <Container id="History" className="pt-5">
             <Row className="mb-4 justify-content-center">
                 <Col xs={true} md={8} className="pt-2 pb-2">
-                    <Badge><h2 className="mytitle titles rounded ">{t('navbar.history')}</h2></Badge>
+                    <Badge className='mytitle titles'><h2 className="rounded ">{t('navbar.history')}</h2></Badge>
                 </Col>
             </Row>
             <Timeline lineColor={'#ddd'}>

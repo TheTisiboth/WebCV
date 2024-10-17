@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Badge, Col, Container, Row } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { FaBasketballBall, FaTableTennis } from 'react-icons/fa';
@@ -12,8 +12,8 @@ export const Hobbies: FC = () => {
         <Container>
             <Row className="pt-5 mb-4 justify-content-center">
                 <Col xs={true} className="pt-2 pb-2">
-                    <Badge>
-                        <h2 id="longTitle" className="mytitle rounded ">{t('navbar.hobbies')}</h2>
+                    <Badge className='mytitle rounded'>
+                        <h2 id="longTitle">{t('navbar.hobbies')}</h2>
                     </Badge>
                 </Col>
             </Row>

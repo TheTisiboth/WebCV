@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { Badge, Col, Container, Figure, Row } from 'react-bootstrap';
 import { Trans, useTranslation } from 'react-i18next';
 import { IconContext } from 'react-icons';
@@ -19,7 +19,7 @@ export const Projects: FC = () => {
         <Container id="Projects" className="pt-5">
             <Row className="mb-4 justify-content-center">
                 <Col xs={true} md={8} className="pt-2 pb-2">
-                    <Badge><h2 className="mytitle titles rounded ">{t('navbar.projects')}</h2></Badge>
+                    <Badge className="mytitle titles "><h2 className=" rounded ">{t('navbar.projects')}</h2></Badge>
                 </Col>
             </Row>
             <Row className="justify-content-center pt-5 pb-5 mt-3 mb-3">

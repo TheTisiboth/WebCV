@@ -1,70 +1,46 @@
 {
-  "name": "react_usinghooks",
-  "version": "0.1.0",
+  "name": "vite-project",
   "private": true,
-  "dependencies": {
-    "@types/geojson": "^7946.0.7",
-    "@types/jest": "^25.1.5",
-    "@types/leaflet": "^1.5.12",
-    "@types/node": "^13.11.0",
-    "@types/react": "^16.9.32",
-    "@types/react-animate-on-scroll": "^2.1.2",
-    "@types/react-dom": "^16.9.6",
-    "@types/react-leaflet": "^2.5.1",
-    "@types/react-scroll": "^1.5.4",
-    "animate.css": "^3.7.2",
-    "bootstrap": "^4.4.1",
-    "i18next": "18.0.0",
-    "i18next-browser-languagedetector": "4.0.0",
-    "i18next-xhr-backend": "3.2.0",
-    "leaflet": "^1.6.0",
-    "moment": "^2.29.1",
-    "react": "^16.11.0",
-    "react-animate-on-scroll": "^2.1.5",
-    "react-bootstrap": "^1.0.0",
-    "react-dom": "^16.11.0",
-    "react-i18next": "11.0.0",
-    "react-icons": "^3.9.0",
-    "react-leaflet": "^2.6.3",
-    "react-scripts": "^3.2.0",
-    "react-scroll": "^1.7.16",
-    "typescript": "^3.8.3",
-    "vertical-timeline-component-for-react": "^1.0.7"
-  },
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "lint:ts": "tslint 'src/**/*.{ts,tsx,js}'"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
-  "browserslist": {
-    "development": [
-      "last 2 chrome versions",
-      "last 2 firefox versions",
-      "last 2 edge versions"
-    ],
-    "production": [
-      ">1%",
-      "last 4 versions",
-      "Firefox ESR",
-      "not ie < 11"
-    ]
-  },
-  "resolve": {
-    "extensions": [
-      ".js",
-      ".json",
-      ".ts",
-      ".tsx"
-    ]
+  "dependencies": {
+    "@types/react-animate-on-scroll": "^2.1.8",
+    "animate.css": "^4.1.1",
+    "bootstrap": "^5.3.3",
+    "i18next": "^23.16.0",
+    "i18next-browser-languagedetector": "^8.0.0",
+    "i18next-fs-backend": "^2.3.2",
+    "i18next-http-backend": "^2.6.2",
+    "leaflet": "^1.9.4",
+    "react": "^18.3.1",
+    "react-animate-on-scroll": "^2.1.9",
+    "react-bootstrap": "^2.10.5",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^15.0.3",
+    "react-icons": "^5.3.0",
+    "react-leaflet": "^4.2.1",
+    "react-scroll": "^1.9.0"
   },
   "devDependencies": {
-    "@types/react-i18next": "^8.1.0",
-    "prettier": "^2.0.4",
-    "tslint": "^6.1.1",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.3.0",
-    "tslint-react": "^5.0.0"
+    "@eslint/js": "^9.11.1",
+    "@types/geojson": "^7946.0.14",
+    "@types/leaflet": "^1.9.12",
+    "@types/react": "^18.3.10",
+    "@types/react-dom": "^18.3.0",
+    "@types/react-scroll": "^1.8.10",
+    "@vitejs/plugin-react": "^4.3.2",
+    "eslint": "^9.11.1",
+    "eslint-plugin-react-hooks": "^5.1.0-rc.0",
+    "eslint-plugin-react-refresh": "^0.4.12",
+    "globals": "^15.9.0",
+    "typescript": "^5.5.3",
+    "typescript-eslint": "^8.7.0",
+    "vite": "^5.4.8"
   }
 }

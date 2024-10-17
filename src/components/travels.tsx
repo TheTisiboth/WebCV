@@ -1,10 +1,9 @@
 import geojson from 'geojson';
-import { TFunction } from 'i18next';
 import L, { LatLngLiteral, Layer, LeafletMouseEvent, PathOptions } from 'leaflet';
-import React, { FC, useRef, useState } from 'react';
+import { FC, useRef, useState } from 'react';
 import { Badge, Col, Container, Row } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
-import { GeoJSON, Map, TileLayer } from 'react-leaflet';
+import { GeoJSON, MapContainer, TileLayer } from 'react-leaflet';
 import geoJsonData from '../assets/geoJsonData.json';
 import { cities, countries } from './constant';
 
@@ -18,8 +17,8 @@ export const Travels: FC = () => {
     <Container id="Travels" className="pt-5 pb-4" fluid>
       <Row className="mb-4 justify-content-center">
         <Col xs={8} className="pt-2 pb-2">
-          <Badge>
-            <h2 className="mytitle titles rounded ">{t('navbar.travel')}</h2>
+          <Badge className='mytitle titles'>
+            <h2 className="rounded">{t('navbar.travel')}</h2>
           </Badge>
         </Col>
       </Row>
@@ -47,7 +46,7 @@ interface State {
  */
 const CustomMap = () => {
   const mapRef: any = useRef();
-  const { t, i18n }: { t: TFunction; i18n: any } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const countryToString = (countries: string[]): string => countries.map((c: string): string => t(c)).join(', ');
 
@@ -135,17 +134,17 @@ const CustomMap = () => {
       return geoJson;
     }
   }
-
   return (
-    <Map
+    <MapContainer
       ref={mapRef}
       style={{ height: '500px' }}
       center={[54.370138916189596, -29.918133437500003]}
       zoom={state.zoom}
-      onZoomend={onZoom}
+
+      // onZoomend={onZoom}
     >
       <TileLayer url="https://api.mapbox.com/styles/v1/mapbox/streets-v11/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw" />
       {state.display}
-    </Map>
+    </MapContainer>
   );
 }
