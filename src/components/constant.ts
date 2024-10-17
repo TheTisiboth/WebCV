@@ -1,27 +1,27 @@
-import ANGULAR from '../assets/angular.png';
-import ARDUINO from '../assets/arduino.svg';
-import ARM from '../assets/arm2.png';
-import BOOTSTRAP from '../assets/bootstrap.png';
-import C from '../assets/c.png';
-import CSS from '../assets/css.png';
-import GIT from '../assets/git.png';
-import HTML from '../assets/html.png';
-import JAVA from '../assets/java.png';
-import JHIPSTER from '../assets/jhipster.png';
-import JQUERY from '../assets/jquery.png';
-import LINUX from '../assets/linux.svg';
-import MONGODB from '../assets/mongodb.png';
-import MUI from '../assets/mui.png';
-import NODE from '../assets/node.png';
-import OCAML from '../assets/ocaml.jpg';
-import PHP from '../assets/php.png';
-import POSTGRES from '../assets/postgres.webp';
-import PYTHON from '../assets/python.png';
-import REACT from '../assets/react.svg';
-import SPRING from '../assets/spring.png';
-import SQL from '../assets/sql.png';
-import { Skills } from './skills';
-import { Position } from './travels';
+import ANGULAR from '../assets/angular.png'
+import ARDUINO from '../assets/arduino.svg'
+import ARM from '../assets/arm2.png'
+import BOOTSTRAP from '../assets/bootstrap.png'
+import C from '../assets/c.png'
+import CSS from '../assets/css.png'
+import GIT from '../assets/git.png'
+import HTML from '../assets/html.png'
+import JAVA from '../assets/java.png'
+import JHIPSTER from '../assets/jhipster.png'
+import JQUERY from '../assets/jquery.png'
+import LINUX from '../assets/linux.svg'
+import MONGODB from '../assets/mongodb.png'
+import MUI from '../assets/mui.png'
+import NODE from '../assets/node.png'
+import OCAML from '../assets/ocaml.jpg'
+import PHP from '../assets/php.png'
+import POSTGRES from '../assets/postgres.webp'
+import PYTHON from '../assets/python.png'
+import REACT from '../assets/react.svg'
+import SPRING from '../assets/spring.png'
+import SQL from '../assets/sql.png'
+import { Skills } from './skills'
+import { Position } from './travels'
 
 export const system: Skills = {
   title: 'skills.system',
@@ -42,7 +42,7 @@ export const system: Skills = {
       tooltip: 'Arduino'
     }
   ]
-};
+}
 
 export const software: Skills = {
   title: 'skills.software',
@@ -63,7 +63,7 @@ export const software: Skills = {
       tooltip: 'Ocaml'
     }
   ]
-};
+}
 
 export const web: Skills = {
   title: 'skills.web',
@@ -111,7 +111,7 @@ export const web: Skills = {
       size: 25
     }
   ]
-};
+}
 
 export const others: Skills = {
   title: 'skills.other',
@@ -128,7 +128,7 @@ export const others: Skills = {
       tooltip: 'Linux'
     }
   ]
-};
+}
 
 export const extraSkills: Skills = {
   title: 'Extra Skills',
@@ -164,7 +164,7 @@ export const extraSkills: Skills = {
       tooltip: 'CSS'
     },
   ]
-};
+}
 
 // List of position and label of tooltip for the GeoJson object, for each country
 export const countries: { [key: string]: Position } = {
@@ -289,7 +289,7 @@ export const countries: { [key: string]: Position } = {
       'travel.sweden.country',
     ]
   }
-};
+}
 
 // List of position and tooltip for the cities Markers
 export const cities: Position[] = [
@@ -474,4 +474,4 @@ export const cities: Position[] = [
     },
     tooltip: 'travel.sweden.stockholm',
   },
-];
+]

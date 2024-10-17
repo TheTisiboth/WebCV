@@ -1,50 +1,18 @@
-# React + TypeScript + Vite
+# Web CV
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is my Web CV, developped in react. It is deployed on Netlify. here is a deployement status :
 
-Currently, two official plugins are available:
+[![Netlify Status](https://api.netlify.com/api/v1/badges/00a29a99-777f-4bc8-8e9d-8476e89adccf/deploy-status)](https://app.netlify.com/sites/janleo/deploys)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+If the status is `success`, you can access last version of the website directly on `https://janleo.fr`.
 
-## Expanding the ESLint configuration
+## Run the project
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+First, you have to run `npm install`, in order to install the needed dependencies.   
+Then, you have to run `npm start`, to start the development server. After a few minutes, you can acces via your browser the page `http://localhost:3000`.
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## React-Leaflet
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+I'm using React-Leaflet in order to display a map. I'm using geoJSON datas, given by `https://geojson-maps.ash.ms/`. It helps to build a custom geoJSON.   
+The resulting JSON has to be converted, thanks to this website : `http://mapster.me/right-hand-rule-geojson-fixer/`, because it's not well formated.
