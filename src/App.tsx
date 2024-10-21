@@ -20,8 +20,8 @@ import { MyNavbar } from './components/navbar'
 import { Projects } from './components/projects'
 import { Skills } from './components/skills'
 import { Travels } from './components/travels'
-import { computeAge, renderTooltip, scrollTo } from './utils'
-import { animateScroll ,scroller} from 'react-scroll'
+import { computeAge, renderTooltip } from './utils'
+import { animateScroll } from 'react-scroll'
 
 /**
  * LeftHeader, containing general info about author

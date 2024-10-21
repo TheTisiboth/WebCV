@@ -91,7 +91,7 @@ export const History: FC = () => {
       }],
     ]
   )
-  const historyItems: HistoryItem[] = t('history', { returnObjects: true })
+  const historyItems = t('history', { returnObjects: true }) as HistoryItem[]
   return (
     <Container id="History" className="pt-5">
       <Row className="mb-4 justify-content-center">
