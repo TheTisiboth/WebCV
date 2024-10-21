@@ -30,6 +30,10 @@ h2 {
   color: white;
 }
 
+.nav-link {
+  padding: .5rem 1rem;
+}
+
 .mytitle {
   background-color: #011638!important;
   color: #cdcdcd!important;

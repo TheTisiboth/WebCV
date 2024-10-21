@@ -1,33 +1,31 @@
-import 'animate.css/animate.min.css';
-import React, { FC, ReactElement, Suspense } from 'react';
-import ScrollAnimation from 'react-animate-on-scroll';
+import 'animate.css/animate.compat.css'
+import React, { FC, ReactElement, Suspense } from 'react'
+import ScrollAnimation from 'react-animate-on-scroll'
 import {
   Button, Col,
   Container,
   Figure, ListGroup, Nav, OverlayTrigger, Row
-} from 'react-bootstrap';
-import { useTranslation } from 'react-i18next';
-import { IconContext } from 'react-icons';
-import { AiOutlineGitlab } from 'react-icons/ai';
+} from 'react-bootstrap'
+import { useTranslation } from 'react-i18next'
+import { IconContext } from 'react-icons'
+import { AiOutlineGitlab } from 'react-icons/ai'
 import {
   FaArrowAltCircleUp, FaGithub, FaLinkedin
-} from 'react-icons/fa';
-import './App.css';
-import image from './assets/leo.jpg';
-import { History } from "./components/history";
-import { Hobbies } from "./components/hobbies";
-import { MyNavbar } from "./components/navbar";
-import { Projects } from "./components/projects";
-import { Skills } from './components/skills';
-import { Travels } from "./components/travels";
-import { computeAge, renderTooltip, scrollTo } from './utils';
-
-// tslint:disable-next-line: no-var-requires
-require('./global.d.ts');
+} from 'react-icons/fa'
+import './App.css'
+import image from './assets/leo.jpg'
+import { History } from './components/history'
+import { Hobbies } from './components/hobbies'
+import { MyNavbar } from './components/navbar'
+import { Projects } from './components/projects'
+import { Skills } from './components/skills'
+import { Travels } from './components/travels'
+import { computeAge, renderTooltip } from './utils'
+import { animateScroll } from 'react-scroll'
 
 /**
-* LeftHeader, containing general info about author
-*/
+ * LeftHeader, containing general info about author
+ */
 const LeftHeader: FC = () => {
   const { t } = useTranslation()
   return (
@@ -59,22 +57,22 @@ const LeftHeader: FC = () => {
         </Col>
       </Row>
     </div>
-  );
+  )
 }
 
 /**
-* RightHeader containing info about Skills
-*/
+ * RightHeader containing info about Skills
+ */
 const RightHeader: FC = () => {
   return (
     <Skills />
-  );
+  )
 }
 
 /**
-* Display an icon that links to social media
-* @param props info about the social media (href, icon)
-*/
+ * Display an icon that links to social media
+ * @param props info about the social media (href, icon)
+ */
 const IconSocial: FC<{ href: string | undefined, icon: React.ReactNode }> = ({ href, icon }) => {
   return (
     <a
@@ -88,12 +86,12 @@ const IconSocial: FC<{ href: string | undefined, icon: React.ReactNode }> = ({ h
         </div>
       </IconContext.Provider>
     </a>
-  );
+  )
 }
 
 /**
-* AppHeader, containing LeftHeader, Image, and RightHeader
-*/
+ * AppHeader, containing LeftHeader, Image, and RightHeader
+ */
 const AppHeader: FC = () => {
   return (
     <Container fluid={true} className="App-header">
@@ -132,19 +130,17 @@ const AppHeader: FC = () => {
         </Col>
       </Row>
     </Container>
-  );
+  )
 }
 
 /**
-* Footer component
-*/
+ * Footer component
+ */
 const Footer: FC = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation()
   const scrollOptions = {
-    smooth: true,
-    offset: -40,
-    duration: 1000,
-  };
+    duration: 200
+  }
 
   return (
     <Container>
@@ -153,7 +149,7 @@ const Footer: FC = () => {
       </ListGroup>
       <Row className="justify-content-center">
         <Col md={3}>
-          <Nav.Link className="mt-2" href="#App" onSelect={scrollTo('App', scrollOptions)}>
+          <Nav.Link className="mt-2" onClick={() => animateScroll.scrollToTop(scrollOptions)} >
             <OverlayTrigger
               placement="right"
               delay={{ show: 0, hide: 0 }}
@@ -167,29 +163,29 @@ const Footer: FC = () => {
         </Col>
       </Row>
     </Container>
-  );
+  )
 }
 
 // page uses the hook
 const Page: FC = () => {
   return (
     <div id="App" className="App">
-      <MyNavbar />
+      <MyNavbar/>
 
-      <AppHeader />
-      <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true} >
+      <AppHeader/>
+      <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true} animatePreScroll={false}>
         <section className="grey">
-          <Projects />
+          <Projects/>
         </section>
       </ScrollAnimation>
       <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
         <section>
-          <History />
+          <History/>
         </section>
       </ScrollAnimation>
       <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
         <section className="grey">
-          <Hobbies />
+          <Hobbies/>
         </section>
       </ScrollAnimation>
       <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
@@ -198,23 +194,23 @@ const Page: FC = () => {
         </section>
       </ScrollAnimation>
       <section className="App-footer">
-        <Footer />
+        <Footer/>
       </section>
-    </div >
-  );
+    </div>
+  )
 }
 
 // loading component for suspense fallback
 const Loader = (): ReactElement => (
-  <div className="App" />
-);
+  <div className="App"/>
+)
 
 // here app catches the suspense from page in case translations are not yet loaded
 const App: FC = () => {
   return (
-    <Suspense fallback={<Loader />}>
-      <Page />
+    <Suspense fallback={<Loader/>}>
+      <Page/>
     </Suspense>
-  );
+  )
 }
 export default App

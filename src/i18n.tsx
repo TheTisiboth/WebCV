@@ -1,10 +1,10 @@
-import i18n from 'i18next';
-import Backend from 'i18next-xhr-backend';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18n from 'i18next'
+import Backend from 'i18next-http-backend'
+import { initReactI18next } from 'react-i18next'
+import LanguageDetector from 'i18next-browser-languagedetector'
 
 i18n
-  // load translation using xhr -> see /public/locales
+  // load translation using http -> see /public/locales
   // learn more: https://github.com/i18next/i18next-xhr-backend
   .use(Backend)
   // detect user language
@@ -15,12 +15,10 @@ i18n
   // init i18next
   // for all options read: https://www.i18next.com/overview/configuration-options
   .init({
-    react: {
-      wait: true,
-    },
     debug: false,
     initImmediate: true,
-    preload: ['en', 'fr'],
+    load: 'all',
+    preload: ['en', 'fr', 'de'],
     fallbackLng: 'en',
     backend: {
       // for all available options read the backend's repository readme file
@@ -29,6 +27,6 @@ i18n
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },
-  });
+  })
 
-export default i18n;
+export default i18n
