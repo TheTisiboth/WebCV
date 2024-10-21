@@ -62,7 +62,7 @@ export const MyNavbar: FC = () => {
         />{' '}
       </Nav.Link>
       <Navbar.Toggle ref={toggle} aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse ref={collapse} id="responsive-navbar-nav" className="pb-3 pb-md-0">
+      <Navbar.Collapse ref={collapse} id="responsive-navbar-nav" className="pb-3 pb-md-0 justify-content-between">
         <Nav className="mr-auto">
           <Nav.Link className="" href="#Skills" onSelect={scrollTo('Skills', scrollOptions)}>
             {t('navbar.skill')}

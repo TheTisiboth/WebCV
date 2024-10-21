@@ -21,6 +21,7 @@ import { Projects } from './components/projects'
 import { Skills } from './components/skills'
 import { Travels } from './components/travels'
 import { computeAge, renderTooltip, scrollTo } from './utils'
+import { animateScroll ,scroller} from 'react-scroll'
 
 /**
  * LeftHeader, containing general info about author
@@ -138,9 +139,7 @@ const AppHeader: FC = () => {
 const Footer: FC = () => {
   const { t } = useTranslation()
   const scrollOptions = {
-    smooth: true,
-    offset: -40,
-    duration: 1000,
+    duration: 200
   }
 
   return (
@@ -150,7 +149,7 @@ const Footer: FC = () => {
       </ListGroup>
       <Row className="justify-content-center">
         <Col md={3}>
-          <Nav.Link className="mt-2" href="#App" onSelect={scrollTo('App', scrollOptions)}>
+          <Nav.Link className="mt-2" onClick={() => animateScroll.scrollToTop(scrollOptions)} >
             <OverlayTrigger
               placement="right"
               delay={{ show: 0, hide: 0 }}
