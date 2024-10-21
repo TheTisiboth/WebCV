@@ -16,3 +16,7 @@ Then, you have to run `npm start`, to start the development server. After a few 
 
 I'm using React-Leaflet in order to display a map. I'm using geoJSON datas, given by `https://geojson-maps.ash.ms/`. It helps to build a custom geoJSON.   
 The resulting JSON has to be converted, thanks to this website : `http://mapster.me/right-hand-rule-geojson-fixer/`, because it's not well formated.
+
+## Technical details
+
+The project used to be created with `create-react-app`. We now switched to vite, in order to have a faster build.
