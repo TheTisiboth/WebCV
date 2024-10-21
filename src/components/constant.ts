@@ -20,8 +20,8 @@ import PYTHON from '../assets/python.png'
 import REACT from '../assets/react.svg'
 import SPRING from '../assets/spring.png'
 import SQL from '../assets/sql.png'
-import { Skills } from './skills'
-import { Position } from './travels'
+import { type Skills } from '../layouts/skills'
+import { type Position } from '../layouts/travels'
 
 export const system: Skills = {
   title: 'skills.system',
@@ -164,131 +164,6 @@ export const extraSkills: Skills = {
       tooltip: 'CSS'
     },
   ]
-}
-
-// List of position and label of tooltip for the GeoJson object, for each country
-export const countries: { [key: string]: Position } = {
-  DEU: {
-    latlng: {
-      lat: 51.0834196,
-      lng: 10.4234469,
-    },
-    tooltip: [
-      'travel.germany.munich',
-      'travel.germany.berlin',
-      'travel.germany.hamburg',
-      'travel.germany.munster',
-      'travel.germany.country',
-    ]
-  },
-  CZE: {
-    latlng: {
-      lat: 49.667628,
-      lng: 15.326962,
-    },
-    tooltip: [
-      'travel.tchequie.prague',
-      'travel.tchequie.country',
-    ]
-  },
-  BEL: {
-    latlng: {
-      lat: 50.6402809,
-      lng: 4.6667145,
-    },
-    tooltip: [
-      'travel.belgium.brussels',
-      'travel.belgium.liege',
-      'travel.belgium.country',
-    ]
-  },
-  CAN: {
-    latlng: {
-      lat: 46.825754,
-      lng: -71.20849,
-    },
-    tooltip: [
-      'travel.canada.montreal',
-      'travel.canada.quebec',
-      'travel.canada.sherbrooke',
-      'travel.canada.tadoussac',
-      'travel.canada.country',
-    ]
-  },
-  ESP: {
-    latlng: {
-      lat: 40.463669,
-      lng: -3.749220,
-    },
-    tooltip: [
-      'travel.spain.barcelona',
-      'travel.spain.palma',
-      'travel.spain.country',
-    ]
-  },
-  ITA: {
-    latlng: {
-      lat: 42.6384261,
-      lng: 12.674297,
-    },
-    tooltip: [
-      'travel.italy.roma',
-      'travel.italy.naples',
-      'travel.italy.pompei',
-      'travel.italy.country',
-    ]
-  },
-  GRC: {
-    latlng: {
-      lat: 38.9953683,
-      lng: 21.9877132,
-    },
-    tooltip: [
-      'travel.greece.athens',
-      'travel.greece.corinth',
-      'travel.greece.country',
-    ]
-  },
-  USA: {
-    latlng: {
-      lat: 42.92121887207031,
-      lng: -75.62081909179688,
-    },
-    tooltip:
-      ['travel.us.ny',
-        'travel.us.country'
-      ]
-  },
-  IRL: {
-    latlng: {
-      lat: 52.865196,
-      lng: -7.9794599,
-    },
-    tooltip: [
-      'travel.uk.ireland',
-      'travel.uk.country',
-    ]
-  },
-  FRA: {
-    latlng: {
-      lat: 43.2961743,
-      lng: 5.3699525,
-    },
-    tooltip: [
-      'travel.fr.marseille',
-      'travel.fr.country',
-    ]
-  },
-  SWE: {
-    latlng: {
-      lat: 59.6749712,
-      lng: 14.5208584,
-    },
-    tooltip: [
-      'travel.sweden.stockholm',
-      'travel.sweden.country',
-    ]
-  }
 }
 
 // List of position and tooltip for the cities Markers
@@ -475,3 +350,9 @@ export const cities: Position[] = [
     tooltip: 'travel.sweden.stockholm',
   },
 ]
+
+export const scrollOptions = {
+  smooth: true,
+  offset: -50,
+  duration: 500,
+}

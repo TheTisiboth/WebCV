@@ -2,11 +2,10 @@ import { FC, ReactElement } from 'react'
 import {
   Badge, Col,
   Figure,
-  OverlayTrigger, Row
+  OverlayTrigger, Row, Tooltip
 } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
-import { renderTooltip } from '../utils'
-import { extraSkills, others, software, system, web } from './constant'
+import { extraSkills, others, software, system, web } from '../components/constant'
 
 interface Skill {
   image: string;
@@ -26,6 +25,7 @@ export interface Skills {
  * @param props Info about the image to display
  */
 const Skill: FC<{ skill: Skill }> = ({ skill }) => {
+  const {t} = useTranslation()
   return (
     <a
       href={skill.href}
@@ -36,7 +36,7 @@ const Skill: FC<{ skill: Skill }> = ({ skill }) => {
       <OverlayTrigger
         placement="bottom"
         delay={{ show: 0, hide: 0 }}
-        overlay={renderTooltip(skill.tooltip)}
+        overlay={<Tooltip>{t(skill.tooltip)}</Tooltip>}
       >
         <Figure>
           <Figure.Image
@@ -55,7 +55,10 @@ const Skill: FC<{ skill: Skill }> = ({ skill }) => {
 /**
  * Display a list of skill
  */
-export const Skills: FC<{ skillName?: string }> = ({ skillName }) => {
+type SkillsProps = {
+    skillName?: string
+}
+export const Skills: FC<SkillsProps> = ({ skillName }) => {
   const { t } = useTranslation()
 
   const list: Skills[][] = [[system, software], [web, others]]

@@ -3,7 +3,7 @@ import {FC} from 'react'
 import {Badge, Col, Container, Row} from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import {MapContainer, Marker, TileLayer, Tooltip} from 'react-leaflet'
-import { cities } from './constant'
+import { cities } from '../components/constant'
 
 /**
 * Travel section, containing a leaflet map
@@ -34,8 +34,6 @@ export interface Position {
   tooltip: string | string[];
 }
 
-
-
 /**
  * Display a Leaflet Map containing a list of Markers per visited city
  */
@@ -50,7 +48,7 @@ const CustomMap = () => {
     >
       <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
       {cities.map(city => (
-        <Marker position={city.latlng} >
+        <Marker position={city.latlng} key={`${city.latlng.lat}_${city.latlng.lng}`}>
           <Tooltip>{t(city.tooltip)}</Tooltip>
         </Marker>
       ))}
