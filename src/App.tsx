@@ -19,7 +19,7 @@ import { Hobbies } from './components/hobbies'
 import { MyNavbar } from './components/navbar'
 import { Projects } from './components/projects'
 import { Skills } from './components/skills'
-// import { Travels } from "./components/travels";
+import { Travels } from './components/travels'
 import { computeAge, renderTooltip, scrollTo } from './utils'
 
 /**
@@ -191,7 +191,7 @@ const Page: FC = () => {
       </ScrollAnimation>
       <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
         <section>
-          {/*<Travels />*/}
+          <Travels />
         </section>
       </ScrollAnimation>
       <section className="App-footer">
