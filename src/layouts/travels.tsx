@@ -1,9 +1,8 @@
-import { LatLngLiteral } from 'leaflet'
 import {FC} from 'react'
 import {Badge, Col, Container, Row} from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import {MapContainer, Marker, TileLayer, Tooltip} from 'react-leaflet'
-import { cities } from '../components/constant'
+import {cities} from '../fixtures/travels.ts'
 
 /**
 * Travel section, containing a leaflet map
@@ -27,11 +26,6 @@ export const Travels: FC = () => {
       </Row>
     </Container>
   )
-}
-
-export interface Position {
-  latlng: LatLngLiteral;
-  tooltip: string | string[];
 }
 
 /**

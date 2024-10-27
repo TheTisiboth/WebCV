@@ -18,7 +18,8 @@ export const Hobbies: FC = () => {
         </Col>
       </Row>
       <Row className="pb-5">
-        <Col md={10}>
+        <Col md={4} />
+        <Col md={4}>
           <div className="text-left">
             <ul>
               <li>
@@ -38,7 +39,7 @@ export const Hobbies: FC = () => {
                       height="20px"
                       src={Badminton}
                       alt=""
-                    />
+                    />{' '}
                     <span className="ml-2 ">
                       {t('hobbies.badminton')}
                     </span>
@@ -64,6 +65,7 @@ export const Hobbies: FC = () => {
             </ul>
           </div>
         </Col>
+        <Col md={4} />
       </Row>
     </Container>
   )

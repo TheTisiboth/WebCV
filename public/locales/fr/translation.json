@@ -28,54 +28,63 @@
 	},
 	"history": [
 		{
+			"id": 1,
 			"date": "01/2021 - Maintenant",
 			"title": "GreenDelta - Berlin",
 			"body": "<0>Dévelopement web et logiciel</0> : Impliqué dans plusieurs projets open-source centré sur le dévelopement durable. Dévelopement de nouvelles fonctionnalitées pour openLCA (Java), logiciel d'Analyse de Cycle de Vie, et création d'une version web allégée de openLCA pour le domaine de la construction (React).",
 			"job": true
 		},
     {
+		    "id": 2,
 			"date": "05/2020 - 09/2020",
 			"title": "Enovacom, Marseille",
 			"body": "<0>Internationalisation de logiciel</0> : Mise en place d'une API RESTful respectant la norme de communication FHIR afin de pouvoir permettre un dialogue entre un logiciel d'annuaire et nimporte quelle autre application tierce compatible FHIR. Programmation logicielle (Java).",
 			"job": true
 		},
     {
+			"id": 3,
 			"date": "05/2019 - 08/2019",
 			"title": "Motion Picture Association of America, Bruxelles",
 			"body": "<0>Automatisation de Web enquêtes</0> : Aide à la mise en place d'une interface Web permettant de lancer des scripts automatisant les enquêtes relatives aux sites mettant en ligne du contenu audiovisuel de manière illégale. Programmation Web (Jquery, PHP, Python ...)",
 			"job": true
 		},
     {
+			"id": 4,
 			"date": "2016 - 2020",
 			"title": "École d'Ingénieur Polytech Grenoble",
 			"body": "Spécialité Réseaux Informatiques et Communication Multimédia, 5ème année",
 			"job": false
 		},
     {
+			"id": 5,
 			"date": "Eté 2018",
 			"title": "MacDonald's, Marseille",
 			"body": "<0>Équipier polyvalent</0> : Participation en cuisine à la préparation des commandes en suivant le protocole et les recettes préalablement définis",
 			"job": true
 		},
     {
+			"id": 6,
 			"date": "Été 2017",
 			"title": "Deliveroo, Grenoble",
 			"body": "<0>Auto-entrepreneur</0> : Livraison à domicile de nourriture à vélo.",
 			"job": true
 		},
     {
+			"id": 7,
 			"date": "2014 - 2016",
 			"title": "Parcours des Élèves Ingénieurs Polytech (PEIP), Marseille",
 			"body": "Classe préparatoire intégrée à Polytech (Mathématique, Physique, Chimie, Informatique)",
 			"job": false
 		},
     {
+			"id": 8,
 			"date": "Eté 2014 & 2015",
 			"title": "SEBBEN, Toulon",
 			"body": "<0>Entreprise multi-services</0> : Nettoyage des parties communes d'immeubles",
 			"job": true
 		},
     {
+			"id": 9,
 			"date": "06/2016",
 			"title": "Bac S spécialité Informatique et Science du Numérique",
 			"body": "Double cursus AbiBac (littérature et histoire allemande)",

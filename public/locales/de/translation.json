@@ -28,54 +28,63 @@
 	},
 	"history": [
 		{
+			"id": 1,
 			"date": "01/2021 - Jetzt",
 			"title": "GreenDelta - Berlin",
 			"body": "<0>Sofwtare und Web Entwicklung</0> : Arbeit an verschiedenen open-source Projekte, in Zusammenhang mit der nachhaltigen Entwicklung. Neue Funktionalität für openLCA (Java), software für LCA, und erstellung einer leichtgewichtigen Web-Version von openLCA im Bereich des Bauwesens (React)",
       "job": true
 		},
 		{
+			"id": 2,
 			"date": "05/2020 - 09/2020",
 			"title": "Enovacom, Marseille",
 			"body": "<0>Internationalisierung der Software</0> : Implementierung einer RESTful API, die den FHIR-Kommunikationsstandard respektiert, um einen Dialog zwischen einer Verzeichnissoftware und jeder anderen FHIR-kompatiblen Drittanwendung zu ermöglichen. Software-Programmierung (Java)",
       "job": true
 		},
 		{
+			"id": 3,
 			"date": "05/2019 - 08/2019",
 			"title": "Motion Picture Association of America, Brüssel",
 			"body": "<0>Automatisierung von Web-Umfragen</0> : Hilfe bei der Einrichtung einer Web-Schnittstelle zum Starten von Skripten zur Automatisierung von Umfragen für Websites, die illegal audiovisuelle Inhalte veröffentlichen. Web-Programmierung (Jquery, PHP, Python ...)",
       "job": true
 		},
 		{
+			"id": 4,
 			"date": "2016 - 2020",
 			"title": "Ingenieurschule  Polytech Grenoble",
 			"body": "Fachgebiet Computernetzwerke und Multimedia-Kommunikation, 5.",
       "job": false
 		},
     {
+			"id": 5,
 			"date": "Sommer 2018",
 			"title": "MacDonald's, Marseille",
 			"body": "<0>Polyvalentes Teammitglied</0> : Teilnahme an der Küche, um die Bestellungen nach dem vorher festgelegten Protokoll und Rezepten vorzubereiten.",
       "job": true
 		},
     {
+			"id": 6,
 			"date": "Sommer 2017",
 			"title": "Deliveroo, Grenoble",
 			"body": "<0>Selbstständig Erwerbstätige</0>: Hauslieferung von Lebensmitteln auf Fahrrädern",
       "job": true
 		},
     {
+			"id": 7,
 			"date": "2014 - 2016",
 			"title": "Parcours des Élèves Ingénieurs Polytech (PEIP), Marseille",
 			"body": "Polytech integrierte Vorbereitungsklasse (Mathematik, Physik, Chemie, Informatik)",
       "job": false
 		},
     {
+			"id": 8,
 			"date": "Sommer 2014 & 2015",
 			"title": "SEBBEN, Toulon",
 			"body": "<0>Multi-Service-Unternehmen</0>: Reinigung von Gemeinschaftsbereichen von Gebäuden",
       "job": true
 		},
     {
+			"id": 9,
 			"date": "06/2016",
 			"title": "Wissenschaftliches Bakkalaureat in Informatik und Digitaler Wissenschaft",
 			"body": "AbiBac Doppelstudium der deutschen Literatur und Geschichte",
