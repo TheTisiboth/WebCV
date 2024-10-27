@@ -2,7 +2,7 @@ import {FC, useCallback} from 'react'
 import {useTranslation} from 'react-i18next'
 import {NavDropdown} from 'react-bootstrap'
 import {MdTranslate} from 'react-icons/md'
-import {LinkTooltip} from '../icon.tsx'
+import {LinkTooltip} from '../icon'
 
 /**
  * Translation button, that translate the whole page. It switches between english (by default), french and german

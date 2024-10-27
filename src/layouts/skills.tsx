@@ -1,9 +1,9 @@
 import { FC, ReactElement } from 'react'
 import {Badge, Col, Row} from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
-import Link from '../components/icon.tsx'
-import {allSkillImages, others, software, system, web} from '../fixtures/skills.ts'
-import {type SkillImage, type SkillInfos} from '../types.ts'
+import Link from '../components/icon'
+import {allSkillImages, others, software, system, web} from '../fixtures/skills'
+import {type SkillImage, type SkillInfos} from '../types'
 
 
 /**

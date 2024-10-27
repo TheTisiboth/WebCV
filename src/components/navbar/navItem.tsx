@@ -1,8 +1,8 @@
 import {Nav} from 'react-bootstrap'
 import {scroller} from 'react-scroll'
-import {scrollOptions} from '../constant.ts'
 import {useTranslation} from 'react-i18next'
 import {FC, ReactElement} from 'react'
+import {scrollOptions} from '../../constant'
 
 type NavItemProps = {
     scrollAnchor: string

@@ -1,9 +1,9 @@
 import { FC, useEffect, useRef } from 'react'
 import {Nav, Navbar} from 'react-bootstrap'
-import Logo from '../components/navbar/logo.tsx'
-import NavItem from '../components/navbar/navItem.tsx'
-import CvButton from '../components/navbar/CvButton.tsx'
-import TranslationButton from '../components/navbar/TranslationButton.tsx'
+import Logo from '../components/navbar/logo'
+import NavItem from '../components/navbar/navItem'
+import CvButton from '../components/navbar/CvButton'
+import TranslationButton from '../components/navbar/TranslationButton'
 
 /**
 * The Navbar, containing the different section of the website, and the translate button

@@ -1,5 +1,5 @@
 import {FC} from 'react'
-import {Skills} from '../skills.tsx'
+import {Skills} from '../skills'
 
 /**
  * RightHeader containing info about Skills

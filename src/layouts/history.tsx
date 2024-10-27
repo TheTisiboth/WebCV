@@ -2,9 +2,10 @@ import { FC } from 'react'
 import { Badge, Col, Container, Row } from 'react-bootstrap'
 import { Trans, useTranslation } from 'react-i18next'
 import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react'
-import Link from '../components/icon.tsx'
-import {pictures} from '../fixtures/history.ts'
-import {type HistoryItem} from '../types.ts'
+import type {HistoryItem} from '../types'
+import {pictures} from '../fixtures/history'
+import Link from '../components/icon'
+
 
 /**
 * Contains Education and professionnal experience

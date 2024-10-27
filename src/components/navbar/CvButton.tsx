@@ -6,7 +6,7 @@ import CV_DE from '../../assets/CV_DE_Leo_Jan.pdf'
 import CV_EN from '../../assets/CV_EN_Leo_Jan.pdf'
 import {useTranslation} from 'react-i18next'
 import {FC} from 'react'
-import {LinkTooltip} from '../icon.tsx'
+import {LinkTooltip} from '../icon'
 
 type CVButtonItemProps = {
     href: string

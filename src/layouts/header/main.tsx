@@ -3,9 +3,9 @@ import {Col, Container, Row} from 'react-bootstrap'
 import image from '../../assets/leo.jpg'
 import {FaGithub, FaLinkedin} from 'react-icons/fa'
 import {AiOutlineGitlab} from 'react-icons/ai'
-import LeftHeader from './left.tsx'
-import RightHeader from './right.tsx'
-import Link, {Image} from '../../components/icon.tsx'
+import LeftHeader from './left'
+import RightHeader from './right'
+import Link, {Image} from '../../components/icon'
 
 /**
  * AppHeader, containing LeftHeader, Image, and RightHeader

@@ -2,7 +2,7 @@ import {FC} from 'react'
 import {Badge, Col, Container, Row} from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import {MapContainer, Marker, TileLayer, Tooltip} from 'react-leaflet'
-import {cities} from '../fixtures/travels.ts'
+import {cities} from '../fixtures/travels'
 
 /**
 * Travel section, containing a leaflet map

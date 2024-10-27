@@ -1,4 +1,4 @@
-import {Position} from '../types.ts'
+import {Position} from '../types'
 
 export const cities: Position[] = [
   {

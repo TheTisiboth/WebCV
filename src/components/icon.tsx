@@ -1,7 +1,7 @@
 import {FC, ReactElement, ReactNode} from 'react'
 import {IconContext, type IconType} from 'react-icons'
 import {Figure, OverlayTrigger, Tooltip} from 'react-bootstrap'
-import {Placement} from 'react-bootstrap/types'
+import {type Placement} from 'react-bootstrap/types'
 import {useTranslation} from 'react-i18next'
 
 type LinkProps = {

@@ -2,7 +2,7 @@ import {FC} from 'react'
 import {Button, Col, Container, ListGroup, Row, Nav} from 'react-bootstrap'
 import {animateScroll} from 'react-scroll'
 import {FaArrowAltCircleUp} from 'react-icons/fa'
-import {LinkTooltip} from '../components/icon.tsx'
+import {LinkTooltip} from '../components/icon'
 
 const Footer: FC = () => {
   const scrollOptions = {

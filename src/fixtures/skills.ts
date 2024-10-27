@@ -20,7 +20,7 @@ import SPRING from '../assets/spring.png'
 import POSTGRES from '../assets/postgres.webp'
 import HTML from '../assets/html.png'
 import CSS from '../assets/css.png'
-import {SkillImage, SkillInfos} from '../types.ts'
+import {SkillImage, SkillInfos} from '../types'
 
 export const system: SkillInfos = {
   title: 'skills.system',

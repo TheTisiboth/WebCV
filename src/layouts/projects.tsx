@@ -2,9 +2,9 @@ import { FC } from 'react'
 import { Badge, Col, Container, Row } from 'react-bootstrap'
 import { Trans, useTranslation } from 'react-i18next'
 import {Skill} from './skills'
-import Link, {Image} from '../components/icon.tsx'
-import {projects} from '../fixtures/projects.ts'
-import {type Project} from '../types.ts'
+import Link,{Image} from '../components/icon'
+import {projects} from '../fixtures/projects'
+import {type Project} from '../types'
 
 const Project: FC<Project> = ({image, title, body, repository, skills}) => {
   const { t } = useTranslation()
