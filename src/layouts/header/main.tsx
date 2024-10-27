@@ -1,11 +1,11 @@
 import {FC} from 'react'
-import {Col, Container, Figure, Row} from 'react-bootstrap'
+import {Col, Container, Row} from 'react-bootstrap'
 import image from '../../assets/leo.jpg'
 import {FaGithub, FaLinkedin} from 'react-icons/fa'
 import {AiOutlineGitlab} from 'react-icons/ai'
-import IconSocial from '../../components/icon.tsx'
 import LeftHeader from './left.tsx'
 import RightHeader from './right.tsx'
+import Link, {Image} from '../../components/icon.tsx'
 
 /**
  * AppHeader, containing LeftHeader, Image, and RightHeader
@@ -20,26 +20,24 @@ const AppHeader: FC = () => {
         <Col sm={12} md={4} className="align-self-center">
           <Row >
             <Col>
-              <Figure className="mt-3">
-                <Figure.Image
-                  height="60%"
-                  width="60%"
-                  alt="171x180"
-                  src={image}
-                  roundedCircle={true}
-                />
-              </Figure>
+              <Image src={image} roundedCircle alt='banner image' margin='mt-3' size={285} />
             </Col>
           </Row>
           <Row className="App-header text-center">
             <Col xs={4} className="text-right">
-              <IconSocial href="https://www.linkedin.com/in/l%C3%A9o-jan-065ba8125/" icon={<FaLinkedin />} />
+              <Link href='https://www.linkedin.com/in/l%C3%A9o-jan-065ba8125'>
+                <Link.IconSocial Icon={FaLinkedin} />
+              </Link>
             </Col>
-            <Col xs={4} className="">
-              <IconSocial href="https://github.com/TheTisiboth" icon={<FaGithub />} />
+            <Col xs={4}>
+              <Link href='https://github.com/TheTisiboth'>
+                <Link.IconSocial Icon={FaGithub} />
+              </Link>
             </Col>
             <Col xs={4} className="text-left">
-              <IconSocial href="https://gitlab.com/TheTisiboth" icon={<AiOutlineGitlab />} />
+              <Link href='https://gitlab.com/TheTisiboth'>
+                <Link.IconSocial Icon={AiOutlineGitlab} />
+              </Link>
             </Col>
           </Row>
         </Col>

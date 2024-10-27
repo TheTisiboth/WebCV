@@ -1,11 +1,12 @@
 import {MdFileDownload} from 'react-icons/md'
-import {NavDropdown, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import {NavDropdown} from 'react-bootstrap'
 import CV_FR from '../../assets/CV_FR_Leo_Jan.pdf'
 import {FaRegFilePdf} from 'react-icons/fa'
 import CV_DE from '../../assets/CV_DE_Leo_Jan.pdf'
 import CV_EN from '../../assets/CV_EN_Leo_Jan.pdf'
 import {useTranslation} from 'react-i18next'
 import {FC} from 'react'
+import {LinkTooltip} from '../icon.tsx'
 
 type CVButtonItemProps = {
     href: string
@@ -13,19 +14,14 @@ type CVButtonItemProps = {
     text: string
 }
 const CVButtonItem: FC<CVButtonItemProps> = ({href, tooltip, text}) => {
-  const {t} = useTranslation()
   return (
     <NavDropdown.Item href={href} download={true} className="text-center">
-      <OverlayTrigger
-        placement="bottom"
-        delay={{show: 0, hide: 0}}
-        overlay={<Tooltip >{t(tooltip)}</Tooltip>}
-      >
+      <LinkTooltip tooltipLabel={tooltip}>
         <div>
           <FaRegFilePdf className="mr-2"/>
           {text}
         </div>
-      </OverlayTrigger>
+      </LinkTooltip>
     </NavDropdown.Item>
   )
 }

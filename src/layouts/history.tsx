@@ -1,7 +1,8 @@
 import { FC } from 'react'
-import { Badge, Col, Container, Figure, Row } from 'react-bootstrap'
+import { Badge, Col, Container, Row } from 'react-bootstrap'
 import { Trans, useTranslation } from 'react-i18next'
 import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react'
+import Link from '../components/icon.tsx'
 import deliveroo from '../assets/deliveroo.png'
 import enovacom from '../assets/enovacom.png'
 import greendelta from '../assets/greendelta.png'
@@ -21,8 +22,8 @@ type HistoryItem = {
 type PictureInfo = {
     icon: string,
     url?: string,
-    width: string,
-    height: string,
+    width: number,
+    height: number,
     name: string
 }
 
@@ -37,56 +38,56 @@ export const History: FC = () => {
       [0, {
         icon: greendelta,
         url: 'https://www.greendelta.com/',
-        height: '120px',
-        width: '120px',
+        height: 120,
+        width: 120,
         name: 'Greendelta'
       }],
       [1, {
         icon: enovacom,
         url: 'https://www.enovacom.fr/',
-        height: '120px',
-        width: '120px',
+        height: 120,
+        width: 120,
         name: 'Enovacom'
       }],
       [2, {
         icon: mpaa,
         url: 'https://www.motionpictures.org/',
-        height: '80px',
-        width: '80px',
+        height: 80,
+        width: 80,
         name: 'MPAA'
       }],
       [3, {
         icon: polytech,
         url: 'https://www.polytech-grenoble.fr/',
-        height: '160px',
-        width: '160px',
+        height: 160,
+        width: 160,
         name: 'Polytech Grenoble'
       }],
       [4, {
         icon: mcdonalds,
         url: 'https://www.mcdonalds.fr/',
-        height: '80px',
-        width: '80px',
+        height: 80,
+        width: 80,
         name: 'McDonald\'s'
       }],
       [5, {
         icon: deliveroo,
         url: 'https://deliveroo.fr',
-        height: '80px',
-        width: '80px',
+        height: 80,
+        width: 80,
         name: 'Deliveroo'
       }],
       [6, {
         icon: peip,
         url: 'https://polytech.univ-amu.fr/formations/cycle-preparatoire',
-        height: '80px',
-        width: '80px',
+        height: 80,
+        width: 80,
         name: 'PEIP'
       }],
       [7, {
         icon: sebben,
-        height: '80px',
-        width: '80px',
+        height: 80,
+        width: 80,
         name: 'Sebben'
       }],
     ]
@@ -118,16 +119,9 @@ export const History: FC = () => {
             >
               <h4>{historyItem.title}</h4>
               {picture &&
-                                <a href={picture.url} target="_blank" rel="noopener noreferrer">
-                                  <Figure className="mt-4">
-                                    <Figure.Image
-                                      height={picture.height}
-                                      width={picture.width}
-                                      alt={picture.name}
-                                      src={picture.icon}
-                                    />
-                                  </Figure>
-                                </a>
+                    <Link href={picture.url}>
+                      <Link.Image margin='mt-4' src={picture.icon} size={picture.height} alt={picture.name}/>
+                    </Link>
               }
               <p className="text-left">
                 <Trans i18nKey={`history[${idx}].body`}>

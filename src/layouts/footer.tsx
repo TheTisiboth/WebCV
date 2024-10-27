@@ -1,11 +1,10 @@
 import {FC} from 'react'
-import {useTranslation} from 'react-i18next'
-import {Button, Col, Container, ListGroup, OverlayTrigger, Row, Nav, Tooltip} from 'react-bootstrap'
+import {Button, Col, Container, ListGroup, Row, Nav} from 'react-bootstrap'
 import {animateScroll} from 'react-scroll'
 import {FaArrowAltCircleUp} from 'react-icons/fa'
+import {LinkTooltip} from '../components/icon.tsx'
 
 const Footer: FC = () => {
-  const { t } = useTranslation()
   const scrollOptions = {
     duration: 200
   }
@@ -18,15 +17,11 @@ const Footer: FC = () => {
       <Row className="justify-content-center">
         <Col md={3}>
           <Nav.Link className="mt-2" onClick={() => animateScroll.scrollToTop(scrollOptions)} >
-            <OverlayTrigger
-              placement="right"
-              delay={{ show: 0, hide: 0 }}
-              overlay={<Tooltip>{t('top')}</Tooltip>}
-            >
+            <LinkTooltip tooltipLabel='top' placement="right">
               <Button variant="outline-light">
                 <FaArrowAltCircleUp className="mb-1" />
               </Button>
-            </OverlayTrigger>
+            </LinkTooltip>
           </Nav.Link>
         </Col>
       </Row>

@@ -1,11 +1,8 @@
 import { FC, ReactElement } from 'react'
-import {
-  Badge, Col,
-  Figure,
-  OverlayTrigger, Row, Tooltip
-} from 'react-bootstrap'
+import {Badge, Col, Row} from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import { extraSkills, others, software, system, web } from '../components/constant'
+import Link from '../components/icon.tsx'
 
 interface Skill {
   image: string;
@@ -25,30 +22,12 @@ export interface Skills {
  * @param props Info about the image to display
  */
 const Skill: FC<{ skill: Skill }> = ({ skill }) => {
-  const {t} = useTranslation()
   return (
-    <a
-      href={skill.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="m-2"
-    >
-      <OverlayTrigger
-        placement="bottom"
-        delay={{ show: 0, hide: 0 }}
-        overlay={<Tooltip>{t(skill.tooltip)}</Tooltip>}
-      >
-        <Figure>
-          <Figure.Image
-            className={(skill.class ? skill.class : '')}
-            width={(skill.size) ? skill.size : 32}
-            height={(skill.size) ? skill.size : 32}
-            alt={skill.tooltip}
-            src={skill.image}
-          />
-        </Figure>
-      </OverlayTrigger>
-    </a>
+    <Link href={skill.href} className='m-2'>
+      <Link.LinkTooltip tooltipLabel={skill.tooltip}>
+        <Link.Image src={skill.image} size={skill.size} alt={skill.tooltip} className={skill.class} />
+      </Link.LinkTooltip>
+    </Link>
   )
 }
 
@@ -85,14 +64,9 @@ export const Skills: FC<SkillsProps> = ({ skillName }) => {
                     </Row>
                     <Row className="justify-content-center">
                       <Col xs={6} md={10}>
-                        {s.skills.map((skill: Skill): ReactElement => {
-                          return (
-                            <Skill
-                              skill={skill}
-                              key={skill.href}
-                            />
-                          )
-                        })}
+                        {s.skills.map(skill => (
+                          <Skill skill={skill} key={skill.href}/>
+                        ))}
                       </Col>
                     </Row>
                   </Col>

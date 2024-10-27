@@ -1,7 +1,8 @@
 import {FC, useCallback} from 'react'
 import {useTranslation} from 'react-i18next'
-import {NavDropdown, OverlayTrigger, Tooltip} from 'react-bootstrap'
+import {NavDropdown} from 'react-bootstrap'
 import {MdTranslate} from 'react-icons/md'
+import {LinkTooltip} from '../icon.tsx'
 
 /**
  * Translation button, that translate the whole page. It switches between english (by default), french and german
@@ -51,15 +52,11 @@ const TranslationButton: FC<TranslationButtonProps> = ({ collapseNavbar }) => {
 
   return (
     <NavDropdown title={
-      <OverlayTrigger
-        placement="bottom"
-        delay={{ show: 0, hide: 0 }}
-        overlay={<Tooltip>t('translationTooltip')</Tooltip>}
-      >
+      <LinkTooltip tooltipLabel='translationTooltip'>
         <span className="m-auto">
           <MdTranslate className=" mr-2 myIcon" />{languageLabel}
         </span>
-      </OverlayTrigger>}
+      </LinkTooltip>}
     id="basic-nav-dropdown" className="m-auto mr-md-5">
       <NavDropdown.Item className="text-center" onClick={() => { handleClick('fr') }}>
         <div>
