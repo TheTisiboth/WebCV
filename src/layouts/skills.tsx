@@ -1,14 +1,16 @@
 import { FC, ReactElement } from 'react'
-import {Badge, Col, Row} from 'react-bootstrap'
+import { Badge, Col, Row } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import Link from '../components/icon'
-import {allSkillImages, others, software, system, web} from '../fixtures/skills'
-import {type SkillImage, type SkillInfos} from '../types'
+import { allSkillImages, others, software, system, web } from '../fixtures/skills'
+import { type SkillImage, type SkillInfos } from '../types'
 
 
 /**
  * Display an image of a technology, with a link to its website, and a tooltip (on hover)
- * @param props Info about the image to display
+ * The params are mutually exclusive: either skill or skillName
+ * @param skill - The skill to display
+ * @param skillName - The name of the skill to display
  */
 type SkillProps = // We can either pass a SkillImage or a skillName
   | { skill: SkillImage; skillName?: never }
@@ -22,13 +24,13 @@ export const Skill: FC<SkillProps> = ({ skill, skillName }) => {
 
     return (<Skill skill={mySkill}/>)
   }
-  
+
   return (
     <>
       {skill && (
         <Link href={skill.href} className='m-2'>
           <Link.LinkTooltip tooltipLabel={skill.tooltip}>
-            <Link.Image src={skill.image} size={skill.size} alt={skill.tooltip} className={skill.class} />
+            <Link.Image src={skill.image} size={skill.size} alt={skill.tooltip} className={skill.class}/>
           </Link.LinkTooltip>
         </Link>
       )}
@@ -42,13 +44,13 @@ export const Skill: FC<SkillProps> = ({ skill, skillName }) => {
 export const Skills: FC = () => {
   const { t } = useTranslation()
 
-  const list: SkillInfos[][] = [[system, software], [web, others]]
-  
+  const list: SkillInfos[][] = [ [ system, software ], [ web, others ] ]
+
   return (
     <div id="Skills" className="text-center pt-5 pt-md-2 pr-0 pr-md-5">
       <Row className=" justify-content-center">
         <Col md={6} xs={8} className="pt-2 pb-2  rounded">
-          <Badge className="titleReverse pl-3 pr-3"><h2 >{t('navbar.skill')}</h2></Badge>
+          <Badge className="titleReverse pl-3 pr-3"><h2>{t('navbar.skill')}</h2></Badge>
         </Col>
       </Row>
       {list.map((row: SkillInfos[]): ReactElement => {

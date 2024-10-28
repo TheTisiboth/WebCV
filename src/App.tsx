@@ -3,12 +3,12 @@ import ScrollAnimation from 'react-animate-on-scroll'
 import Footer from './layouts/footer'
 import 'animate.css/animate.compat.css'
 import './App.css'
-import {MyNavbar} from './layouts/navbar'
+import { MyNavbar } from './layouts/navbar'
 import AppHeader from './layouts/header/main'
-import {Projects} from './layouts/projects'
-import {Hobbies} from './layouts/hobbies'
-import {Travels} from './layouts/travels'
-import {History} from './layouts/history'
+import { Projects } from './layouts/projects'
+import { Hobbies } from './layouts/hobbies'
+import { Travels } from './layouts/travels'
+import { History } from './layouts/history'
 
 const Page: FC = () => {
   return (
@@ -33,7 +33,7 @@ const Page: FC = () => {
       </ScrollAnimation>
       <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
         <section>
-          <Travels />
+          <Travels/>
         </section>
       </ScrollAnimation>
       <section className="App-footer">

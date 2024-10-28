@@ -6,9 +6,9 @@ import mcdonalds from '../assets/mcdonalds.png'
 import deliveroo from '../assets/deliveroo.png'
 import peip from '../assets/peip.png'
 import sebben from '../assets/sebben.png'
-import {type HistoryPicture} from '../types'
+import { type HistoryPicture } from '../types'
 
-export const pictures: HistoryPicture[] = 
+export const pictures: HistoryPicture[] =
   [
     {
       historyItemId: 1,

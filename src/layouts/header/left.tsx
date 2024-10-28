@@ -1,7 +1,7 @@
-import {FC} from 'react'
-import {useTranslation} from 'react-i18next'
-import {Button, Col, Row} from 'react-bootstrap'
-import {computeAge} from '../../utils'
+import { FC } from 'react'
+import { useTranslation } from 'react-i18next'
+import { Button, Col, Row } from 'react-bootstrap'
+import { computeAge } from '../../utils'
 
 /**
  * LeftHeader, containing general info about author

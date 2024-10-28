@@ -20,7 +20,7 @@ import SPRING from '../assets/spring.png'
 import POSTGRES from '../assets/postgres.webp'
 import HTML from '../assets/html.png'
 import CSS from '../assets/css.png'
-import {SkillImage, SkillInfos} from '../types'
+import { SkillImage, SkillInfos } from '../types'
 
 export const system: SkillInfos = {
   title: 'skills.system',
@@ -165,4 +165,4 @@ export const extraSkills: SkillInfos = {
   ]
 }
 
-export const allSkillImages: SkillImage[] = [system.skills, software.skills, web.skills, others.skills, extraSkills.skills].flat()
+export const allSkillImages: SkillImage[] = [ system.skills, software.skills, web.skills, others.skills, extraSkills.skills ].flat()

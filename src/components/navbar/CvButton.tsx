@@ -1,19 +1,19 @@
-import {MdFileDownload} from 'react-icons/md'
-import {NavDropdown} from 'react-bootstrap'
+import { MdFileDownload } from 'react-icons/md'
+import { NavDropdown } from 'react-bootstrap'
 import CV_FR from '../../assets/CV_FR_Leo_Jan.pdf'
-import {FaRegFilePdf} from 'react-icons/fa'
+import { FaRegFilePdf } from 'react-icons/fa'
 import CV_DE from '../../assets/CV_DE_Leo_Jan.pdf'
 import CV_EN from '../../assets/CV_EN_Leo_Jan.pdf'
-import {useTranslation} from 'react-i18next'
-import {FC} from 'react'
-import {LinkTooltip} from '../icon'
+import { useTranslation } from 'react-i18next'
+import { FC } from 'react'
+import { LinkTooltip } from '../icon'
 
 type CVButtonItemProps = {
-    href: string
-    tooltip: string
-    text: string
+  href: string
+  tooltip: string
+  text: string
 }
-const CVButtonItem: FC<CVButtonItemProps> = ({href, tooltip, text}) => {
+const CVButtonItem: FC<CVButtonItemProps> = ({ href, tooltip, text }) => {
   return (
     <NavDropdown.Item href={href} download={true} className="text-center">
       <LinkTooltip tooltipLabel={tooltip}>
@@ -25,10 +25,9 @@ const CVButtonItem: FC<CVButtonItemProps> = ({href, tooltip, text}) => {
     </NavDropdown.Item>
   )
 }
-    
 
 const CVButton = () => {
-  const {t} = useTranslation()
+  const { t } = useTranslation()
   const title = <span className="m-auto">
     <MdFileDownload className=" mr-2 myIcon"/>{t('navbar.cv')}
   </span>

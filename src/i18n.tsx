@@ -18,7 +18,7 @@ i18n
     debug: false,
     initImmediate: true,
     load: 'all',
-    preload: ['en', 'fr', 'de'],
+    preload: [ 'en', 'fr', 'de' ],
     fallbackLng: 'en',
     backend: {
       // for all available options read the backend's repository readme file
