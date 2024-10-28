@@ -21,7 +21,7 @@ export const Hobbies: FC = () => {
         <Col md={4}/>
         <Col md={4}>
           <div className="text-left">
-            <ul>
+            <ul className='list-unstyled'>
               <li>
                 <h5>{t('hobbies.it')}</h5>
               </li>
