@@ -1,13 +1,12 @@
-import { LatLngLiteral } from 'leaflet'
-import {FC} from 'react'
-import {Badge, Col, Container, Row} from 'react-bootstrap'
+import { FC } from 'react'
+import { Badge, Col, Container, Row } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
-import {MapContainer, Marker, TileLayer, Tooltip} from 'react-leaflet'
-import { cities } from './constant'
+import { MapContainer, Marker, TileLayer, Tooltip } from 'react-leaflet'
+import { cities } from '../fixtures/travels'
 
 /**
-* Travel section, containing a leaflet map
-*/
+ * Travel section, containing a leaflet map
+ */
 export const Travels: FC = () => {
   const { t } = useTranslation()
 
@@ -22,19 +21,12 @@ export const Travels: FC = () => {
       </Row>
       <Row className="pt-5 mb-4 justify-content-center">
         <Col md={10}>
-          <CustomMap />
+          <CustomMap/>
         </Col>
       </Row>
     </Container>
   )
 }
-
-export interface Position {
-  latlng: LatLngLiteral;
-  tooltip: string | string[];
-}
-
-
 
 /**
  * Display a Leaflet Map containing a list of Markers per visited city
@@ -45,12 +37,13 @@ const CustomMap = () => {
   return (
     <MapContainer
       style={{ height: '500px' }}
-      center={[54.370138916189596, -29.918133437500003]}
+      center={[ 54.370138916189596, -29.918133437500003 ]}
       zoom={3}
     >
-      <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      <TileLayer attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"/>
       {cities.map(city => (
-        <Marker position={city.latlng} >
+        <Marker position={city.latlng} key={`${city.latlng.lat}_${city.latlng.lng}`}>
           <Tooltip>{t(city.tooltip)}</Tooltip>
         </Marker>
       ))}

@@ -1,175 +1,184 @@
 {
-	"title": "Willkommen zu meinem Web CV!",
-	"top": "Zurück zum Anfang",
-	"navbar": {
-		"presentation": "Vorführung",
-		"education": "Ausbildung",
-		"experience": "Erlebnisse",
-		"skill": "Fähigkeiten",
-		"travel": "Reisen",
-		"projects": "Projekte",
-		"cv": "Lebenslauf herunterladen",
-		"hobbies": "Interessen",
-		"history": "Geschichte"
-	},
-	"me": {
-		"work": "Software-Ingenieur",
-		"livesIn": "Lebt in Berlin",
-		"years": "Jahre alt"
-	},
-	"translationTooltip": "Die Website übersetzen.",
-	"cvFrTooltip": "Meinen Lebenslauf auf Französisch herunterladen",
-	"cvEnTooltip": "Meinen Lebenslauf auf Englisch hochladen",
-	"cvDeTooltip": "Meinen Lebenslauf auf Deutsch hochladen",
-	"languages": {
-		"french": "Französisch",
-		"english": "Englisch",
-		"german": "Deutsch"
-	},
-	"history": [
-		{
-			"date": "01/2021 - Jetzt",
-			"title": "GreenDelta - Berlin",
-			"body": "<0>Sofwtare und Web Entwicklung</0> : Arbeit an verschiedenen open-source Projekte, in Zusammenhang mit der nachhaltigen Entwicklung. Neue Funktionalität für openLCA (Java), software für LCA, und erstellung einer leichtgewichtigen Web-Version von openLCA im Bereich des Bauwesens (React)",
+  "title": "Willkommen zu meinem Web CV!",
+  "top": "Zurück zum Anfang",
+  "navbar": {
+    "presentation": "Vorführung",
+    "education": "Ausbildung",
+    "experience": "Erlebnisse",
+    "skill": "Fähigkeiten",
+    "travel": "Reisen",
+    "projects": "Projekte",
+    "cv": "Lebenslauf herunterladen",
+    "hobbies": "Interessen",
+    "history": "Geschichte"
+  },
+  "me": {
+    "work": "Software-Ingenieur",
+    "livesIn": "Lebt in Berlin",
+    "years": "Jahre alt"
+  },
+  "translationTooltip": "Die Website übersetzen.",
+  "cvFrTooltip": "Meinen Lebenslauf auf Französisch herunterladen",
+  "cvEnTooltip": "Meinen Lebenslauf auf Englisch hochladen",
+  "cvDeTooltip": "Meinen Lebenslauf auf Deutsch hochladen",
+  "languages": {
+    "french": "Französisch",
+    "english": "Englisch",
+    "german": "Deutsch"
+  },
+  "history": [
+    {
+      "id": 1,
+      "date": "01/2021 - Jetzt",
+      "title": "GreenDelta - Berlin",
+      "body": "<0>Sofwtare und Web Entwicklung</0> : Arbeit an verschiedenen open-source Projekte, in Zusammenhang mit der nachhaltigen Entwicklung. Neue Funktionalität für openLCA (Java), software für LCA, und erstellung einer leichtgewichtigen Web-Version von openLCA im Bereich des Bauwesens (React)",
       "job": true
-		},
-		{
-			"date": "05/2020 - 09/2020",
-			"title": "Enovacom, Marseille",
-			"body": "<0>Internationalisierung der Software</0> : Implementierung einer RESTful API, die den FHIR-Kommunikationsstandard respektiert, um einen Dialog zwischen einer Verzeichnissoftware und jeder anderen FHIR-kompatiblen Drittanwendung zu ermöglichen. Software-Programmierung (Java)",
+    },
+    {
+      "id": 2,
+      "date": "05/2020 - 09/2020",
+      "title": "Enovacom, Marseille",
+      "body": "<0>Internationalisierung der Software</0> : Implementierung einer RESTful API, die den FHIR-Kommunikationsstandard respektiert, um einen Dialog zwischen einer Verzeichnissoftware und jeder anderen FHIR-kompatiblen Drittanwendung zu ermöglichen. Software-Programmierung (Java)",
       "job": true
-		},
-		{
-			"date": "05/2019 - 08/2019",
-			"title": "Motion Picture Association of America, Brüssel",
-			"body": "<0>Automatisierung von Web-Umfragen</0> : Hilfe bei der Einrichtung einer Web-Schnittstelle zum Starten von Skripten zur Automatisierung von Umfragen für Websites, die illegal audiovisuelle Inhalte veröffentlichen. Web-Programmierung (Jquery, PHP, Python ...)",
+    },
+    {
+      "id": 3,
+      "date": "05/2019 - 08/2019",
+      "title": "Motion Picture Association of America, Brüssel",
+      "body": "<0>Automatisierung von Web-Umfragen</0> : Hilfe bei der Einrichtung einer Web-Schnittstelle zum Starten von Skripten zur Automatisierung von Umfragen für Websites, die illegal audiovisuelle Inhalte veröffentlichen. Web-Programmierung (Jquery, PHP, Python ...)",
       "job": true
-		},
-		{
-			"date": "2016 - 2020",
-			"title": "Ingenieurschule  Polytech Grenoble",
-			"body": "Fachgebiet Computernetzwerke und Multimedia-Kommunikation, 5.",
+    },
+    {
+      "id": 4,
+      "date": "2016 - 2020",
+      "title": "Ingenieurschule  Polytech Grenoble",
+      "body": "Fachgebiet Computernetzwerke und Multimedia-Kommunikation, 5.",
       "job": false
-		},
+    },
     {
-			"date": "Sommer 2018",
-			"title": "MacDonald's, Marseille",
-			"body": "<0>Polyvalentes Teammitglied</0> : Teilnahme an der Küche, um die Bestellungen nach dem vorher festgelegten Protokoll und Rezepten vorzubereiten.",
+      "id": 5,
+      "date": "Sommer 2018",
+      "title": "MacDonald's, Marseille",
+      "body": "<0>Polyvalentes Teammitglied</0> : Teilnahme an der Küche, um die Bestellungen nach dem vorher festgelegten Protokoll und Rezepten vorzubereiten.",
       "job": true
-		},
+    },
     {
-			"date": "Sommer 2017",
-			"title": "Deliveroo, Grenoble",
-			"body": "<0>Selbstständig Erwerbstätige</0>: Hauslieferung von Lebensmitteln auf Fahrrädern",
+      "id": 6,
+      "date": "Sommer 2017",
+      "title": "Deliveroo, Grenoble",
+      "body": "<0>Selbstständig Erwerbstätige</0>: Hauslieferung von Lebensmitteln auf Fahrrädern",
       "job": true
-		},
+    },
     {
-			"date": "2014 - 2016",
-			"title": "Parcours des Élèves Ingénieurs Polytech (PEIP), Marseille",
-			"body": "Polytech integrierte Vorbereitungsklasse (Mathematik, Physik, Chemie, Informatik)",
+      "id": 7,
+      "date": "2014 - 2016",
+      "title": "Parcours des Élèves Ingénieurs Polytech (PEIP), Marseille",
+      "body": "Polytech integrierte Vorbereitungsklasse (Mathematik, Physik, Chemie, Informatik)",
       "job": false
-		},
+    },
     {
-			"date": "Sommer 2014 & 2015",
-			"title": "SEBBEN, Toulon",
-			"body": "<0>Multi-Service-Unternehmen</0>: Reinigung von Gemeinschaftsbereichen von Gebäuden",
+      "id": 8,
+      "date": "Sommer 2014 & 2015",
+      "title": "SEBBEN, Toulon",
+      "body": "<0>Multi-Service-Unternehmen</0>: Reinigung von Gemeinschaftsbereichen von Gebäuden",
       "job": true
-		},
+    },
     {
-			"date": "06/2016",
-			"title": "Wissenschaftliches Bakkalaureat in Informatik und Digitaler Wissenschaft",
-			"body": "AbiBac Doppelstudium der deutschen Literatur und Geschichte",
+      "id": 9,
+      "date": "06/2016",
+      "title": "Wissenschaftliches Bakkalaureat in Informatik und Digitaler Wissenschaft",
+      "body": "AbiBac Doppelstudium der deutschen Literatur und Geschichte",
       "job": false
-		}
-	],
-	"skills": {
-		"system": "Systementwicklung",
-		"software": "Software-Entwicklung",
-		"web": "Webentwicklung",
-		"other": "Andere"
-	},
-	"hobbies": {
-		"it": "Computer-Entwicklung",
-		"read": "Lesen (Fantasy-Roman)",
-		"music": "Musik (8 Jahre Klavier und Musiktheorie)",
-		"frisbee": "Ultimate Frisbee: Leiter der Mannschaft meiner Schule, Sportlizenz in einem Club",
-		"badminton": "Badminton (11 Jahren)",
-		"basketball": "Basketball",
-		"pingpong": "Tischtennis"
-	},
-	"projects": {
-		"0": {
-			"title": "<0>Web CV</0>, 2020 - 1 Monat",
-			"body": "Erstellung eines Web-Lebenslaufs mit React. Dies ist ein persönliches Projekt, das darauf abzielt, in die Hand zu nehmen reagieren. Der Einsatz in der Produktion erfolgte dank Netlify auf einem bei Google Domains registrierten Domainnamen."
-		},
-		"1": {
-			"title": "<0>Kine 2.0</0>, 2020 - 3 Monate",
-			"body": "Erstellung von 2 Websites: eine für die Kinesitherapeuten, damit sie ihre Patienten verwalten und ihre Aktivitäten verfolgen können, und eine für die Patienten, damit sie ihre Rehabilitationsübungen zu Hause durchführen können. Dieses Projekt wurde auf Wunsch unseres Kunden Vestib+, einer auf Gleichgewichtsstörungen spezialisierten Kinesitherapiepraxis, durchgeführt."
-		},
-		"2": {
-			"title": "<0>Guc Voile</0>, 2019 - 2,5 Monate",
-			"body": "Einrichtung einer E-Commerce-Website, die es den Mitgliedern des Clubs Guc voile de Grenoble ermöglicht, Segelausrüstung zu mieten und den Managern des Clubs eine Lagerverwaltung zu ermöglichen. Generiert mit JHipster."
-		},
-		"3": {
-			"title": "<0>COLORicm</0>, 2018 - 3 Wochen",
-			"body": "Als Gruppenleiter eines Teams von 6 Entwicklern haben wir ein 2D-Videospiel in Java (Swing) mit Echtzeitsteuerung und modularer Funktionalität unter Einbeziehung von Automaten entwickelt, das uns das Konzept der künstlichen Intelligenz näher gebracht hat."
-		}
-	},
-	"travel": {
-		"germany": {
-			"country": "Deutschland",
-			"munich": "München",
-			"munster": "Münster",
-			"hamburg": "Hamburg",
-			"berlin": "Berlin"
-		},
-		"tchequie": {
-			"country": "Tschechische Republik",
-			"prague": "Prag"
-		},
-		"belgium": {
-			"country": "Belgien",
-			"brussels": "Brüssel",
-			"liege": "Lüttich"
-		},
-		"canada": {
-			"country": "Kanada",
-			"montreal": "Montreal",
-			"tadoussac": "Tadoussac",
-			"sherbrooke": "Sherbrooke",
-			"quebec": "Quebec"
-		},
-		"spain": {
-			"country": "Spanien",
-			"barcelona": "Barcelona",
-			"palma": "Palma de Mallorca"
-		},
-		"italy": {
-			"country": "Italien",
-			"roma": "Rom",
-			"naples": "Neapel",
-			"pompei": "Pompeji"
-		},
-		"greece": {
-			"country": "Griechenland",
-			"athens": "Athen",
-			"corinth": "Korinth"
-		},
-		"us": {
-			"country": "Vereinigte Staaten",
-			"ny": "New York"
-		},
-		"uk": {
-			"country": "Vereinigtes Königreich",
-			"ireland": "Irland"
-		},
-		"fr": {
-			"country": "Frankreich",
-			"marseille": "Marseille"
-		},
-		"sweden": {
-			"country": "Schweden",
-			"stockholm": "Stockholm"
-		}
-	}
+    }
+  ],
+  "skills": {
+    "system": "Systementwicklung",
+    "software": "Software-Entwicklung",
+    "web": "Webentwicklung",
+    "other": "Andere"
+  },
+  "hobbies": {
+    "it": "Computer-Entwicklung",
+    "read": "Lesen (Fantasy-Roman)",
+    "music": "Musik (8 Jahre Klavier und Musiktheorie)",
+    "frisbee": "Ultimate Frisbee: Leiter der Mannschaft meiner Schule, Sportlizenz in einem Club",
+    "badminton": "Badminton (11 Jahren)",
+    "basketball": "Basketball",
+    "pingpong": "Tischtennis"
+  },
+  "projects": {
+    "0": {
+      "title": "<0>Web CV</0>, 2020 - 1 Monat",
+      "body": "Erstellung eines Web-Lebenslaufs mit React. Dies ist ein persönliches Projekt, das darauf abzielt, in die Hand zu nehmen reagieren. Der Einsatz in der Produktion erfolgte dank Netlify auf einem bei Google Domains registrierten Domainnamen."
+    },
+    "1": {
+      "title": "<0>Kine 2.0</0>, 2020 - 3 Monate",
+      "body": "Erstellung von 2 Websites: eine für die Kinesitherapeuten, damit sie ihre Patienten verwalten und ihre Aktivitäten verfolgen können, und eine für die Patienten, damit sie ihre Rehabilitationsübungen zu Hause durchführen können. Dieses Projekt wurde auf Wunsch unseres Kunden Vestib+, einer auf Gleichgewichtsstörungen spezialisierten Kinesitherapiepraxis, durchgeführt."
+    },
+    "2": {
+      "title": "<0>Guc Voile</0>, 2019 - 2,5 Monate",
+      "body": "Einrichtung einer E-Commerce-Website, die es den Mitgliedern des Clubs Guc voile de Grenoble ermöglicht, Segelausrüstung zu mieten und den Managern des Clubs eine Lagerverwaltung zu ermöglichen. Generiert mit JHipster."
+    },
+    "3": {
+      "title": "<0>COLORicm</0>, 2018 - 3 Wochen",
+      "body": "Als Gruppenleiter eines Teams von 6 Entwicklern haben wir ein 2D-Videospiel in Java (Swing) mit Echtzeitsteuerung und modularer Funktionalität unter Einbeziehung von Automaten entwickelt, das uns das Konzept der künstlichen Intelligenz näher gebracht hat."
+    }
+  },
+  "travel": {
+    "germany": {
+      "country": "Deutschland",
+      "munich": "München",
+      "munster": "Münster",
+      "hamburg": "Hamburg",
+      "berlin": "Berlin"
+    },
+    "tchequie": {
+      "country": "Tschechische Republik",
+      "prague": "Prag"
+    },
+    "belgium": {
+      "country": "Belgien",
+      "brussels": "Brüssel",
+      "liege": "Lüttich"
+    },
+    "canada": {
+      "country": "Kanada",
+      "montreal": "Montreal",
+      "tadoussac": "Tadoussac",
+      "sherbrooke": "Sherbrooke",
+      "quebec": "Quebec"
+    },
+    "spain": {
+      "country": "Spanien",
+      "barcelona": "Barcelona",
+      "palma": "Palma de Mallorca"
+    },
+    "italy": {
+      "country": "Italien",
+      "roma": "Rom",
+      "naples": "Neapel",
+      "pompei": "Pompeji"
+    },
+    "greece": {
+      "country": "Griechenland",
+      "athens": "Athen",
+      "corinth": "Korinth"
+    },
+    "us": {
+      "country": "Vereinigte Staaten",
+      "ny": "New York"
+    },
+    "uk": {
+      "country": "Vereinigtes Königreich",
+      "ireland": "Irland"
+    },
+    "fr": {
+      "country": "Frankreich",
+      "marseille": "Marseille"
+    },
+    "sweden": {
+      "country": "Schweden",
+      "stockholm": "Stockholm"
+    }
+  }
 }

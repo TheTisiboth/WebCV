@@ -18,9 +18,10 @@ export const Hobbies: FC = () => {
         </Col>
       </Row>
       <Row className="pb-5">
-        <Col md={10}>
+        <Col md={4}/>
+        <Col md={4}>
           <div className="text-left">
-            <ul>
+            <ul className='list-unstyled'>
               <li>
                 <h5>{t('hobbies.it')}</h5>
               </li>
@@ -29,7 +30,7 @@ export const Hobbies: FC = () => {
                 <ul>
                   <li style={{ listStyleType: 'none' }}>
                     {' '}
-                    <GiFrisbee />{' '}
+                    <GiFrisbee/>{' '}
                     <span className="ml-2 ">{t('hobbies.frisbee')}</span>
                   </li>
                   <li style={{ listStyleType: 'none' }}>
@@ -38,19 +39,19 @@ export const Hobbies: FC = () => {
                       height="20px"
                       src={Badminton}
                       alt=""
-                    />
+                    />{' '}
                     <span className="ml-2 ">
                       {t('hobbies.badminton')}
                     </span>
                   </li>
                   <li style={{ listStyleType: 'none' }}>
                     {' '}
-                    <FaBasketballBall />{' '}
+                    <FaBasketballBall/>{' '}
                     <span className="ml-2 ">Basket-ball</span>
                   </li>
                   <li style={{ listStyleType: 'none' }}>
                     {' '}
-                    <FaTableTennis />{' '}
+                    <FaTableTennis/>{' '}
                     <span className="ml-2 ">{t('hobbies.pingpong')}</span>
                   </li>
                 </ul>
@@ -64,6 +65,7 @@ export const Hobbies: FC = () => {
             </ul>
           </div>
         </Col>
+        <Col md={4}/>
       </Row>
     </Container>
   )

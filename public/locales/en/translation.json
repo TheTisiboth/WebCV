@@ -26,56 +26,65 @@
     "english": "English",
     "german": "German"
   },
-  "history":[
+  "history": [
     {
-			"date": "01/2021 - Now",
-			"title": "GreenDelta - Berlin",
-			"body": "<0>Sofwtare and Web development</0> : Work in different open-source projects, in the sustainability development. New feature for the openLCA (Java), software that performs Life Cycle Assessment, and creation of a light web version of openLCA in the construction field (React).",
+      "id": 1,
+      "date": "01/2021 - Now",
+      "title": "GreenDelta - Berlin",
+      "body": "<0>Sofwtare and Web development</0> : Work in different open-source projects, in the sustainability development. New feature for the openLCA (Java), software that performs Life Cycle Assessment, and creation of a light web version of openLCA in the construction field (React).",
       "job": true
-		},
+    },
     {
+      "id": 2,
       "date": "06/2020 - 09/2020",
       "title": "Enovacom, Marseille",
       "body": "<0>Software internationalization</0> : Implementation of a RESTful API respecting the FHIR communication standard in order to allow a dialogue between a directory software and any other FHIR compatible third party application. Software development (Java).",
       "job": true
     },
     {
+      "id": 3,
       "date": "05/2019 - 08/2019",
       "title": "Motion Picture Association of America, Bruxelles",
       "body": "<0>Automatisation of Web investigation </0>: Website creation, in order to centralize multiple scripts that automatize the investigation about some infringing website, which are puting some illegal content on internet. Web Programmation (Jquery, PHP,Python ...)",
       "job": true
     },
     {
+      "id": 4,
       "date": "2016 - 2020",
       "title": "IT Engineering",
       "body": "Polytech, Engineering school of the Grenoble Alpes University - 5th year",
       "job": false
     },
     {
+      "id": 5,
       "date": "Summer 2018",
       "title": "MacDonald's, Marseille",
       "body": "<0>Multi-tasked teammate</0> : Participation in the preparation of orders in the kitchen",
       "job": true
     },
     {
+      "id": 6,
       "date": "Summer 2017",
       "title": "Deliveroo, Grenoble",
       "body": "<0>Self-employed</0> : Food delivery by bike.",
       "job": true
     },
     {
+      "id": 7,
       "date": "2014 - 2016",
       "title": "PEIP, Marseille",
       "body": "Preparatory classes : two-year undergraduate intensive course in mathematics, physics, chemistry, and IT",
       "job": false
     },
     {
+      "id": 8,
       "date": "Summer 2014 & 2015",
       "title": "SEBBEN, Toulon",
       "body": "<0>Cleaning professionals</0> : cleaning service in buildings shared",
       "job": true
     },
     {
+      "id": 9,
       "date": "2014",
       "title": "Scientific baccalaureate and specialization in Computer Science and Digital Science",
       "body": "German Bacalaureat : AbiBac (German literature and history)",
