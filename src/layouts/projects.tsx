@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Badge, Col, Container, Row } from 'react-bootstrap'
 import { Trans, useTranslation } from 'react-i18next'
 import { Skill } from './skills'
-import Link, { Image } from '../components/icon'
+import Link, { StyledImage } from '../components/icon'
 import { projects } from '../fixtures/projects'
 import { type Project } from '../types'
 
@@ -11,7 +11,7 @@ const Project: FC<Project> = ({ image, title, body, repository, skills }) => {
   return (
     <Row className="justify-content-center pt-5 pb-5 mt-3 mb-3">
       <Col xs={12} md={true}>
-        <Image src={image} alt={title} size={477}/>
+        <StyledImage image={image} alt={title} size={477}/>
       </Col>
       <Col xs={12} md={true} className="align-self-center pr-5">
         <h3>

@@ -23,7 +23,7 @@ const Page: FC = () => {
       </ScrollAnimation>
       <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
         <section>
-          <History/>
+          {/*<History/>*/}
         </section>
       </ScrollAnimation>
       <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
@@ -33,7 +33,7 @@ const Page: FC = () => {
       </ScrollAnimation>
       <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
         <section>
-          <Travels/>
+          {/*<Travels/>*/}
         </section>
       </ScrollAnimation>
       <section className="App-footer">

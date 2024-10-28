@@ -14,6 +14,9 @@ const TranslationButton: FC<TranslationButtonProps> = ({ collapseNavbar }) => {
   const { t, i18n } = useTranslation()
 
   const getLanguageCode = (language: string): string => {
+    console.log(language)
+    if (!language) return
+
     if (language.includes('fr'))
       return 'fr'
     if (language.includes('de'))

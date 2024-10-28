@@ -1,8 +1,8 @@
-import webCV from '../assets/projects/webCV.png'
+import webCV from '../../public/projects/webCV.png'
 import { FaGithub, FaGitlab } from 'react-icons/fa'
-import kine from '../assets/projects/kine.png'
-import guc from '../assets/projects/guc.png'
-import coloricm from '../assets/projects/coloricm.png'
+import kine from '../../public/projects/kine.png'
+import guc from '../../public/projects/guc.png'
+import coloricm from '../../public/projects/coloricm.png'
 import { Project } from '../types'
 
 export const projects: Project[] = [

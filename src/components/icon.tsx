@@ -3,6 +3,8 @@ import { IconContext, type IconType } from 'react-icons'
 import { Figure, OverlayTrigger, Tooltip } from 'react-bootstrap'
 import { type Placement } from 'react-bootstrap/types'
 import { useTranslation } from 'react-i18next'
+import { type StaticImageData } from 'next/image'
+import Image from 'next/image'
 
 type LinkProps = {
   href?: string
@@ -12,7 +14,7 @@ type LinkProps = {
 
 type LinkComposition = {
   IconSocial: typeof IconSocial
-  Image: typeof Image
+  Image: typeof StyledImage
   LinkTooltip: typeof LinkTooltip
 }
 
@@ -65,22 +67,26 @@ const IconSocial: FC<IconRepositoryProps> = ({ Icon, size = 'medium' }) => {
 type ImageProps = {
   size?: number
   roundedCircle?: boolean
-  src: string
+  image: StaticImageData | string
   alt: string
   margin?: string
   className?: string
 }
-export const Image: FC<ImageProps> = ({ size = 32, roundedCircle = false, src, alt, margin, className }) => {
+export const StyledImage: FC<ImageProps> = ({ size = 32, roundedCircle = false, image, alt, margin, className }) => {
+  const style = {
+    borderRadius: roundedCircle ? '50%' : '0',
+  }
   return (
     <Figure className={margin}>
-      <Figure.Image
-        src={src}
-        height={`${size}px`}
-        width={`${size}px`}
-        className={className}
-        alt={alt}
-        roundedCircle={roundedCircle}
-      />
+      <Image src={image} alt={alt} style={style} height={size} width={size} className={className} />
+      {/*<Figure.Image*/}
+      {/*  src={src}*/}
+      {/*  height={`${size}px`}*/}
+      {/*  width={`${size}px`}*/}
+      {/*  className={className}*/}
+      {/*  alt={alt}*/}
+      {/*  roundedCircle={roundedCircle}*/}
+      {/*/>*/}
     </Figure>
   )
 }
@@ -97,7 +103,7 @@ export const Image: FC<ImageProps> = ({ size = 32, roundedCircle = false, src, a
 
 
 Link.IconSocial = IconSocial
-Link.Image = Image
+Link.Image = StyledImage
 Link.LinkTooltip = LinkTooltip
 
 export default Link

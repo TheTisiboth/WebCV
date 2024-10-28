@@ -29,7 +29,7 @@ const HistoryItem: FC<HistoryItemProps> = ({ historyItem, idx, picture }) => {
       <h4>{historyItem.title}</h4>
       {picture &&
           <Link href={picture.url}>
-            <Link.Image margin='mt-4' src={picture.icon} size={picture.height} alt={picture.name}/>
+            <Link.Image margin='mt-4' image={picture.icon} size={picture.height} alt={picture.name}/>
           </Link>
       }
       <p className="text-left">
