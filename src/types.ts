@@ -1,8 +1,9 @@
 import { type IconType } from 'react-icons'
 import { LatLngLiteral } from 'leaflet'
+import {StaticImageData} from 'next/image'
 
 export type Project = {
-  image: string
+  image: string | StaticImageData
   title: string
   body: string
   skills: string[]
@@ -14,7 +15,7 @@ export type Project = {
 
 export type HistoryPicture = {
   historyItemId: number
-  icon: string,
+  icon: string | StaticImageData,
   url?: string,
   width: number,
   height: number,
@@ -30,7 +31,7 @@ export type HistoryItem = {
 }
 
 export type SkillImage = {
-  image: string
+  image: string | StaticImageData
   href: string
   tooltip: string
   class?: string

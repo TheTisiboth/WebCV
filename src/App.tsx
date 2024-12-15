@@ -7,8 +7,8 @@ import { MyNavbar } from './layouts/navbar'
 import AppHeader from './layouts/header/main'
 import { Projects } from './layouts/projects'
 import { Hobbies } from './layouts/hobbies'
-import { Travels } from './layouts/travels'
-import { History } from './layouts/history'
+// import { Travels } from './layouts/travels'
+// import { History } from './layouts/history'
 
 const Page: FC = () => {
   return (
