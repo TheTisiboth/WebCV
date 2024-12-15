@@ -1,3 +1,4 @@
+'use client'
 import { FC, useEffect, useRef } from 'react'
 import { Nav, Navbar } from 'react-bootstrap'
 import Logo from '../components/navbar/logo'

@@ -1,3 +1,6 @@
+'use client'
+import './index.css'
+
 import { FC, ReactElement, Suspense } from 'react'
 import ScrollAnimation from 'react-animate-on-scroll'
 import Footer from './layouts/footer'

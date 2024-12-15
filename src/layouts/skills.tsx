@@ -1,4 +1,4 @@
-import { FC, ReactElement } from 'react'
+import { FC } from 'react'
 import { Badge, Col, Row } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import Link from '../components/icon'
@@ -53,10 +53,10 @@ export const Skills: FC = () => {
           <Badge className="titleReverse pl-3 pr-3"><h2>{t('navbar.skill')}</h2></Badge>
         </Col>
       </Row>
-      {list.map((row: SkillInfos[]): ReactElement => {
+      {list.map((row: SkillInfos[]) => {
         return (
           <Row key={row[0].title} className="justify-content-center pt-4">
-            {row.map((s: SkillInfos): ReactElement => {
+            {row.map((s: SkillInfos) => {
               return (
                 <Col key={s.title} md={6}>
                   <Row>
