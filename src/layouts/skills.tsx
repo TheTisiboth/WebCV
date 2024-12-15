@@ -30,7 +30,7 @@ export const Skill: FC<SkillProps> = ({ skill, skillName }) => {
       {skill && (
         <Link href={skill.href} className='m-2'>
           <Link.LinkTooltip tooltipLabel={skill.tooltip}>
-            <Link.Image src={skill.image} size={skill.size} alt={skill.tooltip} className={skill.class}/>
+            <Link.Image image={skill.image} size={skill.size} alt={skill.tooltip} className={skill.class}/>
           </Link.LinkTooltip>
         </Link>
       )}

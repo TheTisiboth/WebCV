@@ -21,3 +21,8 @@ yarn-debug.log*
 yarn-error.log*
 
 workspace.xml
+
+# next
+.next
+next-env.d.ts
+dist

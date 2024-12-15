@@ -3,7 +3,8 @@ import { Badge, Col, Container, Row } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
 import { FaBasketballBall, FaTableTennis } from 'react-icons/fa'
 import { GiFrisbee } from 'react-icons/gi'
-import Badminton from '../assets/badminton.png'
+import Badminton from '../../public/badminton.png'
+import Image from 'next/image'
 
 
 export const Hobbies: FC = () => {
@@ -35,11 +36,7 @@ export const Hobbies: FC = () => {
                   </li>
                   <li style={{ listStyleType: 'none' }}>
                     {' '}
-                    <img
-                      height="20px"
-                      src={Badminton}
-                      alt=""
-                    />{' '}
+                    <Image src={Badminton} alt='badminton' width={20} height={20} />{' '}
                     <span className="ml-2 ">
                       {t('hobbies.badminton')}
                     </span>
