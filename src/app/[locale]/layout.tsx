@@ -1,9 +1,11 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, {ReactNode} from 'react'
-import {Metadata} from 'next'
+import { Metadata } from 'next/types'
 import {notFound} from 'next/navigation'
 import {NextIntlClientProvider} from 'next-intl'
-import {getMessages, setRequestLocale} from 'next-intl/server'
 import {routing} from '../../i18n/routing'
+// eslint-disable-next-line import/no-unresolved
+import {getMessages, setRequestLocale} from 'next-intl/server'
 
 export const metadata: Metadata = {
     title: 'Léo Jan',
