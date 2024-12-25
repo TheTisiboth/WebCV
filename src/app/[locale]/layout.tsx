@@ -20,11 +20,11 @@ export default async function RootLayout(
         params: Promise<{ locale: 'en' | 'fr' | 'de' }>
     }
 ) {
-    const params = await props.params;
+    const params = await props.params
 
     const {
         children
-    } = props;
+    } = props
 
     // Ensure that the incoming `locale` is valid
     if (!routing.locales.includes(params.locale)) {

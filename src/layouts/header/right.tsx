@@ -5,9 +5,9 @@ import { Skills } from '../skills'
  * RightHeader containing info about Skills
  */
 const RightHeader: FC = () => {
-  return (
-    <Skills/>
-  )
+    return (
+        <Skills/>
+    )
 }
 
 export default RightHeader
