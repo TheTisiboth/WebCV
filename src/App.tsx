@@ -11,7 +11,11 @@ import AppHeader from './layouts/header/main'
 import { Projects } from './layouts/projects'
 import { Hobbies } from './layouts/hobbies'
 // import { Travels } from './layouts/travels'
+import dynamic from 'next/dynamic'
 // import { History } from './layouts/history'
+
+const Travels = dynamic(() => import('./layouts/travels').then(mod => mod.Travels), { ssr: false })
+
 
 const Page: FC = () => {
   return (
@@ -36,7 +40,7 @@ const Page: FC = () => {
       </ScrollAnimation>
       <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
         <section>
-          {/*<Travels/>*/}
+          <Travels/>
         </section>
       </ScrollAnimation>
       <section className="App-footer">
