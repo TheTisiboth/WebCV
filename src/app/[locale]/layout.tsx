@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import React, {ReactNode} from 'react'
-import { Metadata } from 'next/types'
+import {Metadata} from 'next/types'
 import {notFound} from 'next/navigation'
 import {NextIntlClientProvider} from 'next-intl'
 import {routing} from '../../i18n/routing'
@@ -48,6 +48,7 @@ export default async function RootLayout(
                 <meta name="geo.position" content="52.52005040392529, 13.404648245302424"/>
                 <meta name="geo.placename" content="Berlin"/>
                 <meta name="geo.region" content="Brandenburg"/>
+                <link rel="icon" href="/favicon.ico" sizes="any"/>
                 <link rel="canonical" href="https://janleo.fr"/>
                 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
                     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
