@@ -33,7 +33,7 @@ export default tseslint.config(
       ],
         quotes: ["error", "single"],
         semi: ["error", "never"],
-        "indent": ["error", 2],
+        "indent": ["error", 4],
         "import/extensions": ["error", "never"],
     },
   },

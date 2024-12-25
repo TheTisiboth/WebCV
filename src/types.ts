@@ -24,9 +24,6 @@ export type HistoryPicture = {
 
 export type HistoryItem = {
   id: number,
-  date: string,
-  title: string,
-  body: string,
   job: boolean
 }
 
