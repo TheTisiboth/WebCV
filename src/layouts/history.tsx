@@ -1,3 +1,4 @@
+/*
 import {FC} from 'react'
 import {Badge, Col, Container, Row} from 'react-bootstrap'
 import {Timeline, TimelineItem} from 'vertical-timeline-component-for-react'
@@ -44,9 +45,9 @@ const HistoryItem: FC<HistoryItemProps> = ({historyItem, idx, picture}) => {
     )
 }
 
-/**
+/!**
  * Contains Education and professionnal experience
- */
+ *!/
 export const History: FC = () => {
     const t = useTranslations('navbar')
 
@@ -66,3 +67,4 @@ export const History: FC = () => {
         </Container>
     )
 }
+*/
