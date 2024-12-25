@@ -22,12 +22,12 @@
         "name": "next"
       }
     ]
-},
+  },
   "include": [
-    "next-env.d.ts",
-    "./dist/types/**/*.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "next-env.d.ts",
+    "./build/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"
