@@ -76,15 +76,7 @@ export const StyledImage: FC<ImageProps> = ({size = 32, roundedCircle = false, i
     }
     return (
         <Figure className={margin}>
-            <Image src={image} alt={alt} style={style} height={size} width={size} className={className}/>
-            {/*<Figure.Image*/}
-            {/*  src={src}*/}
-            {/*  height={`${size}px`}*/}
-            {/*  width={`${size}px`}*/}
-            {/*  className={className}*/}
-            {/*  alt={alt}*/}
-            {/*  roundedCircle={roundedCircle}*/}
-            {/*/>*/}
+            <Image src={image} alt={alt} style={style} width={size} className={className} />
         </Figure>
     )
 }

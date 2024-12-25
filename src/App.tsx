@@ -26,11 +26,11 @@ const Page: FC = () => {
                     <Projects/>
                 </section>
             </ScrollAnimation>
-            <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
-                <section>
-                    {/*<History/>*/}
-                </section>
-            </ScrollAnimation>
+            {/*<ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>*/}
+            {/*    <section>*/}
+            {/*        <History/>*/}
+            {/*    </section>*/}
+            {/*</ScrollAnimation>*/}
             <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
                 <section className="grey">
                     <Hobbies/>

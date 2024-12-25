@@ -39,7 +39,7 @@ export const MyNavbar: FC = () => {
 
     return (
         <Navbar id="nav" ref={nav} collapseOnSelect={true} expand="md" bg="dark" variant="dark" className="pt-0 pb-0"
-            fixed="top">
+            fixed="top" style={{ height: '60px' }}>
             <Logo/>
             <Navbar.Toggle ref={toggle} aria-controls="responsive-navbar-nav"/>
             <Navbar.Collapse ref={collapse} id="responsive-navbar-nav" className="pb-3 pb-md-0 justify-content-between">
