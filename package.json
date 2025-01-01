@@ -11,14 +11,12 @@
     "lintfix": "eslint --fix ."
   },
   "dependencies": {
-    "@types/react-animate-on-scroll": "^2.1.8",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3",
     "leaflet": "^1.9.4",
     "next": "15.1.0",
     "next-intl": "^3.26.3",
     "react": "19.0.0",
-    "react-animate-on-scroll": "^2.1.9",
     "react-bootstrap": "^2.10.7",
     "react-dom": "19.0.0",
     "react-icons": "^5.4.0",

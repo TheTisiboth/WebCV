@@ -1,3 +1,4 @@
+'use client'
 import {FC, ReactElement, ReactNode} from 'react'
 import {IconContext, type IconType} from 'react-icons'
 import {Figure, OverlayTrigger, Tooltip} from 'react-bootstrap'

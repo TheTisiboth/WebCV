@@ -1,3 +1,4 @@
+'use client'
 import {FC} from 'react'
 import {Badge, Col, Container, Row} from 'react-bootstrap'
 import {MapContainer, Marker, TileLayer, Tooltip} from 'react-leaflet'

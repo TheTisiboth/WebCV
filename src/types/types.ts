@@ -1,3 +1,8 @@
+export type Project = {
+    title: string,
+    description: string
+}
+
 export type Dictionary = {
     title: string,
     top: string,
