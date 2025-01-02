@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import {Badge, Col, Row} from 'react-bootstrap'
-import Link from '../components/icon'
+import Link, {LinkTooltip, StyledImage} from '../components/icon'
 import {allSkillImages, others, software, system, web} from '../fixtures/skills'
 import {type SkillImage, type SkillInfos} from '../types'
 import {useTranslations} from 'next-intl'
@@ -8,33 +8,22 @@ import {useTranslations} from 'next-intl'
 
 /**
  * Display an image of a technology, with a link to its website, and a tooltip (on hover)
- * The params are mutually exclusive: either skill or skillName
- * @param skill - The skill to display
  * @param skillName - The name of the skill to display
  */
-type SkillProps = // We can either pass a SkillImage or a skillName
-    | { skill: SkillImage; skillName?: never }
-    | { skill?: never; skillName: string }
-export const Skill: FC<SkillProps> = ({skill, skillName}) => {
-    if (skillName) {
-        const mySkill = allSkillImages.find((skill: SkillImage) => skill.tooltip.includes(skillName))
+type SkillProps = { skillName: string }
+export const Skill: FC<SkillProps> = ({skillName}) => {
+    const skillMetadata = allSkillImages.find((skill: SkillImage) => skill.image.includes(skillName))
 
-        if (!mySkill)
-            throw new Error(`Skill ${skillName} not found`)
-
-        return (<Skill skill={mySkill}/>)
-    }
+    if (!skillMetadata || !skillName)
+        throw new Error(`Skill ${skillName} not found`)
 
     return (
-        <>
-            {skill && (
-                <Link href={skill.href} className='m-2'>
-                    <Link.LinkTooltip tooltipLabel={skill.tooltip}>
-                        <Link.Image image={skill.image} size={skill.size} alt={skill.tooltip} className={skill.class}/>
-                    </Link.LinkTooltip>
-                </Link>
-            )}
-        </>
+        <Link href={skillMetadata.href} className='m-2'>
+            <LinkTooltip tooltipLabel={skillMetadata.tooltip}>
+                <StyledImage name={skillName} width={skillMetadata.width} height={skillMetadata.height} alt={skillMetadata.tooltip}
+                    className={skillMetadata.class}/>
+            </LinkTooltip>
+        </Link>
     )
 }
 
@@ -67,7 +56,7 @@ export const Skills: FC = () => {
                                     <Row className="justify-content-center">
                                         <Col xs={6} md={10}>
                                             {s.skills.map(skill => (
-                                                <Skill skill={skill} key={skill.href}/>
+                                                <Skill skillName={skill.image} key={skill.href}/>
                                             ))}
                                         </Col>
                                     </Row>

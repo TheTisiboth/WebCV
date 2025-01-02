@@ -1,17 +1,15 @@
 import './index.css'
+import './App.css'
 
 import {FC, ReactElement, Suspense} from 'react'
 import Footer from './layouts/footer'
-import 'animate.css/animate.compat.css'
-import './App.css'
+// import 'animate.css/animate.compat.css'
 import {MyNavbar} from './layouts/navbar'
 import AppHeader from './layouts/header/main'
-import {Projects} from './layouts/v2/projects'
+import {Projects} from './layouts/projects/projects'
 import {Hobbies} from './layouts/hobbies'
-// import {Travels} from './layouts/travels'
-import dynamic from 'next/dynamic'
+import Travels from './layouts/travels/travelsServer'
 // import { History } from './layouts/history'
-// const Travels = dynamic(() => import('./layouts/travels').then(mod => mod.Travels), {ssr: false})
 
 
 const Page: FC = () => {
@@ -23,17 +21,15 @@ const Page: FC = () => {
             <section className="grey">
                 <Projects/>
             </section>
-            {/*<ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>*/}
             {/*    <section>*/}
             {/*        <History/>*/}
             {/*    </section>*/}
-            {/*</ScrollAnimation>*/}
             <section className="grey">
                 <Hobbies/>
             </section>
-            {/*<section>*/}
-            {/*    <Travels/>*/}
-            {/*</section>*/}
+            <section>
+                <Travels/>
+            </section>
             <section className="App-footer">
                 <Footer/>
             </section>

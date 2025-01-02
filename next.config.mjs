@@ -11,7 +11,18 @@ const nextConfig = {
             type: "asset/resource",
         });
         return config;
-    }
+    },
+    images: {
+        remotePatterns: [
+            {
+                protocol: 'http',
+                hostname: 'localhost',
+                port: '1337',
+                pathname: '**',
+                search: '',
+            },
+        ],
+    },
 }
 
 export default withNextIntl(nextConfig);

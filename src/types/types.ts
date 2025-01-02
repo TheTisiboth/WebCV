@@ -1,6 +1,18 @@
 export type Project = {
     title: string,
     description: string
+    codeRepository: {
+        name: string,
+        link: string,
+    },
+    skills:{
+        name: string
+    }[],
+    picture: {
+        url: string
+    },
+    year: string,
+    duration: string
 }
 
 export type Dictionary = {

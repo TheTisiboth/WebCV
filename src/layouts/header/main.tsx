@@ -1,9 +1,6 @@
 'use client'
 import { FC } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import image from '../../../public/leo.jpg'
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { AiOutlineGitlab } from 'react-icons/ai'
 import LeftHeader from './left'
 import RightHeader from './right'
 import Link, { StyledImage } from '../../components/icon'
@@ -21,23 +18,23 @@ const AppHeader: FC = () => {
                 <Col sm={12} md={4} className="align-self-center">
                     <Row>
                         <Col>
-                            <StyledImage image={image} roundedCircle alt='banner image' margin='mt-3' size={285}/>
+                            <StyledImage name='leo' roundedCircle alt='banner image' margin='mt-3' size={285}/>
                         </Col>
                     </Row>
                     <Row className="App-header text-center">
                         <Col xs={4} className="text-right">
                             <Link href='https://www.linkedin.com/in/l%C3%A9o-jan-065ba8125'>
-                                <Link.IconSocial Icon={FaLinkedin}/>
+                                <Link.IconSocial name='linkedin'/>
                             </Link>
                         </Col>
                         <Col xs={4}>
                             <Link href='https://github.com/TheTisiboth'>
-                                <Link.IconSocial Icon={FaGithub}/>
+                                <Link.IconSocial name='github'/>
                             </Link>
                         </Col>
                         <Col xs={4} className="text-left">
                             <Link href='https://gitlab.com/TheTisiboth'>
-                                <Link.IconSocial Icon={AiOutlineGitlab}/>
+                                <Link.IconSocial name='gitlab'/>
                             </Link>
                         </Col>
                     </Row>

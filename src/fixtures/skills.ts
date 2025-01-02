@@ -1,44 +1,28 @@
-import C from '../../public/c.png'
-import ARM from '../../public/arm2.png'
-import ARDUINO from '../../public/arduino.svg'
-import JAVA from '../../public/java.png'
-import PYTHON from '../../public/python.png'
-import OCAML from '../../public/ocaml.jpg'
-import REACT from '../../public/react.svg'
-import MUI from '../../public/mui.png'
-import BOOTSTRAP from '../../public/bootstrap.png'
-import ANGULAR from '../../public/angular.png'
-import MONGODB from '../../public/mongodb.png'
-import JQUERY from '../../public/jquery.png'
-import PHP from '../../public/php.png'
-import SQL from '../../public/sql.png'
-import GIT from '../../public/git.png'
-import LINUX from '../../public/linux.svg'
-import NODE from '../../public/node.png'
-import JHIPSTER from '../../public/jhipster.png'
-import SPRING from '../../public/spring.png'
-import POSTGRES from '../../public/postgres.webp'
-import HTML from '../../public/html.png'
-import CSS from '../../public/css.png'
 import { SkillImage, SkillInfos } from '../types'
 
 export const system: SkillInfos = {
     title: 'skills.system',
     skills: [
         {
-            image: C,
+            image: 'c',
             href: 'https://en.wikipedia.org/wiki/C_(programming_language)',
-            tooltip: 'C'
+            tooltip: 'C',
+            width: 32,
+            height: 35
         },
         {
-            image: ARM,
+            image: 'arm',
             href: 'https://www.arm.com/products/silicon-ip-cpu',
-            tooltip: 'ARM'
+            tooltip: 'ARM',
+            width: 32,
+            height: 10
         },
         {
-            image: ARDUINO,
+            image: 'arduino',
             href: 'https://www.arduino.cc/',
-            tooltip: 'Arduino'
+            tooltip: 'Arduino',
+            width: 32,
+            height: 22
         }
     ]
 }
@@ -47,17 +31,19 @@ export const software: SkillInfos = {
     title: 'skills.software',
     skills: [
         {
-            image: JAVA,
+            image: 'java',
             href: 'https://www.java.com/fr/',
-            tooltip: 'Java'
+            tooltip: 'Java',
+            width: 32,
+            height: 60
         },
         {
-            image: PYTHON,
+            image: 'python',
             href: 'https://www.python.org/',
             tooltip: 'Python'
         },
         {
-            image: OCAML,
+            image: 'ocaml',
             href: 'https://ocaml.org/',
             tooltip: 'Ocaml'
         }
@@ -68,46 +54,54 @@ export const web: SkillInfos = {
     title: 'skills.web',
     skills: [
         {
-            image: REACT,
+            image: 'react',
             href: 'https://reactjs.org/',
-            tooltip: 'React'
+            tooltip: 'React',
+            width: 32,
+            height: 29
         },
         {
-            image: MUI,
+            image: 'mui',
             href: 'https://mui.com/',
             tooltip: 'Material UI'
         },
         {
-            image: BOOTSTRAP,
+            image: 'bootstrap',
             href: 'https://getbootstrap.com/',
             tooltip: 'Bootstrap'
         },
         {
-            image: ANGULAR,
+            image: 'angular',
             href: 'https://angular.io/',
-            tooltip: 'Angular'
+            tooltip: 'Angular',
+            width: 32,
+            height: 34
         },
         {
-            image: MONGODB,
+            image: 'mongodb',
             href: 'https://www.mongodb.com/',
             tooltip: 'MongoDB'
         },
         {
-            image: JQUERY,
+            image: 'jquery',
             href: 'https://jquery.com/',
-            tooltip: 'JQuery'
+            tooltip: 'JQuery',
+            width: 32,
+            height: 36
         },
         {
-            image: PHP,
+            image: 'php',
             href: 'https://www.php.net/',
             tooltip: 'PHP',
-            size: 42
+            width: 42,
+            height: 22
         },
         {
-            image: SQL,
+            image: 'sql',
             href: 'https://en.wikipedia.org/wiki/SQL',
             tooltip: 'SQL',
-            size: 25
+            width: 25,
+            height: 33
         }
     ]
 }
@@ -116,15 +110,17 @@ export const others: SkillInfos = {
     title: 'skills.other',
     skills: [
         {
-            image: GIT,
+            image: 'git',
             href: 'https://git-scm.com/',
             tooltip: 'Git',
             class: 'iconToWhite'
         },
         {
-            image: LINUX,
+            image: 'linux',
             href: 'https://www.linux.org/',
-            tooltip: 'Linux'
+            tooltip: 'Linux',
+            width: 32,
+            height: 38
         }
     ]
 }
@@ -133,32 +129,32 @@ export const extraSkills: SkillInfos = {
     title: 'Extra Skills',
     skills: [
         {
-            image: NODE,
+            image: 'node',
             href: 'https://nodejs.org/',
             tooltip: 'Node.js',
         },
         {
-            image: JHIPSTER,
+            image: 'jhipster',
             href: 'https://www.jhipster.tech/',
             tooltip: 'JHipster',
         },
         {
-            image: SPRING,
+            image: 'spring',
             href: 'https://spring.io/',
             tooltip: 'Spring',
         },
         {
-            image: POSTGRES,
+            image: 'postgres',
             href: 'https://www.postgresql.org/',
             tooltip: 'Postgres SQL',
         },
         {
-            image: HTML,
+            image: 'html',
             href: 'https://en.wikipedia.org/wiki/HTML',
             tooltip: 'HTML'
         },
         {
-            image: CSS,
+            image: 'css',
             href: 'https://en.wikipedia.org/wiki/Cascading_Style_Sheets',
             tooltip: 'CSS'
         },
