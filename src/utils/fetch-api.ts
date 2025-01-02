@@ -1,16 +1,16 @@
-export async function fetchAPI(resource = '') {
+export async function fetchAPI(resource = '', locale = 'en') {
+    const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN
+    const options = {headers: {Authorization: `Bearer ${token}`}}
+    const params = new URLSearchParams({populate: '*', locale})
+
+    const url = new URL(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/${resource}?${params}`)
+
     try {
-        const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN
-        const options = {headers: {Authorization: `Bearer ${token}`}}
-        const url = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/${resource}?populate=*`
-        const query = await fetch(url, options)
-        if (!query.ok) {
-            throw new Error(
-                `Failed to fetch data from Strapi (url=${url}, status=${query.status})`
-            )
+        const response = await fetch(url, options)
+        if (!response.ok) {
+            throw new Error(`Failed to fetch data from Strapi (url=${url}, status=${response.status})`)
         }
-        const response= await query.json()
-        return response.data
+        return (await response.json()).data
     } catch (error) {
         console.error(error)
         throw error

@@ -1,10 +1,11 @@
 import {FC} from 'react'
 import {Badge, Col, Container, Row} from 'react-bootstrap'
 import {type Project} from '../../types/types'
-import {fetchAPI} from '../../utils/fetch-api'
 import SocialLink from './SocialLink'
 import {StyledImage} from '../../components/icon'
 import {Skill} from '../skills'
+import {fetchAPI} from '../../utils/fetch-api'
+import {getLocale, getTranslations} from 'next-intl/server'
 
 const Project: FC<Project> = ({title, description, codeRepository, picture, skills, year, duration}) => {
     const repo = codeRepository
@@ -32,13 +33,14 @@ const Project: FC<Project> = ({title, description, codeRepository, picture, skil
 }
 
 export const Projects: FC = async () => {
-    // const t = useTranslations('navbar')
-    const projects: Project[] = await fetchAPI('projects')
+    const locale = await getLocale()
+    const projects: Project[] = await fetchAPI('projects',locale)
+    const t = await getTranslations('navbar')
     return (
         <Container id="Projects" className="pt-5">
             <Row className="mb-4 justify-content-center">
                 <Col xs={true} md={8} className="pt-2 pb-2">
-                    <Badge className="mytitle titles "><h2 className=" rounded ">{"Projects"}</h2></Badge>
+                    <Badge className="mytitle titles "><h2 className=" rounded ">{t('projects')}</h2></Badge>
                 </Col>
             </Row>
             {projects.map((project) => (
