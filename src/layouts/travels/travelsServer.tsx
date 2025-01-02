@@ -1,8 +1,11 @@
-'use client'
-import dynamic from 'next/dynamic'
+import {fetchAPI} from '../../utils/fetch-api'
+import {getLocale} from 'next-intl/server'
 
-const Travels = dynamic(() => import('./travels').then(mod => mod.Travels), {ssr: false})
+import Travels from './travelsHack'
+import {City} from '../../types/types'
 
-export default function Page() {
-    return (<Travels/>)
+export default async function Page() {
+    const locale = await getLocale()
+    const cities = await fetchAPI<City[]>('cities', locale)
+    return (<Travels cities={cities}/>)
 }

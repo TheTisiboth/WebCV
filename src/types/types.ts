@@ -15,6 +15,14 @@ export type Project = {
     duration: string
 }
 
+export type City = {
+    name: string,
+    coordinate: {
+        lat: number,
+        lng: number
+    }
+}
+
 export type Dictionary = {
     title: string,
     top: string,

@@ -34,7 +34,7 @@ const Project: FC<Project> = ({title, description, codeRepository, picture, skil
 
 export const Projects: FC = async () => {
     const locale = await getLocale()
-    const projects: Project[] = await fetchAPI('projects',locale)
+    const projects = await fetchAPI<Project[]>('projects',locale)
     const t = await getTranslations('navbar')
     return (
         <Container id="Projects" className="pt-5">
