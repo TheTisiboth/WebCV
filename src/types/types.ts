@@ -23,6 +23,20 @@ export type City = {
     }
 }
 
+export type History = {
+    title: string,
+    description: string,
+    type: 'job'|'education',
+    picture:{
+        url: string
+    },
+    link: string,
+    dates: {
+        startDate: string,
+        endDate?: string
+    }
+}
+
 export type Dictionary = {
     title: string,
     top: string,

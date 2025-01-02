@@ -9,7 +9,7 @@ import AppHeader from './layouts/header/main'
 import {Projects} from './layouts/projects/projects'
 import {Hobbies} from './layouts/hobbies'
 import Travels from './layouts/travels/travelsServer'
-// import { History } from './layouts/history'
+import { Histories } from './layouts/history'
 
 
 const Page: FC = () => {
@@ -21,9 +21,9 @@ const Page: FC = () => {
             <section className="grey">
                 <Projects/>
             </section>
-            {/*    <section>*/}
-            {/*        <History/>*/}
-            {/*    </section>*/}
+            <section>
+                <Histories/>
+            </section>
             <section className="grey">
                 <Hobbies/>
             </section>
