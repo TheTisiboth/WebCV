@@ -84,6 +84,7 @@ export const StyledImage: FC<ImageProps> = ({size = 32, roundedCircle = false, n
     const h = url ? size/(16/9) : height || size
     const style = {
         borderRadius: roundedCircle ? '50%' : '0',
+        height: url? 'auto': ''
     }
     return (
         <Figure className={margin}>
@@ -102,7 +103,7 @@ export const StyledImage: FC<ImageProps> = ({size = 32, roundedCircle = false, n
 * </Link>
 */
 
-// TODO: coumpound component pattern not working in nextjs
+// TODO: compound component pattern not working in nextjs
 Link.IconSocial = IconSocial
 Link.Image = StyledImage
 Link.LinkTooltip = LinkTooltip
