@@ -1,3 +1,42 @@
+export type Project = {
+    title: string,
+    description: string
+    codeRepository: {
+        name: string,
+        link: string,
+    },
+    skills:{
+        name: string
+    }[],
+    picture: {
+        url: string
+    },
+    year: string,
+    duration: string
+}
+
+export type City = {
+    name: string,
+    coordinate: {
+        lat: number,
+        lng: number
+    }
+}
+
+export type History = {
+    title: string,
+    description: string,
+    type: 'job'|'education',
+    picture:{
+        url: string
+    },
+    link: string,
+    dates: {
+        startDate: string,
+        endDate?: string
+    }
+}
+
 export type Dictionary = {
     title: string,
     top: string,

@@ -1,56 +1,51 @@
-/*
-import {FC} from 'react'
+import {getLocale, getTranslations} from 'next-intl/server'
 import {Badge, Col, Container, Row} from 'react-bootstrap'
-import {Timeline, TimelineItem} from 'vertical-timeline-component-for-react'
-import type {HistoryItem, HistoryPicture} from '../types'
-import {historyItems, pictures} from '../fixtures/history'
-import Link from '../components/icon'
-import {useTranslations} from 'next-intl'
+import {FC} from 'react'
+import {fetchAPI} from '../utils/fetch-api'
+import {type History} from '../types/types'
+import Link, {StyledImage} from '../components/icon'
+
 
 type HistoryItemProps = {
-    historyItem: HistoryItem
-    idx: number
-    picture?: HistoryPicture
+    history: History
 }
-const HistoryItem: FC<HistoryItemProps> = ({historyItem, idx, picture}) => {
-    const t = useTranslations('history')
-
+const HistoryItem: FC<HistoryItemProps> = async({
+    history: {
+        picture,
+        type,
+        description,
+        title,
+        link,
+        dates: {startDate, endDate}
+    }
+}) => {
+    const locale = await getLocale()
+    const t = await getTranslations()
+    const start = new Date(startDate).toLocaleDateString(locale, { year: 'numeric', month: 'numeric' })
+    const end = endDate ? new Date(endDate).toLocaleDateString(locale, { year: 'numeric', month: 'numeric' }) : t('now')
     return (
-        <TimelineItem
-            key={idx}
-            dateText={t(`${idx}.date`)}
-            style={historyItem.job ? {color: '#e86971'} : {color: '#61b8ff'}}
-            dateInnerStyle={historyItem.job ? {} : {background: '#61b8ff', color: '#000'}}
-            bodyContainerStyle={historyItem.job ? {
-                background: '#ddd',
-                padding: '20px',
-                borderRadius: '8px',
-                boxShadow: '0.5rem 0.5rem 2rem 0 rgba(0, 0, 0, 0.2)',
-            } : {}}
-            className="longDate"
-        >
-            <h4>{t(`${idx}.title`)}</h4>
+        <div>
+            <h3>{title}</h3>
+            <p>{start} - {end}</p>
+            <p>Type: {type}</p>
             {picture &&
-                <Link href={picture.url}>
-                    <Link.Image margin='mt-4' image={picture.icon} size={picture.height} alt={picture.name}/>
+                <Link href={link}>
+                    <StyledImage margin='mt-4' url={picture.url} alt={title}/>
                 </Link>
             }
-            <p className="text-left">
-                {t.rich(`${idx}.body`, {
-                    tag: (children) => <strong>{children}</strong>
-                })
-                }
-            </p>
-        </TimelineItem>
+            <p>{description}</p>
+        </div>
     )
 }
 
-/!**
- * Contains Education and professionnal experience
- *!/
-export const History: FC = () => {
-    const t = useTranslations('navbar')
 
+/**
+ * Contains Education and professionnal experience
+ */
+export const Histories: FC = async () => {
+    const t = await getTranslations('navbar')
+    const locale = await getLocale()
+    const histories = await fetchAPI<History[]>('histories', locale)
     return (
         <Container id="History" className="pt-5">
             <Row className="mb-4 justify-content-center">
@@ -58,13 +53,10 @@ export const History: FC = () => {
                     <Badge className='mytitle titles'><h2 className="rounded ">{t('history')}</h2></Badge>
                 </Col>
             </Row>
-            <Timeline lineColor={'#ddd'}>
-                {historyItems.map((historyItem, idx) => {
-                    const picture = pictures.find(picture => picture.historyItemId === historyItem.id)
-                    return <HistoryItem key={idx} historyItem={historyItem} idx={idx} picture={picture}/>
-                })}
-            </Timeline>
+            {histories.map(history =>
+                <HistoryItem history={history} key={history.title}/>
+            )}
         </Container>
     )
 }
-*/
+

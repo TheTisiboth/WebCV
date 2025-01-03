@@ -1,9 +1,10 @@
+'use client'
 import {FC, ReactElement, ReactNode} from 'react'
-import {IconContext, type IconType} from 'react-icons'
+import {IconContext} from 'react-icons'
 import {Figure, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import {type Placement} from 'react-bootstrap/types'
-import {type StaticImageData} from 'next/image'
 import Image from 'next/image'
+import {getIcon, getImage} from '../utils/iconMapping'
 
 type LinkProps = {
     href?: string
@@ -49,10 +50,11 @@ export const LinkTooltip: FC<LinkTooltipProps> = ({placement = 'bottom', tooltip
 }
 
 type IconRepositoryProps = {
-    Icon: IconType
+    name: string
     size?: 'small' | 'medium'
 }
-const IconSocial: FC<IconRepositoryProps> = ({Icon, size = 'medium'}) => {
+const IconSocial: FC<IconRepositoryProps> = ({name, size = 'medium'}) => {
+    const Icon = getIcon(name)
     return (
         <IconContext.Provider value={{size: `${size === 'medium' ? 3 : 2}em`}}>
             <div>
@@ -62,21 +64,31 @@ const IconSocial: FC<IconRepositoryProps> = ({Icon, size = 'medium'}) => {
     )
 }
 
+// Make url or name optional
+
 type ImageProps = {
     size?: number
     roundedCircle?: boolean
-    image: StaticImageData | string
+    name?: string
+    url?: string
     alt: string
     margin?: string
     className?: string
+    width?: number
+    height?: number
 }
-export const StyledImage: FC<ImageProps> = ({size = 32, roundedCircle = false, image, alt, margin, className}) => {
+export const StyledImage: FC<ImageProps> = ({size = 32, roundedCircle = false, name, url, alt, margin, className, width, height}) => {
+
+    const image = name !== undefined ? getImage(name) : `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${url}`
+    const w = width ?? size
+    const h = url ? size/(16/9) : height || size
     const style = {
         borderRadius: roundedCircle ? '50%' : '0',
+        height: 'auto'
     }
     return (
         <Figure className={margin}>
-            <Image src={image} alt={alt} style={style} width={size} className={className} />
+            <Image src={image} alt={alt} style={style} width={w} height={h} className={className}/>
         </Figure>
     )
 }
@@ -91,7 +103,7 @@ export const StyledImage: FC<ImageProps> = ({size = 32, roundedCircle = false, i
 * </Link>
 */
 
-
+// TODO: compound component pattern not working in nextjs
 Link.IconSocial = IconSocial
 Link.Image = StyledImage
 Link.LinkTooltip = LinkTooltip

@@ -1,6 +1,7 @@
 import {Nav} from 'react-bootstrap'
 import {scroller} from 'react-scroll'
 import {FC, ReactElement} from 'react'
+// TODO: remove this deprecated import
 import {scrollOptions} from '../../constant'
 
 type NavItemProps = {

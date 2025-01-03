@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-unresolved
 import {getRequestConfig} from 'next-intl/server'
 import {routing} from './routing'
 

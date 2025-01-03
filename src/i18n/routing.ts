@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import {defineRouting} from 'next-intl/routing'
 import {createNavigation} from 'next-intl/navigation'
 

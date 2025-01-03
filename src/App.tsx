@@ -1,18 +1,15 @@
-'use client'
 import './index.css'
+import './App.css'
 
 import {FC, ReactElement, Suspense} from 'react'
-import ScrollAnimation from 'react-animate-on-scroll'
 import Footer from './layouts/footer'
-import 'animate.css/animate.compat.css'
-import './App.css'
+// import 'animate.css/animate.compat.css'
 import {MyNavbar} from './layouts/navbar'
 import AppHeader from './layouts/header/main'
-import {Projects} from './layouts/projects'
+import {Projects} from './layouts/projects/projects'
 import {Hobbies} from './layouts/hobbies'
-import dynamic from 'next/dynamic'
-// import { History } from './layouts/history'
-const Travels = dynamic(() => import('./layouts/travels').then(mod => mod.Travels), {ssr: false})
+import Travels from './layouts/travels/travelsServer'
+import { Histories } from './layouts/history'
 
 
 const Page: FC = () => {
@@ -21,26 +18,18 @@ const Page: FC = () => {
             <MyNavbar/>
 
             <AppHeader/>
-            <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true} animatePreScroll={false}>
-                <section className="grey">
-                    <Projects/>
-                </section>
-            </ScrollAnimation>
-            {/*<ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>*/}
-            {/*    <section>*/}
-            {/*        <History/>*/}
-            {/*    </section>*/}
-            {/*</ScrollAnimation>*/}
-            <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
-                <section className="grey">
-                    <Hobbies/>
-                </section>
-            </ScrollAnimation>
-            <ScrollAnimation animateIn="fadeIn" duration={2} animateOnce={true}>
-                <section>
-                    <Travels/>
-                </section>
-            </ScrollAnimation>
+            <section className="grey">
+                <Projects/>
+            </section>
+            <section>
+                <Histories/>
+            </section>
+            <section className="grey">
+                <Hobbies/>
+            </section>
+            <section>
+                <Travels/>
+            </section>
             <section className="App-footer">
                 <Footer/>
             </section>

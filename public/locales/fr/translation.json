@@ -26,6 +26,7 @@
     "english": "Anglais",
     "german": "Allemand"
   },
+  "now": "Maintenant",
   "history": {
     "0": {
       "id": 1,
@@ -111,78 +112,6 @@
     "pingpong": "Tennis de table"
   },
   "projects": {
-    "0": {
-      "title": "<tag>Web CV</tag>, 2020 - 1 mois",
-      "body": "Création d'un web CV avec React. Il s'agit d'un projet personnel, visant à prendre en main react. Le déploiement en production à été fait grâce à Netlify, sur un nom de domaine enregistré sur Google Domains."
-    },
-    "1": {
-      "title": "<tag>Kine 2.0</tag>, 2020 - 3 mois",
-      "body": "Création de 2 sites web : un pour les kinesithérapeuthes afin qu'ils gèrent leur patient, et puissent suivre leurs activitées, et un pour les patients, afin qu'ils puissent faire leurs exercices de rééducation à la maison. Ce projet à été réalisé à la demande de notre client Vestib+, qui est un cabinet de Kinesithérapie, spécialisé dans les troubles de l'équilibre."
-    },
-    "2": {
-      "title": "<tag>Guc Voile</tag>, 2019 - 2,5 mois",
-      "body": "Création d'un site de e-commerce permettant la location de materiel de voile pour les membres du club Guc voile de Grenoble, et permettant la gestion des stocks pour les gérants du club. Généré à l'aide de JHipster."
-    },
-    "3": {
-      "title": "<tag>COLORicm</tag>, 2018 - 3 semaines",
-      "body": "En tant que chef de groupe d'une équipe de 6 développeur, nous avons créé un jeu vidéo 2D en Java (swing), avec des controles en temps réels et des fonctionnalités modulaires, impliquants des automates, ce qui a permis de nous sensibiliser à la notion d'Intelligence Artificielle."
-    }
-  },
-  "travel": {
-    "germany": {
-      "country": "Allemagne",
-      "munich": "Munich",
-      "munster": "Münster",
-      "hamburg": "Hambourg",
-      "berlin": "Berlin"
-    },
-    "tchequie": {
-      "country": "Tchéquie",
-      "prague": "Prague"
-    },
-    "belgium": {
-      "country": "Belgique",
-      "brussels": "Bruxelles",
-      "liege": "Liège"
-    },
-    "canada": {
-      "country": "Canada",
-      "montreal": "Montreal",
-      "tadoussac": "Tadoussac",
-      "sherbrooke": "Sherbrooke",
-      "quebec": "Québec"
-    },
-    "spain": {
-      "country": "Espagne",
-      "barcelona": "Barcelone",
-      "palma": "Palma de Majorque"
-    },
-    "italy": {
-      "country": "Italie",
-      "roma": "Rome",
-      "naples": "Naples",
-      "pompei": "Pompéi"
-    },
-    "greece": {
-      "country": "Grèce",
-      "athens": "Athènes",
-      "corinth": "Corinthe"
-    },
-    "us": {
-      "country": "Etats Unis",
-      "ny": "New York"
-    },
-    "uk": {
-      "country": "Royaume-Uni",
-      "ireland": "Irlande"
-    },
-    "fr": {
-      "country": "France",
-      "marseille": "Marseille"
-    },
-    "sweden": {
-      "country": "Suède",
-      "stockholm": "Stockholm"
-    }
+    "months": "{count, plural, =1 {# mois} other {# mois}}"
   }
 }

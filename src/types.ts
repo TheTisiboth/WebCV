@@ -3,7 +3,7 @@ import { LatLngLiteral } from 'leaflet'
 import {StaticImageData} from 'next/image'
 
 export type Project = {
-  image: string | StaticImageData
+  image: string
   title: string
   body: string
   skills: string[]
@@ -28,11 +28,12 @@ export type HistoryItem = {
 }
 
 export type SkillImage = {
-  image: string | StaticImageData
+  image: string
   href: string
   tooltip: string
   class?: string
-  size?: number
+  width?: number
+  height?: number
 }
 
 export type SkillInfos = {

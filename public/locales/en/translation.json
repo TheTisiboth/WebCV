@@ -26,6 +26,7 @@
     "english": "English",
     "german": "German"
   },
+  "now": "Now",
   "history": {
     "0": {
       "id": 1,
@@ -111,78 +112,6 @@
     "pingpong": "Table tennis"
   },
   "projects": {
-    "0": {
-      "title": "<tag>Web CV</tag>, 2020 - 1 month",
-      "body": "Web CV creation, with React. It is a personnal project, in order to master React. Deployement in production with the help of Netlify, on a custom domain name registered on Google Domains."
-    },
-    "1": {
-      "title": "<tag>Kine 2.0</tag>, 2020 - 3 month",
-      "body": "Creation of 2 websites : one for the physiotherapist, so they can manage their patients, and monitor their activities, and one for the patients, so they can do their rehabilitation exercise at home. This project was carried out at the request of our client Vestib+, which is a Kinesitherapy practice specializing in balance disorders."
-    },
-    "2": {
-      "title": "<tag>Guc Voile</tag>, 2019 - 2.5 month",
-      "body": "Creation of a website that helps the sailing club member to rent some sailing equipment in advance, and helps the club owners to monitor the sailing equipment. Generated with the help of JHipster."
-    },
-    "3": {
-      "title": "<tag>COLORicm</tag>, 2018 - 3 weeks",
-      "body": "As a group Leader of a team of 6, we developped a 2D video game in java (swing), with real-time controls and modular features, involving automatons, introducing the notion of artificial intelligence."
-    }
-  },
-  "travel": {
-    "germany": {
-      "country": "Germany",
-      "munich": "Munich",
-      "munster": "Münster",
-      "hamburg": "Hamburg",
-      "berlin": "Berlin"
-    },
-    "tchequie": {
-      "country": "Czech Republic",
-      "prague": "Prague"
-    },
-    "belgium": {
-      "country": "Belgium",
-      "brussels": "Brussels",
-      "liege": "Liège"
-    },
-    "canada": {
-      "country": "Canada",
-      "montreal": "Montreal",
-      "tadoussac": "Tadoussac",
-      "sherbrooke": "Sherbrooke",
-      "quebec": "Quebec"
-    },
-    "spain": {
-      "country": "Spain",
-      "barcelona": "Barcelona",
-      "palma": "Palma de Mallorca"
-    },
-    "italy": {
-      "country": "Italy",
-      "roma": "Roma",
-      "naples": "Naples",
-      "pompei": "Pompei"
-    },
-    "greece": {
-      "country": "Greece",
-      "athens": "Athens",
-      "corinth": "Corinth"
-    },
-    "us": {
-      "country": "United States",
-      "ny": "New York"
-    },
-    "uk": {
-      "country": "United Kingdom",
-      "ireland": "Ireland"
-    },
-    "fr": {
-      "country": "France",
-      "marseille": "Marseille"
-    },
-    "sweden": {
-      "country": "Sweden",
-      "stockholm": "Stockholm"
-    }
+    "months": "{count, plural, =1 {# month} other {# months}}"
   }
 }
