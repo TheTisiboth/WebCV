@@ -1,10 +1,8 @@
-/* eslint-disable react-refresh/only-export-components */
 import React, {ReactNode} from 'react'
 import {Metadata} from 'next/types'
 import {notFound} from 'next/navigation'
 import {NextIntlClientProvider} from 'next-intl'
 import {routing} from '../../i18n/routing'
-// eslint-disable-next-line import/no-unresolved
 import {getMessages, setRequestLocale} from 'next-intl/server'
 
 export const metadata: Metadata = {
@@ -37,7 +35,7 @@ export default async function RootLayout(
 
     return (
         <NextIntlClientProvider messages={messages}>
-            <div id="root2">{children}</div>
+            <div id="root">{children}</div>
         </NextIntlClientProvider>
     )
 }

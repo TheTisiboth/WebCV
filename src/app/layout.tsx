@@ -1,4 +1,3 @@
-/* eslint-disable react-refresh/only-export-components */
 import React, {ReactNode} from 'react'
 import {Metadata} from 'next/types'
 import {routing} from '../i18n/routing'
@@ -46,11 +45,11 @@ export default async function RootLayout(
                 />
                 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
                     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-                    crossOrigin=""></script>
+                    crossOrigin="" async></script>
                 <title>Léo Jan</title>
             </head>
             <body>
-                <div id="root">{children}</div>
+                {children}
             </body>
         </html>
     )
