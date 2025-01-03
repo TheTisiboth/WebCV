@@ -21,6 +21,13 @@ const nextConfig = {
                 pathname: '**',
                 search: '',
             },
+            {
+                protocol: 'https',
+                hostname: 'web-cv-backend-4d2c351c7b93.herokuapp.com',
+                port: '',
+                pathname: '**',
+                search: '',
+            },
         ],
     },
 }

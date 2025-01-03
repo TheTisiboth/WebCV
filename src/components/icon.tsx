@@ -79,7 +79,7 @@ type ImageProps = {
 }
 export const StyledImage: FC<ImageProps> = ({size = 32, roundedCircle = false, name, url, alt, margin, className, width, height}) => {
 
-    const image = name !== undefined ? getImage(name) : `http://localhost:1337${url}`
+    const image = name !== undefined ? getImage(name) : `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${url}`
     const w = width ?? size
     const h = url ? size/(16/9) : height || size
     const style = {
