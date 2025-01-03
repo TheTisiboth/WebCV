@@ -1,5 +1,4 @@
-import { FaGithub, FaLinkedin} from 'react-icons/fa'
-import { AiOutlineGitlab } from 'react-icons/ai'
+import { FaGithub, FaLinkedin, FaGitlab} from 'react-icons/fa'
 import C from '../../public/c.png'
 import ARM from '../../public/arm2.png'
 import ARDUINO from '../../public/arduino.svg'
@@ -29,7 +28,7 @@ import {StaticImageData} from 'next/image'
 const iconMappings: { [key: string]: ComponentType } = {
     'github': FaGithub,
     'linkedin': FaLinkedin,
-    'gitlab': AiOutlineGitlab,
+    'gitlab': FaGitlab,
     // Add more mappings as needed
 }
 

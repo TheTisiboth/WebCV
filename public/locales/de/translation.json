@@ -112,22 +112,7 @@
     "pingpong": "Tischtennis"
   },
   "projects": {
-    "0": {
-      "title": "<tag>Web CV</tag>, 2020 - 1 Monat",
-      "body": "Erstellung eines Web-Lebenslaufs mit React. Dies ist ein persönliches Projekt, das darauf abzielt, in die Hand zu nehmen reagieren. Der Einsatz in der Produktion erfolgte dank Netlify auf einem bei Google Domains registrierten Domainnamen."
-    },
-    "1": {
-      "title": "<tag>Kine 2.0</tag>, 2020 - 3 Monate",
-      "body": "Erstellung von 2 Websites: eine für die Kinesitherapeuten, damit sie ihre Patienten verwalten und ihre Aktivitäten verfolgen können, und eine für die Patienten, damit sie ihre Rehabilitationsübungen zu Hause durchführen können. Dieses Projekt wurde auf Wunsch unseres Kunden Vestib+, einer auf Gleichgewichtsstörungen spezialisierten Kinesitherapiepraxis, durchgeführt."
-    },
-    "2": {
-      "title": "<tag>Guc Voile</tag>, 2019 - 2,5 Monate",
-      "body": "Einrichtung einer E-Commerce-Website, die es den Mitgliedern des Clubs Guc voile de Grenoble ermöglicht, Segelausrüstung zu mieten und den Managern des Clubs eine Lagerverwaltung zu ermöglichen. Generiert mit JHipster."
-    },
-    "3": {
-      "title": "<tag>COLORicm</tag>, 2018 - 3 Wochen",
-      "body": "Als Gruppenleiter eines Teams von 6 Entwicklern haben wir ein 2D-Videospiel in Java (Swing) mit Echtzeitsteuerung und modularer Funktionalität unter Einbeziehung von Automaten entwickelt, das uns das Konzept der künstlichen Intelligenz näher gebracht hat."
-    }
+    "months": "{count, plural, =1 { # Monat} other {# Monate}}"
   },
   "travel": {
     "germany": {
