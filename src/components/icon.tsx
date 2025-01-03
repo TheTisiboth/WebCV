@@ -84,7 +84,7 @@ export const StyledImage: FC<ImageProps> = ({size = 32, roundedCircle = false, n
     const h = url ? size/(16/9) : height || size
     const style = {
         borderRadius: roundedCircle ? '50%' : '0',
-        height: url? 'auto': ''
+        height: 'auto'
     }
     return (
         <Figure className={margin}>
