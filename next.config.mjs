@@ -23,9 +23,9 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'web-cv-backend-4d2c351c7b93.herokuapp.com',
+                hostname: 'admin.leojan.fr',
                 port: '',
-                pathname: '**',
+                pathname: '/uploads/**',
                 search: '',
             },
         ],
