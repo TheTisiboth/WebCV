@@ -2,6 +2,7 @@ import {FC} from 'react'
 import {Button, Col, Row} from 'react-bootstrap'
 import {computeAge} from '../../utils'
 import {useTranslations} from 'next-intl'
+import Link from "next/link";
 
 /**
  * LeftHeader, containing general info about author
@@ -30,9 +31,9 @@ const LeftHeader: FC = () => {
                         <h5>{t('livesIn')}</h5>
                     </div>
                     <div>
-                        <a href="mailto:pro@leojan.fr" target="_blank" rel="noopener noreferrer">
+                        <Link href="mailto:pro@leojan.fr" target="_blank" rel="noopener noreferrer">
                             <Button variant="secondary">pro@leojan.fr</Button>
-                        </a>
+                        </Link>
                     </div>
                 </Col>
             </Row>
