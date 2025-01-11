@@ -4,6 +4,7 @@ import {IconContext} from 'react-icons'
 import {Figure, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import {type Placement} from 'react-bootstrap/types'
 import Image from 'next/image'
+import NextLink from 'next/link'
 import {getIcon, getImage} from '../utils/iconMapping'
 
 type LinkProps = {
@@ -20,14 +21,14 @@ type LinkComposition = {
 
 const Link: FC<LinkProps> & LinkComposition = ({href, className, children}) => {
     return (
-        <a
+        <NextLink
             href={href}
             className={className}
             target="_blank"
             rel="noopener noreferrer"
         >
             {children}
-        </a>
+        </NextLink>
     )
 }
 
