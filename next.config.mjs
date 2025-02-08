@@ -2,6 +2,13 @@ import createNextIntlPlugin from 'next-intl/plugin'
 
 const withNextIntl = createNextIntlPlugin()
 
+// Cloudinary Configuration
+const CLOUDINARY_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_NAME
+
+if (process.env.NODE_ENV === 'production' && !CLOUDINARY_NAME) {
+    throw new Error('NEXT_PUBLIC_CLOUDINARY_NAME is not defined in the environment variables.')
+}
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'standalone', // Outputs a Single-Page Application (SPA).
@@ -19,14 +26,11 @@ const nextConfig = {
                 hostname: 'localhost',
                 port: '1337',
                 pathname: '**',
-                search: '',
             },
             {
                 protocol: 'https',
                 hostname: 'res.cloudinary.com',
-                port: '',
-                pathname: `${process.env.NEXT_PUBLIC_CLOUDINARY_NAME}/image/upload/**`,
-                search: '',
+                pathname: `/${CLOUDINARY_NAME}/image/upload/**`,
             },
         ],
     },
