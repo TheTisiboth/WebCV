@@ -1,3 +1,5 @@
+import {MySkill} from '../types'
+
 export type Project = {
     title: string,
     description: string
@@ -5,9 +7,7 @@ export type Project = {
         name: string,
         link: string,
     },
-    skills:{
-        name: string
-    }[],
+    skills:MySkill[],
     picture: {
         url: string
     },

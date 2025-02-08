@@ -6,6 +6,6 @@ import {City} from '../../types/types'
 
 export default async function Page() {
     const locale = await getLocale()
-    const cities = await fetchAPI<City[]>('cities', locale)
+    const cities = await fetchAPI<City[]>({resource:'cities', locale})
     return (<Travels cities={cities}/>)
 }

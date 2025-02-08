@@ -23,8 +23,8 @@ const Project: FC<Project> = async ({title, description, codeRepository, picture
                         <SocialLink link={repo.link} name={repo.name}/>
                     </Col>
                     <Col className="text-right pr-md-5">
-                        {skills.map(({name}) =>
-                            <Skill skillName={name} key={name}/>
+                        {skills.map(skill =>
+                            <Skill key={skill.name} {...skill}/>
                         )}
                     </Col>
                 </Row>
@@ -35,7 +35,7 @@ const Project: FC<Project> = async ({title, description, codeRepository, picture
 
 export const Projects: FC = async () => {
     const locale = await getLocale()
-    const projects = await fetchAPI<Project[]>('projects',locale)
+    const projects = await fetchAPI<Project[]>({resource: 'projects',locale})
     const t = await getTranslations('navbar')
     return (
         <Container id="Projects" className="pt-5">

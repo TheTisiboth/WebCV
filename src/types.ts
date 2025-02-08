@@ -45,3 +45,21 @@ export type Position = {
   latlng: LatLngLiteral;
   tooltip: string | string[];
 }
+
+export type MySkill = {
+  name: string
+  image:{
+    url: string
+  }
+  href: string
+  whiteIcon?: boolean
+  width?: number
+  height?: number
+}
+
+export type MySkills = {
+    system: MySkill[]
+    software: MySkill[]
+    web: MySkill[]
+    other: MySkill[]
+}

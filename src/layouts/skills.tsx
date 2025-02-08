@@ -1,40 +1,38 @@
 import {FC} from 'react'
 import {Badge, Col, Row} from 'react-bootstrap'
 import Link, {LinkTooltip, StyledImage} from '../components/icon'
-import {allSkillImages, others, software, system, web} from '../fixtures/skills'
-import {type SkillImage, type SkillInfos} from '../types'
-import {useTranslations} from 'next-intl'
+import {MySkill, MySkills} from '../types'
+import {getTranslations} from 'next-intl/server'
+import {fetchAPI} from '../utils/fetch-api'
 
 
 /**
  * Display an image of a technology, with a link to its website, and a tooltip (on hover)
  * @param skillName - The name of the skill to display
  */
-type SkillProps = { skillName: string }
-export const Skill: FC<SkillProps> = ({skillName}) => {
-    const skillMetadata = allSkillImages.find((skill: SkillImage) => skill.image.includes(skillName))
-
-    if (!skillMetadata || !skillName)
-        throw new Error(`Skill ${skillName} not found`)
+type SkillProps =  MySkill
+export const Skill: FC<SkillProps> = ({href, height, name, width, image, whiteIcon}) => {
 
     return (
-        <Link href={skillMetadata.href} className='m-2'>
-            <LinkTooltip tooltipLabel={skillMetadata.tooltip}>
-                <StyledImage name={skillName} width={skillMetadata.width} height={skillMetadata.height} alt={skillMetadata.tooltip}
-                    className={skillMetadata.class}/>
+        <Link href={href} className='m-2'>
+            <LinkTooltip tooltipLabel={name}>
+                <StyledImage url={image.url} width={width} height={height} alt={name}
+                    className={whiteIcon ? 'iconToWhite' : ''}/>
             </LinkTooltip>
         </Link>
     )
 }
 
+type SkillCategory = keyof MySkills
+const skillCategories: SkillCategory[][] = [['system', 'software'], ['web', 'other']]
+
 /**
  * Display a list of skill
  */
-export const Skills: FC = () => {
-    const t = useTranslations()
+export const Skills: FC = async () => {
+    const t = await getTranslations()
 
-    const list: SkillInfos[][] = [[system, software], [web, others]]
-
+    const skills = await fetchAPI<MySkills>({resource: 'skill', isLocalized: false})
     return (
         <div id="Skills" className="text-center pt-5 pt-md-2 pr-0 pr-md-5">
             <Row className=" justify-content-center">
@@ -42,30 +40,29 @@ export const Skills: FC = () => {
                     <Badge className="titleReverse pl-3 pr-3"><h2>{t('navbar.skill')}</h2></Badge>
                 </Col>
             </Row>
-            {list.map((row: SkillInfos[]) => {
-                return (
-                    <Row key={row[0].title} className="justify-content-center pt-4">
-                        {row.map((s: SkillInfos) => {
-                            return (
-                                <Col key={s.title} md={6}>
-                                    <Row>
-                                        <Col>
-                                            <h5>{t(s.title)}</h5>
-                                        </Col>
-                                    </Row>
-                                    <Row className="justify-content-center">
-                                        <Col xs={6} md={10}>
-                                            {s.skills.map(skill => (
-                                                <Skill skillName={skill.image} key={skill.href}/>
-                                            ))}
-                                        </Col>
-                                    </Row>
+            {skillCategories.map((row) => (
+                <Row key={row[0]} className="justify-content-center pt-4">
+                    {row.map((category) => (
+                        <Col key={category} md={6}>
+                            <Row>
+                                <Col>
+                                    {/*<h5>{t(category)}</h5>*/}
+                                    <h5>{category}</h5>
                                 </Col>
-                            )
-                        })}
-                    </Row>
-                )
-            })}
+                            </Row>
+                            <Row className="justify-content-center">
+                                <Col xs={6} md={10}>
+                                    {skills[category].map(skill => (
+                                        <Skill {...skill}/>
+                                    ))}
+                                </Col>
+                            </Row>
+                        </Col>
+                    )
+                    )}
+                </Row>
+            )
+            )}
         </div>
     )
 }

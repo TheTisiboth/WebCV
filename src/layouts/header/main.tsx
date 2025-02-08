@@ -1,9 +1,8 @@
-'use client'
 import { FC } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import LeftHeader from './left'
 import RightHeader from './right'
-import Link, { StyledImage } from '../../components/icon'
+import Link, { StyledImage, IconSocial } from '../../components/icon'
 
 /**
  * AppHeader, containing LeftHeader, Image, and RightHeader
@@ -24,17 +23,17 @@ const AppHeader: FC = () => {
                     <Row className="App-header text-center">
                         <Col xs={4} className="text-right">
                             <Link href='https://www.linkedin.com/in/l%C3%A9o-jan-065ba8125'>
-                                <Link.IconSocial name='linkedin'/>
+                                <IconSocial name='linkedin'/>
                             </Link>
                         </Col>
                         <Col xs={4}>
                             <Link href='https://github.com/TheTisiboth'>
-                                <Link.IconSocial name='github'/>
+                                <IconSocial name='github'/>
                             </Link>
                         </Col>
                         <Col xs={4} className="text-left">
                             <Link href='https://gitlab.com/TheTisiboth'>
-                                <Link.IconSocial name='gitlab'/>
+                                <IconSocial name='gitlab'/>
                             </Link>
                         </Col>
                     </Row>
