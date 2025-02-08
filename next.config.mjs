@@ -23,9 +23,9 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'admin.leojan.fr',
+                hostname: 'res.cloudinary.com',
                 port: '',
-                pathname: '/uploads/**',
+                pathname: `${process.env.NEXT_PUBLIC_CLOUDINARY_NAME}/image/upload/**`,
                 search: '',
             },
         ],
