@@ -33,6 +33,7 @@ export const Skills: FC = async () => {
     const t = await getTranslations()
 
     const skills = await fetchAPI<MySkills>({resource: 'skill', isLocalized: false})
+
     return (
         <div id="Skills" className="text-center pt-5 pt-md-2 pr-0 pr-md-5">
             <Row className=" justify-content-center">
@@ -46,8 +47,7 @@ export const Skills: FC = async () => {
                         <Col key={category} md={6}>
                             <Row>
                                 <Col>
-                                    {/*<h5>{t(category)}</h5>*/}
-                                    <h5>{category}</h5>
+                                    <h5>{t(`skills.${category}`)}</h5>
                                 </Col>
                             </Row>
                             <Row className="justify-content-center">
