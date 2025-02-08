@@ -25,8 +25,7 @@ export async function fetchAPI<T>({resource, isLocalized = true, locale = 'en'} 
     const response = await fetch(url, {
         headers: {
             Authorization: `Bearer ${token}`
-        },
-        cache: 'force-cache'
+        }
     })
 
     if (!response.ok) {
