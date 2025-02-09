@@ -1,10 +1,11 @@
 import {FC} from 'react'
 import {Badge, Col, Row} from 'react-bootstrap'
 import Link, {LinkTooltip, StyledImage} from '../components/icon'
-import {MySkill, MySkills} from '../types'
 import {getTranslations} from 'next-intl/server'
 import {fetchAPI} from '../utils/fetch-api'
-
+import {StrapiRoute} from '../types/routes/StrapiRoute'
+import {Skill as MySkills} from '../types/Skill'
+import {AllSkill as MySkill} from '../types/AllSkill'
 
 /**
  * Display an image of a technology, with a link to its website, and a tooltip (on hover)
@@ -23,7 +24,7 @@ export const Skill: FC<SkillProps> = ({href, height, name, width, image, whiteIc
     )
 }
 
-type SkillCategory = keyof MySkills
+type SkillCategory = keyof Omit<MySkills, 'documentId'>
 const skillCategories: SkillCategory[][] = [['system', 'software'], ['web', 'other']]
 
 /**
@@ -32,7 +33,8 @@ const skillCategories: SkillCategory[][] = [['system', 'software'], ['web', 'oth
 export const Skills: FC = async () => {
     const t = await getTranslations()
 
-    const skills = await fetchAPI<MySkills>({resource: 'skill', isLocalized: false})
+    // Careful with the resource, it should be 'skill' in singular (it might break up when regenerating the types, as it might be wrong)
+    const skills = await fetchAPI<MySkills>({resource: StrapiRoute.Skill, isLocalized: false})
 
     return (
         <div id="Skills" className="text-center pt-5 pt-md-2 pr-0 pr-md-5">

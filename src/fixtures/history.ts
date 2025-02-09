@@ -7,7 +7,11 @@ import deliveroo from '../../public/deliveroo.png'
 import peip from '../../public/peip.png'
 import sebben from '../../public/sebben.png'
 import {HistoryItem, type HistoryPicture} from '../types'
+// TODO: remove this whole file, it's not used anymore
 
+/*
+* @Deprecated
+*/
 export const pictures: HistoryPicture[] =
     [
         {

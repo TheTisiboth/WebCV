@@ -5,8 +5,9 @@ import {Figure, OverlayTrigger, Tooltip} from 'react-bootstrap'
 import {type Placement} from 'react-bootstrap/types'
 import Image from 'next/image'
 import NextLink from 'next/link'
-import {getIcon, getImage} from '../utils/iconMapping'
-import cloudinaryLoader, {getRelativePath} from '../utils/cloudinary'
+import {getIcon} from '../utils/iconMapping'
+import cloudinaryLoader from '../utils/cloudinary'
+import {getImageUrl} from '../utils/image'
 
 type LinkProps = {
     href?: string
@@ -80,17 +81,16 @@ type ImageProps = {
     height?: number
 }
 export const StyledImage: FC<ImageProps> = ({size = 32, roundedCircle = false, name, url, alt, margin, className, width, height}) => {
-    const image = name !== undefined ? getImage(name) : getRelativePath(url)
-    const w = width ?? size
-    const h = url ? size/(16/9) : height || size
+    const isProduction = process.env.NODE_ENV === 'production'
+    const imageUrl = getImageUrl(name, url, isProduction)
     const style = {
         borderRadius: roundedCircle ? '50%' : '0',
         height: 'auto'
     }
+
     return (
         <Figure className={margin}>
-            <Image loader={url ? cloudinaryLoader : undefined} src={image} alt={alt} style={style} width={w} height={h}
-                className={className}/>
+            <Image loader={isProduction && url ? cloudinaryLoader : undefined} src={imageUrl} alt={alt} style={style} width={width ?? size} height={height ?? size} className={className}/>
         </Figure>
     )
 }

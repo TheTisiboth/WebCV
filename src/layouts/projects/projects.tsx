@@ -1,15 +1,15 @@
 import {FC} from 'react'
 import {Badge, Col, Container, Row} from 'react-bootstrap'
-import {type Project} from '../../types/types'
+import {type Project} from '../../types/Project'
 import SocialLink from './SocialLink'
 import {StyledImage} from '../../components/icon'
 import {Skill} from '../skills'
 import {fetchAPI} from '../../utils/fetch-api'
 import {getLocale, getTranslations} from 'next-intl/server'
+import {StrapiRoute} from '../../types/routes/StrapiRoute'
 
 const Project: FC<Project> = async ({title, description, codeRepository, picture, skills, year, duration}) => {
     const t = await getTranslations('projects')
-    const repo = codeRepository
     return (
         <Row className="justify-content-center pt-5 pb-5 mt-3 mb-3">
             <Col xs={12} md={true}>
@@ -20,7 +20,7 @@ const Project: FC<Project> = async ({title, description, codeRepository, picture
                 <p className="text-left">{description}</p>
                 <Row>
                     <Col xs={4}>
-                        <SocialLink link={repo.link} name={repo.name}/>
+                        <SocialLink link={codeRepository.link} name={codeRepository.name}/>
                     </Col>
                     <Col className="text-right pr-md-5">
                         {skills.map(skill =>
@@ -35,7 +35,7 @@ const Project: FC<Project> = async ({title, description, codeRepository, picture
 
 export const Projects: FC = async () => {
     const locale = await getLocale()
-    const projects = await fetchAPI<Project[]>({resource: 'projects',locale})
+    const projects = await fetchAPI<Project[]>({resource: StrapiRoute.Project,locale})
     const t = await getTranslations('navbar')
     return (
         <Container id="Projects" className="pt-5">

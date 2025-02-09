@@ -3,5 +3,5 @@ export enum StrapiRoute {
   City = 'cities',
   History = 'histories',
   Project = 'projects',
-  Skill = 'skills'
+  Skill = 'skill'
 }

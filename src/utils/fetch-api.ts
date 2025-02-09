@@ -1,5 +1,7 @@
+import {StrapiRoute} from '../types/routes/StrapiRoute'
+
 type FetchApiProps = {
-    resource: string
+    resource: StrapiRoute
     isLocalized?: boolean
     locale?: string
 }

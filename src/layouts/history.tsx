@@ -2,22 +2,20 @@ import {getLocale, getTranslations} from 'next-intl/server'
 import {Badge, Col, Container, Row} from 'react-bootstrap'
 import {FC} from 'react'
 import {fetchAPI} from '../utils/fetch-api'
-import {type History} from '../types/types'
+import {History} from '../types/History'
 import Link, {StyledImage} from '../components/icon'
+import {StrapiRoute} from '../types/routes/StrapiRoute'
 
 
-type HistoryItemProps = {
-    history: History
-}
-const HistoryItem: FC<HistoryItemProps> = async({
-    history: {
-        picture,
-        type,
-        description,
-        title,
-        link,
-        dates: {startDate, endDate}
-    }
+type HistoryItemProps = History
+
+const HistoryItem: FC<HistoryItemProps> = async ({
+    picture,
+    type,
+    description,
+    title,
+    link,
+    dates: {startDate, endDate}
 }) => {
     const locale = await getLocale()
     const t = await getTranslations()
@@ -40,12 +38,12 @@ const HistoryItem: FC<HistoryItemProps> = async({
 
 
 /**
- * Contains Education and professionnal experience
+ * Contains Education and professional experience
  */
 export const Histories: FC = async () => {
     const t = await getTranslations('navbar')
     const locale = await getLocale()
-    const histories = await fetchAPI<History[]>({resource: 'histories', locale})
+    const histories = await fetchAPI<History[]>({resource: StrapiRoute.History, locale})
     return (
         <Container id="History" className="pt-5">
             <Row className="mb-4 justify-content-center">
@@ -54,7 +52,7 @@ export const Histories: FC = async () => {
                 </Col>
             </Row>
             {histories.map(history =>
-                <HistoryItem history={history} key={history.title}/>
+                <HistoryItem {...history} key={history.title}/>
             )}
         </Container>
     )
