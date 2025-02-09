@@ -31,11 +31,6 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'res.cloudinary.com',
                 pathname: `/${CLOUDINARY_NAME}/image/upload/**`,
-            },
-            {
-                protocol: 'https',
-                hostname: 'admin.leojan.fr',
-                pathname: '**',
             }
         ],
     },
