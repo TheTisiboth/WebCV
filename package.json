@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "eslint .",
     "lintfix": "eslint --fix .",
-    "copyTypes": "node src/scripts/copyTypesFromStrapi.cjs"
+    "copyTypes": "node src/scripts/copyTypesFromStrapi.ts"
   },
   "dependencies": {
     "animate.css": "^4.1.1",
