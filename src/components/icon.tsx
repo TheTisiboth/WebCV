@@ -6,7 +6,7 @@ import {type Placement} from 'react-bootstrap/types'
 import Image from 'next/image'
 import NextLink from 'next/link'
 import {getIcon, getImage} from '../utils/iconMapping'
-import cloudinaryLoader from '../utils/cloudinary'
+import cloudinaryLoader, {getRelativePath} from '../utils/cloudinary'
 
 type LinkProps = {
     href?: string
@@ -80,8 +80,7 @@ type ImageProps = {
     height?: number
 }
 export const StyledImage: FC<ImageProps> = ({size = 32, roundedCircle = false, name, url, alt, margin, className, width, height}) => {
-
-    const image = name !== undefined ? getImage(name) : url
+    const image = name !== undefined ? getImage(name) : getRelativePath(url)
     const w = width ?? size
     const h = url ? size/(16/9) : height || size
     const style = {
