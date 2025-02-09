@@ -1,16 +1,18 @@
 # Web CV
 
-This is my Web CV, developped in react. It is deployed on Netlify. here is a deployement status :
+This is my Web CV, developed in react. It was deployed on Netlify, and it is now deployed on Vercel.
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/00a29a99-777f-4bc8-8e9d-8476e89adccf/deploy-status)](https://app.netlify.com/sites/janleo/deploys)
-
-If the status is `success`, you can access last version of the website directly on `https://janleo.fr`.
+You can access last version of the website directly on `https://janleo.fr` or on `https://leojan.fr`
 
 ## Run the project
 
 First, you have to run `npm install`, in order to install the needed dependencies.   
-Then, you have to run `npm start`, to start the development server. After a few minutes, you can acces via your browser the page `http://localhost:3000`.
+Then, you have to run `npm run dev`, to start the development server. After a few minutes, you can access via your browser the page `http://localhost:3000`.
 
+## Run the Backoffice
+
+You need to have the back office running in order to serve the data to the front end.
+You can find the back office on this repository : `https://github.com/TheTisiboth/WebCV_backend`
 
 ## React-Leaflet
 
@@ -19,4 +21,24 @@ The resulting JSON has to be converted, thanks to this website : `http://mapster
 
 ## Technical details
 
-The project used to be created with `create-react-app`. We now switched to vite, in order to have a faster build.
+The project used to be created with `create-react-app`. I then switched to vite, and eventually I migrated to Next.js.
+
+### Copy types script
+
+I'm using a script in order to copy the types from the backend to the frontend, in order to have a unique source of truth for the types.
+I followed this [documentation](https://strapi.io/blog/improve-your-frontend-experience-with-strapi-types-and-type-script) to achieve this.
+I only used the script to copy some files, and I adapted it to my needs.
+
+#### How to use it
+
+You first have to generate the types from the backend. You can do this by running the following command in the backend repository:
+```
+pnpm run t4s -- --v5
+```
+
+Then, you have to copy the generated types to the frontend. You can do this by running the following command in the frontend repository:
+```
+npm run copyTypes
+```
+
+And that's it! You can now use the types in the frontend.
