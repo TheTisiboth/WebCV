@@ -30,9 +30,10 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'res.cloudinary.com',
-                pathname: `/${CLOUDINARY_NAME}/image/upload/**`,
+                pathname: `${CLOUDINARY_NAME}/image/upload/**`,
             }
         ],
+        loader: 'default', // Ensures Next.js does not interfere with Cloudinary URLs
     },
 }
 
