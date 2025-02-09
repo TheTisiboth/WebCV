@@ -89,7 +89,8 @@ export const StyledImage: FC<ImageProps> = ({size = 32, roundedCircle = false, n
     }
     return (
         <Figure className={margin}>
-            <Image loader={cloudinaryLoader} src={image} alt={alt} style={style} width={w} height={h} className={className}/>
+            <Image loader={url ? cloudinaryLoader : undefined} src={image} alt={alt} style={style} width={w} height={h}
+                className={className}/>
         </Figure>
     )
 }
