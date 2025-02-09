@@ -35,6 +35,7 @@ const nextConfig = {
             {
                 protocol: 'https',
                 hostname: 'admin.leojan.fr',
+                pathname: '**',
             }
         ],
     },
