@@ -2,9 +2,9 @@ import {getLocale, getTranslations} from 'next-intl/server'
 import {Badge, Col, Container, Row} from 'react-bootstrap'
 import {FC} from 'react'
 import {fetchAPI} from '../utils/fetch-api'
-import {History} from '../types/History'
+import {History} from '../types/generated/History'
 import Link, {StyledImage} from '../components/icon'
-import {StrapiRoute} from '../types/routes/StrapiRoute'
+import {StrapiRoute} from '../types/generated/routes/StrapiRoute'
 
 
 type HistoryItemProps = History

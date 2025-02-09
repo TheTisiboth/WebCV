@@ -3,9 +3,9 @@ import {Badge, Col, Row} from 'react-bootstrap'
 import Link, {LinkTooltip, StyledImage} from '../components/icon'
 import {getTranslations} from 'next-intl/server'
 import {fetchAPI} from '../utils/fetch-api'
-import {StrapiRoute} from '../types/routes/StrapiRoute'
-import {Skill as MySkills} from '../types/Skill'
-import {AllSkill as MySkill} from '../types/AllSkill'
+import {StrapiRoute} from '../types/generated/routes/StrapiRoute'
+import {Skill as MySkills} from '../types/generated/Skill'
+import {AllSkill as MySkill} from '../types/generated/AllSkill'
 
 /**
  * Display an image of a technology, with a link to its website, and a tooltip (on hover)

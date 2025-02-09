@@ -3,7 +3,7 @@ import {FC} from 'react'
 import {Badge, Col, Container, Row} from 'react-bootstrap'
 import {MapContainer, Marker, TileLayer, Tooltip} from 'react-leaflet'
 import {useTranslations} from 'next-intl'
-import {City} from '../../types/types'
+import {City} from '../../types/generated/City'
 
 type TravelsProps = {
     cities: City[]

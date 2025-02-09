@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic'
 import {FC} from 'react'
-import {City} from '../../types/City'
+import {City} from '../../types/generated/City'
 const Travels = dynamic(() => import('./travels').then(module => module.Travels), {ssr: false})
 
 type ComponentProps = {

@@ -1,12 +1,12 @@
 import {FC} from 'react'
 import {Badge, Col, Container, Row} from 'react-bootstrap'
-import {type Project} from '../../types/Project'
+import {type Project} from '../../types/generated/Project'
 import SocialLink from './SocialLink'
 import {StyledImage} from '../../components/icon'
 import {Skill} from '../skills'
 import {fetchAPI} from '../../utils/fetch-api'
 import {getLocale, getTranslations} from 'next-intl/server'
-import {StrapiRoute} from '../../types/routes/StrapiRoute'
+import {StrapiRoute} from '../../types/generated/routes/StrapiRoute'
 
 const Project: FC<Project> = async ({title, description, codeRepository, picture, skills, year, duration}) => {
     const t = await getTranslations('projects')

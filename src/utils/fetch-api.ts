@@ -1,4 +1,4 @@
-import {StrapiRoute} from '../types/routes/StrapiRoute'
+import {StrapiRoute} from '../types/generated/routes/StrapiRoute'
 
 type FetchApiProps = {
     resource: StrapiRoute
