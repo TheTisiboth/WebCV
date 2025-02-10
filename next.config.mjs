@@ -33,7 +33,7 @@ const nextConfig = {
                 pathname: `${CLOUDINARY_NAME}/image/upload/**`,
             }
         ],
-        loader: 'default', // Ensures Next.js does not interfere with Cloudinary URLs
+        // loader: 'default', // Ensures Next.js does not interfere with Cloudinary URLs
     },
 }
 
