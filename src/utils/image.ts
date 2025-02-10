@@ -7,7 +7,7 @@ export const getImageUrl = (name?: string, url?: string, isProduction?: boolean)
         return getImage(name)
     }
     if (isProduction && url) {
-        return `https://res.cloudinary.com/${env.NEXT_PUBLIC_CLOUDINARY_NAME}/image/upload/${url}`
+        return url
     }
     return `${env.NEXT_PUBLIC_STRAPI_API_URL}${url}`
 }
