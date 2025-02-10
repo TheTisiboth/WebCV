@@ -6,7 +6,7 @@ import NextLink from 'next/link'
 import {getImageUrl} from '../utils/image'
 import {env} from '../utils/env'
 import {IconSocial} from './IconSocial'
-import { CldImage } from 'next-cloudinary'
+import CldImage from './CldImage'
 
 type LinkProps = {
     href?: string
