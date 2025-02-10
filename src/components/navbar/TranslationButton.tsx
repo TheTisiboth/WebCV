@@ -20,7 +20,7 @@ const TranslationButton: FC<TranslationButtonProps> = ({collapseNavbar}) => {
     const params = useParams()
 
 
-    const getLanguageCode = (language: string): string => {
+    const getLanguageCode = (language: string) => {
         if (!language) return
 
         if (language.includes('fr'))
@@ -49,7 +49,7 @@ const TranslationButton: FC<TranslationButtonProps> = ({collapseNavbar}) => {
         collapseNavbar()
     }
 
-    const getLanguageLabel = (lang: string): string => {
+    const getLanguageLabel = (lang?: string): string => {
         switch (lang) {
         case 'fr':
             return t('languages.french')
