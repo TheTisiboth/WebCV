@@ -55,7 +55,7 @@ export const Skills: FC = async () => {
                             <Row className="justify-content-center">
                                 <Col xs={6} md={10}>
                                     {skills[category].map(skill => (
-                                        <Skill {...skill}/>
+                                        <Skill {...skill} key={skill.documentId}/>
                                     ))}
                                 </Col>
                             </Row>

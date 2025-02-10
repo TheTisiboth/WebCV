@@ -8,6 +8,7 @@ import NextLink from 'next/link'
 import {getIcon} from '../utils/iconMapping'
 import cloudinaryLoader from '../utils/cloudinary'
 import {getImageUrl} from '../utils/image'
+import {env} from '../utils/env'
 
 type LinkProps = {
     href?: string
@@ -24,7 +25,7 @@ type LinkComposition = {
 const Link: FC<LinkProps> & LinkComposition = ({href, className, children}) => {
     return (
         <NextLink
-            href={href}
+            href={href || ''}
             className={className}
             target="_blank"
             rel="noopener noreferrer"
@@ -81,7 +82,7 @@ type ImageProps = {
     height?: number
 }
 export const StyledImage: FC<ImageProps> = ({size = 32, roundedCircle = false, name, url, alt, margin, className, width, height}) => {
-    const isProduction = process.env.NODE_ENV === 'production'
+    const isProduction = env.IS_PRODUCTION
     const imageUrl = getImageUrl(name, url, isProduction)
     const style = {
         borderRadius: roundedCircle ? '50%' : '0',

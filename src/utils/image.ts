@@ -1,6 +1,7 @@
 import {getImage} from './iconMapping'
 import {getRelativePath} from './cloudinary'
 import {StaticImageData} from 'next/image'
+import {env} from './env'
 
 export const getImageUrl = (name?: string, url?: string, isProduction?: boolean): StaticImageData | string => {
     if (name) {
@@ -9,5 +10,5 @@ export const getImageUrl = (name?: string, url?: string, isProduction?: boolean)
     if (isProduction && url) {
         return getRelativePath(url)
     }
-    return `${process.env.NEXT_PUBLIC_STRAPI_API_URL}${url}`
+    return `${env.NEXT_PUBLIC_STRAPI_API_URL}${url}`
 }

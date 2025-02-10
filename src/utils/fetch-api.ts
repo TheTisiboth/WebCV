@@ -1,4 +1,5 @@
 import {StrapiRoute} from '../types/generated/routes/StrapiRoute'
+import {env} from './env'
 
 type FetchApiProps = {
     resource: StrapiRoute
@@ -12,7 +13,7 @@ const populateFields: Record<string, string[]> = {
 }
 
 export async function fetchAPI<T>({resource, isLocalized = true, locale = 'en'} : FetchApiProps): Promise<T> {
-    const token = process.env.NEXT_PUBLIC_STRAPI_API_TOKEN
+    const token = env.NEXT_PUBLIC_STRAPI_API_TOKEN
     const params = new URLSearchParams({'sort': 'id:asc', ...(isLocalized && { locale })})
 
     const fieldsToPopulate = populateFields[resource]
@@ -22,7 +23,7 @@ export async function fetchAPI<T>({resource, isLocalized = true, locale = 'en'} 
         params.append('populate', '*')
     }
 
-    const url = new URL(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/${resource}?${params}`)
+    const url = new URL(`${env.NEXT_PUBLIC_STRAPI_API_URL}/api/${resource}?${params}`)
 
     const response = await fetch(url, {
         headers: {
