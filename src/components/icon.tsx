@@ -81,7 +81,7 @@ export const StyledImage: FC<ImageProps> = ({size = 32, roundedCircle = false, n
     return (
         <Figure className={margin}>
             {isProduction && url ?
-                <CldImage src={imageUrl} width={width ?? size}
+                <CldImage src={imageUrl as string} width={width ?? size}
                     height={height ?? size} alt={alt} className={className}/> :
                 <Image src={imageUrl} alt={alt} style={style} width={width ?? size} height={height ?? size}
                     className={className}/>}
