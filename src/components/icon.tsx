@@ -3,7 +3,6 @@ import {Figure, OverlayTrigger, Tooltip as BTooltip} from 'react-bootstrap'
 import {type Placement} from 'react-bootstrap/types'
 import Image from 'next/image'
 import NextLink from 'next/link'
-import cloudinaryLoader from '../utils/cloudinary'
 import {getImageUrl} from '../utils/image'
 import {env} from '../utils/env'
 import {IconSocial} from './IconSocial'
@@ -80,7 +79,7 @@ export const StyledImage: FC<ImageProps> = ({size = 32, roundedCircle = false, n
 
     return (
         <Figure className={margin}>
-            <Image loader={isProduction && url ? cloudinaryLoader : undefined} src={imageUrl} alt={alt} style={style} width={width ?? size} height={height ?? size} className={className}/>
+            <Image src={imageUrl} alt={alt} style={style} width={width ?? size} height={height ?? size} className={className}/>
         </Figure>
     )
 }

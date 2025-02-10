@@ -1,5 +1,4 @@
 import {getImage} from './iconMapping'
-import {getRelativePath} from './cloudinary'
 import {StaticImageData} from 'next/image'
 import {env} from './env'
 
@@ -8,7 +7,7 @@ export const getImageUrl = (name?: string, url?: string, isProduction?: boolean)
         return getImage(name)
     }
     if (isProduction && url) {
-        return getRelativePath(url)
+        return `https://res.cloudinary.com/${env.NEXT_PUBLIC_CLOUDINARY_NAME}/image/upload/${url}`
     }
     return `${env.NEXT_PUBLIC_STRAPI_API_URL}${url}`
 }
