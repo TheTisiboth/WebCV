@@ -1,11 +1,11 @@
 import {FC} from 'react'
 import {Badge, Col, Row} from 'react-bootstrap'
-import Link, {LinkTooltip, StyledImage} from '../components/icon'
+import Link from '../components/icon'
 import {getTranslations} from 'next-intl/server'
 import {fetchAPI} from '../utils/fetch-api'
 import {StrapiRoute} from '../types/generated/routes/StrapiRoute'
 import {Skill as MySkills} from '../types/generated/Skill'
-import {AllSkill as MySkill} from '../types/generated/AllSkill'
+import {AllSkill, AllSkill as MySkill} from '../types/generated/AllSkill'
 
 /**
  * Display an image of a technology, with a link to its website, and a tooltip (on hover)
@@ -16,10 +16,10 @@ export const Skill: FC<SkillProps> = ({href, height, name, width, image, whiteIc
 
     return (
         <Link href={href} className='m-2'>
-            <LinkTooltip tooltipLabel={name}>
-                <StyledImage url={image.url} width={width} height={height} alt={name}
+            <Link.Tooltip tooltipLabel={name}>
+                <Link.Image url={image.url} width={width} height={height} alt={name}
                     className={whiteIcon ? 'iconToWhite' : ''}/>
-            </LinkTooltip>
+            </Link.Tooltip>
         </Link>
     )
 }
@@ -28,7 +28,7 @@ type SkillCategory = keyof Omit<MySkills, 'documentId'>
 const skillCategories: SkillCategory[][] = [['system', 'software'], ['web', 'other']]
 
 /**
- * Display a list of skill
+ * Display a list of skill. We want to display them on 2 rows, with 2 columns each (hence the 2D array skillCategories)
  */
 export const Skills: FC = async () => {
     const t = await getTranslations()
@@ -46,25 +46,31 @@ export const Skills: FC = async () => {
             {skillCategories.map((row) => (
                 <Row key={row[0]} className="justify-content-center pt-4">
                     {row.map((category) => (
-                        <Col key={category} md={6}>
-                            <Row>
-                                <Col>
-                                    <h5>{t(`skills.${category}`)}</h5>
-                                </Col>
-                            </Row>
-                            <Row className="justify-content-center">
-                                <Col xs={6} md={10}>
-                                    {skills[category].map(skill => (
-                                        <Skill {...skill} key={skill.documentId}/>
-                                    ))}
-                                </Col>
-                            </Row>
-                        </Col>
-                    )
-                    )}
+                        <SkillCategory category={category} categorySkills={skills[category]} key={category}/>
+                    ))}
                 </Row>
-            )
-            )}
+            ))}
         </div>
+    )
+}
+
+const SkillCategory: FC<{category: SkillCategory, categorySkills: AllSkill[]}> = async ({category, categorySkills}) => {
+    const t = await getTranslations()
+
+    return (
+        <Col key={category} md={6}>
+            <Row>
+                <Col>
+                    <h5>{t(`skills.${category}`)}</h5>
+                </Col>
+            </Row>
+            <Row className="justify-content-center">
+                <Col xs={6} md={10}>
+                    {categorySkills.map(skill => (
+                        <Skill {...skill} key={skill.documentId}/>
+                    ))}
+                </Col>
+            </Row>
+        </Col>
     )
 }

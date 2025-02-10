@@ -54,3 +54,5 @@ export type Translation = z.infer<typeof translationSchema>
 export const validateTranslation = (translation: unknown) => {
     return translationSchema.parse(translation)
 }
+
+export type Locale = 'de' | 'en' | 'fr'

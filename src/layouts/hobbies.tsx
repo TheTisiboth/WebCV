@@ -1,4 +1,3 @@
-'use client'
 import {FC} from 'react'
 import {Badge, Col, Container, Row} from 'react-bootstrap'
 import {FaBasketballBall, FaTableTennis} from 'react-icons/fa'

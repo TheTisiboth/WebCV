@@ -4,7 +4,7 @@ import {notFound} from 'next/navigation'
 import {NextIntlClientProvider} from 'next-intl'
 import {routing} from '../../i18n/routing'
 import {getMessages, setRequestLocale} from 'next-intl/server'
-import {Locale} from '../../types/i18n'
+import {Locale} from '../../types/translations'
 
 export const metadata: Metadata = {
     title: 'Léo Jan',

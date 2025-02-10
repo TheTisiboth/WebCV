@@ -1,10 +1,10 @@
 import {FC, startTransition, useCallback} from 'react'
 import {NavDropdown} from 'react-bootstrap'
 import {MdTranslate} from 'react-icons/md'
-import {LinkTooltip} from '../icon'
+import {Tooltip} from '../icon'
 import {useTranslations, useLocale} from 'next-intl'
 import {usePathname, useRouter} from '../../i18n/routing'
-import {Locale} from '../../types/i18n'
+import {Locale} from '../../types/translations'
 
 /**
  * Translation button, that translate the whole page. It switches between english (by default), french and german
@@ -76,12 +76,12 @@ const NavDropdownTitle: FC<NavDropdownTitleProps> = ({ languageLabel }) => {
     const t = useTranslations()
 
     return (
-        <LinkTooltip tooltipLabel={t('translationTooltip')}>
+        <Tooltip tooltipLabel={t('translationTooltip')}>
             <span className="m-auto">
                 <MdTranslate className="mr-2 myIcon" />
                 {languageLabel}
             </span>
-        </LinkTooltip>
+        </Tooltip>
     )
 }
 

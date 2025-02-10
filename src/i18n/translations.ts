@@ -1,5 +1,5 @@
 import {Translation, validateTranslation} from '../types/translations'
-import {Locale} from '../types/i18n'
+import {Locale} from '../types/translations'
 
 const locales: Locale[] = ['de', 'en', 'fr']
 const translations: Record<string, Translation> = {}

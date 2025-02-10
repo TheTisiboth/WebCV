@@ -8,7 +8,7 @@ import TranslationButton from '../components/navbar/TranslationButton'
 import {useTranslations} from 'next-intl'
 
 /**
- * The Navbar, containing the different section of the website, and the translate button
+ * The Navbar, containing the different section of the website, and the translation button
  */
 export const MyNavbar: FC = () => {
     const t = useTranslations('navbar')
@@ -16,14 +16,14 @@ export const MyNavbar: FC = () => {
     const collapse = useRef<HTMLDivElement>(null)
     const nav = useRef<HTMLElement>(null)
 
-    // Triger toggle navbar on collapse
+    // Trigger toggle navbar on collapse
     const collapseNavbar = (): void => {
         if (collapse.current?.className.includes('show')) {
             toggle.current?.click()
         }
     }
 
-    // If we click outside of the navbar, we close it
+    // If we click outside the navbar, we close it
     const handleClick = (e: MouseEvent): void => {
         if (!nav.current?.contains(e.currentTarget as Node)) {
             collapseNavbar()
@@ -35,7 +35,7 @@ export const MyNavbar: FC = () => {
         return (): void => {
             document.removeEventListener('mousedown', handleClick)
         }
-    })
+    },[])
 
     return (
         <Navbar id="nav" ref={nav} collapseOnSelect={true} expand="md" bg="dark" variant="dark" className="pt-0 pb-0"

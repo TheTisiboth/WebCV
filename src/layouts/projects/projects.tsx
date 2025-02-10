@@ -10,6 +10,7 @@ import {StrapiRoute} from '../../types/generated/routes/StrapiRoute'
 
 const Project: FC<Project> = async ({title, description, codeRepository, picture, skills, year, duration}) => {
     const t = await getTranslations('projects')
+
     return (
         <Row className="justify-content-center pt-5 pb-5 mt-3 mb-3">
             <Col xs={12} md={true}>
@@ -37,6 +38,7 @@ export const Projects: FC = async () => {
     const locale = await getLocale()
     const projects = await fetchAPI<Project[]>({resource: StrapiRoute.Project,locale})
     const t = await getTranslations('navbar')
+
     return (
         <Container id="Projects" className="pt-5">
             <Row className="mb-4 justify-content-center">

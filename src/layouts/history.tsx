@@ -6,7 +6,6 @@ import {History} from '../types/generated/History'
 import Link, {StyledImage} from '../components/icon'
 import {StrapiRoute} from '../types/generated/routes/StrapiRoute'
 
-
 type HistoryItemProps = History
 
 const HistoryItem: FC<HistoryItemProps> = async ({
@@ -21,6 +20,7 @@ const HistoryItem: FC<HistoryItemProps> = async ({
     const t = await getTranslations()
     const start = new Date(startDate).toLocaleDateString(locale, { year: 'numeric', month: 'numeric' })
     const end = endDate ? new Date(endDate).toLocaleDateString(locale, { year: 'numeric', month: 'numeric' }) : t('now')
+
     return (
         <div>
             <h3>{title}</h3>
@@ -28,7 +28,7 @@ const HistoryItem: FC<HistoryItemProps> = async ({
             <p>Type: {type}</p>
             {picture &&
                 <Link href={link}>
-                    <StyledImage margin='mt-4' url={picture.url} alt={title}/>
+                    <Link.Image margin='mt-4' url={picture.url} alt={title}/>
                 </Link>
             }
             <p>{description}</p>

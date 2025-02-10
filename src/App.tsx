@@ -3,7 +3,6 @@ import './App.css'
 
 import {FC, ReactElement, Suspense} from 'react'
 import Footer from './layouts/footer'
-// import 'animate.css/animate.compat.css'
 import {MyNavbar} from './layouts/navbar'
 import AppHeader from './layouts/header/main'
 import {Projects} from './layouts/projects/projects'

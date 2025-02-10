@@ -5,7 +5,7 @@ import {FaRegFilePdf} from 'react-icons/fa'
 import CV_DE from '../../../public/CV_DE_Leo_Jan.pdf'
 import CV_EN from '../../../public/CV_EN_Leo_Jan.pdf'
 import {FC} from 'react'
-import {LinkTooltip} from '../icon'
+import {Tooltip} from '../icon'
 import {useTranslations} from 'next-intl'
 
 type CVButtonItemProps = {
@@ -16,12 +16,12 @@ type CVButtonItemProps = {
 const CVButtonItem: FC<CVButtonItemProps> = ({href, tooltip, text}) => {
     return (
         <NavDropdown.Item href={href} download={true} className="text-center">
-            <LinkTooltip tooltipLabel={tooltip}>
+            <Tooltip tooltipLabel={tooltip}>
                 <div>
                     <FaRegFilePdf className="mr-2"/>
                     {text}
                 </div>
-            </LinkTooltip>
+            </Tooltip>
         </NavDropdown.Item>
     )
 }

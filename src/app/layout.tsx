@@ -1,7 +1,7 @@
 import React, {ReactNode} from 'react'
 import {Metadata} from 'next/types'
 import {routing} from '../i18n/routing'
-import {Locale} from '../types/i18n'
+import {Locale} from '../types/translations'
 
 export const metadata: Metadata = {
     title: 'Léo Jan',

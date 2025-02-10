@@ -1,4 +1,3 @@
-'use client'
 import {FC} from 'react'
 import {Button, Col, Row} from 'react-bootstrap'
 import {computeAge} from '../../utils'

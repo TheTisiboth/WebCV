@@ -13,7 +13,6 @@
     "copyTypes": "node src/scripts/copyTypesFromStrapi.ts"
   },
   "dependencies": {
-    "animate.css": "^4.1.1",
     "bootstrap": "^5.3.3",
     "leaflet": "^1.9.4",
     "next": "15.1.3",
