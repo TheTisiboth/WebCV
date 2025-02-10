@@ -6,6 +6,7 @@ import NextLink from 'next/link'
 import {getImageUrl} from '../utils/image'
 import {env} from '../utils/env'
 import {IconSocial} from './IconSocial'
+import { CldImage } from 'next-cloudinary'
 
 type LinkProps = {
     href?: string
@@ -79,7 +80,11 @@ export const StyledImage: FC<ImageProps> = ({size = 32, roundedCircle = false, n
 
     return (
         <Figure className={margin}>
-            <Image src={imageUrl} alt={alt} style={style} width={width ?? size} height={height ?? size} className={className}/>
+            {isProduction && url ?
+                <CldImage src={imageUrl} width={width ?? size}
+                    height={height ?? size} alt={alt} className={className}/> :
+                <Image src={imageUrl} alt={alt} style={style} width={width ?? size} height={height ?? size}
+                    className={className}/>}
         </Figure>
     )
 }

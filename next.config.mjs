@@ -3,10 +3,10 @@ import createNextIntlPlugin from 'next-intl/plugin'
 const withNextIntl = createNextIntlPlugin()
 
 // Cloudinary Configuration
-const CLOUDINARY_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_NAME
+const CLOUDINARY_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
 
 if (process.env.NODE_ENV === 'production' && !CLOUDINARY_NAME) {
-    throw new Error('NEXT_PUBLIC_CLOUDINARY_NAME is not defined in the environment variables.')
+    throw new Error('NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME is not defined in the environment variables.')
 }
 
 /** @type {import('next').NextConfig} */
