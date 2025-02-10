@@ -8,8 +8,8 @@ const __dirname = path.dirname(__filename)
 const sourceFolder = path.resolve(__dirname, '../../../WebCV_backend/types')
 const destinationFolder = path.resolve(__dirname, '../types/generated')
 
-// SCRIPT INPUTS: folders to skip, and folders to copy
-const skipFolders = new Set(['generated']) // TODO: Add files to skip, like User and Payload
+// SCRIPT INPUTS: items to skip (folders or files), and folders to copy
+const skipItems = new Set(['generated', 'User.ts', 'Payload.ts'])
 const copyFolders = new Set([
     { src: sourceFolder, dest: destinationFolder }
 ])
@@ -37,12 +37,10 @@ const copyFolder = (src: string, dest: string) => {
     fs.readdirSync(src).forEach(item => {
         const srcPath = path.join(src, item)
         const destPath = path.join(dest, item)
-        if (fs.lstatSync(srcPath).isDirectory()) {
-            if (skipFolders.has(item)) {
-                console.log(`Skipping folder: ${item}`)
-            } else {
-                copyFolder(srcPath, destPath)
-            }
+        if (skipItems.has(item)) {
+            console.log(`Skipping item: ${item}`)
+        } else if (fs.lstatSync(srcPath).isDirectory()) {
+            copyFolder(srcPath, destPath)
         } else {
             copyFile(srcPath, destPath)
         }
