@@ -27,80 +27,11 @@
     "german": "Deutsch"
   },
   "now": "Jetzt",
-  "history": {
-    "0": {
-      "id": 1,
-      "date": "01/2021 - Jetzt",
-      "title": "GreenDelta - Berlin",
-      "body": "<tag>Sofwtare und Web Entwicklung</tag> : Arbeit an verschiedenen open-source Projekte, in Zusammenhang mit der nachhaltigen Entwicklung. Neue Funktionalität für openLCA (Java), software für LCA, und erstellung einer leichtgewichtigen Web-Version von openLCA im Bereich des Bauwesens (React)",
-      "job": true
-    },
-    "1": {
-      "id": 2,
-      "date": "05/2020 - 09/2020",
-      "title": "Enovacom, Marseille",
-      "body": "<tag>Internationalisierung der Software</tag> : Implementierung einer RESTful API, die den FHIR-Kommunikationsstandard respektiert, um einen Dialog zwischen einer Verzeichnissoftware und jeder anderen FHIR-kompatiblen Drittanwendung zu ermöglichen. Software-Programmierung (Java)",
-      "job": true
-    },
-    "2": {
-      "id": 3,
-      "date": "05/2019 - 08/2019",
-      "title": "Motion Picture Association of America, Brüssel",
-      "body": "<tag>Automatisierung von Web-Umfragen</tag> : Hilfe bei der Einrichtung einer Web-Schnittstelle zum Starten von Skripten zur Automatisierung von Umfragen für Websites, die illegal audiovisuelle Inhalte veröffentlichen. Web-Programmierung (Jquery, PHP, Python ...)",
-      "job": true
-    },
-    "3": {
-      "id": 4,
-      "date": "2016 - 2020",
-      "title": "Ingenieurschule  Polytech Grenoble",
-      "body": "Fachgebiet Computernetzwerke und Multimedia-Kommunikation, 5.",
-      "job": false
-    },
-    "4": {
-      "id": 5,
-      "date": "Sommer 2018",
-      "title": "MacDonald's, Marseille",
-      "body": "<tag>Polyvalentes Teammitglied</tag> : Teilnahme an der Küche, um die Bestellungen nach dem vorher festgelegten Protokoll und Rezepten vorzubereiten.",
-      "job": true
-    },
-    "5": {
-      "id": 6,
-      "date": "Sommer 2017",
-      "title": "Deliveroo, Grenoble",
-      "body": "<tag>Selbstständig Erwerbstätige</tag>: Hauslieferung von Lebensmitteln auf Fahrrädern",
-      "job": true
-    },
-    "6": {
-      "id": 7,
-      "date": "2014 - 2016",
-      "title": "Parcours des Élèves Ingénieurs Polytech (PEIP), Marseille",
-      "body": "Polytech integrierte Vorbereitungsklasse (Mathematik, Physik, Chemie, Informatik)",
-      "job": false
-    },
-    "7": {
-      "id": 8,
-      "date": "Sommer 2014 & 2015",
-      "title": "SEBBEN, Toulon",
-      "body": "<tag>Multi-Service-Unternehmen</tag>: Reinigung von Gemeinschaftsbereichen von Gebäuden",
-      "job": true
-    },
-    "8": {
-      "id": 9,
-      "date": "06/2016",
-      "title": "Wissenschaftliches Bakkalaureat in Informatik und Digitaler Wissenschaft",
-      "body": "AbiBac Doppelstudium der deutschen Literatur und Geschichte",
-      "job": false
-    }
-  },
   "skills": {
     "system": "Systementwicklung",
     "software": "Software-Entwicklung",
     "web": "Webentwicklung",
     "other": "Andere"
-  },
-  "wip": {
-    "title": "Work in progress",
-    "body": "This website is currently under development. It will be updated regularly"
   },
   "hobbies": {
     "it": "Computer-Entwicklung",

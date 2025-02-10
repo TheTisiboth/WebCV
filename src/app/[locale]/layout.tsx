@@ -4,6 +4,7 @@ import {notFound} from 'next/navigation'
 import {NextIntlClientProvider} from 'next-intl'
 import {routing} from '../../i18n/routing'
 import {getMessages, setRequestLocale} from 'next-intl/server'
+import {Locale} from '../../types/i18n'
 
 export const metadata: Metadata = {
     title: 'Léo Jan',
@@ -17,7 +18,7 @@ export function generateStaticParams() {
 export default async function RootLayout(
     props: {
         children: ReactNode,
-        params: Promise<{ locale: 'en' | 'fr' | 'de' }>
+        params: Promise<{ locale: Locale }>
     }
 ) {
     const params = await props.params
