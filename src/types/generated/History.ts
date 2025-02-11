@@ -1,8 +1,8 @@
-import { Picture } from './components/Picture'
-import { Media } from './Media'
+import {Picture} from './components/Picture'
+import {Media} from './Media'
 
 export interface History {
-  documentId: number
+    id: number
     title: string
     description: string
     type?: 'job' | 'education'

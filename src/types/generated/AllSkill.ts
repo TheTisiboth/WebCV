@@ -1,7 +1,7 @@
-import { Media } from './Media'
+import {Media} from './Media'
 
 export interface AllSkill {
-  documentId: number
+    documentId: number
     name: string
     image: Media
     href: string

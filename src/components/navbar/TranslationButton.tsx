@@ -4,7 +4,7 @@ import {MdTranslate} from 'react-icons/md'
 import Tooltip from '../link/tooltip'
 import {useTranslations, useLocale} from 'next-intl'
 import {usePathname, useRouter} from '../../i18n/routing'
-import {Locale} from '../../types/translations'
+import {Locale} from '../../schemas/translations'
 
 /**
  * Translation button, that translate the whole page. It switches between english (by default), french and german

@@ -1,7 +1,7 @@
-import { Coordinate } from './components/Coordinate'
+import {Coordinate} from './components/Coordinate'
 
 export interface City {
-  documentId: number
+    id: number
     name: string
     coordinate: Coordinate
     locale: string

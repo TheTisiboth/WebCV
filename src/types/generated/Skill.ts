@@ -1,7 +1,7 @@
-import { AllSkill } from './AllSkill'
+import {AllSkill} from './AllSkill'
 
 export interface Skill {
-  documentId: number
+    id: number
     system: AllSkill[]
     software: AllSkill[]
     web: AllSkill[]

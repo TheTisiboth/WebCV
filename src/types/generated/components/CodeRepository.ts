@@ -1,6 +1,6 @@
 
 export interface CodeRepository {
-  documentId: number
+  id: number
   name: 'github' | 'gitlab'
   link: string
 }

@@ -1,7 +1,7 @@
 import { MediaFormat } from './MediaFormat'
 
 export interface Media {
-  documentId: number
+  id: number
   name: string
   alternativeText: string
   caption: string

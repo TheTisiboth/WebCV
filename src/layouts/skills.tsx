@@ -24,7 +24,7 @@ export const Skill: FC<SkillProps> = ({href, name, width, image, whiteIcon}) => 
     )
 }
 
-type SkillCategory = keyof Omit<MySkills, 'documentId'>
+type SkillCategory = keyof Omit<MySkills, 'id'>
 const skillCategories: SkillCategory[][] = [['system', 'software'], ['web', 'other']]
 
 /**

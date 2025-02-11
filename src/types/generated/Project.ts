@@ -1,9 +1,9 @@
-import { AllSkill } from './AllSkill'
-import { CodeRepository } from './components/CodeRepository'
-import { Media } from './Media'
+import {AllSkill} from './AllSkill'
+import {CodeRepository} from './components/CodeRepository'
+import {Media} from './Media'
 
 export interface Project {
-  documentId: number
+    id: number
     title: string
     description: string
     picture: Media

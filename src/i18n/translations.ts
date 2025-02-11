@@ -1,5 +1,5 @@
-import {Translation, validateTranslation} from '../types/translations'
-import {Locale} from '../types/translations'
+import {Translation, validateTranslation} from '../schemas/translations'
+import {Locale} from '../schemas/translations'
 
 const locales: Locale[] = ['de', 'en', 'fr']
 const translations: Record<string, Translation> = {}

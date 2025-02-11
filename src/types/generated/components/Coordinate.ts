@@ -1,6 +1,6 @@
 
 export interface Coordinate {
-  documentId: number
+  id: number
   lat: number
   lng: number
 }

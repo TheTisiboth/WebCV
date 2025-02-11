@@ -1,7 +1,7 @@
-import { Media } from './Media'
+import {Media} from './Media'
 
 export interface Cv {
-  documentId: number
+    id: number
     cv: Media
     cv_locale: 'fr' | 'en' | 'de'
 }

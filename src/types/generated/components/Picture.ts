@@ -1,6 +1,6 @@
 
 export interface Picture {
-  documentId: number
+  id: number
   startDate: Date
   endDate?: Date
 }
