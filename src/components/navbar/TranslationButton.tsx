@@ -1,7 +1,7 @@
 import {FC, startTransition, useCallback} from 'react'
 import {NavDropdown} from 'react-bootstrap'
 import {MdTranslate} from 'react-icons/md'
-import {Tooltip} from '../icon'
+import Tooltip from '../link/tooltip'
 import {useTranslations, useLocale} from 'next-intl'
 import {usePathname, useRouter} from '../../i18n/routing'
 import {Locale} from '../../types/translations'

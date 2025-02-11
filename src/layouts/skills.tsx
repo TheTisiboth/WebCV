@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import {Badge, Col, Row} from 'react-bootstrap'
-import Link from '../components/icon'
+import Link from '../components/link'
 import {getTranslations} from 'next-intl/server'
 import {fetchAPI} from '../utils/fetch-api'
 import {StrapiRoute} from '../types/generated/routes/StrapiRoute'
@@ -12,12 +12,12 @@ import {AllSkill, AllSkill as MySkill} from '../types/generated/AllSkill'
  * @param skillName - The name of the skill to display
  */
 type SkillProps =  MySkill
-export const Skill: FC<SkillProps> = ({href, height, name, width, image, whiteIcon}) => {
+export const Skill: FC<SkillProps> = ({href, name, width, image, whiteIcon}) => {
 
     return (
         <Link href={href} className='m-2'>
             <Link.Tooltip tooltipLabel={name}>
-                <Link.Image url={image.url} width={width} height={height} alt={name}
+                <Link.Image url={image.url} width={width} alt={name}
                     className={whiteIcon ? 'iconToWhite' : ''}/>
             </Link.Tooltip>
         </Link>
