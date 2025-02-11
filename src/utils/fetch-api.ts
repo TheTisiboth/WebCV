@@ -4,7 +4,7 @@ import { projectSchema } from '../schemas/Project'
 import { skillSchema } from '../schemas/Skill'
 import { citySchema } from '../schemas/City'
 import { cvSchema } from '../schemas/Cv'
-import { historySchema } from '../schemas/History.zod'
+import { historySchema } from '../schemas/History'
 import { z } from 'zod'
 
 type FetchApiProps = {
