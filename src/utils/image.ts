@@ -6,9 +6,8 @@ export const getImageUrlByName = (name: string): StaticImageData => {
     return getImage(name)
 }
 
-export const getImageUrlByUrl = (url: string, isProduction: boolean): string => {
-    if (isProduction) {
-        return url
-    }
-    return `${env.NEXT_PUBLIC_STRAPI_API_URL}${url}`
-}
+export const resolveImageUrl = (url: string, isProduction: boolean): string =>
+    isProduction ?
+        url :
+        `${env.NEXT_PUBLIC_STRAPI_API_URL}${url}`
+

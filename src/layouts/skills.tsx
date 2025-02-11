@@ -1,6 +1,6 @@
 import {FC} from 'react'
 import {Badge, Col, Row} from 'react-bootstrap'
-import Link from '../components/icon'
+import Link from '../components/link'
 import {getTranslations} from 'next-intl/server'
 import {fetchAPI} from '../utils/fetch-api'
 import {StrapiRoute} from '../types/generated/routes/StrapiRoute'
@@ -17,7 +17,7 @@ export const Skill: FC<SkillProps> = ({href, height, name, width, image, whiteIc
     return (
         <Link href={href} className='m-2'>
             <Link.Tooltip tooltipLabel={name}>
-                <Link.URLImage url={image.url} width={width} height={height} alt={name}
+                <Link.Image url={image.url} width={width} height={height} alt={name}
                     className={whiteIcon ? 'iconToWhite' : ''}/>
             </Link.Tooltip>
         </Link>

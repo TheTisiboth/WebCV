@@ -1,5 +1,5 @@
 import {FC} from 'react'
-import Link from '../../components/icon'
+import Link from '../../components/link'
 
 type SocialLinkProps = {
     link: string

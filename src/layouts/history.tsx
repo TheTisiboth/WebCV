@@ -3,7 +3,7 @@ import {Badge, Col, Container, Row} from 'react-bootstrap'
 import {FC} from 'react'
 import {fetchAPI} from '../utils/fetch-api'
 import {History} from '../types/generated/History'
-import Link from '../components/icon'
+import Link from '../components/link'
 import {StrapiRoute} from '../types/generated/routes/StrapiRoute'
 
 type HistoryItemProps = History
@@ -28,7 +28,7 @@ const HistoryItem: FC<HistoryItemProps> = async ({
             <p>Type: {type}</p>
             {picture &&
                 <Link href={link}>
-                    <Link.URLImage margin='mt-4' url={picture.url} alt={title}/>
+                    <Link.Image margin='mt-4' url={picture.url} alt={title}/>
                 </Link>
             }
             <p>{description}</p>

@@ -2,7 +2,7 @@
 
 import {FC, MouseEvent} from 'react'
 import {NavDropdown} from 'react-bootstrap'
-import {Tooltip} from '../icon'
+import Tooltip from '../link/tooltip'
 import {FaRegFilePdf} from 'react-icons/fa'
 import {getPDFUrl, handleDownload} from '../../utils/pdf'
 

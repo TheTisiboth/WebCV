@@ -2,7 +2,7 @@ import {FC} from 'react'
 import {Badge, Col, Container, Row} from 'react-bootstrap'
 import {type Project} from '../../types/generated/Project'
 import SocialLink from './SocialLink'
-import {UrlImage} from '../../components/icon'
+import Image from '../../components/link/image'
 import {Skill} from '../skills'
 import {fetchAPI} from '../../utils/fetch-api'
 import {getLocale, getTranslations} from 'next-intl/server'
@@ -14,7 +14,7 @@ const Project: FC<Project> = async ({title, description, codeRepository, picture
     return (
         <Row className="justify-content-center pt-5 pb-5 mt-3 mb-3">
             <Col xs={12} md={true}>
-                <UrlImage url={picture.url} alt={title} size={477}/>
+                <Image url={picture.url} alt={title} size={477}/>
             </Col>
             <Col xs={12} md={true} className="align-self-center pr-5">
                 <h3><b>{title}</b>, {year} - {t('months', {count: duration})}</h3>

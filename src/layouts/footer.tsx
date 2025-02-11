@@ -2,7 +2,7 @@
 import { FC } from 'react'
 import { Button, Col, Container, ListGroup, Row, Nav } from 'react-bootstrap'
 import { FaArrowAltCircleUp } from 'react-icons/fa'
-import { Tooltip } from '../components/icon'
+import Tooltip  from '../components/link/tooltip'
 
 const Footer: FC = () => {
     return (
