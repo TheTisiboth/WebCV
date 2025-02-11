@@ -12,12 +12,12 @@ import {AllSkill, AllSkill as MySkill} from '../types/generated/AllSkill'
  * @param skillName - The name of the skill to display
  */
 type SkillProps =  MySkill
-export const Skill: FC<SkillProps> = ({href, height, name, width, image, whiteIcon}) => {
+export const Skill: FC<SkillProps> = ({href, name, width, image, whiteIcon}) => {
 
     return (
         <Link href={href} className='m-2'>
             <Link.Tooltip tooltipLabel={name}>
-                <Link.Image url={image.url} width={width} height={height} alt={name}
+                <Link.Image url={image.url} width={width} alt={name}
                     className={whiteIcon ? 'iconToWhite' : ''}/>
             </Link.Tooltip>
         </Link>
