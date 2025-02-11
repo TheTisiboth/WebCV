@@ -17,7 +17,7 @@ export const Skill: FC<SkillProps> = ({href, height, name, width, image, whiteIc
     return (
         <Link href={href} className='m-2'>
             <Link.Tooltip tooltipLabel={name}>
-                <Link.Image url={image.url} width={width} height={height} alt={name}
+                <Link.URLImage url={image.url} width={width} height={height} alt={name}
                     className={whiteIcon ? 'iconToWhite' : ''}/>
             </Link.Tooltip>
         </Link>

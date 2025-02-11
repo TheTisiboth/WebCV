@@ -2,7 +2,7 @@ import { FC } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import LeftHeader from './left'
 import RightHeader from './right'
-import Link, { StyledImage } from '../../components/icon'
+import Link, {NamedImage} from '../../components/icon'
 
 /**
  * AppHeader, containing LeftHeader, Image, and RightHeader
@@ -17,7 +17,7 @@ const AppHeader: FC = () => {
                 <Col sm={12} md={4} className="align-self-center">
                     <Row>
                         <Col>
-                            <StyledImage name='leo' roundedCircle alt='banner image' margin='mt-3' size={285}/>
+                            <NamedImage name='leo' roundedCircle alt='banner image' margin='mt-3' size={285}/>
                         </Col>
                     </Row>
                     <Row className="App-header text-center">

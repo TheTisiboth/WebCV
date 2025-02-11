@@ -28,7 +28,7 @@ const HistoryItem: FC<HistoryItemProps> = async ({
             <p>Type: {type}</p>
             {picture &&
                 <Link href={link}>
-                    <Link.Image margin='mt-4' url={picture.url} alt={title}/>
+                    <Link.URLImage margin='mt-4' url={picture.url} alt={title}/>
                 </Link>
             }
             <p>{description}</p>

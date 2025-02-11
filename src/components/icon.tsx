@@ -1,9 +1,9 @@
 import {FC, ReactElement, ReactNode} from 'react'
 import {Figure, OverlayTrigger, Tooltip as BTooltip} from 'react-bootstrap'
 import {type Placement} from 'react-bootstrap/types'
-import Image from 'next/image'
+import Image, {StaticImageData} from 'next/image'
 import NextLink from 'next/link'
-import {getImageUrl} from '../utils/image'
+import {getImageUrlByName, getImageUrlByUrl} from '../utils/image'
 import {env} from '../utils/env'
 import {IconSocial} from './IconSocial'
 import CldImage from './CldImage'
@@ -16,7 +16,8 @@ type LinkProps = {
 
 type LinkComposition = {
     IconSocial: typeof IconSocial
-    Image: typeof StyledImage
+    URLImage: typeof UrlImage
+    NamedImage: typeof NamedImage
     Tooltip: typeof Tooltip
 }
 
@@ -51,63 +52,87 @@ export const Tooltip: FC<TooltipProps> = ({placement = 'bottom', tooltipLabel, c
     )
 }
 
-// Make url or name optional
-
 type ImageBaseProps = {
-    size?: number
-    roundedCircle?: boolean
-    alt: string
-    margin?: string
-    className?: string
-    width?: number
-    height?: number
-}
+    size?: number;
+    roundedCircle?: boolean;
+    alt: string;
+    margin?: string;
+    className?: string;
+    width?: number;
+    height?: number;
+};
 
-type ImageProps = ImageBaseProps & (
-    | { name: string; url?: never } // We use the name to get the image from the public folder
-    | { name?: never; url: string } // We use the url to get the image from an external source
-    )
+type NamedImageProps = ImageBaseProps & {
+    name: string;
+};
 
-export const StyledImage: FC<ImageProps> = ({size = 32, roundedCircle = false, name, url, alt, margin, className, width, height}) => {
-    isValidImageProps({name, url, alt} as ImageProps)
+type UrlImageProps = ImageBaseProps & {
+    url: string;
+};
 
-    const isProduction = env.IS_PRODUCTION
-    const imageUrl = getImageUrl(name, url, isProduction)
-    const style = {
-        borderRadius: roundedCircle ? '50%' : '0',
-        height: 'auto'
-    }
+type BaseImageProps = ImageBaseProps & { src: string | StaticImageData; useCld?: boolean }
+
+const BaseImage: FC<BaseImageProps> = ({
+    size = 32,
+    roundedCircle = false,
+    src,
+    alt,
+    margin,
+    className,
+    width,
+    height,
+    useCld = false
+}) => {
+    const style = {borderRadius: roundedCircle ? '50%' : '0', height: 'auto'}
 
     return (
         <Figure className={margin}>
-            {isProduction && url ?
-                <CldImage src={imageUrl as string} width={width ?? size}
-                    height={height ?? size} alt={alt} style={style} className={className}/> :
-                <Image src={imageUrl} alt={alt} style={style} width={width ?? size} height={height ?? size}
-                    className={className}/>}
+            {useCld ? (
+                <CldImage
+                    src={src as string}
+                    width={width ?? size}
+                    height={height ?? size}
+                    alt={alt}
+                    style={style}
+                    className={className}
+                />
+            ) : (
+                <Image
+                    src={src}
+                    alt={alt}
+                    width={width ?? size}
+                    height={height ?? size}
+                    style={style}
+                    className={className}
+                />
+            )}
         </Figure>
     )
 }
 
-const isValidImageProps = (props: ImageProps): props is ImageProps => {
-    if (props.name && props.url ) {
-        throw new Error('ImageProps cannot have both "name" and "url" properties.')
-    }
-    return true
+export const NamedImage: FC<NamedImageProps> = (props) => (
+    <BaseImage {...props} src={getImageUrlByName(props.name)}/>
+)
+
+export const UrlImage: FC<UrlImageProps> = (props) => {
+    const imageUrl = getImageUrlByUrl(props.url, env.IS_PRODUCTION)
+    return <BaseImage {...props} src={imageUrl} useCld={env.IS_PRODUCTION}/>
 }
+
 
 /*
 * Using the composition pattern, we can export the Link component with its children, for instance:
 *
 * <Link href={skill.href} className='m-2'>
 *    <Link.Tooltip tooltipLabel={skill.tooltip}>
-*      <Link.Image src={skill.image} size={skill.size} alt={skill.tooltip} className={skill.class} />
+*      <Link.URLImage url={skill.image.url} size={skill.size} alt={skill.tooltip} className={skill.class} />
 *    </Link.Tooltip>
 * </Link>
 */
 
 Link.IconSocial = IconSocial
-Link.Image = StyledImage
+Link.NamedImage = NamedImage
+Link.URLImage = UrlImage
 Link.Tooltip = Tooltip
 
 export default Link
