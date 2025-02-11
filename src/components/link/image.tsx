@@ -2,10 +2,11 @@ import Image, {StaticImageData} from 'next/image'
 import {FC} from 'react'
 import {Figure} from 'react-bootstrap'
 import {env} from '../../utils/env'
-import {getImageUrlByName, resolveImageUrl} from '../../utils/image'
+import {getImageUrlByName} from '../../utils/image'
 import CldImage from '../CldImage'
 import clsx from 'clsx'
 import './image.css'
+import {resolveRemoteMediaURL} from '../../utils/remoteMedia'
 
 type ImageBaseProps = {
     size?: number;
@@ -85,7 +86,7 @@ const ImageComponent: FC<ImageProps> = (props) => {
     // I use this syntax for type narrowing
     const src = name !== undefined
         ? getImageUrlByName(name)
-        : resolveImageUrl(url, isProduction)
+        : resolveRemoteMediaURL(url)
 
     return <BaseImage {...rest} src={src} useCld={isProduction && !!url} />
 }

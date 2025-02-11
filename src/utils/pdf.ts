@@ -1,16 +1,3 @@
-
-import {env} from './env'
-
-export const getPDFUrl = (url: string, ):  string => {
-    const isProduction = env.IS_PRODUCTION
-    
-    if (isProduction) {
-        return url
-    }
-    
-    return `${env.NEXT_PUBLIC_STRAPI_API_URL}${url}`
-}
-
 export const handleDownload = async (url: string) => {
     try {
         const response = await fetch(url)
