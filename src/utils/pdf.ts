@@ -1,4 +1,5 @@
 export const handleDownload = async (url: string) => {
+    console.log(url)
     try {
         const response = await fetch(url)
         if (!response.ok) {
