@@ -4,6 +4,8 @@ import {Figure} from 'react-bootstrap'
 import {env} from '../../utils/env'
 import {getImageUrlByName, resolveImageUrl} from '../../utils/image'
 import CldImage from '../CldImage'
+import clsx from 'clsx'
+import './image.css'
 
 type ImageBaseProps = {
     size?: number;
@@ -12,7 +14,6 @@ type ImageBaseProps = {
     margin?: string;
     className?: string;
     width?: number;
-    height?: number;
 };
 
 type BaseImageProps = ImageBaseProps & { src: string | StaticImageData; useCld?: boolean }
@@ -27,26 +28,29 @@ const BaseImage: FC<BaseImageProps> = ({
     width,
     useCld = false
 }) => {
-    const style = {borderRadius: roundedCircle ? '50%' : '0', height: 'auto'}
+    const effectiveWidth = width ?? size
+    const isBigImage = effectiveWidth > 100
+    const style = {borderRadius:  '50%' }
+    const combinedClassName = clsx(className,'responsive-image',{'responsive-big-image': isBigImage})
 
     return (
         <Figure className={margin}>
             {useCld ? (
                 <CldImage
                     src={src as string}
-                    width={width ?? size}
+                    width={effectiveWidth}
                     alt={alt}
-                    style={style}
-                    className={className}
+                    style={roundedCircle ? style: undefined}
+                    className={combinedClassName}
                 />
             ) : (
                 <Image
                     src={src}
                     alt={alt}
-                    width={width ?? size}
-                    height={size}
-                    style={style}
-                    className={className}
+                    width={effectiveWidth}
+                    height={size} // Forced to put a height, but it is not used
+                    style={roundedCircle ? style: undefined}
+                    className={combinedClassName}
                 />
             )}
         </Figure>
