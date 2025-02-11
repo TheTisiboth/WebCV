@@ -1,10 +1,10 @@
 import { StrapiRoute } from '../types/generated/routes/StrapiRoute';
 import { env } from './env';
-import { projectSchema } from "../schemas/generated/Project.zod";
-import { skillSchema } from "../schemas/generated/Skill.zod";
-import { citySchema } from "../schemas/generated/City.zod";
-import { cvSchema } from "../schemas/generated/Cv.zod";
-import { historySchema } from "../schemas/generated/History.zod";
+import { projectSchema } from "../schemas/Project.zod";
+import { skillSchema } from "../schemas/Skill.zod";
+import { citySchema } from "../schemas/City.zod";
+import { cvSchema } from "../schemas/Cv.zod";
+import { historySchema } from "../schemas/History.zod";
 import { z } from "zod";
 
 type FetchApiProps = {
