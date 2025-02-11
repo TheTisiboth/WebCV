@@ -33,7 +33,7 @@ I only used the script to copy some files, and I adapted it to my needs.
 
 You first have to generate the types from the backend. You can do this by running the following command in the backend repository:
 ```
-pnpm run t4s -- --v5
+pnpm run generate-types
 ```
 
 Then, you have to copy the generated types to the frontend. You can do this by running the following command in the frontend repository:

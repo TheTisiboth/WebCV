@@ -1,16 +1,19 @@
 'use client'
-import {FC, useEffect, useRef} from 'react'
+import React, {FC, ReactNode, useEffect, useRef} from 'react'
 import {Nav, Navbar} from 'react-bootstrap'
 import Logo from '../components/navbar/logo'
 import NavItem from '../components/navbar/navItem'
-import CvButton from '../components/navbar/CvButton'
 import TranslationButton from '../components/navbar/TranslationButton'
 import {useTranslations} from 'next-intl'
+
+interface MyNavbarProps {
+    children: ReactNode
+}
 
 /**
  * The Navbar, containing the different section of the website, and the translation button
  */
-export const MyNavbar: FC = () => {
+export const MyNavbar: FC<MyNavbarProps> = ({children}) => {
     const t = useTranslations('navbar')
     const toggle = useRef<HTMLButtonElement>(null)
     const collapse = useRef<HTMLDivElement>(null)
@@ -35,11 +38,11 @@ export const MyNavbar: FC = () => {
         return (): void => {
             document.removeEventListener('mousedown', handleClick)
         }
-    },[])
+    }, [])
 
     return (
         <Navbar id="nav" ref={nav} collapseOnSelect={true} expand="md" bg="dark" variant="dark" className="pt-0 pb-0"
-            fixed="top" style={{ height: '60px' }}>
+            fixed="top" style={{height: '60px'}}>
             <Logo/>
             <Navbar.Toggle ref={toggle} aria-controls="responsive-navbar-nav"/>
             <Navbar.Collapse ref={collapse} id="responsive-navbar-nav" className="pb-3 pb-md-0 justify-content-between">
@@ -50,7 +53,7 @@ export const MyNavbar: FC = () => {
                     <NavItem scrollAnchor='Travels' element={t('travel')}/>
                 </Nav>
                 <Nav className='me-5'>
-                    <CvButton/>
+                    {children}
                     <TranslationButton collapseNavbar={collapseNavbar}/>
                 </Nav>
             </Navbar.Collapse>
