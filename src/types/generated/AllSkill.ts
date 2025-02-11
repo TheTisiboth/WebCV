@@ -7,5 +7,4 @@ export interface AllSkill {
     href: string
     whiteIcon?: boolean
     width?: number
-    height?: number
 }

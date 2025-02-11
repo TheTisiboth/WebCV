@@ -25,7 +25,6 @@ const BaseImage: FC<BaseImageProps> = ({
     margin,
     className,
     width,
-    height,
     useCld = false
 }) => {
     const style = {borderRadius: roundedCircle ? '50%' : '0', height: 'auto'}
@@ -36,7 +35,6 @@ const BaseImage: FC<BaseImageProps> = ({
                 <CldImage
                     src={src as string}
                     width={width ?? size}
-                    height={height ?? size}
                     alt={alt}
                     style={style}
                     className={className}
@@ -46,7 +44,7 @@ const BaseImage: FC<BaseImageProps> = ({
                     src={src}
                     alt={alt}
                     width={width ?? size}
-                    height={height ?? size}
+                    height={size}
                     style={style}
                     className={className}
                 />
