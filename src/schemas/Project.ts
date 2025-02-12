@@ -14,6 +14,5 @@ export const projectSchema = z.array(
         duration: z.number(),
         skills: z.array(allSkillSchema),
         locale: z.string()
-    }).strict()
+    })
 )
-

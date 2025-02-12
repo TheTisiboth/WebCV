@@ -1,5 +1,4 @@
 import {z} from 'zod'
-
 import {pictureSchema} from './components/Picture'
 import {mediaSchema} from './Media'
 import {resourceSchema} from './resource'
@@ -13,6 +12,5 @@ export const historySchema = z.array(
         picture: mediaSchema.optional(),
         dates: pictureSchema,
         locale: z.string()
-    }).strict()
+    })
 )
-

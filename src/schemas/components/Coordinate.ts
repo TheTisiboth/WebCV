@@ -1,7 +1,7 @@
 import { z } from 'zod'
-import {resourceSchema} from '../resource'
 
-export const coordinateSchema = resourceSchema.extend({
+export const coordinateSchema = z.object({
+    id: z.number(),
     lat: z.number(),
     lng: z.number(),
-}).strict()
+})

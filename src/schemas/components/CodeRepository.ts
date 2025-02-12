@@ -1,7 +1,7 @@
 import { z } from 'zod'
-import {resourceSchema} from '../resource'
 
-export const codeRepositorySchema = resourceSchema.extend({
+export const codeRepositorySchema = z.object({
+    id: z.number(),
     name: z.union([z.literal('github'), z.literal('gitlab')]),
     link: z.string(),
-}).strict()
+})
