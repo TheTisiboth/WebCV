@@ -1,7 +1,8 @@
-import {Media} from './Media'
+// Generated based on Strapi inner types. Please do not modify.
+import { Media } from './Media'
 
 export interface AllSkill {
-    documentId: number
+    id: number
     name: string
     image: Media
     href: string

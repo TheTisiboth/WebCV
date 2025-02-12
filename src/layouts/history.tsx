@@ -43,7 +43,7 @@ const HistoryItem: FC<HistoryItemProps> = async ({
 export const Histories: FC = async () => {
     const t = await getTranslations('navbar')
     const locale = await getLocale()
-    const histories = await fetchAPI<History[]>({resource: StrapiRoute.History, locale})
+    const histories = await fetchAPI<History[]>({resource: StrapiRoute.History, locale, sort: 'order'})
     return (
         <Container id="History" className="pt-5">
             <Row className="mb-4 justify-content-center">

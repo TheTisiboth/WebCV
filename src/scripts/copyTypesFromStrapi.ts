@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import prettier from 'prettier'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -21,14 +22,13 @@ const ensureDirExists = (dir: string) => {
     }
 }
 
-const copyFile = (src: string, dest: string) => {
+const copyFile = async (src: string, dest: string) => {
     ensureDirExists(path.dirname(dest))
+    const content = '// Generated based on Strapi inner types. Please do not modify.\n' +
+        fs.readFileSync(src, 'utf8')
 
-    const content = fs.readFileSync(src, 'utf8')
-        .replace(/;$/gm, '')  // Remove semicolons at the end of lines
-        .replace(/"/g, '\'')  // Replace double quotes with single quotes
-
-    fs.writeFileSync(dest, content)
+    const formattedContent = await prettier.format(content, { parser: 'typescript', tabWidth: 4, semi: false, singleQuote: true })
+    fs.writeFileSync(dest, formattedContent)
     console.log(`File ${src} copied and modified successfully!`)
 }
 
@@ -42,7 +42,7 @@ const copyFolder = (src: string, dest: string) => {
         } else if (fs.lstatSync(srcPath).isDirectory()) {
             copyFolder(srcPath, destPath)
         } else {
-            copyFile(srcPath, destPath)
+            void copyFile(srcPath, destPath)
         }
     })
 }
@@ -52,7 +52,7 @@ copyFolders.forEach(({ src, dest }) => {
         if (fs.lstatSync(src).isDirectory()) {
             copyFolder(src, dest)
         } else {
-            copyFile(src, dest)
+            void copyFile(src, dest)
         }
     } else {
         console.error(`Source path does not exist: ${src}`)

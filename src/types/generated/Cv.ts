@@ -1,4 +1,5 @@
-import {Media} from './Media'
+// Generated based on Strapi inner types. Please do not modify.
+import { Media } from './Media'
 
 export interface Cv {
     id: number
