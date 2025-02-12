@@ -8,6 +8,7 @@ type LinkProps = {
     href?: string
     className?: string
     children: ReactNode
+    ariaLabel?: string
 }
 
 type LinkComposition = {
@@ -16,13 +17,14 @@ type LinkComposition = {
     Tooltip: typeof Tooltip
 }
 
-const Link: FC<LinkProps> & LinkComposition = ({href, className, children}) => {
+const Link: FC<LinkProps> & LinkComposition = ({href, className, children, ariaLabel}) => {
     return (
         <NextLink
             href={href || ''}
             className={className}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={ariaLabel}
         >
             {children}
         </NextLink>

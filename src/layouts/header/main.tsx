@@ -22,17 +22,17 @@ const AppHeader: FC = () => {
                     </Row>
                     <Row className="App-header text-center">
                         <Col xs={4} className="text-right">
-                            <Link href='https://www.linkedin.com/in/l%C3%A9o-jan-065ba8125'>
+                            <Link href='https://www.linkedin.com/in/l%C3%A9o-jan-065ba8125' ariaLabel='linkedin'>
                                 <Link.IconSocial name='linkedin'/>
                             </Link>
                         </Col>
                         <Col xs={4}>
-                            <Link href='https://github.com/TheTisiboth'>
+                            <Link href='https://github.com/TheTisiboth' ariaLabel='github'>
                                 <Link.IconSocial name='github'/>
                             </Link>
                         </Col>
                         <Col xs={4} className="text-left">
-                            <Link href='https://gitlab.com/TheTisiboth'>
+                            <Link href='https://gitlab.com/TheTisiboth' ariaLabel='gitlab'>
                                 <Link.IconSocial name='gitlab'/>
                             </Link>
                         </Col>

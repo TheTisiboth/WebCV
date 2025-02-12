@@ -6,7 +6,7 @@ type SocialLinkProps = {
     name: string
 }
 const SocialLink: FC<SocialLinkProps> = ({link, name}) => (
-    <Link href={link}>
+    <Link href={link} ariaLabel={name}>
         <Link.IconSocial name={name} size='small'/>
     </Link>
 )
