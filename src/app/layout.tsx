@@ -1,7 +1,6 @@
 import React, {ReactNode} from 'react'
 import {Metadata} from 'next/types'
 import {routing} from '../i18n/routing'
-import {Locale} from '../schemas/translations'
 
 export const metadata: Metadata = {
     title: 'Léo Jan',
@@ -12,19 +11,9 @@ export function generateStaticParams() {
     return routing.locales.map((locale) => ({locale}))
 }
 
-export default async function RootLayout(
-    props: {
-        children: ReactNode,
-        params: Promise<{ locale: Locale }>
-    }
-) {
-    const params = await props.params
-    const {
-        children
-    } = props
-
+export default async function RootLayout({children}: { children: ReactNode }) {
     return (
-        <html lang={params.locale}>
+        <html>
             <head>
                 <meta name="theme-color" content="#000000"/>
                 <meta name="description" content="This is the Web CV of Léo Jan."/>

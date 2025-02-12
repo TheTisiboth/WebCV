@@ -35,8 +35,12 @@ export default async function RootLayout(
     const children = props.children
 
     return (
-        <NextIntlClientProvider messages={messages}>
-            <div id="root">{children}</div>
-        </NextIntlClientProvider>
+        <html lang={params.locale}>
+            <body>
+                <NextIntlClientProvider messages={messages}>
+                    <div id="root">{children}</div>
+                </NextIntlClientProvider>
+            </body>
+        </html>
     )
 }
