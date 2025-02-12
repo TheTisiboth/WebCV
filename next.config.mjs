@@ -5,7 +5,7 @@ const withNextIntl = createNextIntlPlugin()
 // Cloudinary Configuration
 const CLOUDINARY_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
 
-if (process.env.NODE_ENV === 'production' && !CLOUDINARY_NAME) {
+if (!CLOUDINARY_NAME) {
     throw new Error('NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME is not defined in the environment variables.')
 }
 
@@ -22,15 +22,9 @@ const nextConfig = {
     images: {
         remotePatterns: [
             {
-                protocol: 'http',
-                hostname: 'localhost',
-                port: '1337',
-                pathname: '**',
-            },
-            {
                 protocol: 'https',
                 hostname: 'res.cloudinary.com',
-                pathname: `${CLOUDINARY_NAME}/image/upload/**`,
+                pathname: `/${CLOUDINARY_NAME}/image/upload/**`,
             }
         ],
         // loader: 'default', // Ensures Next.js does not interfere with Cloudinary URLs

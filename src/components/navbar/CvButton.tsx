@@ -18,9 +18,9 @@ const CVButton: FC<CVButtonProps> = async({cvs}) => {
 
     return (
         <NavDropdown title={title} id="basic-nav-dropdown" className="m-auto mr-md-5">
-            {cvs.map(({cv_locale, cv: {url}}) => (
+            {cvs.map(({cv_locale, cv: {url}, id}) => (
                 <CVButtonItem href={url} tooltip={t(getPDFTooltip(cv_locale))}
-                    text={`CV ${cv_locale.toUpperCase()}`}/>
+                    text={`CV ${cv_locale.toUpperCase()}`} key={id}/>
             ))}
         </NavDropdown>
     )
