@@ -14,7 +14,7 @@ const Footer: FC = () => {
                 <Col md={3}>
                     <Nav.Link className="mt-2">
                         <Tooltip tooltipLabel='top' placement="right">
-                            <Button variant="outline-light">
+                            <Button variant="outline-light" aria-label='go to top'>
                                 <FaArrowAltCircleUp className="mb-1"/>
                             </Button>
                         </Tooltip>
