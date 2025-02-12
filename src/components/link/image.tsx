@@ -6,7 +6,6 @@ import {getImageUrlByName} from '../../utils/image'
 import CldImage from '../CldImage'
 import clsx from 'clsx'
 import './image.css'
-import {resolveRemoteMediaURL} from '../../utils/remoteMedia'
 
 type ImageBaseProps = {
     size?: number;
@@ -86,7 +85,7 @@ const ImageComponent: FC<ImageProps> = (props) => {
     // I use this syntax for type narrowing
     const src = name !== undefined
         ? getImageUrlByName(name)
-        : resolveRemoteMediaURL(url)
+        : url
 
     return <BaseImage {...rest} src={src} useCld={isProduction && !!url} />
 }

@@ -36,7 +36,7 @@ const Project: FC<Project> = async ({title, description, codeRepository, picture
 
 export const Projects: FC = async () => {
     const locale = await getLocale()
-    const projects = await fetchAPI<Project[]>({resource: StrapiRoute.Project,locale})
+    const projects = await fetchAPI<Project[]>({resource: StrapiRoute.Project, locale, sort: 'order'})
     const t = await getTranslations('navbar')
 
     return (

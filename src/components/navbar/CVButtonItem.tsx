@@ -5,7 +5,6 @@ import {NavDropdown} from 'react-bootstrap'
 import Tooltip from '../link/tooltip'
 import {FaRegFilePdf} from 'react-icons/fa'
 import {handleDownload} from '../../utils/pdf'
-import {resolveRemoteMediaURL} from '../../utils/remoteMedia'
 
 type CVButtonItemProps = {
     href: string
@@ -16,7 +15,7 @@ export const CVButtonItem: FC<CVButtonItemProps> = ({href, tooltip, text}) => {
 
     const handleOnClick = async (e: MouseEvent<HTMLElement>) => {
         e.preventDefault()
-        void handleDownload(resolveRemoteMediaURL(href))
+        void handleDownload(href)
     }
 
     return (

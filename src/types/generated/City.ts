@@ -1,4 +1,5 @@
-import {Coordinate} from './components/Coordinate'
+// Generated based on Strapi inner types. Please do not modify.
+import { Coordinate } from './components/Coordinate'
 
 export interface City {
     id: number

@@ -67,7 +67,7 @@ const SkillCategory: FC<{category: SkillCategory, categorySkills: AllSkill[]}> =
             <Row className="justify-content-center">
                 <Col xs={6} md={10}>
                     {categorySkills.map(skill => (
-                        <Skill {...skill} key={skill.documentId}/>
+                        <Skill {...skill} key={skill.id}/>
                     ))}
                 </Col>
             </Row>
