@@ -1,5 +1,3 @@
-import './index.css'
-import './App.css'
 import {FC} from 'react'
 import Footer from './layouts/footer'
 import AppHeader from './layouts/header/main'
@@ -14,6 +12,9 @@ const App: FC = () => (
         <NavBar/>
 
         <AppHeader/>
+        <h1 className="text-3xl font-bold underline text-red-700">
+            Hello world!
+        </h1>
         <section className="grey">
             <Projects/>
         </section>
