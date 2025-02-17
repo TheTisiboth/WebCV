@@ -5,14 +5,16 @@ import {Projects} from './layouts/projects/projects'
 import {Hobbies} from './layouts/hobbies'
 import Travels from './layouts/travels/travelsServer'
 import {Histories} from './layouts/history'
-import NavBar from './layouts/navbarWrapper'
+// import {MyNavbar} from './layouts/navbar'
+import Navbar2 from './layouts/navbar2'
+
 
 const App: FC = () => (
     <div id="App" className="App">
-        <NavBar/>
-
+        {/*<MyNavbar />*/}
+        <Navbar2/>
         <AppHeader/>
-        <h1 className="text-3xl font-bold underline text-red-700">
+        <h1 className="text-3xl font-bold  text-red-700">
             Hello world!
         </h1>
         <section className="grey">
