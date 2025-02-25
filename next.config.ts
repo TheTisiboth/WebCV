@@ -1,3 +1,4 @@
+import type { NextConfig } from 'next'
 import createNextIntlPlugin from 'next-intl/plugin'
 
 const withNextIntl = createNextIntlPlugin()
@@ -10,7 +11,7 @@ if (!CLOUDINARY_NAME) {
 }
 
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const nextConfig: NextConfig = {
     output: 'standalone', // Outputs a Single-Page Application (SPA).
     webpack: (config) => {
         config.module.rules.push({

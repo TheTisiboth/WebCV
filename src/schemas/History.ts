@@ -11,6 +11,7 @@ export const historySchema = z.array(
         link: z.string().optional(),
         picture: mediaSchema.optional(),
         dates: pictureSchema,
-        locale: z.string()
+        locale: z.string(),
+        order: z.number()
     })
 )
