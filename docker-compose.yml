@@ -10,4 +10,4 @@ services:
     container_name: webcv-front
     restart: unless-stopped
     ports:
-      - "3001:3001"
+      - "3000:3000"
