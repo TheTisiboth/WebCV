@@ -1,5 +1,7 @@
 # Web CV
 
+![Status](https://status.leojan.fr/api/badge/1/status) ![Uptime](https://status.leojan.fr/api/badge/1/uptime/24)
+
 This is my Web CV, developed in react. It was deployed on Netlify, and it is now deployed on Vercel.
 
 You can access last version of the website directly on `https://janleo.fr` or on `https://leojan.fr`
