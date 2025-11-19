@@ -2,6 +2,8 @@
 
 ![Status](https://status.leojan.fr/api/badge/1/status) ![Uptime](https://status.leojan.fr/api/badge/1/uptime/24)
 
+[Monitoring status page](https://status.leojan.fr/status/webcv-front)
+
 This is my Web CV, developed in react. It was deployed on Netlify, and it is now deployed on Vercel.
 
 You can access last version of the website directly on `https://janleo.fr` or on `https://leojan.fr`
