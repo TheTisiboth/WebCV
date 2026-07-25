@@ -13,6 +13,7 @@ export const projectSchema = z.array(
         year: z.string(),
         duration: z.number(),
         skills: z.array(allSkillSchema),
-        locale: z.string()
+        locale: z.string(),
+        order: z.number()
     })
 )

@@ -5,6 +5,7 @@ import {NextIntlClientProvider} from 'next-intl'
 import {routing} from '../../i18n/routing'
 import {getMessages, setRequestLocale} from 'next-intl/server'
 import {Locale} from '../../schemas/translations'
+import HtmlWrapper from './HTMLWrapper'
 
 export const metadata: Metadata = {
     title: 'Léo Jan',
@@ -21,26 +22,24 @@ export default async function RootLayout(
         params: Promise<{ locale: Locale }>
     }
 ) {
-    const params = await props.params
+    const {locale} = await props.params
 
     // Ensure that the incoming `locale` is valid
-    if (!routing.locales.includes(params.locale)) {
+    if (!routing.locales.includes(locale)) {
         notFound()
     }
 
-    setRequestLocale(params.locale)
+    setRequestLocale(locale)
 
     const messages = await getMessages()
 
     const children = props.children
 
     return (
-        <html lang={params.locale}>
-            <body>
-                <NextIntlClientProvider messages={messages}>
-                    <div id="root">{children}</div>
-                </NextIntlClientProvider>
-            </body>
-        </html>
+        <HtmlWrapper locale={locale}>
+            <NextIntlClientProvider messages={messages}>
+                <div id="root">{children}</div>
+            </NextIntlClientProvider>
+        </HtmlWrapper>
     )
 }
