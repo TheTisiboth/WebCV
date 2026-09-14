@@ -8,6 +8,15 @@ services:
         - NEXT_PUBLIC_STRAPI_API_TOKEN=${NEXT_PUBLIC_STRAPI_API_TOKEN}
     image: webcv_front
     container_name: webcv-front
+    init: true
     restart: unless-stopped
     ports:
       - "${APP_PORT:-3007}:3007"
+    # Liveness only: /api/health probes Strapi, and Traefik stops routing to unhealthy containers
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://127.0.0.1:3007/favicon.ico >/dev/null || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+      start_interval: 5s

@@ -1,63 +1,34 @@
-# Multi-stage build for Next.js app
-FROM node:20-alpine AS builder
+ARG NODE_VERSION=22
 
+FROM node:${NODE_VERSION}-alpine AS base
 WORKDIR /app
+ENV NEXT_TELEMETRY_DISABLED=1
 
-# Copy package files
-COPY package*.json ./
+FROM base AS deps
+COPY package.json package-lock.json ./
+RUN --mount=type=cache,target=/root/.npm \
+    npm ci
 
-# Install dependencies
-RUN npm ci --force
-
-# Copy source code
+FROM deps AS build
 COPY . .
-
-# Accept build arguments
 ARG NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
 ARG NEXT_PUBLIC_STRAPI_API_URL
 ARG NEXT_PUBLIC_STRAPI_API_TOKEN
+ENV NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=$NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME \
+    NEXT_PUBLIC_STRAPI_API_URL=$NEXT_PUBLIC_STRAPI_API_URL \
+    NEXT_PUBLIC_STRAPI_API_TOKEN=$NEXT_PUBLIC_STRAPI_API_TOKEN
+RUN --mount=type=cache,target=/app/.next/cache \
+    npm run build
 
-# Set as environment variables for build
-ENV NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME=$NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME
-ENV NEXT_PUBLIC_STRAPI_API_URL=$NEXT_PUBLIC_STRAPI_API_URL
-ENV NEXT_PUBLIC_STRAPI_API_TOKEN=$NEXT_PUBLIC_STRAPI_API_TOKEN
+FROM base AS runner
+ENV NODE_ENV=production \
+    PORT=3007 \
+    HOSTNAME=0.0.0.0
 
-# Build the application
-RUN npm run build
+COPY --from=build --chown=node:node /app/.next/standalone ./
+COPY --from=build --chown=node:node /app/.next/static ./.next/static
+COPY --from=build --chown=node:node /app/public ./public
 
-# Production stage
-FROM node:20-alpine AS production
-
-WORKDIR /app
-
-# Set production environment
-ENV NODE_ENV=production
-ENV PORT=3007
-ENV HOSTNAME="0.0.0.0"
-
-# Copy package files
-COPY package*.json ./
-
-# Copy built application from builder stage
-COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
-
-# Create a non-root user
-RUN addgroup -g 1001 -S nodejs
-RUN adduser -S nextjs -u 1001
-
-# Change ownership of the app directory
-RUN chown -R nextjs:nodejs /app
-
-USER nextjs
-
-# Expose port
+USER node
 EXPOSE 3007
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-  CMD node -e "console.log('App is healthy')" || exit 1
-
-# Start the application
 CMD ["node", "server.js"]
